@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Mar  6 12:06:30 2018" VIVADOVERSION="2017.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Mar  6 12:41:45 2018" VIVADOVERSION="2017.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="xilinx.com:zc706:part0:1.4" DEVICE="7z045" NAME="design_1" PACKAGE="ffg900" SPEEDGRADE="-2"/>
 
@@ -236,8 +236,8 @@
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="O" LEFT="0" NAME="IBUF_OUT" RIGHT="0" SIGIS="clk" SIGNAME="CLK1_OUT_IBUF_OUT">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="counter_DAC_0" PORT="clk"/>
             <CONNECTION INSTANCE="blk_mem_gen_1" PORT="clka"/>
+            <CONNECTION INSTANCE="counter_DAC_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -954,6 +954,11 @@
         <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="CLK1_OUT_IBUF_OUT">
           <CONNECTIONS>
             <CONNECTION INSTANCE="CLK1_OUT" PORT="IBUF_OUT"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="19" NAME="step" RIGHT="0" SIGIS="undef" SIGNAME="wb_test_slave_0_wbt_dds_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="wb_test_slave_0" PORT="wbt_dds_o"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="9" NAME="dac_sierra" RIGHT="0" SIGIS="undef" SIGNAME="counter_DAC_0_dac_sierra">
@@ -3268,7 +3273,11 @@
             <CONNECTION INSTANCE="External_Ports" PORT="PLL1_SYNCB"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="15" NAME="wbt_dds_o" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="19" NAME="wbt_dds_o" RIGHT="0" SIGIS="undef" SIGNAME="wb_test_slave_0_wbt_dds_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="counter_DAC_0" PORT="step"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="31" NAME="wbt_key_i" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_1_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="xlconstant_1" PORT="dout"/>

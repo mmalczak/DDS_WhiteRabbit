@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.1 (lin64) Build 1846317 Fri Apr 14 18:54:47 MDT 2017
---Date        : Tue Mar  6 12:06:29 2018
+--Date        : Tue Mar  6 12:41:45 2018
 --Host        : milosz-System-Product-Name running 64-bit Linux Mint 18.2 Sonya
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -1354,12 +1354,6 @@ architecture STRUCTURE of design_1 is
     IBUF_OUT : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component design_1_util_ds_buf_1_4;
-  component design_1_counter_DAC_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    dac_sierra : out STD_LOGIC_VECTOR ( 9 downto 0 )
-  );
-  end component design_1_counter_DAC_0_0;
   component design_1_blk_mem_gen_1_0 is
   port (
     clka : in STD_LOGIC;
@@ -1367,6 +1361,13 @@ architecture STRUCTURE of design_1 is
     douta : out STD_LOGIC_VECTOR ( 13 downto 0 )
   );
   end component design_1_blk_mem_gen_1_0;
+  component design_1_counter_DAC_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    step : in STD_LOGIC_VECTOR ( 19 downto 0 );
+    dac_sierra : out STD_LOGIC_VECTOR ( 9 downto 0 )
+  );
+  end component design_1_counter_DAC_0_0;
   component design_1_wb_test_slave_0_0 is
   port (
     rst_n_i : in STD_LOGIC;
@@ -1382,7 +1383,7 @@ architecture STRUCTURE of design_1 is
     wb_stall_o : out STD_LOGIC;
     wbt_led_pll_o : out STD_LOGIC_VECTOR ( 1 downto 0 );
     wbt_pll1_syncb_o : out STD_LOGIC;
-    wbt_dds_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    wbt_dds_o : out STD_LOGIC_VECTOR ( 19 downto 0 );
     wbt_key_i : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   end component design_1_wb_test_slave_0_0;
@@ -1521,6 +1522,7 @@ architecture STRUCTURE of design_1 is
   signal util_ds_buf_0_IBUF_OUT : STD_LOGIC_VECTOR ( 17 downto 0 );
   signal wb_test_slave_0_wb_ack_o : STD_LOGIC;
   signal wb_test_slave_0_wb_dat_o : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal wb_test_slave_0_wbt_dds_o : STD_LOGIC_VECTOR ( 19 downto 0 );
   signal wb_test_slave_0_wbt_led_o : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal wb_test_slave_0_wbt_pll1_syncb_o : STD_LOGIC;
   signal xlconstant_0_dout : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -1538,7 +1540,6 @@ architecture STRUCTURE of design_1 is
   signal NLW_rst_processing_system7_0_50M_bus_struct_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_rst_processing_system7_0_50M_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_wb_test_slave_0_wb_stall_o_UNCONNECTED : STD_LOGIC;
-  signal NLW_wb_test_slave_0_wbt_dds_o_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
 begin
   DAC_DAT_N(13 downto 0) <= DAC_DAT_OBUF_DS_N(13 downto 0);
   DAC_DAT_P(13 downto 0) <= DAC_DAT_OBUF_DS_P(13 downto 0);
@@ -1669,7 +1670,8 @@ blk_mem_gen_1: component design_1_blk_mem_gen_1_0
 counter_DAC_0: component design_1_counter_DAC_0_0
      port map (
       clk => CLK1_OUT_IBUF_OUT(0),
-      dac_sierra(9 downto 0) => counter_DAC_0_dac_sierra(9 downto 0)
+      dac_sierra(9 downto 0) => counter_DAC_0_dac_sierra(9 downto 0),
+      step(19 downto 0) => wb_test_slave_0_wbt_dds_o(19 downto 0)
     );
 do_nothing_0: component design_1_do_nothing_0_0
      port map (
@@ -1863,7 +1865,7 @@ wb_test_slave_0: component design_1_wb_test_slave_0_0
       wb_stall_o => NLW_wb_test_slave_0_wb_stall_o_UNCONNECTED,
       wb_stb_i => axil2wb_0_wb_stb_o,
       wb_we_i => axil2wb_0_wb_we_o,
-      wbt_dds_o(15 downto 0) => NLW_wb_test_slave_0_wbt_dds_o_UNCONNECTED(15 downto 0),
+      wbt_dds_o(19 downto 0) => wb_test_slave_0_wbt_dds_o(19 downto 0),
       wbt_key_i(31 downto 0) => xlconstant_1_dout(31 downto 0),
       wbt_led_pll_o(1 downto 0) => wb_test_slave_0_wbt_led_o(1 downto 0),
       wbt_pll1_syncb_o => wb_test_slave_0_wbt_pll1_syncb_o

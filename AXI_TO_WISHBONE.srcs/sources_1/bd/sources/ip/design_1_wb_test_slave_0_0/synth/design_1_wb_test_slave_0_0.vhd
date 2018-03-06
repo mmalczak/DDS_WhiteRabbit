@@ -68,7 +68,7 @@ ENTITY design_1_wb_test_slave_0_0 IS
     wb_stall_o : OUT STD_LOGIC;
     wbt_led_pll_o : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     wbt_pll1_syncb_o : OUT STD_LOGIC;
-    wbt_dds_o : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+    wbt_dds_o : OUT STD_LOGIC_VECTOR(19 DOWNTO 0);
     wbt_key_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0)
   );
 END design_1_wb_test_slave_0_0;
@@ -91,7 +91,7 @@ ARCHITECTURE design_1_wb_test_slave_0_0_arch OF design_1_wb_test_slave_0_0 IS
       wb_stall_o : OUT STD_LOGIC;
       wbt_led_pll_o : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
       wbt_pll1_syncb_o : OUT STD_LOGIC;
-      wbt_dds_o : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+      wbt_dds_o : OUT STD_LOGIC_VECTOR(19 DOWNTO 0);
       wbt_key_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0)
     );
   END COMPONENT wb_test_slave;

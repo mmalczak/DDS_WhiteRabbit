@@ -105,11 +105,11 @@ int main(void)
 
 
 
-	Xil_Out32(0x43C00000, 0b000000000);
+/*	Xil_Out32(0x43C00000, 0b000000000);
 	u32 a;
 	a=Xil_In32(0x43C00004);
 	printf("b = %d\n", a);
-
+*/
 	printf("Sukces\n");
 	return XST_SUCCESS;
 }

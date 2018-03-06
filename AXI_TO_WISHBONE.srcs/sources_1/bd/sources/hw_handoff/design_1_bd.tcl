@@ -855,6 +855,7 @@ CONFIG.CONST_WIDTH {32} \
   connect_bd_net -net util_ds_buf_0_IBUF_OUT [get_bd_pins do_nothing_0/s_lvds] [get_bd_pins util_ds_buf_0/IBUF_OUT]
   connect_bd_net -net wb_test_slave_0_wb_ack_o [get_bd_pins axil2wb_0/wb_ack_i] [get_bd_pins wb_test_slave_0/wb_ack_o]
   connect_bd_net -net wb_test_slave_0_wb_dat_o [get_bd_pins axil2wb_0/wb_dat_i] [get_bd_pins wb_test_slave_0/wb_dat_o]
+  connect_bd_net -net wb_test_slave_0_wbt_dds_o [get_bd_pins counter_DAC_0/step] [get_bd_pins wb_test_slave_0/wbt_dds_o]
   connect_bd_net -net wb_test_slave_0_wbt_led_o [get_bd_ports wbt_led_o] [get_bd_pins wb_test_slave_0/wbt_led_pll_o]
   connect_bd_net -net wb_test_slave_0_wbt_pll1_syncb_o [get_bd_ports PLL1_SYNCB] [get_bd_pins wb_test_slave_0/wbt_pll1_syncb_o]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins axil2wb_0/wb_err_i] [get_bd_pins xlconstant_0/dout]

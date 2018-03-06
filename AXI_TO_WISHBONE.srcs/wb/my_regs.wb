@@ -49,7 +49,7 @@ peripheral {
 -- type of our field - std_logic_vector
 			type = SLV;
 -- size - we want 32-bits wide port :)
-			size = 16;
+			size = 20;
 
 -- the field will be readable/writable from the Wishbone bus
 			access_bus = READ_WRITE;

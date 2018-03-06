@@ -4,6 +4,7 @@ use ieee.std_logic_unsigned.all;
 
 entity counter_DAC is
     Port ( clk : in STD_LOGIC;
+           step : in std_logic_vector(19 downto 0);
            dac_sierra : out std_logic_vector(9 downto 0)
     );
 end counter_DAC;
@@ -11,15 +12,15 @@ end counter_DAC;
 architecture Behavioral of counter_DAC is
 
 
-signal counter : std_logic_vector(9 downto 0);
+signal counter : std_logic_vector(19 downto 0);
 
 begin
     process(clk)
     begin
         if(clk'event and clk='1')then
-            counter<=counter+1;
+            counter<=counter+step;
         end if;
     end process;
-   dac_sierra <= counter(9 downto 0);
+   dac_sierra <= counter(19 downto 10);
 
 end Behavioral;

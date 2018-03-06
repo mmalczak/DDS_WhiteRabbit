@@ -100,7 +100,12 @@ void setDDSFrequency(u32 freq)
 	u64 step = (u64)freq*1024;
 	step = step/BASE_FREQUENCY;
 	//step = step*1024;
-	printf("step = %d\n", (u32)step);
+	//printf("step = %d\n", (u32)step);
+
+	if(freq<30000) xil_printf("Frequency to low\n\r");
+	if(freq>80000000) xil_printf("Frequency to high\n\r");
+
+
 	setDDSStep((u32)step);
 }
 
@@ -117,7 +122,7 @@ int main(void)
 	ppl1_syncb_on(1);
 	select_AD9510();
 	configure_AD9510();
-	setDDSFrequency(300);
+	setDDSFrequency(16015000);
 
 /*	Xil_Out32(0x43C00000, 0b000000000);
 	u32 a;

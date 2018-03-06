@@ -245,17 +245,6 @@ CONFIG.Write_Width_B {14} \
 CONFIG.use_bram_block {Stand_Alone} \
  ] $blk_mem_gen_1
 
-  # Create instance: c_addsub_0, and set properties
-  set c_addsub_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:c_addsub:12.0 c_addsub_0 ]
-  set_property -dict [ list \
-CONFIG.A_Width {32} \
-CONFIG.B_Value {00000000000000000000000000000000} \
-CONFIG.B_Width {32} \
-CONFIG.CE {false} \
-CONFIG.Latency {0} \
-CONFIG.Out_Width {32} \
- ] $c_addsub_0
-
   # Create instance: counter_DAC_0, and set properties
   set block_name counter_DAC
   set block_cell_name counter_DAC_0
@@ -856,7 +845,6 @@ CONFIG.CONST_WIDTH {32} \
   connect_bd_net -net axil2wb_0_wb_stb_o [get_bd_pins axil2wb_0/wb_stb_o] [get_bd_pins wb_test_slave_0/wb_stb_i]
   connect_bd_net -net axil2wb_0_wb_we_o [get_bd_pins axil2wb_0/wb_we_o] [get_bd_pins wb_test_slave_0/wb_we_i]
   connect_bd_net -net blk_mem_gen_1_douta [get_bd_pins DAC_DAT/OBUF_IN] [get_bd_pins blk_mem_gen_1/douta]
-  connect_bd_net -net c_addsub_0_S [get_bd_pins c_addsub_0/S] [get_bd_pins wb_test_slave_0/wbt_di1_i]
   connect_bd_net -net counter_DAC_0_dac_sierra [get_bd_pins blk_mem_gen_1/addra] [get_bd_pins counter_DAC_0/dac_sierra]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_quad_spi_0/ext_spi_clk] [get_bd_pins axi_quad_spi_0/s_axi_aclk] [get_bd_pins axil2wb_0/S_AXI_ACLK] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0_axi_periph/ACLK] [get_bd_pins processing_system7_0_axi_periph/M00_ACLK] [get_bd_pins processing_system7_0_axi_periph/M01_ACLK] [get_bd_pins processing_system7_0_axi_periph/S00_ACLK] [get_bd_pins rst_processing_system7_0_50M/slowest_sync_clk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_processing_system7_0_50M/ext_reset_in]
@@ -867,9 +855,7 @@ CONFIG.CONST_WIDTH {32} \
   connect_bd_net -net util_ds_buf_0_IBUF_OUT [get_bd_pins do_nothing_0/s_lvds] [get_bd_pins util_ds_buf_0/IBUF_OUT]
   connect_bd_net -net wb_test_slave_0_wb_ack_o [get_bd_pins axil2wb_0/wb_ack_i] [get_bd_pins wb_test_slave_0/wb_ack_o]
   connect_bd_net -net wb_test_slave_0_wb_dat_o [get_bd_pins axil2wb_0/wb_dat_i] [get_bd_pins wb_test_slave_0/wb_dat_o]
-  connect_bd_net -net wb_test_slave_0_wbt_do1_o [get_bd_pins c_addsub_0/B] [get_bd_pins wb_test_slave_0/wbt_do1_o]
-  connect_bd_net -net wb_test_slave_0_wbt_do2_o [get_bd_pins c_addsub_0/A] [get_bd_pins wb_test_slave_0/wbt_do2_o]
-  connect_bd_net -net wb_test_slave_0_wbt_led_o [get_bd_ports wbt_led_o] [get_bd_pins wb_test_slave_0/wbt_led_o]
+  connect_bd_net -net wb_test_slave_0_wbt_led_o [get_bd_ports wbt_led_o] [get_bd_pins wb_test_slave_0/wbt_led_pll_o]
   connect_bd_net -net wb_test_slave_0_wbt_pll1_syncb_o [get_bd_ports PLL1_SYNCB] [get_bd_pins wb_test_slave_0/wbt_pll1_syncb_o]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins axil2wb_0/wb_err_i] [get_bd_pins xlconstant_0/dout]
   connect_bd_net -net xlconstant_1_dout [get_bd_pins wb_test_slave_0/wbt_key_i] [get_bd_pins xlconstant_1/dout]

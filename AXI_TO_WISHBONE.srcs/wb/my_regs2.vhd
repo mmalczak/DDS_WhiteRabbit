@@ -162,7 +162,7 @@ begin
   wb_dat_o <= rddata_reg;
 -- LEDS_PLL
   wbt_led_pll_o <= wbt_led_pll_int(1 downto 0);
-  wbt_pll1_syncb_o <= wbt_led_pll_int(2);
+  wbt_pll1_syncb_o <= wbt_led_int(2);
 -- DDS
   wbt_dds_o <= wbt_dds_int;
 -- KEY state

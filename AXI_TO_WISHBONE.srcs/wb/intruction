@@ -1,0 +1,1 @@
+./bin/wbgen2 -l vhdl -H signals -V my_regs2.vhd my_regs.wb

@@ -1,8 +1,37 @@
-12:18:27 **** Incremental Build of configuration Debug for project axi_to_wb ****
+14:10:58 **** Incremental Build of configuration Debug for project axi_to_wb ****
 make pre-build main-build 
 a9-linaro-pre-build-step
  
-make: Nothing to be done for 'main-build'.
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
 
-12:18:27 Build Finished (took 139ms)
+14:10:59 Build Finished (took 225ms)
 

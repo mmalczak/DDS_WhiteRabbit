@@ -7608,3 +7608,1532 @@ make pre-build main-build
 a9-linaro-pre-build-step
  
 make: Nothing to be done for 'main-build'.
+13:09:07 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:120:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:120:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:120:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  41320	   2220	2054344	2097884	 2002dc	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:10:31 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:109:2: warning: implicit declaration of function 'setDDFrequency' [-Wimplicit-function-declaration]
+  setDDFrequency(0b00000000010000000000);
+  ^~~~~~~~~~~~~~
+../src/spi_mine.c:117:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:117:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:117:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/spi_mine.o: In function `main':
+/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/../src/spi_mine.c:109: undefined reference to `setDDFrequency'
+makefile:39: recipe for target 'axi_to_wb.elf' failed
+collect2: error: ld returned 1 exit status
+make: *** [axi_to_wb.elf] Error 1
+13:10:49 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:117:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:117:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:117:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  41384	   2220	2054344	2097948	 20031c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:10:51 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:13:19 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:122:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:122:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:122:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  41384	   2220	2054344	2097948	 20031c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:13:21 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:24:08 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:124:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:124:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:124:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  41448	   2220	2054344	2098012	 20035c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:24:22 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:125:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:125:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:125:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  41448	   2220	2054344	2098012	 20035c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:25:00 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:124:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:124:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:124:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  41448	   2220	2054344	2098012	 20035c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:25:01 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:32:36 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:40:38 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:124:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:124:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:124:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  41448	   2220	2054344	2098012	 20035c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:41:00 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:124:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:124:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:124:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  41448	   2220	2054344	2098012	 20035c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:41:54 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:101:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", step);
+  ^~~~~~
+../src/spi_mine.c:101:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:101:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:101:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'u32 {aka long unsigned int}' [-Wformat=]
+  printf("step = %d\n", step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:125:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:125:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80264	   2612	2055056	2137932	 209f4c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:41:56 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:43:00 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:44:26 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:102:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", step);
+  ^~~~~~
+../src/spi_mine.c:102:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:102:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:102:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'u64 {aka long long unsigned int}' [-Wformat=]
+  printf("step = %d\n", step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:126:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:126:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:44:45 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:102:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", step);
+  ^~~~~~
+../src/spi_mine.c:102:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:102:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:102:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'u64 {aka long long unsigned int}' [-Wformat=]
+  printf("step = %d\n", step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:126:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:126:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:44:50 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:45:39 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:101:28: error: expected ';' before ')' token
+  step = step/BASE_FREQUENCY)
+                            ^
+../src/spi_mine.c:101:28: error: expected statement before ')' token
+../src/spi_mine.c:102:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:102:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:102:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:102:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:126:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:126:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+src/subdir.mk:24: recipe for target 'src/spi_mine.o' failed
+make: *** [src/spi_mine.o] Error 1
+13:45:44 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:102:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:102:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:102:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:102:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:126:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:126:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:45:44 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:46:04 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:102:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", step);
+  ^~~~~~
+../src/spi_mine.c:102:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:102:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:102:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'u64 {aka long long unsigned int}' [-Wformat=]
+  printf("step = %d\n", step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:126:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:126:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:46:05 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:46:37 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:47:12 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:102:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:102:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:102:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:102:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:126:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:126:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:47:14 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:49:44 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:49:45 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:52:08 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:101:2: error: expected ',' or ';' before 'step'
+  step = step/BASE_FREQUENCY;
+  ^~~~
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+src/subdir.mk:24: recipe for target 'src/spi_mine.o' failed
+make: *** [src/spi_mine.o] Error 1
+13:52:18 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:101:2: error: expected ',' or ';' before 'step'
+  step = step/BASE_FREQUENCY;
+  ^~~~
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+make: *** [src/spi_mine.o] Error 1
+src/subdir.mk:24: recipe for target 'src/spi_mine.o' failed
+13:52:21 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:52:48 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:53:07 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:53:37 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:53:47 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:53:58 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:54:07 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:54:20 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:54:42 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:54:59 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:55:19 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:59:11 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:59:35 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:59:44 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+14:00:02 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+14:02:56 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+14:03:32 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+14:04:49 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+14:05:53 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+14:07:33 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+14:08:02 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+14:08:21 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+14:08:43 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+14:10:07 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+14:10:17 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+14:10:29 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+14:10:58 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'setDDSFrequency':
+../src/spi_mine.c:103:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  printf("step = %d\n", (u32)step);
+  ^~~~~~
+../src/spi_mine.c:103:2: warning: incompatible implicit declaration of built-in function 'printf'
+../src/spi_mine.c:103:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../src/spi_mine.c:103:18: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("step = %d\n", (u32)step);
+                  ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:127:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Sukces\n");
+  ^~~~~~
+../src/spi_mine.c:127:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  80296	   2612	2055056	2137964	 209f6c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 

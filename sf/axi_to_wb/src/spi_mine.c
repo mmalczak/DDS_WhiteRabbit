@@ -6,6 +6,8 @@
 
 
 #define SPI_DEVICE_ID       XPAR_SPI_0_DEVICE_ID
+#define BASE_FREQUENCY 250000
+
 
 int SpiSelfTestExample(u16 DeviceId);
 
@@ -88,6 +90,19 @@ void led_on(u8 on)
 	}
 }
 
+void setDDSStep(u32 step)
+{
+	Xil_Out32(0x43C00004, step);
+}
+
+void setDDSFrequency(u32 freq)
+{
+	u64 step = (u64)freq*1024;
+	step = step/BASE_FREQUENCY;
+	//step = step*1024;
+	printf("step = %d\n", (u32)step);
+	setDDSStep((u32)step);
+}
 
 
 int main(void)
@@ -102,8 +117,7 @@ int main(void)
 	ppl1_syncb_on(1);
 	select_AD9510();
 	configure_AD9510();
-
-
+	setDDSFrequency(300);
 
 /*	Xil_Out32(0x43C00000, 0b000000000);
 	u32 a;

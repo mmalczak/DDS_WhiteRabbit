@@ -1,0 +1,147 @@
+#include "xparameters.h"
+#include "xspi.h"
+#include "xspi_l.h"
+#include "xil_printf.h"
+
+
+#define SPI_DEVICE_ID       XPAR_SPI_0_DEVICE_ID
+
+int SpiSelfTestExample(u16 DeviceId);
+
+XSpi Spi; /* The instance of the SPI device */
+
+int spi_init(void);
+
+
+int spi_send_data(u16 address, u8 data)
+{
+	u8 address_pointer[2] = {(u8)(address>>8), (u8)address};
+	u8 data_pointer[1] = {data};
+	u8 data_read[3];
+	int Status=XST_SUCCESS;
+	Status=XSpi_Transfer(&Spi, address_pointer, data_read, 2);
+		if (Status != XST_SUCCESS) {
+			xil_printf("failure2\n\r");
+			return XST_FAILURE;
+	}
+	Status=XSpi_Transfer(&Spi, data_pointer, (data_read+2), 1);
+	if (Status != XST_SUCCESS) {
+		xil_printf("failure2\n\r");
+		return XST_FAILURE;
+	}
+	if(Status!=XST_SUCCESS) xil_printf("Sending failure\n\r");
+	return Status;
+}
+
+
+int main(void)
+{
+
+	int Status=spi_init();
+	if(Status!=XST_SUCCESS) xil_printf("Initiatlization failure \n\r");
+
+
+	spi_send_data(0x0010, 0x7C);
+	spi_send_data(0x0011, 0x01);
+	spi_send_data(0x0012, 0x00);
+	spi_send_data(0x0013, 0x04);
+	spi_send_data(0x0014, 0x3C);
+	spi_send_data(0x0015, 0x00);
+	spi_send_data(0x0016, 0x00);
+	spi_send_data(0x0017, 0x00);
+	spi_send_data(0x0018, 0x07);
+	spi_send_data(0x0019, 0x00);
+	spi_send_data(0x001A, 0x00);
+	spi_send_data(0x001B, 0x00);
+	spi_send_data(0x001C, 0x02);
+	spi_send_data(0x001D, 0x00);
+	spi_send_data(0x001E, 0x00);
+	spi_send_data(0x001F, 0x0E);
+	spi_send_data(0x00A0, 0x01);
+	spi_send_data(0x00A1, 0x00);
+	spi_send_data(0x00A2, 0x00);
+	spi_send_data(0x00A3, 0x01);
+	spi_send_data(0x00A4, 0x00);
+	spi_send_data(0x00A5, 0x00);
+	spi_send_data(0x00A6, 0x01);
+	spi_send_data(0x00A7, 0x00);
+	spi_send_data(0x00A8, 0x00);
+	spi_send_data(0x00A9, 0x01);
+	spi_send_data(0x00AA, 0x00);
+	spi_send_data(0x00AB, 0x00);
+	spi_send_data(0x00F0, 0x08);
+	spi_send_data(0x00F1, 0x0A);
+	spi_send_data(0x00F2, 0x0A);
+	spi_send_data(0x00F3, 0x0A);
+	spi_send_data(0x00F4, 0x0A);
+	spi_send_data(0x00F5, 0x0A);
+	spi_send_data(0x0140, 0x42);
+	spi_send_data(0x0141, 0x43);
+	spi_send_data(0x0142, 0x42);
+	spi_send_data(0x0143, 0x43);
+	spi_send_data(0x0190, 0x10);
+	spi_send_data(0x0191, 0x00);
+	spi_send_data(0x0192, 0x00);
+	spi_send_data(0x0193, 0xBB);
+	spi_send_data(0x0194, 0x00);
+	spi_send_data(0x0195, 0x00);
+	spi_send_data(0x0196, 0x00);
+	spi_send_data(0x0197, 0x00);
+	spi_send_data(0x0198, 0x00);
+	spi_send_data(0x0199, 0x22);
+	spi_send_data(0x019A, 0x00);
+	spi_send_data(0x019B, 0x11);
+	spi_send_data(0x019C, 0x00);
+	spi_send_data(0x019D, 0x00);
+	spi_send_data(0x019E, 0x22);
+	spi_send_data(0x019F, 0x00);
+	spi_send_data(0x01A0, 0x00);
+	spi_send_data(0x01A1, 0x20);
+	spi_send_data(0x01A2, 0x00);
+	spi_send_data(0x01A3, 0x00);
+	spi_send_data(0x01E0, 0x00);
+	spi_send_data(0x01E1, 0x02);
+	spi_send_data(0x0230, 0x00);
+	spi_send_data(0x0231, 0x00);
+	spi_send_data(0x0232, 0x00);
+
+
+
+	spi_send_data(0x0232, 0x01);
+
+
+	xil_printf("sukces2\n\r");
+
+
+
+	return XST_SUCCESS;
+}
+
+
+
+int spi_init(void)
+{
+	int Status;
+	XSpi_Config *ConfigPtr;	/* Pointer to Configuration data */
+	ConfigPtr = XSpi_LookupConfig(SPI_DEVICE_ID);
+	if (ConfigPtr == NULL) {
+		return XST_DEVICE_NOT_FOUND;
+	}
+	Status = XSpi_CfgInitialize(&Spi, ConfigPtr,
+				  ConfigPtr->BaseAddress);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+	Status = XSpi_SetOptions(&Spi, XSP_MASTER_OPTION);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+	XSpi_Start(&Spi);
+	XSpi_IntrGlobalDisable(&Spi);
+	Status=XSpi_SetSlaveSelect(&Spi, 1);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+	return XST_SUCCESS;
+}
+

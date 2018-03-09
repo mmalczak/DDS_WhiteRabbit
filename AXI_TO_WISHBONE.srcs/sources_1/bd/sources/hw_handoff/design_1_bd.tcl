@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# axil2wb, counter_DAC, do_nothing, wb_test_slave
+# axil2wb, counter_DAC, do_nothing, freq_high_measure, wb_test_slave
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -263,6 +263,17 @@ CONFIG.use_bram_block {Stand_Alone} \
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    } elseif { $do_nothing_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: freq_high_measure_0, and set properties
+  set block_name freq_high_measure
+  set block_cell_name freq_high_measure_0
+  if { [catch {set freq_high_measure_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $freq_high_measure_0 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
@@ -809,13 +820,6 @@ CONFIG.C_SIZE {18} \
 CONFIG.CONST_VAL {0} \
  ] $xlconstant_0
 
-  # Create instance: xlconstant_1, and set properties
-  set xlconstant_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_1 ]
-  set_property -dict [ list \
-CONFIG.CONST_VAL {0x0bbababe} \
-CONFIG.CONST_WIDTH {32} \
- ] $xlconstant_1
-
   # Create interface connections
   connect_bd_intf_net -intf_net axi_quad_spi_0_SPI_0 [get_bd_intf_ports SPI_0] [get_bd_intf_pins axi_quad_spi_0/SPI_0]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
@@ -825,7 +829,9 @@ CONFIG.CONST_WIDTH {32} \
   connect_bd_intf_net -intf_net processing_system7_0_axi_periph_M01_AXI [get_bd_intf_pins axi_quad_spi_0/AXI_LITE] [get_bd_intf_pins processing_system7_0_axi_periph/M01_AXI]
 
   # Create port connections
+  connect_bd_net -net CLK0_OUT_IBUF_OUT [get_bd_pins CLK0_OUT/IBUF_OUT] [get_bd_pins freq_high_measure_0/dac_meas]
   connect_bd_net -net CLK1_OUT_IBUF_OUT [get_bd_pins CLK1_OUT/IBUF_OUT] [get_bd_pins blk_mem_gen_1/clka] [get_bd_pins counter_DAC_0/clk]
+  connect_bd_net -net CLK2_out_IBUF_OUT [get_bd_pins CLK2_out/IBUF_OUT] [get_bd_pins freq_high_measure_0/pll_meas]
   connect_bd_net -net DAC_DAT_OBUF_DS_N [get_bd_ports DAC_DAT_N] [get_bd_pins DAC_DAT/OBUF_DS_N]
   connect_bd_net -net DAC_DAT_OBUF_DS_P [get_bd_ports DAC_DAT_P] [get_bd_pins DAC_DAT/OBUF_DS_P]
   connect_bd_net -net IBUF_DS_N_1 [get_bd_ports IBUF_DS_N] [get_bd_pins util_ds_buf_0/IBUF_DS_N]
@@ -846,7 +852,8 @@ CONFIG.CONST_WIDTH {32} \
   connect_bd_net -net axil2wb_0_wb_we_o [get_bd_pins axil2wb_0/wb_we_o] [get_bd_pins wb_test_slave_0/wb_we_i]
   connect_bd_net -net blk_mem_gen_1_douta [get_bd_pins DAC_DAT/OBUF_IN] [get_bd_pins blk_mem_gen_1/douta]
   connect_bd_net -net counter_DAC_0_dac_sierra [get_bd_pins blk_mem_gen_1/addra] [get_bd_pins counter_DAC_0/dac_sierra]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_quad_spi_0/ext_spi_clk] [get_bd_pins axi_quad_spi_0/s_axi_aclk] [get_bd_pins axil2wb_0/S_AXI_ACLK] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0_axi_periph/ACLK] [get_bd_pins processing_system7_0_axi_periph/M00_ACLK] [get_bd_pins processing_system7_0_axi_periph/M01_ACLK] [get_bd_pins processing_system7_0_axi_periph/S00_ACLK] [get_bd_pins rst_processing_system7_0_50M/slowest_sync_clk]
+  connect_bd_net -net freq_high_measure_0_counts [get_bd_pins freq_high_measure_0/counts] [get_bd_pins wb_test_slave_0/wbt_key_i]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_quad_spi_0/ext_spi_clk] [get_bd_pins axi_quad_spi_0/s_axi_aclk] [get_bd_pins axil2wb_0/S_AXI_ACLK] [get_bd_pins freq_high_measure_0/clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0_axi_periph/ACLK] [get_bd_pins processing_system7_0_axi_periph/M00_ACLK] [get_bd_pins processing_system7_0_axi_periph/M01_ACLK] [get_bd_pins processing_system7_0_axi_periph/S00_ACLK] [get_bd_pins rst_processing_system7_0_50M/slowest_sync_clk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_processing_system7_0_50M/ext_reset_in]
   connect_bd_net -net przycisk_1 [get_bd_ports led] [get_bd_ports przycisk]
   connect_bd_net -net rst_processing_system7_0_50M_interconnect_aresetn [get_bd_pins processing_system7_0_axi_periph/ARESETN] [get_bd_pins rst_processing_system7_0_50M/interconnect_aresetn]
@@ -859,7 +866,6 @@ CONFIG.CONST_WIDTH {32} \
   connect_bd_net -net wb_test_slave_0_wbt_led_o [get_bd_ports wbt_led_o] [get_bd_pins wb_test_slave_0/wbt_led_pll_o]
   connect_bd_net -net wb_test_slave_0_wbt_pll1_syncb_o [get_bd_ports PLL1_SYNCB] [get_bd_pins wb_test_slave_0/wbt_pll1_syncb_o]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins axil2wb_0/wb_err_i] [get_bd_pins xlconstant_0/dout]
-  connect_bd_net -net xlconstant_1_dout [get_bd_pins wb_test_slave_0/wbt_key_i] [get_bd_pins xlconstant_1/dout]
 
   # Create address segments
   create_bd_addr_seg -range 0x00010000 -offset 0x41E00000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_quad_spi_0/AXI_LITE/Reg] SEG_axi_quad_spi_0_Reg

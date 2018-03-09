@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Mar  6 12:41:45 2018" VIVADOVERSION="2017.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Mar  9 14:10:53 2018" VIVADOVERSION="2017.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="xilinx.com:zc706:part0:1.4" DEVICE="7z045" NAME="design_1" PACKAGE="ffg900" SPEEDGRADE="-2"/>
 
@@ -200,7 +200,11 @@
             <CONNECTION INSTANCE="External_Ports" PORT="CLK0_OUT_N"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="O" LEFT="0" NAME="IBUF_OUT" RIGHT="0" SIGIS="clk"/>
+        <PORT CLKFREQUENCY="100000000" DIR="O" LEFT="0" NAME="IBUF_OUT" RIGHT="0" SIGIS="clk" SIGNAME="CLK0_OUT_IBUF_OUT">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="freq_high_measure_0" PORT="dac_meas"/>
+          </CONNECTIONS>
+        </PORT>
       </PORTS>
       <BUSINTERFACES>
         <BUSINTERFACE BUSNAME="__NOC__" NAME="CLK_IN_D" TYPE="TARGET" VLNV="xilinx.com:interface:diff_clock:1.0">
@@ -273,7 +277,11 @@
             <CONNECTION INSTANCE="External_Ports" PORT="CLK2_OUT_N"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="O" LEFT="0" NAME="IBUF_OUT" RIGHT="0" SIGIS="clk"/>
+        <PORT CLKFREQUENCY="100000000" DIR="O" LEFT="0" NAME="IBUF_OUT" RIGHT="0" SIGIS="clk" SIGNAME="CLK2_out_IBUF_OUT">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="freq_high_measure_0" PORT="pll_meas"/>
+          </CONNECTIONS>
+        </PORT>
       </PORTS>
       <BUSINTERFACES>
         <BUSINTERFACE BUSNAME="__NOC__" NAME="CLK_IN_D" TYPE="TARGET" VLNV="xilinx.com:interface:diff_clock:1.0">
@@ -987,6 +995,36 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="57" NAME="s_out" RIGHT="0" SIGIS="undef"/>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/freq_high_measure_0" HWVERSION="1.0" INSTANCE="freq_high_measure_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="freq_high_measure" VLNV="user.org:module_ref:freq_high_measure:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_freq_high_measure_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="50000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="dac_meas" SIGIS="undef" SIGNAME="CLK0_OUT_IBUF_OUT">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CLK0_OUT" PORT="IBUF_OUT"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="pll_meas" SIGIS="undef" SIGNAME="CLK2_out_IBUF_OUT">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CLK2_out" PORT="IBUF_OUT"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="counts" RIGHT="0" SIGIS="undef" SIGNAME="freq_high_measure_0_counts">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="wb_test_slave_0" PORT="wbt_key_i"/>
+          </CONNECTIONS>
+        </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
@@ -2140,6 +2178,7 @@
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M00_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_ACLK"/>
+            <CONNECTION INSTANCE="freq_high_measure_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
@@ -3278,9 +3317,9 @@
             <CONNECTION INSTANCE="counter_DAC_0" PORT="step"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="wbt_key_i" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_1_dout">
+        <PORT DIR="I" LEFT="31" NAME="wbt_key_i" RIGHT="0" SIGIS="undef" SIGNAME="freq_high_measure_0_counts">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconstant_1" PORT="dout"/>
+            <CONNECTION INSTANCE="freq_high_measure_0" PORT="counts"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -3298,23 +3337,6 @@
         <PORT DIR="O" LEFT="0" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axil2wb_0" PORT="wb_err_i"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE FULLNAME="/xlconstant_1" HWVERSION="1.1" INSTANCE="xlconstant_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="CONST_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="CONST_VAL" VALUE="0x0BBABABE"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_xlconstant_1_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="O" LEFT="31" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_1_dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="wb_test_slave_0" PORT="wbt_key_i"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

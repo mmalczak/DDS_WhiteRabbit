@@ -1335,15 +1335,6 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>xlconstant_1</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="xlconstant" spirit:vendor="xilinx.com" spirit:version="1.1"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_xlconstant_1_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="CONST_WIDTH">32</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="CONST_VAL">0x0bbababe</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
         <spirit:instanceName>util_ds_buf_0</spirit:instanceName>
         <spirit:componentRef spirit:library="ip" spirit:name="util_ds_buf" spirit:vendor="xilinx.com" spirit:version="2.1"/>
         <spirit:configurableElementValues>
@@ -1447,6 +1438,17 @@
           <spirit:configurableElementValue spirit:referenceId="bd:BoundaryCRC">0x0</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>freq_high_measure_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="module_ref" spirit:name="freq_high_measure" spirit:vendor="user.org" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_freq_high_measure_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:referenceName">freq_high_measure</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:subInstancePath"></spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:referenceType">hdl</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:BoundaryCRC">0x0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
     </spirit:componentInstances>
     <spirit:interconnections>
       <spirit:interconnection>
@@ -1478,6 +1480,7 @@
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="S00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M01_ACLK"/>
+        <spirit:internalPortReference spirit:componentRef="freq_high_measure_0" spirit:portRef="clk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>processing_system7_0_FCLK_RESET0_N</spirit:name>
@@ -1552,11 +1555,6 @@
         <spirit:name>xlconstant_0_dout</spirit:name>
         <spirit:internalPortReference spirit:componentRef="xlconstant_0" spirit:portRef="dout"/>
         <spirit:internalPortReference spirit:componentRef="axil2wb_0" spirit:portRef="wb_err_i"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>xlconstant_1_dout</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="xlconstant_1" spirit:portRef="dout"/>
-        <spirit:internalPortReference spirit:componentRef="wb_test_slave_0" spirit:portRef="wbt_key_i"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>IBUF_DS_P_1</spirit:name>
@@ -1653,6 +1651,21 @@
         <spirit:name>wb_test_slave_0_wbt_dds_o</spirit:name>
         <spirit:internalPortReference spirit:componentRef="wb_test_slave_0" spirit:portRef="wbt_dds_o"/>
         <spirit:internalPortReference spirit:componentRef="counter_DAC_0" spirit:portRef="step"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>CLK0_OUT_IBUF_OUT</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="CLK0_OUT" spirit:portRef="IBUF_OUT"/>
+        <spirit:internalPortReference spirit:componentRef="freq_high_measure_0" spirit:portRef="dac_meas"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>CLK2_out_IBUF_OUT</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="CLK2_out" spirit:portRef="IBUF_OUT"/>
+        <spirit:internalPortReference spirit:componentRef="freq_high_measure_0" spirit:portRef="pll_meas"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>freq_high_measure_0_counts</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="freq_high_measure_0" spirit:portRef="counts"/>
+        <spirit:internalPortReference spirit:componentRef="wb_test_slave_0" spirit:portRef="wbt_key_i"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>

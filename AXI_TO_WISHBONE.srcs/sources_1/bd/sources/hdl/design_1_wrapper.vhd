@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.1 (lin64) Build 1846317 Fri Apr 14 18:54:47 MDT 2017
---Date        : Mon Mar 12 15:17:37 2018
+--Date        : Tue Mar 13 17:16:40 2018
 --Host        : milosz-System-Product-Name running 64-bit Linux Mint 18.2 Sonya
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -44,8 +44,7 @@ entity design_1_wrapper is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     IBUF_DS_N : in STD_LOGIC_VECTOR ( 17 downto 0 );
     IBUF_DS_P : in STD_LOGIC_VECTOR ( 17 downto 0 );
-    PLL1_SYNCB : out STD_LOGIC;
-    STATUS_PIN : in STD_LOGIC;
+    PLL1_SYNCB : out STD_LOGIC_VECTOR ( 0 to 0 );
     led : out STD_LOGIC;
     przycisk : in STD_LOGIC;
     save : in STD_LOGIC_VECTOR ( 39 downto 0 );
@@ -53,6 +52,7 @@ entity design_1_wrapper is
     spi_0_io1_io : inout STD_LOGIC;
     spi_0_sck_io : inout STD_LOGIC;
     spi_0_ss_io : inout STD_LOGIC_VECTOR ( 1 downto 0 );
+    spi_miso_i : in STD_LOGIC;
     wbt_led_o : out STD_LOGIC_VECTOR ( 1 downto 0 )
   );
 end design_1_wrapper;
@@ -93,7 +93,6 @@ architecture STRUCTURE of design_1_wrapper is
     SPI_0_ss_i : in STD_LOGIC_VECTOR ( 1 downto 0 );
     SPI_0_ss_o : out STD_LOGIC_VECTOR ( 1 downto 0 );
     SPI_0_ss_t : out STD_LOGIC;
-    STATUS_PIN : in STD_LOGIC;
     IBUF_DS_P : in STD_LOGIC_VECTOR ( 17 downto 0 );
     IBUF_DS_N : in STD_LOGIC_VECTOR ( 17 downto 0 );
     save : in STD_LOGIC_VECTOR ( 39 downto 0 );
@@ -106,9 +105,10 @@ architecture STRUCTURE of design_1_wrapper is
     CLK0_OUT_N : in STD_LOGIC_VECTOR ( 0 to 0 );
     CLK2_OUT_P : in STD_LOGIC_VECTOR ( 0 to 0 );
     CLK2_OUT_N : in STD_LOGIC_VECTOR ( 0 to 0 );
-    PLL1_SYNCB : out STD_LOGIC;
+    PLL1_SYNCB : out STD_LOGIC_VECTOR ( 0 to 0 );
     przycisk : in STD_LOGIC;
-    led : out STD_LOGIC
+    led : out STD_LOGIC;
+    spi_miso_i : in STD_LOGIC
   );
   end component design_1;
   component IOBUF is
@@ -169,7 +169,7 @@ design_1_i: component design_1
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
       IBUF_DS_N(17 downto 0) => IBUF_DS_N(17 downto 0),
       IBUF_DS_P(17 downto 0) => IBUF_DS_P(17 downto 0),
-      PLL1_SYNCB => PLL1_SYNCB,
+      PLL1_SYNCB(0) => PLL1_SYNCB(0),
       SPI_0_io0_i => spi_0_io0_i,
       SPI_0_io0_o => spi_0_io0_o,
       SPI_0_io0_t => spi_0_io0_t,
@@ -184,10 +184,10 @@ design_1_i: component design_1
       SPI_0_ss_o(1) => spi_0_ss_o_1(1),
       SPI_0_ss_o(0) => spi_0_ss_o_0(0),
       SPI_0_ss_t => spi_0_ss_t,
-      STATUS_PIN => STATUS_PIN,
       led => led,
       przycisk => przycisk,
       save(39 downto 0) => save(39 downto 0),
+      spi_miso_i => spi_miso_i,
       wbt_led_o(1 downto 0) => wbt_led_o(1 downto 0)
     );
 spi_0_io0_iobuf: component IOBUF

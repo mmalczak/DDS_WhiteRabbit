@@ -66,7 +66,7 @@ ENTITY design_1_wb_test_slave_0_0 IS
     wb_we_i : IN STD_LOGIC;
     wb_ack_o : OUT STD_LOGIC;
     wb_stall_o : OUT STD_LOGIC;
-    wbt_led_pll_o : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+    wbt_led_o : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     wbt_pll1_syncb_o : OUT STD_LOGIC;
     wbt_dds_o : OUT STD_LOGIC_VECTOR(27 DOWNTO 0);
     wbt_pll_freq_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -91,7 +91,7 @@ ARCHITECTURE design_1_wb_test_slave_0_0_arch OF design_1_wb_test_slave_0_0 IS
       wb_we_i : IN STD_LOGIC;
       wb_ack_o : OUT STD_LOGIC;
       wb_stall_o : OUT STD_LOGIC;
-      wbt_led_pll_o : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+      wbt_led_o : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
       wbt_pll1_syncb_o : OUT STD_LOGIC;
       wbt_dds_o : OUT STD_LOGIC_VECTOR(27 DOWNTO 0);
       wbt_pll_freq_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -113,7 +113,7 @@ BEGIN
       wb_we_i => wb_we_i,
       wb_ack_o => wb_ack_o,
       wb_stall_o => wb_stall_o,
-      wbt_led_pll_o => wbt_led_pll_o,
+      wbt_led_o => wbt_led_o,
       wbt_pll1_syncb_o => wbt_pll1_syncb_o,
       wbt_dds_o => wbt_dds_o,
       wbt_pll_freq_i => wbt_pll_freq_i,

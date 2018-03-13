@@ -10,11 +10,12 @@
 #define FREQ_MEAS_BASE_FREQUENCY 50000000
 //#define FREQ_MEAS_BASE_FREQUENCY 900000000
 
-#define LED__PLL_SYNC_ADDR 0x43C00000
-#define DDS_ADDR 0x43C00004
-#define PLL_FREQ_ADDR 0x43C00008
-#define DAC_FREQ_ADDR 0x43C0000C
-#define FREQ_CNT_MASK_ADDR 0x43C00010
+#define LED_ADDR 0x43C00000
+#define PLL_SYNC_ADDR 0x43C00004
+#define DDS_ADDR 0x43C00008
+#define PLL_FREQ_ADDR 0x43C0000C
+#define DAC_FREQ_ADDR 0x43C00010
+#define FREQ_CNT_MASK_ADDR 0x43C00014
 
 
 int SpiSelfTestExample(u16 DeviceId);
@@ -74,27 +75,27 @@ int spi_read_data(u16 address, u8 data)
 void ppl1_syncb_on(u8 on)
 {
 	u32 a;
-	a = Xil_In32(LED__PLL_SYNC_ADDR);
+	a = Xil_In32(PLL_SYNC_ADDR);
 	if(on==1)
 	{
-		Xil_Out32(LED__PLL_SYNC_ADDR, a|(u32)4);
+		Xil_Out32(PLL_SYNC_ADDR, a|(u32)1);
 	}
 	else
 	{
-		Xil_Out32(LED__PLL_SYNC_ADDR, a&(u32)0xfffffffb);
+		Xil_Out32(PLL_SYNC_ADDR, a&(u32)0xfffffffe);
 	}
 }
 void led_on(u8 on)
 {
 	u32 a;
-	a = Xil_In32(LED__PLL_SYNC_ADDR);
+	a = Xil_In32(LED_ADDR);
 	if(on==1)
 	{
-		Xil_Out32(LED__PLL_SYNC_ADDR, a|(u32)1);
+		Xil_Out32(LED_ADDR, 3);
 	}
 	else
 	{
-		Xil_Out32(LED__PLL_SYNC_ADDR, a&(u32)0xfffffffe);
+		Xil_Out32(LED_ADDR, 0);
 	}
 }
 
@@ -144,7 +145,6 @@ int main(void)
 
 	int Status=spi_init();
 	if(Status!=XST_SUCCESS) xil_printf("Initiatlization failure \n\r");
-
 	u32 freqPLL, prFreqPLL;
 	u32 freqDAC, prFreqDAC;
 

@@ -14,7 +14,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:ab22752b</spirit:value>
+            <spirit:value>7:81838bab</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -29,11 +29,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Mar 12 14:17:37 UTC 2018</spirit:value>
+            <spirit:value>Tue Mar 13 16:16:40 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:ab22752b</spirit:value>
+            <spirit:value>7:81838bab</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -45,7 +45,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:4ded01b2</spirit:value>
+            <spirit:value>7:b57b116c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -60,11 +60,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Mar 12 14:17:37 UTC 2018</spirit:value>
+            <spirit:value>Tue Mar 13 16:16:40 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:4ded01b2</spirit:value>
+            <spirit:value>7:b57b116c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -230,7 +230,7 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>wbt_led_pll_o</spirit:name>
+        <spirit:name>wbt_led_o</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>

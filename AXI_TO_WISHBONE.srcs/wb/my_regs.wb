@@ -1,139 +1,91 @@
-
--- here comes our peripheral definition
 peripheral {
--- short (human-readable) name for the peripheral.
 	name = "TEST_regs";
--- a longer description, if you want
 	description = "Set f registers used to test my AXI4-Lite to WB bridge";
--- name of the target VHDL entity to be generated
 	hdl_entity = "wb_test_slave";
-
--- prefix for all the generated ports belonging to our peripheral
 	prefix = "wbt";
 
-
-
--- LEDS and pll control register. Readable and writable from the bus, readable from the device.
 	reg {
-		name = "LEDS&PLL register";
-		description = "A register defining the state of the LEDs and the state of PLL1_SYNCB";
-		prefix = "led_pll";
+		name = "LEDS register";
+		description = "A register defining the state of the LEDs";
+		prefix = "led";
 
--- a single, anonymous field (no prefix) of type SLV.
 		field {
-			name = "LEDS_PLL";
-			description = "Two first bits in this register define the states of LEDs, third bit defines the state of PLL1_SYNCB";
--- type of our field - std_logic_vector
+			name = "LEDS";
+			description = "Two first bits in this register define the states of LEDs";
 			type = SLV;
--- size - we want 32-bits wide port :)
-			size = 3;
-
--- the field will be readable/writable from the Wishbone bus
+			size = 2;
 			access_bus = READ_WRITE;
-			
--- .. and readable from the peripheral
 			access_dev = READ_ONLY;
 		};
 	};
 
--- DDS control register. Readable and writable from the bus, readable from the device.
+
+	reg {
+		name = "PLL1_SYNCB register";
+		description = "A register defining the state of the LEDs and the state of PLL1_SYNCB";
+		prefix = "pll1_syncb";
+		field {
+			name = "PLL1_SYNCB";
+			description = "Defines the state of PLL1_SYNCB";
+			type = BIT;
+			access_bus = READ_WRITE;
+			access_dev = READ_ONLY;
+		};
+	};
+
 	reg {
 		name = "DDS register";
 		description = "A register defining the frequency of DDS";
 		prefix = "dds";
-
--- a single, anonymous field (no prefix) of type SLV.
 		field {
 			name = "DDS";
 			description = "Bits in this register define the frequency of DDS";
--- type of our field - std_logic_vector
 			type = SLV;
--- size - we want 32-bits wide port :)
 			size = 28;
-
--- the field will be readable/writable from the Wishbone bus
 			access_bus = READ_WRITE;
-			
--- .. and readable from the peripheral
 			access_dev = READ_ONLY;
 		};
 	};
 
--- PLL frequency measurement register
--- Pin input state register. Readable the bus, writable from the device.
 	reg {
 		name = "PLL frequency measurement register";
 		description = "A register containing the value of PLL counts.";
 		prefix = "pll_freq";
 
--- a single, anonymous field (no prefix) of type SLV.
 		field {
 			name = "PLL freq";
 			description = "Each bit in this register reflects the value of PLL counts.";
-
--- no prefix here as well (see above)
-
--- type of our field - std_logic_vector
 			type = SLV;
-
--- size - we want 32-bits wide port :)
 			size = 32;
-
--- the field will be readable from the Wishbone bus
-			access_bus = READ_ONLY;
-			
--- .. and writable from the peripheral
+			access_bus = READ_ONLY;			
 			access_dev = WRITE_ONLY;
 		};
 	};
 
--- DDS frequency measurement register
--- Pin input state register. Readable the bus, writable from the device.
 	reg {
 		name = "DDS frequency measurement register";
 		description = "A register containing the value of DDS counts.";
 		prefix = "dds_freq";
-
--- a single, anonymous field (no prefix) of type SLV.
 		field {
 			name = "DDS freq";
 			description = "Each bit in this register reflects the value of DDS counts.";
-
--- no prefix here as well (see above)
-
--- type of our field - std_logic_vector
 			type = SLV;
-
--- size - we want 32-bits wide port :)
 			size = 32;
-
--- the field will be readable from the Wishbone bus
 			access_bus = READ_ONLY;
-			
--- .. and writable from the peripheral
 			access_dev = WRITE_ONLY;
 		};
 	};
 
--- Frequency measurement COUNTER MASK. Readable and writable from the bus, readable from the device.
 	reg {
 		name = "COUNTER MASK register";
 		description = "A register defining the mask for frequency measurement";
 		prefix = "CNT_MASK";
-
--- a single, anonymous field (no prefix) of type SLV.
 		field {
 			name = "CNT MASK";
 			description = "Bits in this register define the mask for frequency measurement";
--- type of our field - std_logic_vector
 			type = SLV;
--- size - we want 32-bits wide port :)
 			size = 32;
-
--- the field will be readable/writable from the Wishbone bus
 			access_bus = READ_WRITE;
-			
--- .. and readable from the peripheral
 			access_dev = READ_ONLY;
 		};
 	};

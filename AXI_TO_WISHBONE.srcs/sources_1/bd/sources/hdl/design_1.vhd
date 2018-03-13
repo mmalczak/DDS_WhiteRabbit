@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.1 (lin64) Build 1846317 Fri Apr 14 18:54:47 MDT 2017
---Date        : Mon Mar 12 15:17:36 2018
+--Date        : Tue Mar 13 17:16:40 2018
 --Host        : milosz-System-Product-Name running 64-bit Linux Mint 18.2 Sonya
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -1119,7 +1119,7 @@ entity design_1 is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     IBUF_DS_N : in STD_LOGIC_VECTOR ( 17 downto 0 );
     IBUF_DS_P : in STD_LOGIC_VECTOR ( 17 downto 0 );
-    PLL1_SYNCB : out STD_LOGIC;
+    PLL1_SYNCB : out STD_LOGIC_VECTOR ( 0 to 0 );
     SPI_0_io0_i : in STD_LOGIC;
     SPI_0_io0_o : out STD_LOGIC;
     SPI_0_io0_t : out STD_LOGIC;
@@ -1132,10 +1132,10 @@ entity design_1 is
     SPI_0_ss_i : in STD_LOGIC_VECTOR ( 1 downto 0 );
     SPI_0_ss_o : out STD_LOGIC_VECTOR ( 1 downto 0 );
     SPI_0_ss_t : out STD_LOGIC;
-    STATUS_PIN : in STD_LOGIC;
     led : out STD_LOGIC;
     przycisk : in STD_LOGIC;
     save : in STD_LOGIC_VECTOR ( 39 downto 0 );
+    spi_miso_i : in STD_LOGIC;
     wbt_led_o : out STD_LOGIC_VECTOR ( 1 downto 0 )
   );
   attribute CORE_GENERATION_INFO : string;
@@ -1363,6 +1363,16 @@ architecture STRUCTURE of design_1 is
     dac_sierra : out STD_LOGIC_VECTOR ( 9 downto 0 )
   );
   end component design_1_counter_DAC_0_0;
+  component design_1_freq_high_measure_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    dac_meas : in STD_LOGIC;
+    pll_meas : in STD_LOGIC;
+    counter_mask : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    counts_dac : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    counts_pll : out STD_LOGIC_VECTOR ( 31 downto 0 )
+  );
+  end component design_1_freq_high_measure_0_0;
   component design_1_wb_test_slave_0_0 is
   port (
     rst_n_i : in STD_LOGIC;
@@ -1376,7 +1386,7 @@ architecture STRUCTURE of design_1 is
     wb_we_i : in STD_LOGIC;
     wb_ack_o : out STD_LOGIC;
     wb_stall_o : out STD_LOGIC;
-    wbt_led_pll_o : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    wbt_led_o : out STD_LOGIC_VECTOR ( 1 downto 0 );
     wbt_pll1_syncb_o : out STD_LOGIC;
     wbt_dds_o : out STD_LOGIC_VECTOR ( 27 downto 0 );
     wbt_pll_freq_i : in STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -1384,16 +1394,6 @@ architecture STRUCTURE of design_1 is
     wbt_cnt_mask_o : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   end component design_1_wb_test_slave_0_0;
-  component design_1_freq_high_measure_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    dac_meas : in STD_LOGIC;
-    pll_meas : in STD_LOGIC;
-    counter_mask : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    counts_dac : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    counts_pll : out STD_LOGIC_VECTOR ( 31 downto 0 )
-  );
-  end component design_1_freq_high_measure_0_0;
   signal CLK0_OUT_IBUF_OUT : STD_LOGIC_VECTOR ( 0 to 0 );
   signal CLK1_OUT_IBUF_OUT : STD_LOGIC_VECTOR ( 0 to 0 );
   signal CLK2_out_IBUF_OUT : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -1560,7 +1560,7 @@ begin
   IBUF_DS_P_1_1(0) <= CLK1_OUT_P(0);
   IBUF_DS_P_1_2(0) <= CLK0_OUT_P(0);
   IBUF_DS_P_2_1(0) <= CLK2_OUT_P(0);
-  PLL1_SYNCB <= wb_test_slave_0_wbt_pll1_syncb_o;
+  PLL1_SYNCB(0) <= wb_test_slave_0_wbt_pll1_syncb_o;
   SPI_0_io0_o <= axi_quad_spi_0_SPI_0_IO0_O;
   SPI_0_io0_t <= axi_quad_spi_0_SPI_0_IO0_T;
   SPI_0_io1_o <= axi_quad_spi_0_SPI_0_IO1_O;
@@ -1886,7 +1886,7 @@ wb_test_slave_0: component design_1_wb_test_slave_0_0
       wbt_cnt_mask_o(31 downto 0) => wb_test_slave_0_wbt_cnt_mask_o(31 downto 0),
       wbt_dds_freq_i(31 downto 0) => freq_high_measure_0_counts_dac(31 downto 0),
       wbt_dds_o(27 downto 0) => wb_test_slave_0_wbt_dds_o(27 downto 0),
-      wbt_led_pll_o(1 downto 0) => wb_test_slave_0_wbt_led_o(1 downto 0),
+      wbt_led_o(1 downto 0) => wb_test_slave_0_wbt_led_o(1 downto 0),
       wbt_pll1_syncb_o => wb_test_slave_0_wbt_pll1_syncb_o,
       wbt_pll_freq_i(31 downto 0) => freq_high_measure_0_counts_pll(31 downto 0)
     );

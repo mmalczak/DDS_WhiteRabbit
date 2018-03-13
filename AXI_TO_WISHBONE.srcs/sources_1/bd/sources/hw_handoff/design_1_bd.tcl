@@ -176,11 +176,11 @@ proc create_root_design { parentCell } {
   set DAC_DAT_P [ create_bd_port -dir O -from 13 -to 0 -type clk DAC_DAT_P ]
   set IBUF_DS_N [ create_bd_port -dir I -from 17 -to 0 -type clk IBUF_DS_N ]
   set IBUF_DS_P [ create_bd_port -dir I -from 17 -to 0 -type clk IBUF_DS_P ]
-  set PLL1_SYNCB [ create_bd_port -dir O PLL1_SYNCB ]
-  set STATUS_PIN [ create_bd_port -dir I STATUS_PIN ]
+  set PLL1_SYNCB [ create_bd_port -dir O -from 0 -to 0 PLL1_SYNCB ]
   set led [ create_bd_port -dir O led ]
   set przycisk [ create_bd_port -dir I przycisk ]
   set save [ create_bd_port -dir I -from 39 -to 0 save ]
+  set spi_miso_i [ create_bd_port -dir I spi_miso_i ]
   set wbt_led_o [ create_bd_port -dir O -from 1 -to 0 wbt_led_o ]
 
   # Create instance: CLK0_OUT, and set properties
@@ -865,7 +865,7 @@ CONFIG.CONST_VAL {0} \
   connect_bd_net -net wb_test_slave_0_wb_dat_o [get_bd_pins axil2wb_0/wb_dat_i] [get_bd_pins wb_test_slave_0/wb_dat_o]
   connect_bd_net -net wb_test_slave_0_wbt_cnt_mask_o [get_bd_pins freq_high_measure_0/counter_mask] [get_bd_pins wb_test_slave_0/wbt_cnt_mask_o]
   connect_bd_net -net wb_test_slave_0_wbt_dds_o [get_bd_pins counter_DAC_0/step] [get_bd_pins wb_test_slave_0/wbt_dds_o]
-  connect_bd_net -net wb_test_slave_0_wbt_led_o [get_bd_ports wbt_led_o] [get_bd_pins wb_test_slave_0/wbt_led_pll_o]
+  connect_bd_net -net wb_test_slave_0_wbt_led_o [get_bd_ports wbt_led_o] [get_bd_pins wb_test_slave_0/wbt_led_o]
   connect_bd_net -net wb_test_slave_0_wbt_pll1_syncb_o [get_bd_ports PLL1_SYNCB] [get_bd_pins wb_test_slave_0/wbt_pll1_syncb_o]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins axil2wb_0/wb_err_i] [get_bd_pins xlconstant_0/dout]
 

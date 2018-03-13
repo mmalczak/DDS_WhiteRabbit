@@ -1648,11 +1648,6 @@
         <spirit:internalPortReference spirit:componentRef="DAC_DAT" spirit:portRef="OBUF_IN"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>wb_test_slave_0_wbt_dds_o</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="wb_test_slave_0" spirit:portRef="wbt_dds_o"/>
-        <spirit:internalPortReference spirit:componentRef="counter_DAC_0" spirit:portRef="step"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
         <spirit:name>CLK0_OUT_IBUF_OUT</spirit:name>
         <spirit:internalPortReference spirit:componentRef="CLK0_OUT" spirit:portRef="IBUF_OUT"/>
         <spirit:internalPortReference spirit:componentRef="freq_high_measure_0" spirit:portRef="dac_meas"/>
@@ -1663,9 +1658,24 @@
         <spirit:internalPortReference spirit:componentRef="freq_high_measure_0" spirit:portRef="pll_meas"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>freq_high_measure_0_counts</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="freq_high_measure_0" spirit:portRef="counts"/>
-        <spirit:internalPortReference spirit:componentRef="wb_test_slave_0" spirit:portRef="wbt_key_i"/>
+        <spirit:name>freq_high_measure_0_counts_pll</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="freq_high_measure_0" spirit:portRef="counts_pll"/>
+        <spirit:internalPortReference spirit:componentRef="wb_test_slave_0" spirit:portRef="wbt_pll_freq_i"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>freq_high_measure_0_counts_dac</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="freq_high_measure_0" spirit:portRef="counts_dac"/>
+        <spirit:internalPortReference spirit:componentRef="wb_test_slave_0" spirit:portRef="wbt_dds_freq_i"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>wb_test_slave_0_wbt_dds_o</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="wb_test_slave_0" spirit:portRef="wbt_dds_o"/>
+        <spirit:internalPortReference spirit:componentRef="counter_DAC_0" spirit:portRef="step"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>wb_test_slave_0_wbt_cnt_mask_o</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="wb_test_slave_0" spirit:portRef="wbt_cnt_mask_o"/>
+        <spirit:internalPortReference spirit:componentRef="freq_high_measure_0" spirit:portRef="counter_mask"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>

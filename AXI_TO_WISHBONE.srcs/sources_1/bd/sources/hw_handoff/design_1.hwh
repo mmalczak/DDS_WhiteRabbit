@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Mar  9 14:10:53 2018" VIVADOVERSION="2017.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Mar 12 15:17:37 2018" VIVADOVERSION="2017.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="xilinx.com:zc706:part0:1.4" DEVICE="7z045" NAME="design_1" PACKAGE="ffg900" SPEEDGRADE="-2"/>
 
@@ -964,7 +964,7 @@
             <CONNECTION INSTANCE="CLK1_OUT" PORT="IBUF_OUT"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="19" NAME="step" RIGHT="0" SIGIS="undef" SIGNAME="wb_test_slave_0_wbt_dds_o">
+        <PORT DIR="I" LEFT="27" NAME="step" RIGHT="0" SIGIS="undef" SIGNAME="wb_test_slave_0_wbt_dds_o">
           <CONNECTIONS>
             <CONNECTION INSTANCE="wb_test_slave_0" PORT="wbt_dds_o"/>
           </CONNECTIONS>
@@ -1020,9 +1020,19 @@
             <CONNECTION INSTANCE="CLK2_out" PORT="IBUF_OUT"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="counts" RIGHT="0" SIGIS="undef" SIGNAME="freq_high_measure_0_counts">
+        <PORT DIR="I" LEFT="31" NAME="counter_mask" RIGHT="0" SIGIS="undef" SIGNAME="wb_test_slave_0_wbt_cnt_mask_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="wb_test_slave_0" PORT="wbt_key_i"/>
+            <CONNECTION INSTANCE="wb_test_slave_0" PORT="wbt_cnt_mask_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="counts_dac" RIGHT="0" SIGIS="undef" SIGNAME="freq_high_measure_0_counts_dac">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="wb_test_slave_0" PORT="wbt_dds_freq_i"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="counts_pll" RIGHT="0" SIGIS="undef" SIGNAME="freq_high_measure_0_counts_pll">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="wb_test_slave_0" PORT="wbt_pll_freq_i"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -3261,7 +3271,7 @@
             <CONNECTION INSTANCE="axil2wb_0" PORT="wb_clk_o"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="wb_adr_i" RIGHT="0" SIGIS="undef" SIGNAME="axil2wb_0_wb_addr_o">
+        <PORT DIR="I" LEFT="2" NAME="wb_adr_i" RIGHT="0" SIGIS="undef" SIGNAME="axil2wb_0_wb_addr_o">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axil2wb_0" PORT="wb_addr_o"/>
           </CONNECTIONS>
@@ -3312,14 +3322,24 @@
             <CONNECTION INSTANCE="External_Ports" PORT="PLL1_SYNCB"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="19" NAME="wbt_dds_o" RIGHT="0" SIGIS="undef" SIGNAME="wb_test_slave_0_wbt_dds_o">
+        <PORT DIR="O" LEFT="27" NAME="wbt_dds_o" RIGHT="0" SIGIS="undef" SIGNAME="wb_test_slave_0_wbt_dds_o">
           <CONNECTIONS>
             <CONNECTION INSTANCE="counter_DAC_0" PORT="step"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="wbt_key_i" RIGHT="0" SIGIS="undef" SIGNAME="freq_high_measure_0_counts">
+        <PORT DIR="I" LEFT="31" NAME="wbt_pll_freq_i" RIGHT="0" SIGIS="undef" SIGNAME="freq_high_measure_0_counts_pll">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="freq_high_measure_0" PORT="counts"/>
+            <CONNECTION INSTANCE="freq_high_measure_0" PORT="counts_pll"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="wbt_dds_freq_i" RIGHT="0" SIGIS="undef" SIGNAME="freq_high_measure_0_counts_dac">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="freq_high_measure_0" PORT="counts_dac"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="wbt_cnt_mask_o" RIGHT="0" SIGIS="undef" SIGNAME="wb_test_slave_0_wbt_cnt_mask_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="freq_high_measure_0" PORT="counter_mask"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

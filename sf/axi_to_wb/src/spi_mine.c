@@ -6,7 +6,15 @@
 
 
 #define SPI_DEVICE_ID       XPAR_SPI_0_DEVICE_ID
-#define BASE_FREQUENCY 250000
+#define DDS_BASE_FREQUENCY 244140
+#define FREQ_MEAS_BASE_FREQUENCY 50000000
+//#define FREQ_MEAS_BASE_FREQUENCY 900000000
+
+#define LED__PLL_SYNC_ADDR 0x43C00000
+#define DDS_ADDR 0x43C00004
+#define PLL_FREQ_ADDR 0x43C00008
+#define DAC_FREQ_ADDR 0x43C0000C
+#define FREQ_CNT_MASK_ADDR 0x43C00010
 
 
 int SpiSelfTestExample(u16 DeviceId);
@@ -66,39 +74,39 @@ int spi_read_data(u16 address, u8 data)
 void ppl1_syncb_on(u8 on)
 {
 	u32 a;
-	a = Xil_In32(0x43C00000);
+	a = Xil_In32(LED__PLL_SYNC_ADDR);
 	if(on==1)
 	{
-		Xil_Out32(0x43C00000, a|(u32)4);
+		Xil_Out32(LED__PLL_SYNC_ADDR, a|(u32)4);
 	}
 	else
 	{
-		Xil_Out32(0x43C00000, a&(u32)0xfffffffb);
+		Xil_Out32(LED__PLL_SYNC_ADDR, a&(u32)0xfffffffb);
 	}
 }
 void led_on(u8 on)
 {
 	u32 a;
-	a = Xil_In32(0x43C00000);
+	a = Xil_In32(LED__PLL_SYNC_ADDR);
 	if(on==1)
 	{
-		Xil_Out32(0x43C00000, a|(u32)1);
+		Xil_Out32(LED__PLL_SYNC_ADDR, a|(u32)1);
 	}
 	else
 	{
-		Xil_Out32(0x43C00000, a&(u32)0xfffffffe);
+		Xil_Out32(LED__PLL_SYNC_ADDR, a&(u32)0xfffffffe);
 	}
 }
 
 void setDDSStep(u32 step)
 {
-	Xil_Out32(0x43C00004, step);
+	Xil_Out32(DDS_ADDR, step);
 }
 
 void setDDSFrequency(u32 freq)
 {
-	u64 step = (u64)freq*1024;
-	step = step/BASE_FREQUENCY;
+	u64 step = freq*(u64)262144;
+	step = step/DDS_BASE_FREQUENCY;
 	//step = step*1024;
 	//printf("step = %d\n", (u32)step);
 
@@ -109,6 +117,27 @@ void setDDSFrequency(u32 freq)
 	setDDSStep((u32)step);
 }
 
+void setFreqCounterMaskReg(u32 mask)
+{
+	Xil_Out32(FREQ_CNT_MASK_ADDR, mask);
+}
+
+
+
+void measureDACPLLFreq(u32* freqDAC, u32* freqPLL)
+{
+	u32 countsDAC=0;
+	u32 countsPLL=0;
+
+	countsPLL=Xil_In32(PLL_FREQ_ADDR);
+	countsDAC=Xil_In32(DAC_FREQ_ADDR);
+
+	*freqDAC = (u32)(countsDAC*1.49);
+	*freqPLL = (u32)(countsPLL*1.49);
+}
+
+
+
 
 int main(void)
 {
@@ -116,20 +145,86 @@ int main(void)
 	int Status=spi_init();
 	if(Status!=XST_SUCCESS) xil_printf("Initiatlization failure \n\r");
 
+	u32 freqPLL, prFreqPLL;
+	u32 freqDAC, prFreqDAC;
+
+	u32 freqPLL_t[16]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+	u32 freqDAC_t[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+	u32 freqDACSet=1000000;
+
+	int diff, prDiff;
+	int P=0, I=0, D=0;
 
 	select_AD9516();
 	configure_AD9516();
 	ppl1_syncb_on(1);
 	select_AD9510();
 	configure_AD9510();
-	setDDSFrequency(16015000);
+	setDDSFrequency(freqDACSet);
+	setFreqCounterMaskReg((u32)0x006000000);
 
-/*	Xil_Out32(0x43C00000, 0b000000000);
-	u32 a;
-	a=Xil_In32(0x43C00004);
-	printf("b = %d\n", a);
-*/
-	printf("Sukces\n");
+
+	/*diff = freqDAC-freqPLL;
+	if(diff>0)
+		freqDACSet=(diff>100) ? (freqDACSet-diff) : (freqDACSet-100);
+	else
+		freqDACSet=(diff<-100) ? (freqDACSet-diff) : (freqDACSet+100);
+	 */
+	for(int i=0; i<200000000; i++);
+
+	measureDACPLLFreq(&freqDAC, &freqPLL);
+	/*diff = freqDAC-freqPLL;
+			if(diff>64 || diff<-64)
+			{
+				freqDACSet = freqDACSet - diff/64;
+			}else if(diff>16 || diff<-16)
+			{
+				freqDACSet = freqDACSet - diff/16;
+			}else
+			{
+				freqDACSet = freqDACSet - diff;
+			}*/
+
+	u32 a=0;
+	while(1)
+	{
+
+		prFreqDAC = freqDAC;
+		measureDACPLLFreq(&freqDAC, &freqPLL);
+		if(prFreqDAC != freqDAC)
+		{
+
+			freqDAC_t[a] = freqDAC;
+			freqPLL_t[a] = freqPLL;
+			a++;a=a&15;
+			diff=0;
+			for(int i=0; i<16; i++)
+			{
+				diff=diff+freqDAC_t[i] - freqPLL_t[i];
+			}
+			diff = diff/8192;
+
+			xil_printf("pll freq = %d \n\r", freqPLL);
+			xil_printf("dac freq = %d \n\r", freqDAC);
+
+			freqDACSet = freqDACSet - diff;
+			setDDSFrequency(freqDACSet);
+		}
+
+	}
+
+
+
+	xil_printf("pll freq = %d \n\r", freqPLL);
+	xil_printf("dac freq = %d \n\r", freqDAC);
+	xil_printf("diff freq = %d \n\r", diff);
+
+
+
+	xil_printf("Sukces\n\r");
+
+
 	return XST_SUCCESS;
 }
 
@@ -265,7 +360,7 @@ void configure_AD9510(void)
 	spi_send_data(0x0007, 0x00);
 	spi_send_data(0x0008, 0x03);
 	spi_send_data(0x0009, 0x30);
-	spi_send_data(0x000A, 0x1A);
+	spi_send_data(0x000A, 0x1B);
 	spi_send_data(0x000B, 0x00);
 	spi_send_data(0x000C, 0x00);
 	spi_send_data(0x000D, 0x01);
@@ -283,10 +378,10 @@ void configure_AD9510(void)
 	spi_send_data(0x003F, 0x08);
 	spi_send_data(0x0040, 0x03);
 	spi_send_data(0x0041, 0x03);
-	spi_send_data(0x0042, 0x03);
+	spi_send_data(0x0042, 0x02);
 	spi_send_data(0x0043, 0x03);
 	spi_send_data(0x0044, 0x13);
-	spi_send_data(0x0045, 0x02);
+	spi_send_data(0x0045, 0x11);
 	spi_send_data(0x0048, 0x00);
 	spi_send_data(0x0049, 0x00);
 	spi_send_data(0x004A, 0x00);
@@ -294,13 +389,13 @@ void configure_AD9510(void)
 	spi_send_data(0x004C, 0x11);
 	spi_send_data(0x004D, 0x00);
 	spi_send_data(0x004E, 0xFF);
-	spi_send_data(0x004F, 0x00);
+	spi_send_data(0x004F, 0x90);
 	spi_send_data(0x0050, 0x00);
 	spi_send_data(0x0051, 0x00);
 	spi_send_data(0x0052, 0x11);
 	spi_send_data(0x0053, 0x00);
-	spi_send_data(0x0054, 0x00);
-	spi_send_data(0x0055, 0x00);
+	spi_send_data(0x0054, 0xFF);
+	spi_send_data(0x0055, 0x80);
 	spi_send_data(0x0056, 0x00);
 	spi_send_data(0x0057, 0x00);
 	spi_send_data(0x0058, 0x20);

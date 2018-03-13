@@ -57,7 +57,7 @@ ENTITY design_1_wb_test_slave_0_0 IS
   PORT (
     rst_n_i : IN STD_LOGIC;
     clk_sys_i : IN STD_LOGIC;
-    wb_adr_i : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+    wb_adr_i : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
     wb_dat_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     wb_dat_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     wb_cyc_i : IN STD_LOGIC;
@@ -68,8 +68,10 @@ ENTITY design_1_wb_test_slave_0_0 IS
     wb_stall_o : OUT STD_LOGIC;
     wbt_led_pll_o : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     wbt_pll1_syncb_o : OUT STD_LOGIC;
-    wbt_dds_o : OUT STD_LOGIC_VECTOR(19 DOWNTO 0);
-    wbt_key_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0)
+    wbt_dds_o : OUT STD_LOGIC_VECTOR(27 DOWNTO 0);
+    wbt_pll_freq_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+    wbt_dds_freq_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+    wbt_cnt_mask_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
   );
 END design_1_wb_test_slave_0_0;
 
@@ -80,7 +82,7 @@ ARCHITECTURE design_1_wb_test_slave_0_0_arch OF design_1_wb_test_slave_0_0 IS
     PORT (
       rst_n_i : IN STD_LOGIC;
       clk_sys_i : IN STD_LOGIC;
-      wb_adr_i : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+      wb_adr_i : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
       wb_dat_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
       wb_dat_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
       wb_cyc_i : IN STD_LOGIC;
@@ -91,8 +93,10 @@ ARCHITECTURE design_1_wb_test_slave_0_0_arch OF design_1_wb_test_slave_0_0 IS
       wb_stall_o : OUT STD_LOGIC;
       wbt_led_pll_o : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
       wbt_pll1_syncb_o : OUT STD_LOGIC;
-      wbt_dds_o : OUT STD_LOGIC_VECTOR(19 DOWNTO 0);
-      wbt_key_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0)
+      wbt_dds_o : OUT STD_LOGIC_VECTOR(27 DOWNTO 0);
+      wbt_pll_freq_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+      wbt_dds_freq_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+      wbt_cnt_mask_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
     );
   END COMPONENT wb_test_slave;
 BEGIN
@@ -112,6 +116,8 @@ BEGIN
       wbt_led_pll_o => wbt_led_pll_o,
       wbt_pll1_syncb_o => wbt_pll1_syncb_o,
       wbt_dds_o => wbt_dds_o,
-      wbt_key_i => wbt_key_i
+      wbt_pll_freq_i => wbt_pll_freq_i,
+      wbt_dds_freq_i => wbt_dds_freq_i,
+      wbt_cnt_mask_o => wbt_cnt_mask_o
     );
 END design_1_wb_test_slave_0_0_arch;

@@ -58,7 +58,9 @@ ENTITY design_1_freq_high_measure_0_0 IS
     clk : IN STD_LOGIC;
     dac_meas : IN STD_LOGIC;
     pll_meas : IN STD_LOGIC;
-    counts : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+    counter_mask : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+    counts_dac : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    counts_pll : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
   );
 END design_1_freq_high_measure_0_0;
 
@@ -70,7 +72,9 @@ ARCHITECTURE design_1_freq_high_measure_0_0_arch OF design_1_freq_high_measure_0
       clk : IN STD_LOGIC;
       dac_meas : IN STD_LOGIC;
       pll_meas : IN STD_LOGIC;
-      counts : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+      counter_mask : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+      counts_dac : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+      counts_pll : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
     );
   END COMPONENT freq_high_measure;
   ATTRIBUTE X_CORE_INFO : STRING;
@@ -85,6 +89,8 @@ BEGIN
       clk => clk,
       dac_meas => dac_meas,
       pll_meas => pll_meas,
-      counts => counts
+      counter_mask => counter_mask,
+      counts_dac => counts_dac,
+      counts_pll => counts_pll
     );
 END design_1_freq_high_measure_0_0_arch;

@@ -1,8 +1,8 @@
-13:05:51 **** Incremental Build of configuration Debug for project axi_to_wb ****
+15:29:58 **** Incremental Build of configuration Debug for project axi_to_wb ****
 make pre-build main-build 
 a9-linaro-pre-build-step
  
 make: Nothing to be done for 'main-build'.
 
-13:05:51 Build Finished (took 122ms)
+15:29:58 Build Finished (took 140ms)
 

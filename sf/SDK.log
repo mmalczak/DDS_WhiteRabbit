@@ -35888,3 +35888,2580 @@ con
 ----------------End of Script----------------
 
 13:05:53 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+13:45:21 INFO  : Disconnected from the channel tcfchan#27.
+13:45:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+13:45:22 INFO  : 'fpga -state' command is executed.
+13:45:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:45:22 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+13:45:22 INFO  : 'jtag frequency' command is executed.
+13:45:22 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+13:45:22 INFO  : Context for 'APU' is selected.
+13:45:22 INFO  : 'stop' command is executed.
+13:45:23 INFO  : 'ps7_init' command is executed.
+13:45:23 INFO  : 'ps7_post_config' command is executed.
+13:45:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:45:23 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+13:45:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:45:23 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:45:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+13:45:23 INFO  : Memory regions updated for context APU
+13:45:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:45:23 INFO  : 'con' command is executed.
+13:45:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+13:45:23 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+13:48:47 INFO  : Disconnected from the channel tcfchan#28.
+13:48:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+13:48:48 INFO  : 'fpga -state' command is executed.
+13:48:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:48:48 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+13:48:48 INFO  : 'jtag frequency' command is executed.
+13:48:48 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+13:48:48 INFO  : Context for 'APU' is selected.
+13:48:48 INFO  : 'stop' command is executed.
+13:48:49 INFO  : 'ps7_init' command is executed.
+13:48:49 INFO  : 'ps7_post_config' command is executed.
+13:48:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:48:49 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+13:48:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:48:49 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:48:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+13:48:49 INFO  : Memory regions updated for context APU
+13:48:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:48:49 INFO  : 'con' command is executed.
+13:48:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+13:48:49 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+13:50:16 INFO  : Disconnected from the channel tcfchan#29.
+13:50:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+13:50:17 INFO  : 'fpga -state' command is executed.
+13:50:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:50:17 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+13:50:17 INFO  : 'jtag frequency' command is executed.
+13:50:17 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+13:50:17 INFO  : Context for 'APU' is selected.
+13:50:17 INFO  : 'stop' command is executed.
+13:50:17 INFO  : 'ps7_init' command is executed.
+13:50:17 INFO  : 'ps7_post_config' command is executed.
+13:50:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:50:17 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+13:50:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:50:17 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:50:17 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+13:50:17 INFO  : Memory regions updated for context APU
+13:50:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:50:17 INFO  : 'con' command is executed.
+13:50:17 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+13:50:17 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:00:55 INFO  : Disconnected from the channel tcfchan#30.
+14:00:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:00:56 INFO  : 'fpga -state' command is executed.
+14:00:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:00:56 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:00:56 INFO  : 'jtag frequency' command is executed.
+14:00:56 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:00:56 INFO  : Context for 'APU' is selected.
+14:00:56 INFO  : 'stop' command is executed.
+14:00:57 INFO  : 'ps7_init' command is executed.
+14:00:57 INFO  : 'ps7_post_config' command is executed.
+14:00:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:00:57 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:00:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:00:57 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:00:57 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:00:57 INFO  : Memory regions updated for context APU
+14:00:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:00:57 INFO  : 'con' command is executed.
+14:00:57 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:00:57 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:07:04 INFO  : Disconnected from the channel tcfchan#31.
+14:07:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:07:05 INFO  : 'fpga -state' command is executed.
+14:07:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:07:05 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:07:05 INFO  : 'jtag frequency' command is executed.
+14:07:05 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:07:05 INFO  : Context for 'APU' is selected.
+14:07:05 INFO  : 'stop' command is executed.
+14:07:06 INFO  : 'ps7_init' command is executed.
+14:07:06 INFO  : 'ps7_post_config' command is executed.
+14:07:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:07:06 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:07:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:07:06 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:07:06 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:07:06 INFO  : Memory regions updated for context APU
+14:07:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:07:06 INFO  : 'con' command is executed.
+14:07:06 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:07:06 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:11:25 INFO  : Disconnected from the channel tcfchan#32.
+14:11:26 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:11:26 INFO  : 'fpga -state' command is executed.
+14:11:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:11:26 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:11:26 INFO  : 'jtag frequency' command is executed.
+14:11:26 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:11:26 INFO  : Context for 'APU' is selected.
+14:11:26 INFO  : 'stop' command is executed.
+14:11:26 INFO  : 'ps7_init' command is executed.
+14:11:26 INFO  : 'ps7_post_config' command is executed.
+14:11:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:11:26 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:11:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:11:27 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:11:27 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:11:27 INFO  : Memory regions updated for context APU
+14:11:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:11:27 INFO  : 'con' command is executed.
+14:11:27 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:11:27 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:11:41 INFO  : Disconnected from the channel tcfchan#33.
+14:11:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:11:42 INFO  : 'fpga -state' command is executed.
+14:11:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:11:42 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:11:42 INFO  : 'jtag frequency' command is executed.
+14:11:42 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:11:42 INFO  : Context for 'APU' is selected.
+14:11:42 INFO  : 'stop' command is executed.
+14:11:43 INFO  : 'ps7_init' command is executed.
+14:11:43 INFO  : 'ps7_post_config' command is executed.
+14:11:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:11:43 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:11:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:11:43 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:11:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:11:43 INFO  : Memory regions updated for context APU
+14:11:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:11:43 INFO  : 'con' command is executed.
+14:11:43 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:11:43 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:13:06 INFO  : Disconnected from the channel tcfchan#34.
+14:13:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:13:08 INFO  : 'fpga -state' command is executed.
+14:13:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:13:08 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:13:08 INFO  : 'jtag frequency' command is executed.
+14:13:08 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:13:08 INFO  : Context for 'APU' is selected.
+14:13:08 INFO  : 'stop' command is executed.
+14:13:08 INFO  : 'ps7_init' command is executed.
+14:13:08 INFO  : 'ps7_post_config' command is executed.
+14:13:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:13:08 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:13:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:13:08 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:13:08 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:13:08 INFO  : Memory regions updated for context APU
+14:13:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:13:09 INFO  : 'con' command is executed.
+14:13:09 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:13:09 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:13:37 INFO  : Disconnected from the channel tcfchan#35.
+14:13:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:13:38 INFO  : 'fpga -state' command is executed.
+14:13:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:13:38 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:13:38 INFO  : 'jtag frequency' command is executed.
+14:13:38 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:13:38 INFO  : Context for 'APU' is selected.
+14:13:38 INFO  : 'stop' command is executed.
+14:13:39 INFO  : 'ps7_init' command is executed.
+14:13:39 INFO  : 'ps7_post_config' command is executed.
+14:13:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:13:39 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:13:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:13:39 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:13:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:13:39 INFO  : Memory regions updated for context APU
+14:13:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:13:39 INFO  : 'con' command is executed.
+14:13:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:13:39 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:13:52 INFO  : Disconnected from the channel tcfchan#36.
+14:13:53 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:13:53 INFO  : 'fpga -state' command is executed.
+14:13:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:13:53 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:13:53 INFO  : 'jtag frequency' command is executed.
+14:13:53 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:13:53 INFO  : Context for 'APU' is selected.
+14:13:53 INFO  : 'stop' command is executed.
+14:13:54 INFO  : 'ps7_init' command is executed.
+14:13:54 INFO  : 'ps7_post_config' command is executed.
+14:13:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:13:54 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:13:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:13:54 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:13:54 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:13:54 INFO  : Memory regions updated for context APU
+14:13:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:13:55 INFO  : 'con' command is executed.
+14:13:55 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:13:55 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:14:28 INFO  : Disconnected from the channel tcfchan#37.
+14:14:29 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:14:29 INFO  : 'fpga -state' command is executed.
+14:14:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:14:29 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:14:29 INFO  : 'jtag frequency' command is executed.
+14:14:29 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:14:29 INFO  : Context for 'APU' is selected.
+14:14:29 INFO  : 'stop' command is executed.
+14:14:30 INFO  : 'ps7_init' command is executed.
+14:14:30 INFO  : 'ps7_post_config' command is executed.
+14:14:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:14:30 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:14:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:14:30 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:14:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:14:30 INFO  : Memory regions updated for context APU
+14:14:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:14:30 INFO  : 'con' command is executed.
+14:14:30 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:14:30 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:14:55 INFO  : Disconnected from the channel tcfchan#38.
+14:14:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:14:56 INFO  : 'fpga -state' command is executed.
+14:14:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:14:56 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:14:56 INFO  : 'jtag frequency' command is executed.
+14:14:56 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:14:56 INFO  : Context for 'APU' is selected.
+14:14:56 INFO  : 'stop' command is executed.
+14:14:57 INFO  : 'ps7_init' command is executed.
+14:14:57 INFO  : 'ps7_post_config' command is executed.
+14:14:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:14:57 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:14:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:14:57 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:14:57 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:14:57 INFO  : Memory regions updated for context APU
+14:14:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:14:57 INFO  : 'con' command is executed.
+14:14:57 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:14:57 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:15:23 INFO  : Disconnected from the channel tcfchan#39.
+14:15:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:15:24 INFO  : 'fpga -state' command is executed.
+14:15:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:15:24 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:15:24 INFO  : 'jtag frequency' command is executed.
+14:15:24 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:15:24 INFO  : Context for 'APU' is selected.
+14:15:24 INFO  : 'stop' command is executed.
+14:15:25 INFO  : 'ps7_init' command is executed.
+14:15:25 INFO  : 'ps7_post_config' command is executed.
+14:15:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:15:25 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:15:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:15:25 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:15:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:15:25 INFO  : Memory regions updated for context APU
+14:15:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:15:25 INFO  : 'con' command is executed.
+14:15:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:15:25 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:16:09 INFO  : Disconnected from the channel tcfchan#40.
+14:16:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:16:10 INFO  : 'fpga -state' command is executed.
+14:16:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:16:10 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:16:10 INFO  : 'jtag frequency' command is executed.
+14:16:10 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:16:10 INFO  : Context for 'APU' is selected.
+14:16:10 INFO  : 'stop' command is executed.
+14:16:11 INFO  : 'ps7_init' command is executed.
+14:16:11 INFO  : 'ps7_post_config' command is executed.
+14:16:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:16:11 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:16:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:16:11 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:16:11 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:16:11 INFO  : Memory regions updated for context APU
+14:16:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:16:11 INFO  : 'con' command is executed.
+14:16:11 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:16:11 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:16:21 INFO  : Disconnected from the channel tcfchan#41.
+14:16:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:16:22 INFO  : 'fpga -state' command is executed.
+14:16:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:16:22 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:16:22 INFO  : 'jtag frequency' command is executed.
+14:16:22 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:16:22 INFO  : Context for 'APU' is selected.
+14:16:22 INFO  : 'stop' command is executed.
+14:16:23 INFO  : 'ps7_init' command is executed.
+14:16:23 INFO  : 'ps7_post_config' command is executed.
+14:16:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:16:23 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:16:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:16:23 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:16:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:16:23 INFO  : Memory regions updated for context APU
+14:16:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:16:23 INFO  : 'con' command is executed.
+14:16:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:16:23 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:17:13 INFO  : Disconnected from the channel tcfchan#42.
+14:17:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:17:14 INFO  : 'fpga -state' command is executed.
+14:17:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:17:14 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:17:14 INFO  : 'jtag frequency' command is executed.
+14:17:14 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:17:14 INFO  : Context for 'APU' is selected.
+14:17:14 INFO  : 'stop' command is executed.
+14:17:15 INFO  : 'ps7_init' command is executed.
+14:17:15 INFO  : 'ps7_post_config' command is executed.
+14:17:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:17:15 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:17:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:17:15 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:17:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:17:15 INFO  : Memory regions updated for context APU
+14:17:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:17:15 INFO  : 'con' command is executed.
+14:17:15 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:17:15 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:18:41 INFO  : Disconnected from the channel tcfchan#43.
+14:18:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:18:42 INFO  : 'fpga -state' command is executed.
+14:18:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:18:42 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:18:42 INFO  : 'jtag frequency' command is executed.
+14:18:42 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:18:42 INFO  : Context for 'APU' is selected.
+14:18:42 INFO  : 'stop' command is executed.
+14:18:43 INFO  : 'ps7_init' command is executed.
+14:18:43 INFO  : 'ps7_post_config' command is executed.
+14:18:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:18:43 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:18:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:18:43 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:18:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:18:43 INFO  : Memory regions updated for context APU
+14:18:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:18:43 INFO  : 'con' command is executed.
+14:18:43 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:18:43 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:21:14 INFO  : Disconnected from the channel tcfchan#44.
+14:21:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:21:15 INFO  : 'fpga -state' command is executed.
+14:21:15 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:21:15 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:21:15 INFO  : 'jtag frequency' command is executed.
+14:21:15 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:21:15 INFO  : Context for 'APU' is selected.
+14:21:16 INFO  : 'stop' command is executed.
+14:21:16 INFO  : 'ps7_init' command is executed.
+14:21:16 INFO  : 'ps7_post_config' command is executed.
+14:21:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:21:16 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:21:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:21:16 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:21:16 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:21:16 INFO  : Memory regions updated for context APU
+14:21:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:21:17 INFO  : 'con' command is executed.
+14:21:17 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:21:17 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:22:02 INFO  : Disconnected from the channel tcfchan#45.
+14:22:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:22:03 INFO  : 'fpga -state' command is executed.
+14:22:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:22:03 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:22:03 INFO  : 'jtag frequency' command is executed.
+14:22:03 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:22:03 INFO  : Context for 'APU' is selected.
+14:22:03 INFO  : 'stop' command is executed.
+14:22:04 INFO  : 'ps7_init' command is executed.
+14:22:04 INFO  : 'ps7_post_config' command is executed.
+14:22:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:22:04 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:22:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:22:04 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:22:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:22:04 INFO  : Memory regions updated for context APU
+14:22:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:22:04 INFO  : 'con' command is executed.
+14:22:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:22:04 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:22:29 INFO  : Disconnected from the channel tcfchan#46.
+14:22:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:22:30 INFO  : 'fpga -state' command is executed.
+14:22:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:22:31 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:22:31 INFO  : 'jtag frequency' command is executed.
+14:22:31 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:22:31 INFO  : Context for 'APU' is selected.
+14:22:31 INFO  : 'stop' command is executed.
+14:22:31 INFO  : 'ps7_init' command is executed.
+14:22:31 INFO  : 'ps7_post_config' command is executed.
+14:22:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:22:31 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:22:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:22:32 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:22:32 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:22:32 INFO  : Memory regions updated for context APU
+14:22:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:22:32 INFO  : 'con' command is executed.
+14:22:32 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:22:32 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:23:25 INFO  : Disconnected from the channel tcfchan#47.
+14:23:26 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:23:26 INFO  : 'fpga -state' command is executed.
+14:23:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:23:26 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:23:26 INFO  : 'jtag frequency' command is executed.
+14:23:26 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:23:26 INFO  : Context for 'APU' is selected.
+14:23:26 INFO  : 'stop' command is executed.
+14:23:27 INFO  : 'ps7_init' command is executed.
+14:23:27 INFO  : 'ps7_post_config' command is executed.
+14:23:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:23:27 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:23:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:23:27 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:23:27 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:23:27 INFO  : Memory regions updated for context APU
+14:23:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:23:27 INFO  : 'con' command is executed.
+14:23:27 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:23:27 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:24:31 INFO  : Disconnected from the channel tcfchan#48.
+14:24:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:24:32 INFO  : 'fpga -state' command is executed.
+14:24:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:24:32 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:24:32 INFO  : 'jtag frequency' command is executed.
+14:24:32 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:24:32 INFO  : Context for 'APU' is selected.
+14:24:32 INFO  : 'stop' command is executed.
+14:24:33 INFO  : 'ps7_init' command is executed.
+14:24:33 INFO  : 'ps7_post_config' command is executed.
+14:24:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:24:33 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:24:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:24:33 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:24:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:24:33 INFO  : Memory regions updated for context APU
+14:24:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:24:33 INFO  : 'con' command is executed.
+14:24:33 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:24:33 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:24:50 INFO  : Disconnected from the channel tcfchan#49.
+14:24:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:24:51 INFO  : 'fpga -state' command is executed.
+14:24:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:24:51 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:24:51 INFO  : 'jtag frequency' command is executed.
+14:24:51 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:24:51 INFO  : Context for 'APU' is selected.
+14:24:51 INFO  : 'stop' command is executed.
+14:24:52 INFO  : 'ps7_init' command is executed.
+14:24:52 INFO  : 'ps7_post_config' command is executed.
+14:24:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:24:52 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:24:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:24:52 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:24:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:24:52 INFO  : Memory regions updated for context APU
+14:24:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:24:52 INFO  : 'con' command is executed.
+14:24:52 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:24:52 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:26:41 INFO  : Disconnected from the channel tcfchan#50.
+14:26:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:26:42 INFO  : 'fpga -state' command is executed.
+14:26:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:26:42 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:26:42 INFO  : 'jtag frequency' command is executed.
+14:26:42 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:26:43 INFO  : Context for 'APU' is selected.
+14:26:43 INFO  : 'stop' command is executed.
+14:26:43 INFO  : 'ps7_init' command is executed.
+14:26:43 INFO  : 'ps7_post_config' command is executed.
+14:26:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:26:43 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:26:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:26:43 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:26:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:26:43 INFO  : Memory regions updated for context APU
+14:26:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:26:44 INFO  : 'con' command is executed.
+14:26:44 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:26:44 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:26:56 INFO  : Disconnected from the channel tcfchan#51.
+14:26:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:26:57 INFO  : 'fpga -state' command is executed.
+14:26:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:26:57 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:26:57 INFO  : 'jtag frequency' command is executed.
+14:26:57 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:26:57 INFO  : Context for 'APU' is selected.
+14:26:57 INFO  : 'stop' command is executed.
+14:26:58 INFO  : 'ps7_init' command is executed.
+14:26:58 INFO  : 'ps7_post_config' command is executed.
+14:26:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:26:58 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:26:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:26:58 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:26:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:26:58 INFO  : Memory regions updated for context APU
+14:26:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:26:58 INFO  : 'con' command is executed.
+14:26:58 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:26:58 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:27:07 INFO  : Disconnected from the channel tcfchan#52.
+14:27:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:27:08 INFO  : 'fpga -state' command is executed.
+14:27:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:27:09 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:27:09 INFO  : 'jtag frequency' command is executed.
+14:27:09 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:27:09 INFO  : Context for 'APU' is selected.
+14:27:09 INFO  : 'stop' command is executed.
+14:27:09 INFO  : 'ps7_init' command is executed.
+14:27:09 INFO  : 'ps7_post_config' command is executed.
+14:27:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:27:09 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:27:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:27:10 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:27:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:27:10 INFO  : Memory regions updated for context APU
+14:27:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:27:10 INFO  : 'con' command is executed.
+14:27:10 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:27:10 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:28:02 INFO  : Disconnected from the channel tcfchan#53.
+14:28:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:28:03 INFO  : 'fpga -state' command is executed.
+14:28:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:28:04 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:28:04 INFO  : 'jtag frequency' command is executed.
+14:28:04 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:28:04 INFO  : Context for 'APU' is selected.
+14:28:04 INFO  : 'stop' command is executed.
+14:28:04 INFO  : 'ps7_init' command is executed.
+14:28:04 INFO  : 'ps7_post_config' command is executed.
+14:28:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:28:04 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:28:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:28:05 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:28:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:28:05 INFO  : Memory regions updated for context APU
+14:28:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:28:05 INFO  : 'con' command is executed.
+14:28:05 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:28:05 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:29:11 INFO  : Disconnected from the channel tcfchan#54.
+14:29:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:29:12 INFO  : 'fpga -state' command is executed.
+14:29:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:29:12 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:29:12 INFO  : 'jtag frequency' command is executed.
+14:29:12 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:29:12 INFO  : Context for 'APU' is selected.
+14:29:12 INFO  : 'stop' command is executed.
+14:29:13 INFO  : 'ps7_init' command is executed.
+14:29:13 INFO  : 'ps7_post_config' command is executed.
+14:29:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:29:13 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:29:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:29:13 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:29:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:29:13 INFO  : Memory regions updated for context APU
+14:29:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:29:13 INFO  : 'con' command is executed.
+14:29:13 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:29:13 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:29:23 INFO  : Disconnected from the channel tcfchan#55.
+14:29:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:29:24 INFO  : 'fpga -state' command is executed.
+14:29:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:29:24 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:29:24 INFO  : 'jtag frequency' command is executed.
+14:29:24 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:29:24 INFO  : Context for 'APU' is selected.
+14:29:24 INFO  : 'stop' command is executed.
+14:29:25 INFO  : 'ps7_init' command is executed.
+14:29:25 INFO  : 'ps7_post_config' command is executed.
+14:29:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:29:25 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:29:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:29:25 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:29:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:29:25 INFO  : Memory regions updated for context APU
+14:29:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:29:25 INFO  : 'con' command is executed.
+14:29:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:29:25 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:29:48 INFO  : Disconnected from the channel tcfchan#56.
+14:29:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:29:49 INFO  : 'fpga -state' command is executed.
+14:29:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:29:49 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:29:49 INFO  : 'jtag frequency' command is executed.
+14:29:49 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:29:49 INFO  : Context for 'APU' is selected.
+14:29:49 INFO  : 'stop' command is executed.
+14:29:50 INFO  : 'ps7_init' command is executed.
+14:29:50 INFO  : 'ps7_post_config' command is executed.
+14:29:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:29:50 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:29:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:29:50 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:29:50 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:29:50 INFO  : Memory regions updated for context APU
+14:29:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:29:50 INFO  : 'con' command is executed.
+14:29:50 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:29:50 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:30:18 INFO  : Disconnected from the channel tcfchan#57.
+14:30:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:30:19 INFO  : 'fpga -state' command is executed.
+14:30:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:30:19 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:30:19 INFO  : 'jtag frequency' command is executed.
+14:30:19 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:30:19 INFO  : Context for 'APU' is selected.
+14:30:19 INFO  : 'stop' command is executed.
+14:30:20 INFO  : 'ps7_init' command is executed.
+14:30:20 INFO  : 'ps7_post_config' command is executed.
+14:30:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:30:20 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:30:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:30:20 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:30:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:30:20 INFO  : Memory regions updated for context APU
+14:30:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:30:21 INFO  : 'con' command is executed.
+14:30:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:30:21 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:31:40 INFO  : Disconnected from the channel tcfchan#58.
+14:31:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:31:41 INFO  : 'fpga -state' command is executed.
+14:31:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:31:41 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:31:41 INFO  : 'jtag frequency' command is executed.
+14:31:41 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:31:41 INFO  : Context for 'APU' is selected.
+14:31:41 INFO  : 'stop' command is executed.
+14:31:42 INFO  : 'ps7_init' command is executed.
+14:31:42 INFO  : 'ps7_post_config' command is executed.
+14:31:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:31:42 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:31:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:31:42 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:31:42 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:31:42 INFO  : Memory regions updated for context APU
+14:31:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:31:42 INFO  : 'con' command is executed.
+14:31:42 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:31:42 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:32:09 INFO  : Disconnected from the channel tcfchan#59.
+14:32:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:32:10 INFO  : 'fpga -state' command is executed.
+14:32:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:32:10 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:32:10 INFO  : 'jtag frequency' command is executed.
+14:32:10 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:32:10 INFO  : Context for 'APU' is selected.
+14:32:10 INFO  : 'stop' command is executed.
+14:32:11 INFO  : 'ps7_init' command is executed.
+14:32:11 INFO  : 'ps7_post_config' command is executed.
+14:32:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:32:11 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:32:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:32:11 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:32:11 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:32:11 INFO  : Memory regions updated for context APU
+14:32:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:32:11 INFO  : 'con' command is executed.
+14:32:11 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:32:11 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:40:17 INFO  : Disconnected from the channel tcfchan#60.
+14:40:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:40:18 INFO  : 'fpga -state' command is executed.
+14:40:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:40:18 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:40:18 INFO  : 'jtag frequency' command is executed.
+14:40:18 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:40:18 INFO  : Context for 'APU' is selected.
+14:40:18 INFO  : 'stop' command is executed.
+14:40:22 INFO  : 'ps7_init' command is executed.
+14:40:22 INFO  : 'ps7_post_config' command is executed.
+14:40:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:40:23 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:40:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:40:25 ERROR : Memory write error at 0x100000. AP transaction timeout
+14:40:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:40:26 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:40:26 INFO  : 'fpga -state' command is executed.
+14:40:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:40:26 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:40:26 INFO  : 'jtag frequency' command is executed.
+14:40:26 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:40:26 INFO  : Context for 'APU' is selected.
+14:40:26 INFO  : 'stop' command is executed.
+14:40:26 ERROR : AP transaction error, DAP status f0000021
+14:40:26 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+----------------End of Script----------------
+
+14:41:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:41:04 INFO  : 'fpga -state' command is executed.
+14:41:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:41:04 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:41:04 INFO  : 'jtag frequency' command is executed.
+14:41:04 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:41:04 INFO  : Context for 'APU' is selected.
+14:41:04 INFO  : 'stop' command is executed.
+14:41:05 INFO  : 'ps7_init' command is executed.
+14:41:05 INFO  : 'ps7_post_config' command is executed.
+14:41:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:41:05 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:41:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:41:05 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:41:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:41:05 INFO  : Memory regions updated for context APU
+14:41:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:41:05 INFO  : 'con' command is executed.
+14:41:05 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:41:05 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:41:21 INFO  : Disconnected from the channel tcfchan#61.
+14:41:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:41:22 INFO  : 'fpga -state' command is executed.
+14:41:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:41:22 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:41:22 INFO  : 'jtag frequency' command is executed.
+14:41:22 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:41:22 INFO  : Context for 'APU' is selected.
+14:41:22 INFO  : 'stop' command is executed.
+14:41:23 INFO  : 'ps7_init' command is executed.
+14:41:23 INFO  : 'ps7_post_config' command is executed.
+14:41:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:41:23 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:41:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:41:23 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:41:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:41:23 INFO  : Memory regions updated for context APU
+14:41:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:41:23 INFO  : 'con' command is executed.
+14:41:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:41:23 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:41:34 INFO  : Disconnected from the channel tcfchan#62.
+14:41:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:41:36 INFO  : 'fpga -state' command is executed.
+14:41:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:41:36 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:41:36 INFO  : 'jtag frequency' command is executed.
+14:41:36 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:41:36 INFO  : Context for 'APU' is selected.
+14:41:36 INFO  : 'stop' command is executed.
+14:41:36 INFO  : 'ps7_init' command is executed.
+14:41:36 INFO  : 'ps7_post_config' command is executed.
+14:41:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:41:36 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:41:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:41:37 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:41:37 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:41:37 INFO  : Memory regions updated for context APU
+14:41:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:41:37 INFO  : 'con' command is executed.
+14:41:37 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:41:37 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:44:11 INFO  : Disconnected from the channel tcfchan#63.
+14:44:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:44:12 INFO  : 'fpga -state' command is executed.
+14:44:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:44:12 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:44:12 INFO  : 'jtag frequency' command is executed.
+14:44:12 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:44:12 INFO  : Context for 'APU' is selected.
+14:44:12 INFO  : 'stop' command is executed.
+14:44:13 INFO  : 'ps7_init' command is executed.
+14:44:13 INFO  : 'ps7_post_config' command is executed.
+14:44:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:44:13 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:44:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:44:13 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:44:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:44:13 INFO  : Memory regions updated for context APU
+14:44:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:44:13 INFO  : 'con' command is executed.
+14:44:13 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:44:13 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:44:19 INFO  : Disconnected from the channel tcfchan#64.
+14:44:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:44:20 INFO  : 'fpga -state' command is executed.
+14:44:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:44:20 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:44:20 INFO  : 'jtag frequency' command is executed.
+14:44:20 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:44:20 INFO  : Context for 'APU' is selected.
+14:44:20 INFO  : 'stop' command is executed.
+14:44:21 INFO  : 'ps7_init' command is executed.
+14:44:21 INFO  : 'ps7_post_config' command is executed.
+14:44:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:44:21 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:44:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:44:21 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:44:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:44:21 INFO  : Memory regions updated for context APU
+14:44:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:44:21 INFO  : 'con' command is executed.
+14:44:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:44:21 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:44:29 INFO  : Disconnected from the channel tcfchan#65.
+14:44:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:44:30 INFO  : 'fpga -state' command is executed.
+14:44:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:44:30 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:44:30 INFO  : 'jtag frequency' command is executed.
+14:44:30 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:44:30 INFO  : Context for 'APU' is selected.
+14:44:30 INFO  : 'stop' command is executed.
+14:44:31 INFO  : 'ps7_init' command is executed.
+14:44:31 INFO  : 'ps7_post_config' command is executed.
+14:44:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:44:31 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:44:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:44:31 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:44:31 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:44:31 INFO  : Memory regions updated for context APU
+14:44:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:44:31 INFO  : 'con' command is executed.
+14:44:31 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:44:31 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:44:44 INFO  : Disconnected from the channel tcfchan#66.
+14:44:45 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:44:45 INFO  : 'fpga -state' command is executed.
+14:44:45 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:44:45 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:44:45 INFO  : 'jtag frequency' command is executed.
+14:44:45 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:44:45 INFO  : Context for 'APU' is selected.
+14:44:45 INFO  : 'stop' command is executed.
+14:44:46 INFO  : 'ps7_init' command is executed.
+14:44:46 INFO  : 'ps7_post_config' command is executed.
+14:44:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:44:46 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:44:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:44:46 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:44:46 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:44:46 INFO  : Memory regions updated for context APU
+14:44:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:44:46 INFO  : 'con' command is executed.
+14:44:46 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:44:46 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:45:47 INFO  : Disconnected from the channel tcfchan#67.
+14:45:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:45:48 INFO  : 'fpga -state' command is executed.
+14:45:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:45:48 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:45:48 INFO  : 'jtag frequency' command is executed.
+14:45:48 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:45:48 INFO  : Context for 'APU' is selected.
+14:45:48 INFO  : 'stop' command is executed.
+14:45:49 INFO  : 'ps7_init' command is executed.
+14:45:49 INFO  : 'ps7_post_config' command is executed.
+14:45:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:45:49 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:45:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:45:49 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:45:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:45:49 INFO  : Memory regions updated for context APU
+14:45:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:45:49 INFO  : 'con' command is executed.
+14:45:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:45:49 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:46:59 INFO  : Disconnected from the channel tcfchan#68.
+14:47:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:47:01 INFO  : 'fpga -state' command is executed.
+14:47:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:47:01 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:47:01 INFO  : 'jtag frequency' command is executed.
+14:47:01 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:47:01 INFO  : Context for 'APU' is selected.
+14:47:01 INFO  : 'stop' command is executed.
+14:47:01 INFO  : 'ps7_init' command is executed.
+14:47:01 INFO  : 'ps7_post_config' command is executed.
+14:47:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:47:01 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:47:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:47:01 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:47:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:47:01 INFO  : Memory regions updated for context APU
+14:47:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:47:01 INFO  : 'con' command is executed.
+14:47:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:47:01 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:47:17 INFO  : Disconnected from the channel tcfchan#69.
+14:47:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:47:18 INFO  : 'fpga -state' command is executed.
+14:47:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:47:18 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:47:18 INFO  : 'jtag frequency' command is executed.
+14:47:18 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:47:18 INFO  : Context for 'APU' is selected.
+14:47:18 INFO  : 'stop' command is executed.
+14:47:19 INFO  : 'ps7_init' command is executed.
+14:47:19 INFO  : 'ps7_post_config' command is executed.
+14:47:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:47:19 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:47:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:47:19 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:47:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:47:19 INFO  : Memory regions updated for context APU
+14:47:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:47:19 INFO  : 'con' command is executed.
+14:47:19 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:47:19 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:57:39 INFO  : Disconnected from the channel tcfchan#70.
+14:57:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:57:40 INFO  : 'fpga -state' command is executed.
+14:57:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:57:40 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:57:40 INFO  : 'jtag frequency' command is executed.
+14:57:40 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:57:40 INFO  : Context for 'APU' is selected.
+14:57:40 INFO  : 'stop' command is executed.
+14:57:44 INFO  : 'ps7_init' command is executed.
+14:57:44 INFO  : 'ps7_post_config' command is executed.
+14:57:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:57:44 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:57:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:57:46 ERROR : Memory write error at 0x100000. AP transaction timeout
+14:57:46 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:58:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:58:11 INFO  : 'fpga -state' command is executed.
+14:58:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:58:11 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:58:11 INFO  : 'jtag frequency' command is executed.
+14:58:11 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:58:11 INFO  : Context for 'APU' is selected.
+14:58:11 INFO  : 'stop' command is executed.
+14:58:11 INFO  : 'ps7_init' command is executed.
+14:58:11 INFO  : 'ps7_post_config' command is executed.
+14:58:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:58:11 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:58:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:58:11 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:58:11 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:58:11 INFO  : Memory regions updated for context APU
+14:58:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:58:11 INFO  : 'con' command is executed.
+14:58:11 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:58:11 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:58:19 INFO  : Disconnected from the channel tcfchan#71.
+14:58:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:58:20 INFO  : 'fpga -state' command is executed.
+14:58:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:58:20 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:58:20 INFO  : 'jtag frequency' command is executed.
+14:58:20 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:58:20 INFO  : Context for 'APU' is selected.
+14:58:20 INFO  : 'stop' command is executed.
+14:58:21 INFO  : 'ps7_init' command is executed.
+14:58:21 INFO  : 'ps7_post_config' command is executed.
+14:58:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:58:21 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:58:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:58:21 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:58:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:58:21 INFO  : Memory regions updated for context APU
+14:58:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:58:21 INFO  : 'con' command is executed.
+14:58:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:58:21 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:58:30 INFO  : Disconnected from the channel tcfchan#72.
+14:58:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:58:32 INFO  : 'fpga -state' command is executed.
+14:58:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:58:32 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:58:32 INFO  : 'jtag frequency' command is executed.
+14:58:32 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:58:32 INFO  : Context for 'APU' is selected.
+14:58:32 INFO  : 'stop' command is executed.
+14:58:32 INFO  : 'ps7_init' command is executed.
+14:58:32 INFO  : 'ps7_post_config' command is executed.
+14:58:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:58:33 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:58:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:58:33 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:58:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:58:33 INFO  : Memory regions updated for context APU
+14:58:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:58:33 INFO  : 'con' command is executed.
+14:58:33 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:58:33 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+14:58:39 INFO  : Disconnected from the channel tcfchan#73.
+14:58:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+14:58:40 INFO  : 'fpga -state' command is executed.
+14:58:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:58:40 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+14:58:40 INFO  : 'jtag frequency' command is executed.
+14:58:40 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:58:40 INFO  : Context for 'APU' is selected.
+14:58:40 INFO  : 'stop' command is executed.
+14:58:41 INFO  : 'ps7_init' command is executed.
+14:58:41 INFO  : 'ps7_post_config' command is executed.
+14:58:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:58:41 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:58:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:58:41 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:58:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+14:58:41 INFO  : Memory regions updated for context APU
+14:58:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:58:41 INFO  : 'con' command is executed.
+14:58:41 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+14:58:41 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+15:00:04 INFO  : Disconnected from the channel tcfchan#74.
+15:00:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+15:00:05 INFO  : 'fpga -state' command is executed.
+15:00:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:00:05 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+15:00:05 INFO  : 'jtag frequency' command is executed.
+15:00:05 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:00:05 INFO  : Context for 'APU' is selected.
+15:00:05 INFO  : 'stop' command is executed.
+15:00:06 INFO  : 'ps7_init' command is executed.
+15:00:06 INFO  : 'ps7_post_config' command is executed.
+15:00:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:00:06 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:00:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:00:06 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:00:06 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+15:00:06 INFO  : Memory regions updated for context APU
+15:00:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:00:06 INFO  : 'con' command is executed.
+15:00:06 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+15:00:06 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+15:00:12 INFO  : Disconnected from the channel tcfchan#75.
+15:00:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+15:00:13 INFO  : 'fpga -state' command is executed.
+15:00:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:00:13 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+15:00:13 INFO  : 'jtag frequency' command is executed.
+15:00:13 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:00:13 INFO  : Context for 'APU' is selected.
+15:00:13 INFO  : 'stop' command is executed.
+15:00:14 INFO  : 'ps7_init' command is executed.
+15:00:14 INFO  : 'ps7_post_config' command is executed.
+15:00:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:00:14 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:00:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:00:14 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:00:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+15:00:14 INFO  : Memory regions updated for context APU
+15:00:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:00:14 INFO  : 'con' command is executed.
+15:00:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+15:00:14 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+15:00:48 INFO  : Disconnected from the channel tcfchan#76.
+15:00:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+15:00:49 INFO  : 'fpga -state' command is executed.
+15:00:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:00:49 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+15:00:49 INFO  : 'jtag frequency' command is executed.
+15:00:49 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:00:49 INFO  : Context for 'APU' is selected.
+15:00:49 INFO  : 'stop' command is executed.
+15:00:50 INFO  : 'ps7_init' command is executed.
+15:00:50 INFO  : 'ps7_post_config' command is executed.
+15:00:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:00:50 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:00:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:00:50 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:00:50 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+15:00:50 INFO  : Memory regions updated for context APU
+15:00:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:00:50 INFO  : 'con' command is executed.
+15:00:50 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+15:00:50 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+15:01:00 INFO  : Disconnected from the channel tcfchan#77.
+15:01:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+15:01:01 INFO  : 'fpga -state' command is executed.
+15:01:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:01:01 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+15:01:01 INFO  : 'jtag frequency' command is executed.
+15:01:01 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:01:01 INFO  : Context for 'APU' is selected.
+15:01:01 INFO  : 'stop' command is executed.
+15:01:02 INFO  : 'ps7_init' command is executed.
+15:01:02 INFO  : 'ps7_post_config' command is executed.
+15:01:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:01:02 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:01:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:01:02 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:01:02 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+15:01:02 INFO  : Memory regions updated for context APU
+15:01:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:01:02 INFO  : 'con' command is executed.
+15:01:02 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+15:01:02 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+15:02:00 INFO  : Disconnected from the channel tcfchan#78.
+15:02:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+15:02:02 INFO  : 'fpga -state' command is executed.
+15:02:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:02:02 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+15:02:02 INFO  : 'jtag frequency' command is executed.
+15:02:02 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:02:02 INFO  : Context for 'APU' is selected.
+15:02:02 INFO  : 'stop' command is executed.
+15:02:02 INFO  : 'ps7_init' command is executed.
+15:02:02 INFO  : 'ps7_post_config' command is executed.
+15:02:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:02:02 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:02:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:02:02 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:02:02 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+15:02:02 INFO  : Memory regions updated for context APU
+15:02:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:02:02 INFO  : 'con' command is executed.
+15:02:02 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+15:02:02 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+15:02:08 INFO  : Disconnected from the channel tcfchan#79.
+15:02:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+15:02:09 INFO  : 'fpga -state' command is executed.
+15:02:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:02:09 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+15:02:09 INFO  : 'jtag frequency' command is executed.
+15:02:09 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:02:09 INFO  : Context for 'APU' is selected.
+15:02:09 INFO  : 'stop' command is executed.
+15:02:10 INFO  : 'ps7_init' command is executed.
+15:02:10 INFO  : 'ps7_post_config' command is executed.
+15:02:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:02:10 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:02:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:02:10 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:02:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+15:02:10 INFO  : Memory regions updated for context APU
+15:02:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:02:10 INFO  : 'con' command is executed.
+15:02:10 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+15:02:10 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+15:02:18 INFO  : Disconnected from the channel tcfchan#80.
+15:02:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+15:02:19 INFO  : 'fpga -state' command is executed.
+15:02:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:02:19 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+15:02:19 INFO  : 'jtag frequency' command is executed.
+15:02:19 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:02:19 INFO  : Context for 'APU' is selected.
+15:02:19 INFO  : 'stop' command is executed.
+15:02:19 INFO  : 'ps7_init' command is executed.
+15:02:19 INFO  : 'ps7_post_config' command is executed.
+15:02:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:02:20 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:02:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:02:20 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:02:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+15:02:20 INFO  : Memory regions updated for context APU
+15:02:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:02:20 INFO  : 'con' command is executed.
+15:02:20 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+15:02:20 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+15:02:46 INFO  : Disconnected from the channel tcfchan#81.
+15:02:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+15:02:47 INFO  : 'fpga -state' command is executed.
+15:02:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:02:47 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+15:02:47 INFO  : 'jtag frequency' command is executed.
+15:02:47 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:02:48 INFO  : Context for 'APU' is selected.
+15:02:48 INFO  : 'stop' command is executed.
+15:02:48 INFO  : 'ps7_init' command is executed.
+15:02:48 INFO  : 'ps7_post_config' command is executed.
+15:02:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:02:48 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:02:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:02:48 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:02:48 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+15:02:48 INFO  : Memory regions updated for context APU
+15:02:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:02:49 INFO  : 'con' command is executed.
+15:02:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+15:02:49 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+15:25:15 INFO  : Disconnected from the channel tcfchan#82.
+15:25:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+15:25:16 INFO  : 'fpga -state' command is executed.
+15:25:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:25:16 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+15:25:16 INFO  : 'jtag frequency' command is executed.
+15:25:16 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:25:16 INFO  : Context for 'APU' is selected.
+15:25:17 INFO  : 'stop' command is executed.
+15:25:21 INFO  : 'ps7_init' command is executed.
+15:25:21 INFO  : 'ps7_post_config' command is executed.
+15:25:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:25:21 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:25:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:25:23 ERROR : Memory write error at 0x100000. AP transaction timeout
+15:25:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+15:25:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+15:25:50 INFO  : 'fpga -state' command is executed.
+15:25:50 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:25:50 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+15:25:50 INFO  : 'jtag frequency' command is executed.
+15:25:50 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:25:50 INFO  : Context for 'APU' is selected.
+15:25:50 INFO  : 'stop' command is executed.
+15:25:51 INFO  : 'ps7_init' command is executed.
+15:25:51 INFO  : 'ps7_post_config' command is executed.
+15:25:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:25:51 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:25:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:25:51 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:25:51 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+15:25:51 INFO  : Memory regions updated for context APU
+15:25:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:25:51 INFO  : 'con' command is executed.
+15:25:51 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+15:25:51 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+15:25:57 INFO  : Disconnected from the channel tcfchan#83.
+15:25:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+15:25:58 INFO  : 'fpga -state' command is executed.
+15:25:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:25:58 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+15:25:58 INFO  : 'jtag frequency' command is executed.
+15:25:58 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:25:58 INFO  : Context for 'APU' is selected.
+15:25:58 INFO  : 'stop' command is executed.
+15:25:59 INFO  : 'ps7_init' command is executed.
+15:25:59 INFO  : 'ps7_post_config' command is executed.
+15:25:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:25:59 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:25:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:25:59 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:25:59 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+15:25:59 INFO  : Memory regions updated for context APU
+15:25:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:25:59 INFO  : 'con' command is executed.
+15:25:59 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+15:25:59 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+15:26:05 INFO  : Disconnected from the channel tcfchan#84.
+15:26:06 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+15:26:06 INFO  : 'fpga -state' command is executed.
+15:26:06 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:26:07 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+15:26:07 INFO  : 'jtag frequency' command is executed.
+15:26:07 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:26:07 INFO  : Context for 'APU' is selected.
+15:26:07 INFO  : 'stop' command is executed.
+15:26:07 INFO  : 'ps7_init' command is executed.
+15:26:07 INFO  : 'ps7_post_config' command is executed.
+15:26:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:26:08 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:26:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:26:08 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:26:08 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+15:26:08 INFO  : Memory regions updated for context APU
+15:26:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:26:08 INFO  : 'con' command is executed.
+15:26:08 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+15:26:08 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+15:27:01 INFO  : Disconnected from the channel tcfchan#85.
+15:27:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+15:27:03 INFO  : 'fpga -state' command is executed.
+15:27:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:27:03 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+15:27:03 INFO  : 'jtag frequency' command is executed.
+15:27:03 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:27:03 INFO  : Context for 'APU' is selected.
+15:27:03 INFO  : 'stop' command is executed.
+15:27:03 INFO  : 'ps7_init' command is executed.
+15:27:03 INFO  : 'ps7_post_config' command is executed.
+15:27:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:27:04 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:27:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:27:04 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:27:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+15:27:04 INFO  : Memory regions updated for context APU
+15:27:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:27:04 INFO  : 'con' command is executed.
+15:27:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+15:27:04 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+15:27:11 INFO  : Disconnected from the channel tcfchan#86.
+15:27:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+15:27:12 INFO  : 'fpga -state' command is executed.
+15:27:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:27:12 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+15:27:12 INFO  : 'jtag frequency' command is executed.
+15:27:12 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:27:12 INFO  : Context for 'APU' is selected.
+15:27:12 INFO  : 'stop' command is executed.
+15:27:13 INFO  : 'ps7_init' command is executed.
+15:27:13 INFO  : 'ps7_post_config' command is executed.
+15:27:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:27:13 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:27:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:27:13 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:27:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+15:27:13 INFO  : Memory regions updated for context APU
+15:27:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:27:13 INFO  : 'con' command is executed.
+15:27:13 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+15:27:13 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+15:27:26 INFO  : Disconnected from the channel tcfchan#87.
+15:27:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+15:27:27 INFO  : 'fpga -state' command is executed.
+15:27:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:27:27 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+15:27:27 INFO  : 'jtag frequency' command is executed.
+15:27:27 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:27:27 INFO  : Context for 'APU' is selected.
+15:27:27 INFO  : 'stop' command is executed.
+15:27:28 INFO  : 'ps7_init' command is executed.
+15:27:28 INFO  : 'ps7_post_config' command is executed.
+15:27:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:27:28 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:27:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:27:28 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:27:28 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+15:27:28 INFO  : Memory regions updated for context APU
+15:27:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:27:28 INFO  : 'con' command is executed.
+15:27:28 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+15:27:28 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+15:27:46 INFO  : Disconnected from the channel tcfchan#88.
+15:27:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+15:27:47 INFO  : 'fpga -state' command is executed.
+15:27:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:27:47 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+15:27:47 INFO  : 'jtag frequency' command is executed.
+15:27:47 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:27:48 INFO  : Context for 'APU' is selected.
+15:27:48 INFO  : 'stop' command is executed.
+15:27:48 INFO  : 'ps7_init' command is executed.
+15:27:48 INFO  : 'ps7_post_config' command is executed.
+15:27:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:27:48 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:27:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:27:48 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:27:48 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+15:27:48 INFO  : Memory regions updated for context APU
+15:27:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:27:49 INFO  : 'con' command is executed.
+15:27:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+15:27:49 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+15:28:29 INFO  : Disconnected from the channel tcfchan#89.
+15:28:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+15:28:30 INFO  : 'fpga -state' command is executed.
+15:28:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:28:30 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+15:28:30 INFO  : 'jtag frequency' command is executed.
+15:28:30 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:28:30 INFO  : Context for 'APU' is selected.
+15:28:30 INFO  : 'stop' command is executed.
+15:28:31 INFO  : 'ps7_init' command is executed.
+15:28:31 INFO  : 'ps7_post_config' command is executed.
+15:28:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:28:31 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:28:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:28:31 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:28:31 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+15:28:31 INFO  : Memory regions updated for context APU
+15:28:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:28:31 INFO  : 'con' command is executed.
+15:28:31 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+15:28:31 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+15:28:39 INFO  : Disconnected from the channel tcfchan#90.
+15:28:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+15:28:40 INFO  : 'fpga -state' command is executed.
+15:28:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:28:40 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+15:28:40 INFO  : 'jtag frequency' command is executed.
+15:28:40 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:28:40 INFO  : Context for 'APU' is selected.
+15:28:40 INFO  : 'stop' command is executed.
+15:28:41 INFO  : 'ps7_init' command is executed.
+15:28:41 INFO  : 'ps7_post_config' command is executed.
+15:28:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:28:41 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:28:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:28:41 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:28:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+15:28:41 INFO  : Memory regions updated for context APU
+15:28:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:28:41 INFO  : 'con' command is executed.
+15:28:41 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+15:28:41 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+15:28:48 INFO  : Disconnected from the channel tcfchan#91.
+15:28:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+15:28:49 INFO  : 'fpga -state' command is executed.
+15:28:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:28:49 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+15:28:49 INFO  : 'jtag frequency' command is executed.
+15:28:49 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:28:49 INFO  : Context for 'APU' is selected.
+15:28:49 INFO  : 'stop' command is executed.
+15:28:50 INFO  : 'ps7_init' command is executed.
+15:28:50 INFO  : 'ps7_post_config' command is executed.
+15:28:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:28:50 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:28:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:28:50 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:28:50 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+15:28:50 INFO  : Memory regions updated for context APU
+15:28:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:28:50 INFO  : 'con' command is executed.
+15:28:50 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+15:28:50 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+15:29:01 INFO  : Disconnected from the channel tcfchan#92.
+15:29:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+15:29:03 INFO  : 'fpga -state' command is executed.
+15:29:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:29:03 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+15:29:03 INFO  : 'jtag frequency' command is executed.
+15:29:03 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:29:03 INFO  : Context for 'APU' is selected.
+15:29:03 INFO  : 'stop' command is executed.
+15:29:03 INFO  : 'ps7_init' command is executed.
+15:29:03 INFO  : 'ps7_post_config' command is executed.
+15:29:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:29:04 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:29:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:29:04 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:29:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+15:29:04 INFO  : Memory regions updated for context APU
+15:29:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:29:04 INFO  : 'con' command is executed.
+15:29:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+15:29:04 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'
+15:29:59 INFO  : Disconnected from the channel tcfchan#93.
+15:30:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770" && level==0} -index 1' command is executed.
+15:30:00 INFO  : 'fpga -state' command is executed.
+15:30:00 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:30:00 INFO  : Jtag cable 'Digilent JTAG-SMT2 210251838770' is selected.
+15:30:00 INFO  : 'jtag frequency' command is executed.
+15:30:00 INFO  : Sourcing of '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:30:00 INFO  : Context for 'APU' is selected.
+15:30:00 INFO  : 'stop' command is executed.
+15:30:01 INFO  : 'ps7_init' command is executed.
+15:30:01 INFO  : 'ps7_post_config' command is executed.
+15:30:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:30:01 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:30:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:30:01 INFO  : The application '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:30:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+dow /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/Debug/axi_to_wb.elf
+----------------End of Script----------------
+
+15:30:01 INFO  : Memory regions updated for context APU
+15:30:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:30:01 INFO  : 'con' command is executed.
+15:30:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT2 210251838770"} -index 0
+con
+----------------End of Script----------------
+
+15:30:01 INFO  : Launch script is exported to file '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_axi_to_wb.elf_on_local.tcl'

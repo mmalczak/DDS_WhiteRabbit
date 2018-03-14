@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.1 (lin64) Build 1846317 Fri Apr 14 18:54:47 MDT 2017
---Date        : Tue Mar 13 17:50:58 2018
+--Date        : Wed Mar 14 12:50:26 2018
 --Host        : milosz-System-Product-Name running 64-bit Linux Mint 18.2 Sonya
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -48,10 +48,6 @@ entity design_1_wrapper is
     led : out STD_LOGIC;
     przycisk : in STD_LOGIC;
     save : in STD_LOGIC_VECTOR ( 39 downto 0 );
-    spi_0_io0_io : inout STD_LOGIC;
-    spi_0_io1_io : inout STD_LOGIC;
-    spi_0_sck_io : inout STD_LOGIC;
-    spi_0_ss_io : inout STD_LOGIC_VECTOR ( 1 downto 0 );
     spi_miso_i_1 : in STD_LOGIC;
     spi_mosi_o : out STD_LOGIC;
     spi_sclk_o : out STD_LOGIC;
@@ -85,18 +81,6 @@ architecture STRUCTURE of design_1_wrapper is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
-    SPI_0_io0_i : in STD_LOGIC;
-    SPI_0_io0_o : out STD_LOGIC;
-    SPI_0_io0_t : out STD_LOGIC;
-    SPI_0_io1_i : in STD_LOGIC;
-    SPI_0_io1_o : out STD_LOGIC;
-    SPI_0_io1_t : out STD_LOGIC;
-    SPI_0_sck_i : in STD_LOGIC;
-    SPI_0_sck_o : out STD_LOGIC;
-    SPI_0_sck_t : out STD_LOGIC;
-    SPI_0_ss_i : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    SPI_0_ss_o : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    SPI_0_ss_t : out STD_LOGIC;
     IBUF_DS_P : in STD_LOGIC_VECTOR ( 17 downto 0 );
     IBUF_DS_N : in STD_LOGIC_VECTOR ( 17 downto 0 );
     save : in STD_LOGIC_VECTOR ( 39 downto 0 );
@@ -119,30 +103,6 @@ architecture STRUCTURE of design_1_wrapper is
     wbt_spi_cs_ad9510_o : out STD_LOGIC
   );
   end component design_1;
-  component IOBUF is
-  port (
-    I : in STD_LOGIC;
-    O : out STD_LOGIC;
-    T : in STD_LOGIC;
-    IO : inout STD_LOGIC
-  );
-  end component IOBUF;
-  signal spi_0_io0_i : STD_LOGIC;
-  signal spi_0_io0_o : STD_LOGIC;
-  signal spi_0_io0_t : STD_LOGIC;
-  signal spi_0_io1_i : STD_LOGIC;
-  signal spi_0_io1_o : STD_LOGIC;
-  signal spi_0_io1_t : STD_LOGIC;
-  signal spi_0_sck_i : STD_LOGIC;
-  signal spi_0_sck_o : STD_LOGIC;
-  signal spi_0_sck_t : STD_LOGIC;
-  signal spi_0_ss_i_0 : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal spi_0_ss_i_1 : STD_LOGIC_VECTOR ( 1 to 1 );
-  signal spi_0_ss_io_0 : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal spi_0_ss_io_1 : STD_LOGIC_VECTOR ( 1 to 1 );
-  signal spi_0_ss_o_0 : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal spi_0_ss_o_1 : STD_LOGIC_VECTOR ( 1 to 1 );
-  signal spi_0_ss_t : STD_LOGIC;
 begin
 design_1_i: component design_1
      port map (
@@ -178,20 +138,6 @@ design_1_i: component design_1
       IBUF_DS_N(17 downto 0) => IBUF_DS_N(17 downto 0),
       IBUF_DS_P(17 downto 0) => IBUF_DS_P(17 downto 0),
       PLL1_SYNCB(0) => PLL1_SYNCB(0),
-      SPI_0_io0_i => spi_0_io0_i,
-      SPI_0_io0_o => spi_0_io0_o,
-      SPI_0_io0_t => spi_0_io0_t,
-      SPI_0_io1_i => spi_0_io1_i,
-      SPI_0_io1_o => spi_0_io1_o,
-      SPI_0_io1_t => spi_0_io1_t,
-      SPI_0_sck_i => spi_0_sck_i,
-      SPI_0_sck_o => spi_0_sck_o,
-      SPI_0_sck_t => spi_0_sck_t,
-      SPI_0_ss_i(1) => spi_0_ss_i_1(1),
-      SPI_0_ss_i(0) => spi_0_ss_i_0(0),
-      SPI_0_ss_o(1) => spi_0_ss_o_1(1),
-      SPI_0_ss_o(0) => spi_0_ss_o_0(0),
-      SPI_0_ss_t => spi_0_ss_t,
       led => led,
       przycisk => przycisk,
       save(39 downto 0) => save(39 downto 0),
@@ -201,40 +147,5 @@ design_1_i: component design_1
       wbt_led_o(1 downto 0) => wbt_led_o(1 downto 0),
       wbt_spi_cs_ad9510_o => wbt_spi_cs_ad9510_o,
       wbt_spi_cs_ad9516_o => wbt_spi_cs_ad9516_o
-    );
-spi_0_io0_iobuf: component IOBUF
-     port map (
-      I => spi_0_io0_o,
-      IO => spi_0_io0_io,
-      O => spi_0_io0_i,
-      T => spi_0_io0_t
-    );
-spi_0_io1_iobuf: component IOBUF
-     port map (
-      I => spi_0_io1_o,
-      IO => spi_0_io1_io,
-      O => spi_0_io1_i,
-      T => spi_0_io1_t
-    );
-spi_0_sck_iobuf: component IOBUF
-     port map (
-      I => spi_0_sck_o,
-      IO => spi_0_sck_io,
-      O => spi_0_sck_i,
-      T => spi_0_sck_t
-    );
-spi_0_ss_iobuf_0: component IOBUF
-     port map (
-      I => spi_0_ss_o_0(0),
-      IO => spi_0_ss_io(0),
-      O => spi_0_ss_i_0(0),
-      T => spi_0_ss_t
-    );
-spi_0_ss_iobuf_1: component IOBUF
-     port map (
-      I => spi_0_ss_o_1(1),
-      IO => spi_0_ss_io(1),
-      O => spi_0_ss_i_1(1),
-      T => spi_0_ss_t
     );
 end STRUCTURE;

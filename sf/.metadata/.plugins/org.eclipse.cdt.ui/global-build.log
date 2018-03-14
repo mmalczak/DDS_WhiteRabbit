@@ -22785,3 +22785,1996 @@ arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
   30348	   1180	2054288	2085816	 1fd3b8	axi_to_wb.elf
 Finished building: axi_to_wb.elf.size
  
+11:26:07 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:120:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:187:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:187:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:187:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:186:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:178:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30604	   1180	2054288	2086072	 1fd4b8	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+11:27:51 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:123:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:190:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:190:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:190:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:189:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:181:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30668	   1180	2054288	2086136	 1fd4f8	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+11:29:00 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'WB_SpiTransfer':
+../src/spi_mine.c:64:6: error: 'inti' undeclared (first use in this function)
+  for(inti=0; i<128;i++);
+      ^~~~
+../src/spi_mine.c:64:6: note: each undeclared identifier is reported only once for each function it appears in
+../src/spi_mine.c:64:14: error: 'i' undeclared (first use in this function)
+  for(inti=0; i<128;i++);
+              ^
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:126:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:193:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:193:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:193:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:192:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:184:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+src/subdir.mk:24: recipe for target 'src/spi_mine.o' failed
+make: *** [src/spi_mine.o] Error 1
+11:29:04 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:126:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:193:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:193:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:193:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:192:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:184:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30668	   1180	2054288	2086136	 1fd4f8	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+11:30:01 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:126:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:193:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:193:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:193:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:192:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:192:6: warning: unused variable 'diff' [-Wunused-variable]
+  int diff, prDiff;
+      ^~~~
+../src/spi_mine.c:190:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=1000000;
+      ^~~~~~~~~~
+../src/spi_mine.c:188:6: warning: unused variable 'freqDAC_t' [-Wunused-variable]
+  u32 freqDAC_t[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:187:6: warning: unused variable 'freqPLL_t' [-Wunused-variable]
+  u32 freqPLL_t[16]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:185:15: warning: unused variable 'prFreqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+               ^~~~~~~~~
+../src/spi_mine.c:185:6: warning: unused variable 'freqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+      ^~~~~~~
+../src/spi_mine.c:184:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+../src/spi_mine.c:184:6: warning: unused variable 'freqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+      ^~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30228	   1180	2054288	2085696	 1fd340	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+11:30:44 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:128:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:195:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:195:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:195:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:194:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:194:6: warning: unused variable 'diff' [-Wunused-variable]
+  int diff, prDiff;
+      ^~~~
+../src/spi_mine.c:192:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=1000000;
+      ^~~~~~~~~~
+../src/spi_mine.c:190:6: warning: unused variable 'freqDAC_t' [-Wunused-variable]
+  u32 freqDAC_t[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:189:6: warning: unused variable 'freqPLL_t' [-Wunused-variable]
+  u32 freqPLL_t[16]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:187:15: warning: unused variable 'prFreqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+               ^~~~~~~~~
+../src/spi_mine.c:187:6: warning: unused variable 'freqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+      ^~~~~~~
+../src/spi_mine.c:186:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+../src/spi_mine.c:186:6: warning: unused variable 'freqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+      ^~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30292	   1180	2054288	2085760	 1fd380	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+11:31:08 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'spi_send_data':
+../src/spi_mine.c:76:17: warning: passing argument 1 of 'WB_SpiTransfer' makes integer from pointer without a cast [-Wint-conversion]
+  WB_SpiTransfer(data_pointer);
+                 ^~~~~~~~~~~~
+../src/spi_mine.c:57:6: note: expected 'u8 {aka unsigned char}' but argument is of type 'u8 * {aka unsigned char *}'
+ void WB_SpiTransfer(u8 data)
+      ^~~~~~~~~~~~~~
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:129:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:196:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:196:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:196:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:195:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:195:6: warning: unused variable 'diff' [-Wunused-variable]
+  int diff, prDiff;
+      ^~~~
+../src/spi_mine.c:193:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=1000000;
+      ^~~~~~~~~~
+../src/spi_mine.c:191:6: warning: unused variable 'freqDAC_t' [-Wunused-variable]
+  u32 freqDAC_t[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:190:6: warning: unused variable 'freqPLL_t' [-Wunused-variable]
+  u32 freqPLL_t[16]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:188:15: warning: unused variable 'prFreqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+               ^~~~~~~~~
+../src/spi_mine.c:188:6: warning: unused variable 'freqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+      ^~~~~~~
+../src/spi_mine.c:187:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+../src/spi_mine.c:187:6: warning: unused variable 'freqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+      ^~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30292	   1180	2054288	2085760	 1fd380	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+11:31:22 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'spi_send_data':
+../src/spi_mine.c:76:17: warning: passing argument 1 of 'WB_SpiTransfer' makes integer from pointer without a cast [-Wint-conversion]
+  WB_SpiTransfer(data_pointer);
+                 ^~~~~~~~~~~~
+../src/spi_mine.c:57:6: note: expected 'u8 {aka unsigned char}' but argument is of type 'u8 * {aka unsigned char *}'
+ void WB_SpiTransfer(u8 data)
+      ^~~~~~~~~~~~~~
+../src/spi_mine.c:72:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:118:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:185:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:185:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:185:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:184:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:184:6: warning: unused variable 'diff' [-Wunused-variable]
+  int diff, prDiff;
+      ^~~~
+../src/spi_mine.c:182:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=1000000;
+      ^~~~~~~~~~
+../src/spi_mine.c:180:6: warning: unused variable 'freqDAC_t' [-Wunused-variable]
+  u32 freqDAC_t[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:179:6: warning: unused variable 'freqPLL_t' [-Wunused-variable]
+  u32 freqPLL_t[16]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:177:15: warning: unused variable 'prFreqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+               ^~~~~~~~~
+../src/spi_mine.c:177:6: warning: unused variable 'freqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+      ^~~~~~~
+../src/spi_mine.c:176:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+../src/spi_mine.c:176:6: warning: unused variable 'freqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+      ^~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30164	   1180	2054288	2085632	 1fd300	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+11:33:02 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+11:34:26 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'spi_send_data':
+../src/spi_mine.c:76:17: warning: passing argument 1 of 'WB_SpiTransfer' makes integer from pointer without a cast [-Wint-conversion]
+  WB_SpiTransfer(data_pointer);
+                 ^~~~~~~~~~~~
+../src/spi_mine.c:57:6: note: expected 'u8 {aka unsigned char}' but argument is of type 'u8 * {aka unsigned char *}'
+ void WB_SpiTransfer(u8 data)
+      ^~~~~~~~~~~~~~
+../src/spi_mine.c:72:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:118:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:185:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:185:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:185:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:184:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:184:6: warning: unused variable 'diff' [-Wunused-variable]
+  int diff, prDiff;
+      ^~~~
+../src/spi_mine.c:182:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=1000000;
+      ^~~~~~~~~~
+../src/spi_mine.c:180:6: warning: unused variable 'freqDAC_t' [-Wunused-variable]
+  u32 freqDAC_t[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:179:6: warning: unused variable 'freqPLL_t' [-Wunused-variable]
+  u32 freqPLL_t[16]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:177:15: warning: unused variable 'prFreqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+               ^~~~~~~~~
+../src/spi_mine.c:177:6: warning: unused variable 'freqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+      ^~~~~~~
+../src/spi_mine.c:176:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+../src/spi_mine.c:176:6: warning: unused variable 'freqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+      ^~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30164	   1180	2054288	2085632	 1fd300	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+11:34:27 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+11:36:50 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'spi_send_data':
+../src/spi_mine.c:76:17: warning: passing argument 1 of 'WB_SpiTransfer' makes integer from pointer without a cast [-Wint-conversion]
+  WB_SpiTransfer(data_pointer);
+                 ^~~~~~~~~~~~
+../src/spi_mine.c:57:6: note: expected 'u8 {aka unsigned char}' but argument is of type 'u8 * {aka unsigned char *}'
+ void WB_SpiTransfer(u8 data)
+      ^~~~~~~~~~~~~~
+../src/spi_mine.c:72:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:118:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:185:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:185:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:185:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:184:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:184:6: warning: unused variable 'diff' [-Wunused-variable]
+  int diff, prDiff;
+      ^~~~
+../src/spi_mine.c:182:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=1000000;
+      ^~~~~~~~~~
+../src/spi_mine.c:180:6: warning: unused variable 'freqDAC_t' [-Wunused-variable]
+  u32 freqDAC_t[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:179:6: warning: unused variable 'freqPLL_t' [-Wunused-variable]
+  u32 freqPLL_t[16]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:177:15: warning: unused variable 'prFreqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+               ^~~~~~~~~
+../src/spi_mine.c:177:6: warning: unused variable 'freqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+      ^~~~~~~
+../src/spi_mine.c:176:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+../src/spi_mine.c:176:6: warning: unused variable 'freqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+      ^~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30164	   1180	2054288	2085632	 1fd300	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+11:36:52 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+11:37:27 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'spi_send_data':
+../src/spi_mine.c:75:17: warning: passing argument 1 of 'WB_SpiTransfer' makes integer from pointer without a cast [-Wint-conversion]
+  WB_SpiTransfer(data_pointer);
+                 ^~~~~~~~~~~~
+../src/spi_mine.c:57:6: note: expected 'u8 {aka unsigned char}' but argument is of type 'u8 * {aka unsigned char *}'
+ void WB_SpiTransfer(u8 data)
+      ^~~~~~~~~~~~~~
+../src/spi_mine.c:71:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:117:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:184:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:184:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:184:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:183:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:183:6: warning: unused variable 'diff' [-Wunused-variable]
+  int diff, prDiff;
+      ^~~~
+../src/spi_mine.c:181:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=1000000;
+      ^~~~~~~~~~
+../src/spi_mine.c:179:6: warning: unused variable 'freqDAC_t' [-Wunused-variable]
+  u32 freqDAC_t[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:178:6: warning: unused variable 'freqPLL_t' [-Wunused-variable]
+  u32 freqPLL_t[16]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:176:15: warning: unused variable 'prFreqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+               ^~~~~~~~~
+../src/spi_mine.c:176:6: warning: unused variable 'freqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+      ^~~~~~~
+../src/spi_mine.c:175:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+../src/spi_mine.c:175:6: warning: unused variable 'freqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+      ^~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30164	   1180	2054288	2085632	 1fd300	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+11:38:05 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'spi_send_data':
+../src/spi_mine.c:75:17: warning: passing argument 1 of 'WB_SpiTransfer' makes integer from pointer without a cast [-Wint-conversion]
+  WB_SpiTransfer(data_pointer);
+                 ^~~~~~~~~~~~
+../src/spi_mine.c:57:6: note: expected 'u8 {aka unsigned char}' but argument is of type 'u8 * {aka unsigned char *}'
+ void WB_SpiTransfer(u8 data)
+      ^~~~~~~~~~~~~~
+../src/spi_mine.c:71:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:117:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:184:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:184:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:184:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:183:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:183:6: warning: unused variable 'diff' [-Wunused-variable]
+  int diff, prDiff;
+      ^~~~
+../src/spi_mine.c:181:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=1000000;
+      ^~~~~~~~~~
+../src/spi_mine.c:179:6: warning: unused variable 'freqDAC_t' [-Wunused-variable]
+  u32 freqDAC_t[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:178:6: warning: unused variable 'freqPLL_t' [-Wunused-variable]
+  u32 freqPLL_t[16]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:176:15: warning: unused variable 'prFreqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+               ^~~~~~~~~
+../src/spi_mine.c:176:6: warning: unused variable 'freqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+      ^~~~~~~
+../src/spi_mine.c:175:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+../src/spi_mine.c:175:6: warning: unused variable 'freqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+      ^~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30164	   1180	2054288	2085632	 1fd300	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+11:39:33 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'spi_send_data':
+../src/spi_mine.c:75:17: warning: passing argument 1 of 'WB_SpiTransfer' makes integer from pointer without a cast [-Wint-conversion]
+  WB_SpiTransfer(data_pointer);
+                 ^~~~~~~~~~~~
+../src/spi_mine.c:57:6: note: expected 'u8 {aka unsigned char}' but argument is of type 'u8 * {aka unsigned char *}'
+ void WB_SpiTransfer(u8 data)
+      ^~~~~~~~~~~~~~
+../src/spi_mine.c:71:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:117:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:184:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:184:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:184:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:183:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:183:6: warning: unused variable 'diff' [-Wunused-variable]
+  int diff, prDiff;
+      ^~~~
+../src/spi_mine.c:181:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=1000000;
+      ^~~~~~~~~~
+../src/spi_mine.c:179:6: warning: unused variable 'freqDAC_t' [-Wunused-variable]
+  u32 freqDAC_t[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:178:6: warning: unused variable 'freqPLL_t' [-Wunused-variable]
+  u32 freqPLL_t[16]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:176:15: warning: unused variable 'prFreqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+               ^~~~~~~~~
+../src/spi_mine.c:176:6: warning: unused variable 'freqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+      ^~~~~~~
+../src/spi_mine.c:175:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+../src/spi_mine.c:175:6: warning: unused variable 'freqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+      ^~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30164	   1180	2054288	2085632	 1fd300	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+11:40:16 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'spi_send_data':
+../src/spi_mine.c:77:17: warning: passing argument 1 of 'WB_SpiTransfer' makes integer from pointer without a cast [-Wint-conversion]
+  WB_SpiTransfer(data_pointer);
+                 ^~~~~~~~~~~~
+../src/spi_mine.c:57:6: note: expected 'u8 {aka unsigned char}' but argument is of type 'u8 * {aka unsigned char *}'
+ void WB_SpiTransfer(u8 data)
+      ^~~~~~~~~~~~~~
+../src/spi_mine.c:73:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:119:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:186:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:186:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:186:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:185:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:185:6: warning: unused variable 'diff' [-Wunused-variable]
+  int diff, prDiff;
+      ^~~~
+../src/spi_mine.c:183:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=1000000;
+      ^~~~~~~~~~
+../src/spi_mine.c:181:6: warning: unused variable 'freqDAC_t' [-Wunused-variable]
+  u32 freqDAC_t[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:180:6: warning: unused variable 'freqPLL_t' [-Wunused-variable]
+  u32 freqPLL_t[16]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:178:15: warning: unused variable 'prFreqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+               ^~~~~~~~~
+../src/spi_mine.c:178:6: warning: unused variable 'freqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+      ^~~~~~~
+../src/spi_mine.c:177:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+../src/spi_mine.c:177:6: warning: unused variable 'freqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+      ^~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30164	   1180	2054288	2085632	 1fd300	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+11:40:21 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+11:41:23 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'spi_send_data':
+../src/spi_mine.c:79:17: warning: passing argument 1 of 'WB_SpiTransfer' makes integer from pointer without a cast [-Wint-conversion]
+  WB_SpiTransfer(data_pointer);
+                 ^~~~~~~~~~~~
+../src/spi_mine.c:57:6: note: expected 'u8 {aka unsigned char}' but argument is of type 'u8 * {aka unsigned char *}'
+ void WB_SpiTransfer(u8 data)
+      ^~~~~~~~~~~~~~
+../src/spi_mine.c:75:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:121:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:188:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:188:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:188:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:187:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:187:6: warning: unused variable 'diff' [-Wunused-variable]
+  int diff, prDiff;
+      ^~~~
+../src/spi_mine.c:185:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=1000000;
+      ^~~~~~~~~~
+../src/spi_mine.c:183:6: warning: unused variable 'freqDAC_t' [-Wunused-variable]
+  u32 freqDAC_t[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:182:6: warning: unused variable 'freqPLL_t' [-Wunused-variable]
+  u32 freqPLL_t[16]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:180:15: warning: unused variable 'prFreqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+               ^~~~~~~~~
+../src/spi_mine.c:180:6: warning: unused variable 'freqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+      ^~~~~~~
+../src/spi_mine.c:179:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+../src/spi_mine.c:179:6: warning: unused variable 'freqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+      ^~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30228	   1180	2054288	2085696	 1fd340	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+11:41:24 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+11:42:57 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'spi_send_data':
+../src/spi_mine.c:79:17: warning: passing argument 1 of 'WB_SpiTransfer' makes integer from pointer without a cast [-Wint-conversion]
+  WB_SpiTransfer(data_pointer);
+                 ^~~~~~~~~~~~
+../src/spi_mine.c:57:6: note: expected 'u8 {aka unsigned char}' but argument is of type 'u8 * {aka unsigned char *}'
+ void WB_SpiTransfer(u8 data)
+      ^~~~~~~~~~~~~~
+../src/spi_mine.c:75:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:121:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:188:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:188:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:188:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:187:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:187:6: warning: unused variable 'diff' [-Wunused-variable]
+  int diff, prDiff;
+      ^~~~
+../src/spi_mine.c:185:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=1000000;
+      ^~~~~~~~~~
+../src/spi_mine.c:183:6: warning: unused variable 'freqDAC_t' [-Wunused-variable]
+  u32 freqDAC_t[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:182:6: warning: unused variable 'freqPLL_t' [-Wunused-variable]
+  u32 freqPLL_t[16]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:180:15: warning: unused variable 'prFreqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+               ^~~~~~~~~
+../src/spi_mine.c:180:6: warning: unused variable 'freqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+      ^~~~~~~
+../src/spi_mine.c:179:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+../src/spi_mine.c:179:6: warning: unused variable 'freqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+      ^~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30228	   1180	2054288	2085696	 1fd340	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+11:42:59 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+11:44:19 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'spi_send_data':
+../src/spi_mine.c:80:17: warning: passing argument 1 of 'WB_SpiTransfer' makes integer from pointer without a cast [-Wint-conversion]
+  WB_SpiTransfer(data_pointer);
+                 ^~~~~~~~~~~~
+../src/spi_mine.c:57:6: note: expected 'u8 {aka unsigned char}' but argument is of type 'u8 * {aka unsigned char *}'
+ void WB_SpiTransfer(u8 data)
+      ^~~~~~~~~~~~~~
+../src/spi_mine.c:76:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:122:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:189:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:189:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:189:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:188:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:188:6: warning: unused variable 'diff' [-Wunused-variable]
+  int diff, prDiff;
+      ^~~~
+../src/spi_mine.c:186:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=1000000;
+      ^~~~~~~~~~
+../src/spi_mine.c:184:6: warning: unused variable 'freqDAC_t' [-Wunused-variable]
+  u32 freqDAC_t[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:183:6: warning: unused variable 'freqPLL_t' [-Wunused-variable]
+  u32 freqPLL_t[16]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:181:15: warning: unused variable 'prFreqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+               ^~~~~~~~~
+../src/spi_mine.c:181:6: warning: unused variable 'freqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+      ^~~~~~~
+../src/spi_mine.c:180:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+../src/spi_mine.c:180:6: warning: unused variable 'freqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+      ^~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30228	   1180	2054288	2085696	 1fd340	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+11:44:20 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+11:50:59 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'spi_send_data':
+../src/spi_mine.c:81:17: warning: passing argument 1 of 'WB_SpiTransfer' makes integer from pointer without a cast [-Wint-conversion]
+  WB_SpiTransfer(data_pointer);
+                 ^~~~~~~~~~~~
+../src/spi_mine.c:57:6: note: expected 'u8 {aka unsigned char}' but argument is of type 'u8 * {aka unsigned char *}'
+ void WB_SpiTransfer(u8 data)
+      ^~~~~~~~~~~~~~
+../src/spi_mine.c:77:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:123:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:190:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:190:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:190:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:189:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:189:6: warning: unused variable 'diff' [-Wunused-variable]
+  int diff, prDiff;
+      ^~~~
+../src/spi_mine.c:187:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=1000000;
+      ^~~~~~~~~~
+../src/spi_mine.c:185:6: warning: unused variable 'freqDAC_t' [-Wunused-variable]
+  u32 freqDAC_t[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:184:6: warning: unused variable 'freqPLL_t' [-Wunused-variable]
+  u32 freqPLL_t[16]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:182:15: warning: unused variable 'prFreqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+               ^~~~~~~~~
+../src/spi_mine.c:182:6: warning: unused variable 'freqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+      ^~~~~~~
+../src/spi_mine.c:181:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+../src/spi_mine.c:181:6: warning: unused variable 'freqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+      ^~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30228	   1180	2054288	2085696	 1fd340	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+11:51:00 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+11:51:31 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'spi_send_data':
+../src/spi_mine.c:82:17: warning: passing argument 1 of 'WB_SpiTransfer' makes integer from pointer without a cast [-Wint-conversion]
+  WB_SpiTransfer(data_pointer);
+                 ^~~~~~~~~~~~
+../src/spi_mine.c:57:6: note: expected 'u8 {aka unsigned char}' but argument is of type 'u8 * {aka unsigned char *}'
+ void WB_SpiTransfer(u8 data)
+      ^~~~~~~~~~~~~~
+../src/spi_mine.c:78:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:124:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:191:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:191:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:191:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:190:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:190:6: warning: unused variable 'diff' [-Wunused-variable]
+  int diff, prDiff;
+      ^~~~
+../src/spi_mine.c:188:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=1000000;
+      ^~~~~~~~~~
+../src/spi_mine.c:186:6: warning: unused variable 'freqDAC_t' [-Wunused-variable]
+  u32 freqDAC_t[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:185:6: warning: unused variable 'freqPLL_t' [-Wunused-variable]
+  u32 freqPLL_t[16]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:183:15: warning: unused variable 'prFreqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+               ^~~~~~~~~
+../src/spi_mine.c:183:6: warning: unused variable 'freqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+      ^~~~~~~
+../src/spi_mine.c:182:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+../src/spi_mine.c:182:6: warning: unused variable 'freqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+      ^~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30292	   1180	2054288	2085760	 1fd380	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+11:51:38 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'spi_send_data':
+../src/spi_mine.c:82:17: warning: passing argument 1 of 'WB_SpiTransfer' makes integer from pointer without a cast [-Wint-conversion]
+  WB_SpiTransfer(data_pointer);
+                 ^~~~~~~~~~~~
+../src/spi_mine.c:57:6: note: expected 'u8 {aka unsigned char}' but argument is of type 'u8 * {aka unsigned char *}'
+ void WB_SpiTransfer(u8 data)
+      ^~~~~~~~~~~~~~
+../src/spi_mine.c:78:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:124:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:191:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:191:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:191:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:190:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:190:6: warning: unused variable 'diff' [-Wunused-variable]
+  int diff, prDiff;
+      ^~~~
+../src/spi_mine.c:188:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=1000000;
+      ^~~~~~~~~~
+../src/spi_mine.c:186:6: warning: unused variable 'freqDAC_t' [-Wunused-variable]
+  u32 freqDAC_t[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:185:6: warning: unused variable 'freqPLL_t' [-Wunused-variable]
+  u32 freqPLL_t[16]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:183:15: warning: unused variable 'prFreqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+               ^~~~~~~~~
+../src/spi_mine.c:183:6: warning: unused variable 'freqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+      ^~~~~~~
+../src/spi_mine.c:182:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+../src/spi_mine.c:182:6: warning: unused variable 'freqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+      ^~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30292	   1180	2054288	2085760	 1fd380	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+11:53:06 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'spi_send_data':
+../src/spi_mine.c:83:17: warning: passing argument 1 of 'WB_SpiTransfer' makes integer from pointer without a cast [-Wint-conversion]
+  WB_SpiTransfer(data_pointer);
+                 ^~~~~~~~~~~~
+../src/spi_mine.c:57:6: note: expected 'u8 {aka unsigned char}' but argument is of type 'u8 * {aka unsigned char *}'
+ void WB_SpiTransfer(u8 data)
+      ^~~~~~~~~~~~~~
+../src/spi_mine.c:79:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:125:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:192:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:192:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:192:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:191:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:191:6: warning: unused variable 'diff' [-Wunused-variable]
+  int diff, prDiff;
+      ^~~~
+../src/spi_mine.c:189:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=1000000;
+      ^~~~~~~~~~
+../src/spi_mine.c:187:6: warning: unused variable 'freqDAC_t' [-Wunused-variable]
+  u32 freqDAC_t[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:186:6: warning: unused variable 'freqPLL_t' [-Wunused-variable]
+  u32 freqPLL_t[16]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:184:15: warning: unused variable 'prFreqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+               ^~~~~~~~~
+../src/spi_mine.c:184:6: warning: unused variable 'freqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+      ^~~~~~~
+../src/spi_mine.c:183:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+../src/spi_mine.c:183:6: warning: unused variable 'freqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+      ^~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30292	   1180	2054288	2085760	 1fd380	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+11:53:07 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+11:56:14 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'spi_send_data':
+../src/spi_mine.c:83:17: warning: passing argument 1 of 'WB_SpiTransfer' makes integer from pointer without a cast [-Wint-conversion]
+  WB_SpiTransfer(data_pointer);
+                 ^~~~~~~~~~~~
+../src/spi_mine.c:57:6: note: expected 'u8 {aka unsigned char}' but argument is of type 'u8 * {aka unsigned char *}'
+ void WB_SpiTransfer(u8 data)
+      ^~~~~~~~~~~~~~
+../src/spi_mine.c:79:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:125:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:192:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:192:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:192:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:191:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:191:6: warning: unused variable 'diff' [-Wunused-variable]
+  int diff, prDiff;
+      ^~~~
+../src/spi_mine.c:189:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=1000000;
+      ^~~~~~~~~~
+../src/spi_mine.c:187:6: warning: unused variable 'freqDAC_t' [-Wunused-variable]
+  u32 freqDAC_t[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:186:6: warning: unused variable 'freqPLL_t' [-Wunused-variable]
+  u32 freqPLL_t[16]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:184:15: warning: unused variable 'prFreqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+               ^~~~~~~~~
+../src/spi_mine.c:184:6: warning: unused variable 'freqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+      ^~~~~~~
+../src/spi_mine.c:183:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+../src/spi_mine.c:183:6: warning: unused variable 'freqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+      ^~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30292	   1180	2054288	2085760	 1fd380	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+11:56:15 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+11:58:08 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'spi_send_data':
+../src/spi_mine.c:83:17: warning: passing argument 1 of 'WB_SpiTransfer' makes integer from pointer without a cast [-Wint-conversion]
+  WB_SpiTransfer(data_pointer);
+                 ^~~~~~~~~~~~
+../src/spi_mine.c:57:6: note: expected 'u8 {aka unsigned char}' but argument is of type 'u8 * {aka unsigned char *}'
+ void WB_SpiTransfer(u8 data)
+      ^~~~~~~~~~~~~~
+../src/spi_mine.c:79:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:125:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:192:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:192:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:192:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:191:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:191:6: warning: unused variable 'diff' [-Wunused-variable]
+  int diff, prDiff;
+      ^~~~
+../src/spi_mine.c:189:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=1000000;
+      ^~~~~~~~~~
+../src/spi_mine.c:187:6: warning: unused variable 'freqDAC_t' [-Wunused-variable]
+  u32 freqDAC_t[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:186:6: warning: unused variable 'freqPLL_t' [-Wunused-variable]
+  u32 freqPLL_t[16]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:184:15: warning: unused variable 'prFreqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+               ^~~~~~~~~
+../src/spi_mine.c:184:6: warning: unused variable 'freqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+      ^~~~~~~
+../src/spi_mine.c:183:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+../src/spi_mine.c:183:6: warning: unused variable 'freqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+      ^~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30292	   1180	2054288	2085760	 1fd380	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+12:02:04 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'spi_send_data':
+../src/spi_mine.c:83:17: warning: passing argument 1 of 'WB_SpiTransfer' makes integer from pointer without a cast [-Wint-conversion]
+  WB_SpiTransfer(data_pointer);
+                 ^~~~~~~~~~~~
+../src/spi_mine.c:57:6: note: expected 'u8 {aka unsigned char}' but argument is of type 'u8 * {aka unsigned char *}'
+ void WB_SpiTransfer(u8 data)
+      ^~~~~~~~~~~~~~
+../src/spi_mine.c:79:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:125:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:192:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:192:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:192:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:191:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:191:6: warning: unused variable 'diff' [-Wunused-variable]
+  int diff, prDiff;
+      ^~~~
+../src/spi_mine.c:189:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=1000000;
+      ^~~~~~~~~~
+../src/spi_mine.c:187:6: warning: unused variable 'freqDAC_t' [-Wunused-variable]
+  u32 freqDAC_t[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:186:6: warning: unused variable 'freqPLL_t' [-Wunused-variable]
+  u32 freqPLL_t[16]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:184:15: warning: unused variable 'prFreqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+               ^~~~~~~~~
+../src/spi_mine.c:184:6: warning: unused variable 'freqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+      ^~~~~~~
+../src/spi_mine.c:183:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+../src/spi_mine.c:183:6: warning: unused variable 'freqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+      ^~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30292	   1180	2054288	2085760	 1fd380	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+12:03:29 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'spi_send_data':
+../src/spi_mine.c:80:17: warning: passing argument 1 of 'WB_SpiTransfer' makes integer from pointer without a cast [-Wint-conversion]
+  WB_SpiTransfer(data_pointer);
+                 ^~~~~~~~~~~~
+../src/spi_mine.c:57:6: note: expected 'u8 {aka unsigned char}' but argument is of type 'u8 * {aka unsigned char *}'
+ void WB_SpiTransfer(u8 data)
+      ^~~~~~~~~~~~~~
+../src/spi_mine.c:76:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:122:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:189:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:189:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:189:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:188:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:188:6: warning: unused variable 'diff' [-Wunused-variable]
+  int diff, prDiff;
+      ^~~~
+../src/spi_mine.c:186:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=1000000;
+      ^~~~~~~~~~
+../src/spi_mine.c:184:6: warning: unused variable 'freqDAC_t' [-Wunused-variable]
+  u32 freqDAC_t[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:183:6: warning: unused variable 'freqPLL_t' [-Wunused-variable]
+  u32 freqPLL_t[16]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:181:15: warning: unused variable 'prFreqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+               ^~~~~~~~~
+../src/spi_mine.c:181:6: warning: unused variable 'freqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+      ^~~~~~~
+../src/spi_mine.c:180:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+../src/spi_mine.c:180:6: warning: unused variable 'freqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+      ^~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30228	   1180	2054288	2085696	 1fd340	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+12:04:58 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'spi_send_data':
+../src/spi_mine.c:80:17: warning: passing argument 1 of 'WB_SpiTransfer' makes integer from pointer without a cast [-Wint-conversion]
+  WB_SpiTransfer(data_pointer);
+                 ^~~~~~~~~~~~
+../src/spi_mine.c:57:6: note: expected 'u8 {aka unsigned char}' but argument is of type 'u8 * {aka unsigned char *}'
+ void WB_SpiTransfer(u8 data)
+      ^~~~~~~~~~~~~~
+../src/spi_mine.c:76:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:122:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:189:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:189:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:189:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:188:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:188:6: warning: unused variable 'diff' [-Wunused-variable]
+  int diff, prDiff;
+      ^~~~
+../src/spi_mine.c:186:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=1000000;
+      ^~~~~~~~~~
+../src/spi_mine.c:184:6: warning: unused variable 'freqDAC_t' [-Wunused-variable]
+  u32 freqDAC_t[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:183:6: warning: unused variable 'freqPLL_t' [-Wunused-variable]
+  u32 freqPLL_t[16]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:181:15: warning: unused variable 'prFreqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+               ^~~~~~~~~
+../src/spi_mine.c:181:6: warning: unused variable 'freqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+      ^~~~~~~
+../src/spi_mine.c:180:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+../src/spi_mine.c:180:6: warning: unused variable 'freqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+      ^~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30228	   1180	2054288	2085696	 1fd340	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+12:41:17 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'spi_send_data':
+../src/spi_mine.c:80:17: warning: passing argument 1 of 'WB_SpiTransfer' makes integer from pointer without a cast [-Wint-conversion]
+  WB_SpiTransfer(data_pointer);
+                 ^~~~~~~~~~~~
+../src/spi_mine.c:57:6: note: expected 'u8 {aka unsigned char}' but argument is of type 'u8 * {aka unsigned char *}'
+ void WB_SpiTransfer(u8 data)
+      ^~~~~~~~~~~~~~
+../src/spi_mine.c:76:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:122:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:189:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:189:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:189:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:188:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:188:6: warning: unused variable 'diff' [-Wunused-variable]
+  int diff, prDiff;
+      ^~~~
+../src/spi_mine.c:186:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=1000000;
+      ^~~~~~~~~~
+../src/spi_mine.c:184:6: warning: unused variable 'freqDAC_t' [-Wunused-variable]
+  u32 freqDAC_t[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:183:6: warning: unused variable 'freqPLL_t' [-Wunused-variable]
+  u32 freqPLL_t[16]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:181:15: warning: unused variable 'prFreqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+               ^~~~~~~~~
+../src/spi_mine.c:181:6: warning: unused variable 'freqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+      ^~~~~~~
+../src/spi_mine.c:180:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+../src/spi_mine.c:180:6: warning: unused variable 'freqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+      ^~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30228	   1180	2054288	2085696	 1fd340	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+12:42:54 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+12:46:24 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+12:58:36 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:01:39 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:03:51 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'spi_send_data':
+../src/spi_mine.c:76:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_mine.c:75:5: warning: unused variable 'data_pointer' [-Wunused-variable]
+  u8 data_pointer[1] = {data};
+     ^~~~~~~~~~~~
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:122:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:189:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:189:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:189:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:188:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:188:6: warning: unused variable 'diff' [-Wunused-variable]
+  int diff, prDiff;
+      ^~~~
+../src/spi_mine.c:186:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=1000000;
+      ^~~~~~~~~~
+../src/spi_mine.c:184:6: warning: unused variable 'freqDAC_t' [-Wunused-variable]
+  u32 freqDAC_t[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:183:6: warning: unused variable 'freqPLL_t' [-Wunused-variable]
+  u32 freqPLL_t[16]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:181:15: warning: unused variable 'prFreqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+               ^~~~~~~~~
+../src/spi_mine.c:181:6: warning: unused variable 'freqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+      ^~~~~~~
+../src/spi_mine.c:180:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+../src/spi_mine.c:180:6: warning: unused variable 'freqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+      ^~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30228	   1180	2054288	2085696	 1fd340	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:03:52 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:04:24 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:05:42 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'spi_send_data':
+../src/spi_mine.c:75:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_mine.c:74:5: warning: unused variable 'data_pointer' [-Wunused-variable]
+  u8 data_pointer[1] = {data};
+     ^~~~~~~~~~~~
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:121:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:188:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:188:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:188:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:187:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:187:6: warning: unused variable 'diff' [-Wunused-variable]
+  int diff, prDiff;
+      ^~~~
+../src/spi_mine.c:185:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=1000000;
+      ^~~~~~~~~~
+../src/spi_mine.c:183:6: warning: unused variable 'freqDAC_t' [-Wunused-variable]
+  u32 freqDAC_t[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:182:6: warning: unused variable 'freqPLL_t' [-Wunused-variable]
+  u32 freqPLL_t[16]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+      ^~~~~~~~~
+../src/spi_mine.c:180:15: warning: unused variable 'prFreqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+               ^~~~~~~~~
+../src/spi_mine.c:180:6: warning: unused variable 'freqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+      ^~~~~~~
+../src/spi_mine.c:179:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+../src/spi_mine.c:179:6: warning: unused variable 'freqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+      ^~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30228	   1180	2054288	2085696	 1fd340	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+13:05:43 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:05:51 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.

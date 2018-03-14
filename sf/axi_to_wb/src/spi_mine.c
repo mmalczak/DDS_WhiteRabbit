@@ -22,7 +22,27 @@
 #define SPI_CS_AD9510_ADDR 0x43C00024
 #define SPI_DATA_ADDR 0x43C00028
 
+void setSpiStart(u32 value)
+{
+	Xil_Out32(SPI_START_ADDR, value);
+}
 
+void setSpiCPol(u32 value)
+{
+	Xil_Out32(SPI_CPOL_ADDR, value);
+}
+void setCSAD9516(u32 value)
+{
+	Xil_Out32(SPI_CS_AD9516_ADDR, value);
+}
+void setCSAD9510(u32 value)
+{
+	Xil_Out32(SPI_CS_AD9510_ADDR, value);
+}
+void setSpiData(u32 value)
+{
+	Xil_Out32(SPI_DATA_ADDR, value);
+}
 
 int SpiSelfTestExample(u16 DeviceId);
 
@@ -34,6 +54,19 @@ int select_AD9516(void);
 int select_AD9510(void);
 void configure_AD9510(void);
 
+void WB_SpiTransfer(u8 data)
+{
+	setSpiCPol(1);
+	setSpiData((u32)data);
+	setCSAD9516(0);
+	setSpiStart(1);
+	for(int i=0; i<64;i++);
+	setSpiStart(0);
+	for(int i=0; i<1024;i++);
+	setCSAD9516(1);
+	for(int i=0; i<128;i++);
+
+}
 
 int spi_send_data(u16 address, u8 data)
 {
@@ -41,17 +74,9 @@ int spi_send_data(u16 address, u8 data)
 	u8 data_pointer[1] = {data};
 	u8 data_read[3];
 	int Status=XST_SUCCESS;
-	Status=XSpi_Transfer(&Spi, address_pointer, data_read, 2);
-		if (Status != XST_SUCCESS) {
-			xil_printf("failure2\n\r");
-			return XST_FAILURE;
-	}
-	Status=XSpi_Transfer(&Spi, data_pointer, (data_read+2), 1);
-	if (Status != XST_SUCCESS) {
-		xil_printf("failure2\n\r");
-		return XST_FAILURE;
-	}
-	if(Status!=XST_SUCCESS) xil_printf("Sending failure\n\r");
+	WB_SpiTransfer(address_pointer[0]);
+	WB_SpiTransfer(address_pointer[1]);
+	WB_SpiTransfer(data);
 	return Status;
 }
 int spi_read_data(u16 address, u8 data)
@@ -149,8 +174,8 @@ void measureDACPLLFreq(u32* freqDAC, u32* freqPLL)
 int main(void)
 {
 
-	int Status=spi_init();
-	if(Status!=XST_SUCCESS) xil_printf("Initiatlization failure \n\r");
+	//int Status=spi_init();
+	//if(Status!=XST_SUCCESS) xil_printf("Initiatlization failure \n\r");
 	u32 freqPLL, prFreqPLL;
 	u32 freqDAC, prFreqDAC;
 
@@ -161,14 +186,14 @@ int main(void)
 
 	int diff, prDiff;
 	int P=0, I=0, D=0;
-
-	select_AD9516();
+	setCSAD9516(1);
+	//select_AD9516();
 	configure_AD9516();
-	ppl1_syncb_on(1);
-	select_AD9510();
-	configure_AD9510();
-	setDDSFrequency(freqDACSet);
-	setFreqCounterMaskReg((u32)0x006000000);
+	//ppl1_syncb_on(1);
+	//select_AD9510();
+	//configure_AD9510();
+	//setDDSFrequency(freqDACSet);
+	//setFreqCounterMaskReg((u32)0x006000000);
 
 
 	/*diff = freqDAC-freqPLL;
@@ -179,7 +204,7 @@ int main(void)
 	 */
 	for(int i=0; i<200000000; i++);
 
-	measureDACPLLFreq(&freqDAC, &freqPLL);
+	//measureDACPLLFreq(&freqDAC, &freqPLL);
 	/*diff = freqDAC-freqPLL;
 			if(diff>64 || diff<-64)
 			{
@@ -192,7 +217,7 @@ int main(void)
 				freqDACSet = freqDACSet - diff;
 			}*/
 
-	u32 a=0;
+	/*u32 a=0;
 	while(1)
 	{
 
@@ -225,7 +250,7 @@ int main(void)
 	xil_printf("pll freq = %d \n\r", freqPLL);
 	xil_printf("dac freq = %d \n\r", freqDAC);
 	xil_printf("diff freq = %d \n\r", diff);
-
+*/
 
 
 	xil_printf("Sukces\n\r");

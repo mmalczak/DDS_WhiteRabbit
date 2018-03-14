@@ -8,11 +8,6 @@ set_property PACKAGE_PIN AK25 [get_ports przycisk]
 set_property PACKAGE_PIN G2 [get_ports led]
 
 
-set_property PACKAGE_PIN AJ30 [get_ports {spi_0_ss_io[1]}]
-set_property PACKAGE_PIN AB27 [get_ports {spi_0_ss_io[0]}]
-set_property PACKAGE_PIN AK28 [get_ports spi_0_io0_io]
-set_property PACKAGE_PIN AH28 [get_ports spi_0_io1_io]
-set_property PACKAGE_PIN AK27 [get_ports spi_0_sck_io]
 set_property IOSTANDARD LVCMOS25 [get_ports spi_0_io0_io]
 set_property IOSTANDARD LVCMOS25 [get_ports {spi_0_ss_io[0]}]
 #AD9510
@@ -156,8 +151,19 @@ set_property PACKAGE_PIN AF18 [get_ports {save[7]}]
 set_property PACKAGE_PIN AJ28 [get_ports {save[5]}]
 set_property PACKAGE_PIN AJ29 [get_ports {save[4]}]
 
-set_property PACKAGE_PIN AF17 [get_ports PLL1_SYNCB]
-set_property IOSTANDARD LVCMOS25 [get_ports PLL1_SYNCB]
+set_property PACKAGE_PIN AF17 [get_ports {PLL1_SYNCB[0]}]
+set_property IOSTANDARD LVCMOS25 [get_ports {PLL1_SYNCB[0]}]
 
 set_property PACKAGE_PIN AH26 [get_ports STATUS_PIN]
 set_property IOSTANDARD LVCMOS25 [get_ports STATUS_PIN]
+
+set_property PACKAGE_PIN AK28 [get_ports spi_mosi_o]
+set_property PACKAGE_PIN AH28 [get_ports spi_miso_i_1]
+set_property PACKAGE_PIN AK27 [get_ports spi_sclk_o]
+set_property PACKAGE_PIN AB27 [get_ports wbt_spi_cs_ad9510_o]
+set_property PACKAGE_PIN AJ30 [get_ports wbt_spi_cs_ad9516_o]
+set_property IOSTANDARD LVCMOS25 [get_ports spi_miso_i_1]
+set_property IOSTANDARD LVCMOS25 [get_ports spi_mosi_o]
+set_property IOSTANDARD LVCMOS25 [get_ports spi_sclk_o]
+set_property IOSTANDARD LVCMOS25 [get_ports wbt_spi_cs_ad9510_o]
+set_property IOSTANDARD LVCMOS25 [get_ports wbt_spi_cs_ad9516_o]

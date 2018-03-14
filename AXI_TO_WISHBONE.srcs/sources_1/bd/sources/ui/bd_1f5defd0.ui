@@ -2,11 +2,15 @@
    guistr: "# # String gsaved with Nlview 6.6.8  2016-12-21 bk=1.3817 VDI=40 GEI=35 GUI=JA:1.6
 #  -string -flagsOSRD
 preplace port DDR -pg 1 -y 470 -defaultsOSRD
-preplace port spi_miso_i -pg 1 -y 1030 -defaultsOSRD
+preplace port wbt_spi_cs_ad9516_o -pg 1 -y 230 -defaultsOSRD
+preplace port spi_sclk_o -pg 1 -y 1000 -defaultsOSRD
+preplace port spi_miso_i_1 -pg 1 -y 1020 -defaultsOSRD
+preplace port spi_mosi_o -pg 1 -y 1020 -defaultsOSRD
 preplace port led -pg 1 -y 660 -defaultsOSRD
 preplace port przycisk -pg 1 -y 700 -defaultsOSRD
 preplace port FIXED_IO -pg 1 -y 490 -defaultsOSRD
 preplace port SPI_0 -pg 1 -y 590 -defaultsOSRD
+preplace port wbt_spi_cs_ad9510_o -pg 1 -y 250 -defaultsOSRD
 preplace portBus CLK2_OUT_P -pg 1 -y 1100 -defaultsOSRD
 preplace portBus CLK0_OUT_N -pg 1 -y 930 -defaultsOSRD
 preplace portBus CLK1_OUT_N -pg 1 -y 810 -defaultsOSRD
@@ -24,6 +28,7 @@ preplace inst CLK1_OUT -pg 1 -lvl 1 -y 780 -defaultsOSRD
 preplace inst do_nothing_0 -pg 1 -lvl 2 -y 1430 -defaultsOSRD
 preplace inst xlconstant_0 -pg 1 -lvl 2 -y 300 -defaultsOSRD
 preplace inst CLK2_out -pg 1 -lvl 1 -y 1100 -defaultsOSRD
+preplace inst spi_master_0 -pg 1 -lvl 6 -y 970 -defaultsOSRD
 preplace inst axil2wb_0 -pg 1 -lvl 4 -y 50 -defaultsOSRD
 preplace inst rst_processing_system7_0_50M -pg 1 -lvl 1 -y 180 -defaultsOSRD
 preplace inst blk_mem_gen_1 -pg 1 -lvl 5 -y 790 -defaultsOSRD
@@ -38,50 +43,58 @@ preplace inst processing_system7_0_axi_periph -pg 1 -lvl 2 -y 130 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 1 -y 550 -defaultsOSRD
 preplace netloc axi_quad_spi_0_SPI_0 1 2 5 NJ 590 NJ 590 NJ 590 NJ 590 NJ
 preplace netloc processing_system7_0_DDR 1 1 6 NJ 470 NJ 470 NJ 470 NJ 470 NJ 470 NJ
+preplace netloc spi_miso_i_1_1 1 0 6 NJ 1020 NJ 1020 NJ 1020 NJ 1020 NJ 1020 NJ
+preplace netloc spi_master_0_spi_mosi_o 1 6 1 N
 preplace netloc freq_high_measure_0_counts_dac 1 3 3 1130 250 NJ 250 NJ
-preplace netloc przycisk_1 1 0 7 NJ 700 NJ 700 690J 660 NJ 660 NJ 660 NJ 660 NJ
+preplace netloc przycisk_1 1 0 7 NJ 700 NJ 700 660J 660 NJ 660 NJ 660 NJ 660 NJ
 preplace netloc DAC_DAT_OBUF_DS_P 1 6 1 N
+preplace netloc wb_test_slave_0_wbt_spi_cpol_o 1 5 2 1920 350 2700
 preplace netloc blk_mem_gen_1_douta 1 4 2 1590 870 1890J
 preplace netloc processing_system7_0_axi_periph_M00_AXI 1 2 2 660 0 NJ
-preplace netloc wb_test_slave_0_wbt_dds_o 1 3 4 1140 310 NJ 310 NJ 310 2690
-preplace netloc wb_test_slave_0_wbt_pll1_syncb_o 1 6 1 2690
+preplace netloc wb_test_slave_0_wbt_dds_o 1 3 4 1140 620 NJ 620 NJ 620 2730
+preplace netloc wb_test_slave_0_wbt_pll1_syncb_o 1 6 1 2740
 preplace netloc axil2wb_0_wb_we_o 1 4 2 NJ 60 1870J
-preplace netloc wb_test_slave_0_wb_dat_o 1 3 4 1140J -70 NJ -70 NJ -70 2680
+preplace netloc wb_test_slave_0_wb_dat_o 1 3 4 1140J -70 NJ -70 NJ -70 2750
 preplace netloc axil2wb_0_wb_rst_o 1 4 2 NJ 0 1910J
-preplace netloc rst_processing_system7_0_50M_interconnect_aresetn 1 1 1 300
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 290
-preplace netloc wb_test_slave_0_wbt_cnt_mask_o 1 2 5 700 300 NJ 300 NJ 300 NJ 300 2680
-preplace netloc IBUF_DS_P_1_1 1 0 1 -150
-preplace netloc IBUF_DS_N_2_1 1 0 1 -150J
+preplace netloc rst_processing_system7_0_50M_interconnect_aresetn 1 1 1 290
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 270
+preplace netloc wb_test_slave_0_wbt_cnt_mask_o 1 2 5 690 610 NJ 610 NJ 610 NJ 610 2720
+preplace netloc IBUF_DS_P_1_1 1 0 1 -160
+preplace netloc IBUF_DS_N_2_1 1 0 1 -160J
 preplace netloc IBUF_DS_P_1_2 1 0 1 NJ
 preplace netloc axil2wb_0_wb_stb_o 1 4 2 NJ 100 1850J
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 -150 280 270
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 6 -150 680 270 680 NJ 680 NJ 680 NJ 680 1870
+preplace netloc wb_test_slave_0_wbt_spi_cs_ad9510_o 1 6 1 N
+preplace netloc wb_test_slave_0_wbt_spi_start_o 1 5 2 1910 330 2690
 preplace netloc CLK2_out_IBUF_OUT 1 1 2 NJ 1100 660
-preplace netloc rst_processing_system7_0_50M_peripheral_aresetn 1 1 3 310 -10 NJ -10 1110J
+preplace netloc rst_processing_system7_0_50M_peripheral_aresetn 1 1 3 300 -10 NJ -10 1130J
 preplace netloc freq_high_measure_0_counts_pll 1 3 3 1120 230 NJ 230 NJ
 preplace netloc save_1 1 0 2 NJ 1430 280
-preplace netloc util_ds_buf_0_IBUF_OUT 1 1 1 310
+preplace netloc util_ds_buf_0_IBUF_OUT 1 1 1 300
 preplace netloc axil2wb_0_wb_dat_o 1 4 2 NJ 40 1890J
+preplace netloc spi_master_0_spi_sclk_o 1 6 1 N
 preplace netloc IBUF_DS_N_1 1 0 1 -160
-preplace netloc xlconstant_0_dout 1 2 2 670J 80 NJ
+preplace netloc xlconstant_0_dout 1 2 2 690J 80 NJ
 preplace netloc axil2wb_0_wb_addr_o 1 4 2 NJ 20 1900J
 preplace netloc axil2wb_0_wb_clk_o 1 4 2 NJ -20 1920J
 preplace netloc processing_system7_0_FIXED_IO 1 1 6 NJ 490 NJ 490 NJ 490 NJ 490 NJ 490 NJ
+preplace netloc wb_test_slave_0_wbt_spi_cs_ad9516_o 1 6 1 N
 preplace netloc counter_DAC_0_dac_sierra 1 4 1 1580J
 preplace netloc IBUF_DS_P_1 1 0 1 -150
 preplace netloc axil2wb_0_wb_sel_o 1 4 2 NJ 80 1880J
 preplace netloc axil2wb_0_wb_cyc_o 1 4 2 NJ 120 1860J
+preplace netloc wb_test_slave_0_wbt_spi_data_o 1 5 2 1900 340 2680
 preplace netloc CLK0_OUT_IBUF_OUT 1 1 2 NJ 910 670
 preplace netloc CLK1_OUT_IBUF_OUT 1 1 4 NJ 780 NJ 780 1110J 800 NJ
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 4 -160 270 280 -30 680J 20 NJ
-preplace netloc wb_test_slave_0_wbt_led_o 1 6 1 2680
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 -160 90 280 710 680J 710 1110J 710 NJ 710 1850
+preplace netloc wb_test_slave_0_wbt_led_o 1 6 1 2750
 preplace netloc DAC_DAT_OBUF_DS_N 1 6 1 N
-preplace netloc IBUF_DS_N_1_1 1 0 1 -160
-preplace netloc processing_system7_0_axi_periph_M01_AXI 1 1 2 320 350 660
+preplace netloc IBUF_DS_N_1_1 1 0 1 -150
+preplace netloc processing_system7_0_axi_periph_M01_AXI 1 1 2 310 350 660
 preplace netloc IBUF_DS_P_2_1 1 0 1 NJ
 preplace netloc IBUF_DS_N_1_2 1 0 1 NJ
-preplace netloc wb_test_slave_0_wb_ack_o 1 3 4 1120J -80 NJ -80 NJ -80 2690
-levelinfo -pg 1 -180 60 490 910 1390 1740 2460 2710 -top -410 -bot 1700
+preplace netloc wb_test_slave_0_wb_ack_o 1 3 4 1140J 320 NJ 320 NJ 320 2710
+levelinfo -pg 1 -180 60 490 910 1390 1740 2460 2770 -top -490 -bot 1700
 ",
 }
 {

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Mar 13 17:16:40 2018" VIVADOVERSION="2017.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Mar 13 17:50:58 2018" VIVADOVERSION="2017.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="xilinx.com:zc706:part0:1.4" DEVICE="7z045" NAME="design_1" PACKAGE="ffg900" SPEEDGRADE="-2"/>
 
@@ -112,7 +112,31 @@
         <CONNECTION INSTANCE="External_Ports" PORT="przycisk"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="spi_miso_i" SIGIS="undef"/>
+    <PORT DIR="O" NAME="spi_sclk_o" SIGIS="undef" SIGNAME="spi_master_0_spi_sclk_o">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="spi_master_0" PORT="spi_sclk_o"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="spi_mosi_o" SIGIS="undef" SIGNAME="spi_master_0_spi_mosi_o">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="spi_master_0" PORT="spi_mosi_o"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="spi_miso_i_1" SIGIS="undef" SIGNAME="External_Ports_spi_miso_i_1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="spi_master_0" PORT="spi_miso_i"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="wbt_spi_cs_ad9516_o" SIGIS="undef" SIGNAME="wb_test_slave_0_wbt_spi_cs_ad9516_o">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="wb_test_slave_0" PORT="wbt_spi_cs_ad9516_o"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="wbt_spi_cs_ad9510_o" SIGIS="undef" SIGNAME="wb_test_slave_0_wbt_spi_cs_ad9510_o">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="wb_test_slave_0" PORT="wbt_spi_cs_ad9510_o"/>
+      </CONNECTIONS>
+    </PORT>
   </EXTERNALPORTS>
 
   <EXTERNALINTERFACES>
@@ -2189,11 +2213,13 @@
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M00_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_ACLK"/>
+            <CONNECTION INSTANCE="spi_master_0" PORT="clk_sys_i"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
           <CONNECTIONS>
             <CONNECTION INSTANCE="rst_processing_system7_0_50M" PORT="ext_reset_in"/>
+            <CONNECTION INSTANCE="spi_master_0" PORT="rst_n_i"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" LEFT="53" NAME="MIO" RIGHT="0" SIGIS="undef"/>
@@ -3216,6 +3242,62 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
+    <MODULE FULLNAME="/spi_master_0" HWVERSION="1.0" INSTANCE="spi_master_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="spi_master" VLNV="user.org:module_ref:spi_master:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="g_div_ratio_log2" VALUE="4"/>
+        <PARAMETER NAME="g_num_data_bits" VALUE="8"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_spi_master_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="clk_sys_i" SIGIS="undef" SIGNAME="processing_system7_0_FCLK_CLK0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst_n_i" SIGIS="undef" SIGNAME="processing_system7_0_FCLK_RESET0_N">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_RESET0_N"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="start_i" SIGIS="undef" SIGNAME="wb_test_slave_0_wbt_spi_start_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="wb_test_slave_0" PORT="wbt_spi_start_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="cpol_i" SIGIS="undef" SIGNAME="wb_test_slave_0_wbt_spi_cpol_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="wb_test_slave_0" PORT="wbt_spi_cpol_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="data_i" RIGHT="0" SIGIS="undef" SIGNAME="wb_test_slave_0_wbt_spi_data_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="wb_test_slave_0" PORT="wbt_spi_data_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="drdy_o" SIGIS="undef"/>
+        <PORT DIR="O" NAME="ready_o" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="7" NAME="data_o" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" NAME="spi_cs_n_o" SIGIS="undef"/>
+        <PORT DIR="O" NAME="spi_sclk_o" SIGIS="undef" SIGNAME="spi_master_0_spi_sclk_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="spi_sclk_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="spi_mosi_o" SIGIS="undef" SIGNAME="spi_master_0_spi_mosi_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="spi_mosi_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="spi_miso_i" SIGIS="undef" SIGNAME="External_Ports_spi_miso_i_1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="spi_miso_i_1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
     <MODULE FULLNAME="/util_ds_buf_0" HWVERSION="2.1" INSTANCE="util_ds_buf_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_ds_buf" VLNV="xilinx.com:ip:util_ds_buf:2.1">
       <DOCUMENTS/>
       <PARAMETERS>
@@ -3271,7 +3353,7 @@
             <CONNECTION INSTANCE="axil2wb_0" PORT="wb_clk_o"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="2" NAME="wb_adr_i" RIGHT="0" SIGIS="undef" SIGNAME="axil2wb_0_wb_addr_o">
+        <PORT DIR="I" LEFT="3" NAME="wb_adr_i" RIGHT="0" SIGIS="undef" SIGNAME="axil2wb_0_wb_addr_o">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axil2wb_0" PORT="wb_addr_o"/>
           </CONNECTIONS>
@@ -3340,6 +3422,31 @@
         <PORT DIR="O" LEFT="31" NAME="wbt_cnt_mask_o" RIGHT="0" SIGIS="undef" SIGNAME="wb_test_slave_0_wbt_cnt_mask_o">
           <CONNECTIONS>
             <CONNECTION INSTANCE="freq_high_measure_0" PORT="counter_mask"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="wbt_spi_start_o" SIGIS="undef" SIGNAME="wb_test_slave_0_wbt_spi_start_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="spi_master_0" PORT="start_i"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="wbt_spi_cpol_o" SIGIS="undef" SIGNAME="wb_test_slave_0_wbt_spi_cpol_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="spi_master_0" PORT="cpol_i"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="wbt_spi_cs_ad9516_o" SIGIS="undef" SIGNAME="wb_test_slave_0_wbt_spi_cs_ad9516_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="wbt_spi_cs_ad9516_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="wbt_spi_cs_ad9510_o" SIGIS="undef" SIGNAME="wb_test_slave_0_wbt_spi_cs_ad9510_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="wbt_spi_cs_ad9510_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="wbt_spi_data_o" RIGHT="0" SIGIS="undef" SIGNAME="wb_test_slave_0_wbt_spi_data_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="spi_master_0" PORT="data_i"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# axil2wb, counter_DAC, do_nothing, freq_high_measure, wb_test_slave
+# axil2wb, counter_DAC, do_nothing, freq_high_measure, spi_master, wb_test_slave
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -180,8 +180,12 @@ proc create_root_design { parentCell } {
   set led [ create_bd_port -dir O led ]
   set przycisk [ create_bd_port -dir I przycisk ]
   set save [ create_bd_port -dir I -from 39 -to 0 save ]
-  set spi_miso_i [ create_bd_port -dir I spi_miso_i ]
+  set spi_miso_i_1 [ create_bd_port -dir I spi_miso_i_1 ]
+  set spi_mosi_o [ create_bd_port -dir O spi_mosi_o ]
+  set spi_sclk_o [ create_bd_port -dir O spi_sclk_o ]
   set wbt_led_o [ create_bd_port -dir O -from 1 -to 0 wbt_led_o ]
+  set wbt_spi_cs_ad9510_o [ create_bd_port -dir O wbt_spi_cs_ad9510_o ]
+  set wbt_spi_cs_ad9516_o [ create_bd_port -dir O wbt_spi_cs_ad9516_o ]
 
   # Create instance: CLK0_OUT, and set properties
   set CLK0_OUT [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_ds_buf:2.1 CLK0_OUT ]
@@ -797,6 +801,17 @@ CONFIG.NUM_MI {2} \
   # Create instance: rst_processing_system7_0_50M, and set properties
   set rst_processing_system7_0_50M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_processing_system7_0_50M ]
 
+  # Create instance: spi_master_0, and set properties
+  set block_name spi_master
+  set block_cell_name spi_master_0
+  if { [catch {set spi_master_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $spi_master_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: util_ds_buf_0, and set properties
   set util_ds_buf_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_ds_buf:2.1 util_ds_buf_0 ]
   set_property -dict [ list \
@@ -854,12 +869,15 @@ CONFIG.CONST_VAL {0} \
   connect_bd_net -net counter_DAC_0_dac_sierra [get_bd_pins blk_mem_gen_1/addra] [get_bd_pins counter_DAC_0/dac_sierra]
   connect_bd_net -net freq_high_measure_0_counts_dac [get_bd_pins freq_high_measure_0/counts_dac] [get_bd_pins wb_test_slave_0/wbt_dds_freq_i]
   connect_bd_net -net freq_high_measure_0_counts_pll [get_bd_pins freq_high_measure_0/counts_pll] [get_bd_pins wb_test_slave_0/wbt_pll_freq_i]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_quad_spi_0/ext_spi_clk] [get_bd_pins axi_quad_spi_0/s_axi_aclk] [get_bd_pins axil2wb_0/S_AXI_ACLK] [get_bd_pins freq_high_measure_0/clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0_axi_periph/ACLK] [get_bd_pins processing_system7_0_axi_periph/M00_ACLK] [get_bd_pins processing_system7_0_axi_periph/M01_ACLK] [get_bd_pins processing_system7_0_axi_periph/S00_ACLK] [get_bd_pins rst_processing_system7_0_50M/slowest_sync_clk]
-  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_processing_system7_0_50M/ext_reset_in]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_quad_spi_0/ext_spi_clk] [get_bd_pins axi_quad_spi_0/s_axi_aclk] [get_bd_pins axil2wb_0/S_AXI_ACLK] [get_bd_pins freq_high_measure_0/clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0_axi_periph/ACLK] [get_bd_pins processing_system7_0_axi_periph/M00_ACLK] [get_bd_pins processing_system7_0_axi_periph/M01_ACLK] [get_bd_pins processing_system7_0_axi_periph/S00_ACLK] [get_bd_pins rst_processing_system7_0_50M/slowest_sync_clk] [get_bd_pins spi_master_0/clk_sys_i]
+  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_processing_system7_0_50M/ext_reset_in] [get_bd_pins spi_master_0/rst_n_i]
   connect_bd_net -net przycisk_1 [get_bd_ports led] [get_bd_ports przycisk]
   connect_bd_net -net rst_processing_system7_0_50M_interconnect_aresetn [get_bd_pins processing_system7_0_axi_periph/ARESETN] [get_bd_pins rst_processing_system7_0_50M/interconnect_aresetn]
   connect_bd_net -net rst_processing_system7_0_50M_peripheral_aresetn [get_bd_pins axi_quad_spi_0/s_axi_aresetn] [get_bd_pins axil2wb_0/S_AXI_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M00_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M01_ARESETN] [get_bd_pins processing_system7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_processing_system7_0_50M/peripheral_aresetn]
   connect_bd_net -net save_1 [get_bd_ports save] [get_bd_pins do_nothing_0/s_mo]
+  connect_bd_net -net spi_master_0_spi_mosi_o [get_bd_ports spi_mosi_o] [get_bd_pins spi_master_0/spi_mosi_o]
+  connect_bd_net -net spi_master_0_spi_sclk_o [get_bd_ports spi_sclk_o] [get_bd_pins spi_master_0/spi_sclk_o]
+  connect_bd_net -net spi_miso_i_1_1 [get_bd_ports spi_miso_i_1] [get_bd_pins spi_master_0/spi_miso_i]
   connect_bd_net -net util_ds_buf_0_IBUF_OUT [get_bd_pins do_nothing_0/s_lvds] [get_bd_pins util_ds_buf_0/IBUF_OUT]
   connect_bd_net -net wb_test_slave_0_wb_ack_o [get_bd_pins axil2wb_0/wb_ack_i] [get_bd_pins wb_test_slave_0/wb_ack_o]
   connect_bd_net -net wb_test_slave_0_wb_dat_o [get_bd_pins axil2wb_0/wb_dat_i] [get_bd_pins wb_test_slave_0/wb_dat_o]
@@ -867,6 +885,11 @@ CONFIG.CONST_VAL {0} \
   connect_bd_net -net wb_test_slave_0_wbt_dds_o [get_bd_pins counter_DAC_0/step] [get_bd_pins wb_test_slave_0/wbt_dds_o]
   connect_bd_net -net wb_test_slave_0_wbt_led_o [get_bd_ports wbt_led_o] [get_bd_pins wb_test_slave_0/wbt_led_o]
   connect_bd_net -net wb_test_slave_0_wbt_pll1_syncb_o [get_bd_ports PLL1_SYNCB] [get_bd_pins wb_test_slave_0/wbt_pll1_syncb_o]
+  connect_bd_net -net wb_test_slave_0_wbt_spi_cpol_o [get_bd_pins spi_master_0/cpol_i] [get_bd_pins wb_test_slave_0/wbt_spi_cpol_o]
+  connect_bd_net -net wb_test_slave_0_wbt_spi_cs_ad9510_o [get_bd_ports wbt_spi_cs_ad9510_o] [get_bd_pins wb_test_slave_0/wbt_spi_cs_ad9510_o]
+  connect_bd_net -net wb_test_slave_0_wbt_spi_cs_ad9516_o [get_bd_ports wbt_spi_cs_ad9516_o] [get_bd_pins wb_test_slave_0/wbt_spi_cs_ad9516_o]
+  connect_bd_net -net wb_test_slave_0_wbt_spi_data_o [get_bd_pins spi_master_0/data_i] [get_bd_pins wb_test_slave_0/wbt_spi_data_o]
+  connect_bd_net -net wb_test_slave_0_wbt_spi_start_o [get_bd_pins spi_master_0/start_i] [get_bd_pins wb_test_slave_0/wbt_spi_start_o]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins axil2wb_0/wb_err_i] [get_bd_pins xlconstant_0/dout]
 
   # Create address segments

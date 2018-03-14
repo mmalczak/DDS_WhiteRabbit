@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.1 (lin64) Build 1846317 Fri Apr 14 18:54:47 MDT 2017
---Date        : Tue Mar 13 17:16:40 2018
+--Date        : Tue Mar 13 17:50:58 2018
 --Host        : milosz-System-Product-Name running 64-bit Linux Mint 18.2 Sonya
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -1135,11 +1135,15 @@ entity design_1 is
     led : out STD_LOGIC;
     przycisk : in STD_LOGIC;
     save : in STD_LOGIC_VECTOR ( 39 downto 0 );
-    spi_miso_i : in STD_LOGIC;
-    wbt_led_o : out STD_LOGIC_VECTOR ( 1 downto 0 )
+    spi_miso_i_1 : in STD_LOGIC;
+    spi_mosi_o : out STD_LOGIC;
+    spi_sclk_o : out STD_LOGIC;
+    wbt_led_o : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    wbt_spi_cs_ad9510_o : out STD_LOGIC;
+    wbt_spi_cs_ad9516_o : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=21,numReposBlks=17,numNonXlnxBlks=5,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=5,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=1,da_clkrst_cnt=1,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=22,numReposBlks=18,numNonXlnxBlks=6,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=6,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=1,da_clkrst_cnt=1,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
@@ -1373,11 +1377,27 @@ architecture STRUCTURE of design_1 is
     counts_pll : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   end component design_1_freq_high_measure_0_0;
+  component design_1_spi_master_0_0 is
+  port (
+    clk_sys_i : in STD_LOGIC;
+    rst_n_i : in STD_LOGIC;
+    start_i : in STD_LOGIC;
+    cpol_i : in STD_LOGIC;
+    data_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    drdy_o : out STD_LOGIC;
+    ready_o : out STD_LOGIC;
+    data_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    spi_cs_n_o : out STD_LOGIC;
+    spi_sclk_o : out STD_LOGIC;
+    spi_mosi_o : out STD_LOGIC;
+    spi_miso_i : in STD_LOGIC
+  );
+  end component design_1_spi_master_0_0;
   component design_1_wb_test_slave_0_0 is
   port (
     rst_n_i : in STD_LOGIC;
     clk_sys_i : in STD_LOGIC;
-    wb_adr_i : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    wb_adr_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
     wb_dat_i : in STD_LOGIC_VECTOR ( 31 downto 0 );
     wb_dat_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
     wb_cyc_i : in STD_LOGIC;
@@ -1391,7 +1411,12 @@ architecture STRUCTURE of design_1 is
     wbt_dds_o : out STD_LOGIC_VECTOR ( 27 downto 0 );
     wbt_pll_freq_i : in STD_LOGIC_VECTOR ( 31 downto 0 );
     wbt_dds_freq_i : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    wbt_cnt_mask_o : out STD_LOGIC_VECTOR ( 31 downto 0 )
+    wbt_cnt_mask_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    wbt_spi_start_o : out STD_LOGIC;
+    wbt_spi_cpol_o : out STD_LOGIC;
+    wbt_spi_cs_ad9516_o : out STD_LOGIC;
+    wbt_spi_cs_ad9510_o : out STD_LOGIC;
+    wbt_spi_data_o : out STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   end component design_1_wb_test_slave_0_0;
   signal CLK0_OUT_IBUF_OUT : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -1530,6 +1555,9 @@ architecture STRUCTURE of design_1 is
   signal rst_processing_system7_0_50M_interconnect_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal rst_processing_system7_0_50M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal save_1 : STD_LOGIC_VECTOR ( 39 downto 0 );
+  signal spi_master_0_spi_mosi_o : STD_LOGIC;
+  signal spi_master_0_spi_sclk_o : STD_LOGIC;
+  signal spi_miso_i_1_1 : STD_LOGIC;
   signal util_ds_buf_0_IBUF_OUT : STD_LOGIC_VECTOR ( 17 downto 0 );
   signal wb_test_slave_0_wb_ack_o : STD_LOGIC;
   signal wb_test_slave_0_wb_dat_o : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -1537,6 +1565,11 @@ architecture STRUCTURE of design_1 is
   signal wb_test_slave_0_wbt_dds_o : STD_LOGIC_VECTOR ( 27 downto 0 );
   signal wb_test_slave_0_wbt_led_o : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal wb_test_slave_0_wbt_pll1_syncb_o : STD_LOGIC;
+  signal wb_test_slave_0_wbt_spi_cpol_o : STD_LOGIC;
+  signal wb_test_slave_0_wbt_spi_cs_ad9510_o : STD_LOGIC;
+  signal wb_test_slave_0_wbt_spi_cs_ad9516_o : STD_LOGIC;
+  signal wb_test_slave_0_wbt_spi_data_o : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal wb_test_slave_0_wbt_spi_start_o : STD_LOGIC;
   signal xlconstant_0_dout : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_axi_quad_spi_0_ip2intc_irpt_UNCONNECTED : STD_LOGIC;
   signal NLW_do_nothing_0_s_out_UNCONNECTED : STD_LOGIC_VECTOR ( 57 downto 0 );
@@ -1548,6 +1581,10 @@ architecture STRUCTURE of design_1 is
   signal NLW_rst_processing_system7_0_50M_mb_reset_UNCONNECTED : STD_LOGIC;
   signal NLW_rst_processing_system7_0_50M_bus_struct_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_rst_processing_system7_0_50M_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_spi_master_0_drdy_o_UNCONNECTED : STD_LOGIC;
+  signal NLW_spi_master_0_ready_o_UNCONNECTED : STD_LOGIC;
+  signal NLW_spi_master_0_spi_cs_n_o_UNCONNECTED : STD_LOGIC;
+  signal NLW_spi_master_0_data_o_UNCONNECTED : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal NLW_wb_test_slave_0_wb_stall_o_UNCONNECTED : STD_LOGIC;
 begin
   DAC_DAT_N(13 downto 0) <= DAC_DAT_OBUF_DS_N(13 downto 0);
@@ -1576,7 +1613,12 @@ begin
   led <= przycisk_1;
   przycisk_1 <= przycisk;
   save_1(39 downto 0) <= save(39 downto 0);
+  spi_miso_i_1_1 <= spi_miso_i_1;
+  spi_mosi_o <= spi_master_0_spi_mosi_o;
+  spi_sclk_o <= spi_master_0_spi_sclk_o;
   wbt_led_o(1 downto 0) <= wb_test_slave_0_wbt_led_o(1 downto 0);
+  wbt_spi_cs_ad9510_o <= wb_test_slave_0_wbt_spi_cs_ad9510_o;
+  wbt_spi_cs_ad9516_o <= wb_test_slave_0_wbt_spi_cs_ad9516_o;
 CLK0_OUT: component design_1_util_ds_buf_1_1
      port map (
       IBUF_DS_N(0) => IBUF_DS_N_1_2(0),
@@ -1864,6 +1906,21 @@ rst_processing_system7_0_50M: component design_1_rst_processing_system7_0_50M_0
       peripheral_reset(0) => NLW_rst_processing_system7_0_50M_peripheral_reset_UNCONNECTED(0),
       slowest_sync_clk => processing_system7_0_FCLK_CLK0
     );
+spi_master_0: component design_1_spi_master_0_0
+     port map (
+      clk_sys_i => processing_system7_0_FCLK_CLK0,
+      cpol_i => wb_test_slave_0_wbt_spi_cpol_o,
+      data_i(7 downto 0) => wb_test_slave_0_wbt_spi_data_o(7 downto 0),
+      data_o(7 downto 0) => NLW_spi_master_0_data_o_UNCONNECTED(7 downto 0),
+      drdy_o => NLW_spi_master_0_drdy_o_UNCONNECTED,
+      ready_o => NLW_spi_master_0_ready_o_UNCONNECTED,
+      rst_n_i => processing_system7_0_FCLK_RESET0_N,
+      spi_cs_n_o => NLW_spi_master_0_spi_cs_n_o_UNCONNECTED,
+      spi_miso_i => spi_miso_i_1_1,
+      spi_mosi_o => spi_master_0_spi_mosi_o,
+      spi_sclk_o => spi_master_0_spi_sclk_o,
+      start_i => wb_test_slave_0_wbt_spi_start_o
+    );
 util_ds_buf_0: component design_1_util_ds_buf_0_0
      port map (
       IBUF_DS_N(17 downto 0) => IBUF_DS_N_1(17 downto 0),
@@ -1875,7 +1932,7 @@ wb_test_slave_0: component design_1_wb_test_slave_0_0
       clk_sys_i => axil2wb_0_wb_clk_o,
       rst_n_i => axil2wb_0_wb_rst_o,
       wb_ack_o => wb_test_slave_0_wb_ack_o,
-      wb_adr_i(2 downto 0) => axil2wb_0_wb_addr_o(2 downto 0),
+      wb_adr_i(3 downto 0) => axil2wb_0_wb_addr_o(3 downto 0),
       wb_cyc_i => axil2wb_0_wb_cyc_o,
       wb_dat_i(31 downto 0) => axil2wb_0_wb_dat_o(31 downto 0),
       wb_dat_o(31 downto 0) => wb_test_slave_0_wb_dat_o(31 downto 0),
@@ -1888,7 +1945,12 @@ wb_test_slave_0: component design_1_wb_test_slave_0_0
       wbt_dds_o(27 downto 0) => wb_test_slave_0_wbt_dds_o(27 downto 0),
       wbt_led_o(1 downto 0) => wb_test_slave_0_wbt_led_o(1 downto 0),
       wbt_pll1_syncb_o => wb_test_slave_0_wbt_pll1_syncb_o,
-      wbt_pll_freq_i(31 downto 0) => freq_high_measure_0_counts_pll(31 downto 0)
+      wbt_pll_freq_i(31 downto 0) => freq_high_measure_0_counts_pll(31 downto 0),
+      wbt_spi_cpol_o => wb_test_slave_0_wbt_spi_cpol_o,
+      wbt_spi_cs_ad9510_o => wb_test_slave_0_wbt_spi_cs_ad9510_o,
+      wbt_spi_cs_ad9516_o => wb_test_slave_0_wbt_spi_cs_ad9516_o,
+      wbt_spi_data_o(7 downto 0) => wb_test_slave_0_wbt_spi_data_o(7 downto 0),
+      wbt_spi_start_o => wb_test_slave_0_wbt_spi_start_o
     );
 xlconstant_0: component design_1_xlconstant_0_0
      port map (

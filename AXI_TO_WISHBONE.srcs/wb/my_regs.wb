@@ -22,7 +22,7 @@ peripheral {
 
 	reg {
 		name = "PLL1_SYNCB register";
-		description = "A register defining the state of the LEDs and the state of PLL1_SYNCB";
+		description = "A register defining the state of PLL1_SYNCB";
 		prefix = "pll1_syncb";
 		field {
 			name = "PLL1_SYNCB";
@@ -89,6 +89,70 @@ peripheral {
 			access_dev = READ_ONLY;
 		};
 	};
+
+    reg {
+		name = "SPI_START register";
+		description = "A register defining the state of SPI_START";
+		prefix = "spi_start";
+		field {
+			name = "SPI_START";
+			description = "Defines the state of SPI_START";
+			type = BIT;
+			access_bus = READ_WRITE;
+			access_dev = READ_ONLY;
+		};
+	};
+
+    reg {
+		name = "SPI_CPOL register";
+		description = "A register defining the state of SPI_CPOL";
+		prefix = "spi_cpol";
+		field {
+			name = "SPI_CPOL";
+			description = "Defines the state of SPI_CPOL";
+			type = BIT;
+			access_bus = READ_WRITE;
+			access_dev = READ_ONLY;
+		};
+	};
+    reg {
+		name = "SPI_CS_AD9516 register";
+		description = "A register defining the state of SPI_CS_AD9516";
+		prefix = "spi_cs_ad9516";
+		field {
+			name = "SPI_CS_AD9516";
+			description = "Defines the state of SPI_CS_AD9516";
+			type = BIT;
+			access_bus = READ_WRITE;
+			access_dev = READ_ONLY;
+		};
+	};
+    reg {
+		name = "SPI_CS_AD9510 register";
+		description = "A register defining the state of SPI_CS_AD9510";
+		prefix = "spi_cs_ad9510";
+		field {
+			name = "SPI_CS_AD9510";
+			description = "Defines the state of SPI_CS_AD9510";
+			type = BIT;
+			access_bus = READ_WRITE;
+			access_dev = READ_ONLY;
+		};
+	};
+    reg {
+		name = "SPI_DATA register";
+		description = "A register defining the state of SPI_DATA";
+		prefix = "spi_data";
+		field {
+			name = "SPI_DATA";
+			description = "Defines the state of SPI_DATA";
+			type = SLV;
+			size = 8;
+			access_bus = READ_WRITE;
+			access_dev = READ_ONLY;
+		};
+	};
+
 
 
 };

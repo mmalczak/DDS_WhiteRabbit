@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.1 (lin64) Build 1846317 Fri Apr 14 18:54:47 MDT 2017
---Date        : Tue Mar 13 17:16:40 2018
+--Date        : Tue Mar 13 17:50:58 2018
 --Host        : milosz-System-Product-Name running 64-bit Linux Mint 18.2 Sonya
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -52,8 +52,12 @@ entity design_1_wrapper is
     spi_0_io1_io : inout STD_LOGIC;
     spi_0_sck_io : inout STD_LOGIC;
     spi_0_ss_io : inout STD_LOGIC_VECTOR ( 1 downto 0 );
-    spi_miso_i : in STD_LOGIC;
-    wbt_led_o : out STD_LOGIC_VECTOR ( 1 downto 0 )
+    spi_miso_i_1 : in STD_LOGIC;
+    spi_mosi_o : out STD_LOGIC;
+    spi_sclk_o : out STD_LOGIC;
+    wbt_led_o : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    wbt_spi_cs_ad9510_o : out STD_LOGIC;
+    wbt_spi_cs_ad9516_o : out STD_LOGIC
   );
 end design_1_wrapper;
 
@@ -108,7 +112,11 @@ architecture STRUCTURE of design_1_wrapper is
     PLL1_SYNCB : out STD_LOGIC_VECTOR ( 0 to 0 );
     przycisk : in STD_LOGIC;
     led : out STD_LOGIC;
-    spi_miso_i : in STD_LOGIC
+    spi_sclk_o : out STD_LOGIC;
+    spi_mosi_o : out STD_LOGIC;
+    spi_miso_i_1 : in STD_LOGIC;
+    wbt_spi_cs_ad9516_o : out STD_LOGIC;
+    wbt_spi_cs_ad9510_o : out STD_LOGIC
   );
   end component design_1;
   component IOBUF is
@@ -187,8 +195,12 @@ design_1_i: component design_1
       led => led,
       przycisk => przycisk,
       save(39 downto 0) => save(39 downto 0),
-      spi_miso_i => spi_miso_i,
-      wbt_led_o(1 downto 0) => wbt_led_o(1 downto 0)
+      spi_miso_i_1 => spi_miso_i_1,
+      spi_mosi_o => spi_mosi_o,
+      spi_sclk_o => spi_sclk_o,
+      wbt_led_o(1 downto 0) => wbt_led_o(1 downto 0),
+      wbt_spi_cs_ad9510_o => wbt_spi_cs_ad9510_o,
+      wbt_spi_cs_ad9516_o => wbt_spi_cs_ad9516_o
     );
 spi_0_io0_iobuf: component IOBUF
      port map (

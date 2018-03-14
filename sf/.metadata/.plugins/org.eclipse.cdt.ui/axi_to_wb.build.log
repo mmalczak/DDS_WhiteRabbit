@@ -1,4 +1,4 @@
-17:32:45 **** Auto Build of configuration Debug for project axi_to_wb ****
+17:48:22 **** Auto Build of configuration Debug for project axi_to_wb ****
 make pre-build main-build 
 a9-linaro-pre-build-step
  
@@ -6,23 +6,23 @@ Building file: ../src/spi_mine.c
 Invoking: ARM v7 gcc compiler
 arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
 ../src/spi_mine.c: In function 'led_on':
-../src/spi_mine.c:90:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+../src/spi_mine.c:96:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
   u32 a;
       ^
 ../src/spi_mine.c: In function 'main':
-../src/spi_mine.c:157:16: warning: unused variable 'D' [-Wunused-variable]
+../src/spi_mine.c:163:16: warning: unused variable 'D' [-Wunused-variable]
   int P=0, I=0, D=0;
                 ^
-../src/spi_mine.c:157:11: warning: unused variable 'I' [-Wunused-variable]
+../src/spi_mine.c:163:11: warning: unused variable 'I' [-Wunused-variable]
   int P=0, I=0, D=0;
            ^
-../src/spi_mine.c:157:6: warning: unused variable 'P' [-Wunused-variable]
+../src/spi_mine.c:163:6: warning: unused variable 'P' [-Wunused-variable]
   int P=0, I=0, D=0;
       ^
-../src/spi_mine.c:156:12: warning: unused variable 'prDiff' [-Wunused-variable]
+../src/spi_mine.c:162:12: warning: unused variable 'prDiff' [-Wunused-variable]
   int diff, prDiff;
             ^~~~~~
-../src/spi_mine.c:148:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+../src/spi_mine.c:154:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
   u32 freqPLL, prFreqPLL;
                ^~~~~~~~~
 Finished building: ../src/spi_mine.c
@@ -39,5 +39,5 @@ arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
 Finished building: axi_to_wb.elf.size
  
 
-17:32:46 Build Finished (took 216ms)
+17:48:23 Build Finished (took 382ms)
 

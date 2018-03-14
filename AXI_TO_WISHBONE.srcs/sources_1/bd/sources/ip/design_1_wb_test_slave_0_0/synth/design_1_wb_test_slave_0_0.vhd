@@ -57,7 +57,7 @@ ENTITY design_1_wb_test_slave_0_0 IS
   PORT (
     rst_n_i : IN STD_LOGIC;
     clk_sys_i : IN STD_LOGIC;
-    wb_adr_i : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+    wb_adr_i : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
     wb_dat_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     wb_dat_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     wb_cyc_i : IN STD_LOGIC;
@@ -71,7 +71,12 @@ ENTITY design_1_wb_test_slave_0_0 IS
     wbt_dds_o : OUT STD_LOGIC_VECTOR(27 DOWNTO 0);
     wbt_pll_freq_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     wbt_dds_freq_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-    wbt_cnt_mask_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+    wbt_cnt_mask_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    wbt_spi_start_o : OUT STD_LOGIC;
+    wbt_spi_cpol_o : OUT STD_LOGIC;
+    wbt_spi_cs_ad9516_o : OUT STD_LOGIC;
+    wbt_spi_cs_ad9510_o : OUT STD_LOGIC;
+    wbt_spi_data_o : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
   );
 END design_1_wb_test_slave_0_0;
 
@@ -82,7 +87,7 @@ ARCHITECTURE design_1_wb_test_slave_0_0_arch OF design_1_wb_test_slave_0_0 IS
     PORT (
       rst_n_i : IN STD_LOGIC;
       clk_sys_i : IN STD_LOGIC;
-      wb_adr_i : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+      wb_adr_i : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
       wb_dat_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
       wb_dat_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
       wb_cyc_i : IN STD_LOGIC;
@@ -96,7 +101,12 @@ ARCHITECTURE design_1_wb_test_slave_0_0_arch OF design_1_wb_test_slave_0_0 IS
       wbt_dds_o : OUT STD_LOGIC_VECTOR(27 DOWNTO 0);
       wbt_pll_freq_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
       wbt_dds_freq_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-      wbt_cnt_mask_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+      wbt_cnt_mask_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+      wbt_spi_start_o : OUT STD_LOGIC;
+      wbt_spi_cpol_o : OUT STD_LOGIC;
+      wbt_spi_cs_ad9516_o : OUT STD_LOGIC;
+      wbt_spi_cs_ad9510_o : OUT STD_LOGIC;
+      wbt_spi_data_o : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
     );
   END COMPONENT wb_test_slave;
   ATTRIBUTE X_CORE_INFO : STRING;
@@ -122,6 +132,11 @@ BEGIN
       wbt_dds_o => wbt_dds_o,
       wbt_pll_freq_i => wbt_pll_freq_i,
       wbt_dds_freq_i => wbt_dds_freq_i,
-      wbt_cnt_mask_o => wbt_cnt_mask_o
+      wbt_cnt_mask_o => wbt_cnt_mask_o,
+      wbt_spi_start_o => wbt_spi_start_o,
+      wbt_spi_cpol_o => wbt_spi_cpol_o,
+      wbt_spi_cs_ad9516_o => wbt_spi_cs_ad9516_o,
+      wbt_spi_cs_ad9510_o => wbt_spi_cs_ad9510_o,
+      wbt_spi_data_o => wbt_spi_data_o
     );
 END design_1_wb_test_slave_0_0_arch;

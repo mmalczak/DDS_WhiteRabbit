@@ -862,6 +862,7 @@ CONFIG.CONST_VAL {0} \
   connect_bd_net -net rst_processing_system7_0_50M_interconnect_aresetn [get_bd_pins processing_system7_0_axi_periph/ARESETN] [get_bd_pins rst_processing_system7_0_50M/interconnect_aresetn]
   connect_bd_net -net rst_processing_system7_0_50M_peripheral_aresetn [get_bd_pins axil2wb_0/S_AXI_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M00_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M01_ARESETN] [get_bd_pins processing_system7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_processing_system7_0_50M/peripheral_aresetn]
   connect_bd_net -net save_1 [get_bd_ports save] [get_bd_pins do_nothing_0/s_mo]
+  connect_bd_net -net spi_master_0_data_o [get_bd_pins spi_master_0/data_o] [get_bd_pins wb_test_slave_0/wbt_spi_data_in_i]
   connect_bd_net -net spi_master_0_spi_mosi_o [get_bd_ports PD_DATA] [get_bd_ports spi_mosi_ad95xx_o] [get_bd_pins spi_master_0/spi_mosi_o]
   connect_bd_net -net spi_master_0_spi_sclk_o [get_bd_ports PD_CLK] [get_bd_ports spi_sclk_ad95xx_o] [get_bd_pins spi_master_0/spi_sclk_o]
   connect_bd_net -net spi_miso_i_1_1 [get_bd_ports spi_miso_i_1] [get_bd_pins spi_master_0/spi_miso_i]

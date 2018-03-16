@@ -176,7 +176,19 @@ peripheral {
 			access_dev = READ_ONLY;
 		};
 	};
- 
+    reg {
+		name = "SPI_DATA_IN register";
+		description = "A register defining the state of SPI_DATA_IN";
+		prefix = "spi_data_in";
+		field {
+			name = "SPI_DATA_IN";
+			description = "Defines the state of SPI_DATA_IN";
+			type = SLV;
+			size = 8;
+			access_bus = READ_ONLY;
+			access_dev = WRITE_ONLY;
+		};
+	};
 
 
 };

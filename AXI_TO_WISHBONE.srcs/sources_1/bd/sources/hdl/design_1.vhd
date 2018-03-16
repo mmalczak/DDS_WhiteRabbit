@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.1 (lin64) Build 1846317 Fri Apr 14 18:54:47 MDT 2017
---Date        : Thu Mar 15 11:32:29 2018
+--Date        : Fri Mar 16 17:26:36 2018
 --Host        : milosz-System-Product-Name running 64-bit Linux Mint 18.2 Sonya
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -1451,16 +1451,6 @@ architecture STRUCTURE of design_1 is
     dac_sierra : out STD_LOGIC_VECTOR ( 9 downto 0 )
   );
   end component design_1_counter_DAC_0_0;
-  component design_1_freq_high_measure_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    dac_meas : in STD_LOGIC;
-    pll_meas : in STD_LOGIC;
-    counter_mask : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    counts_dac : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    counts_pll : out STD_LOGIC_VECTOR ( 31 downto 0 )
-  );
-  end component design_1_freq_high_measure_0_0;
   component design_1_spi_master_0_0 is
   port (
     clk_sys_i : in STD_LOGIC;
@@ -1502,9 +1492,20 @@ architecture STRUCTURE of design_1 is
     wbt_spi_cs_ad9510_o : out STD_LOGIC;
     wbt_spi_data_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
     wbt_adf4002_le_o : out STD_LOGIC;
-    wbt_pll2_reset_n_o : out STD_LOGIC
+    wbt_pll2_reset_n_o : out STD_LOGIC;
+    wbt_spi_data_in_i : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   end component design_1_wb_test_slave_0_0;
+  component design_1_freq_high_measure_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    dac_meas : in STD_LOGIC;
+    pll_meas : in STD_LOGIC;
+    counter_mask : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    counts_dac : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    counts_pll : out STD_LOGIC_VECTOR ( 31 downto 0 )
+  );
+  end component design_1_freq_high_measure_0_0;
   signal CLK0_OUT_IBUF_OUT : STD_LOGIC_VECTOR ( 0 to 0 );
   signal CLK1_OUT_IBUF_OUT : STD_LOGIC_VECTOR ( 0 to 0 );
   signal CLK2_out_IBUF_OUT : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -1612,6 +1613,7 @@ architecture STRUCTURE of design_1 is
   signal rst_processing_system7_0_50M_interconnect_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal rst_processing_system7_0_50M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal save_1 : STD_LOGIC_VECTOR ( 39 downto 0 );
+  signal spi_master_0_data_o : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal spi_master_0_spi_mosi_o : STD_LOGIC;
   signal spi_master_0_spi_sclk_o : STD_LOGIC;
   signal spi_miso_i_1_1 : STD_LOGIC;
@@ -1651,7 +1653,6 @@ architecture STRUCTURE of design_1 is
   signal NLW_spi_master_0_drdy_o_UNCONNECTED : STD_LOGIC;
   signal NLW_spi_master_0_ready_o_UNCONNECTED : STD_LOGIC;
   signal NLW_spi_master_0_spi_cs_n_o_UNCONNECTED : STD_LOGIC;
-  signal NLW_spi_master_0_data_o_UNCONNECTED : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal NLW_wb_test_slave_0_wb_stall_o_UNCONNECTED : STD_LOGIC;
 begin
   DAC_DAT_N(13 downto 0) <= DAC_DAT_OBUF_DS_N(13 downto 0);
@@ -1934,7 +1935,7 @@ spi_master_0: component design_1_spi_master_0_0
       clk_sys_i => processing_system7_0_FCLK_CLK0,
       cpol_i => wb_test_slave_0_wbt_spi_cpol_o,
       data_i(7 downto 0) => wb_test_slave_0_wbt_spi_data_o(7 downto 0),
-      data_o(7 downto 0) => NLW_spi_master_0_data_o_UNCONNECTED(7 downto 0),
+      data_o(7 downto 0) => spi_master_0_data_o(7 downto 0),
       drdy_o => NLW_spi_master_0_drdy_o_UNCONNECTED,
       ready_o => NLW_spi_master_0_ready_o_UNCONNECTED,
       rst_n_i => processing_system7_0_FCLK_RESET0_N,
@@ -1974,6 +1975,7 @@ wb_test_slave_0: component design_1_wb_test_slave_0_0
       wbt_spi_cpol_o => wb_test_slave_0_wbt_spi_cpol_o,
       wbt_spi_cs_ad9510_o => wb_test_slave_0_wbt_spi_cs_ad9510_o,
       wbt_spi_cs_ad9516_o => wb_test_slave_0_wbt_spi_cs_ad9516_o,
+      wbt_spi_data_in_i(7 downto 0) => spi_master_0_data_o(7 downto 0),
       wbt_spi_data_o(7 downto 0) => wb_test_slave_0_wbt_spi_data_o(7 downto 0),
       wbt_spi_start_o => wb_test_slave_0_wbt_spi_start_o
     );

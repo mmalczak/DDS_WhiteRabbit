@@ -22,6 +22,7 @@
 #define SPI_DATA_ADDR 0x43C00028
 #define SPI_LE_ADF4002_ADDR 0x43C0002C
 #define PLL2_RESET_N_ADDR 0x43C00030
+#define SPI_DATA_IN_ADDR 0x43C00034
 
 #define SPI_CS_AD9516_SEL 0
 #define SPI_CS_AD9510_SEL 1
@@ -68,7 +69,7 @@ void configure_AD9516(void);
 void configure_AD9510_internal_signal(void);
 void configure_AD9510_external_signal(void);
 void configure_ADF4002(void);
-
+/*
 void WB_SpiTransfer(u8 data, u8 device)
 {
 	setSpiData((u32)data);
@@ -92,10 +93,10 @@ void WB_SpiTransfer(u8 data, u8 device)
 	}
 	for(int i=0; i<4;i++);
 
-}
-void WB_SpiTransfer2(u8 data, u8 device)
+}*/
+u8 WB_SpiTransfer(u8 dataSend, u8 device)
 {
-	setSpiData((u32)data);
+	setSpiData((u32)dataSend);
 	switch(device)
 	{
 	case SPI_CS_AD9516_SEL : setCS_AD9516(0); break;
@@ -115,7 +116,7 @@ void WB_SpiTransfer2(u8 data, u8 device)
 	default: xil_printf("Wrong CS value\n\r");
 	}
 	for(int i=0; i<4;i++);
-
+	return (u8)(Xil_In32(SPI_DATA_IN_ADDR));
 }
 
 void spi_adf4002_send_data(u32 data)
@@ -137,27 +138,17 @@ int spi_send_data(u16 address, u8 data, u8 device)
 	WB_SpiTransfer(data, device);
 	return Status;
 }
-int spi_read_data(u16 address, u8 data)
+void spi_read_data(u16 address, u8 data, u8 device)
 {
 	u8 address_pointer[2] = {(u8)(address>>8), (u8)address};
 	u8 data_pointer[1] = {data};
 	u8 data_read[3]={0, 0, 0};
-	int Status=XST_SUCCESS;
-	Status=XSpi_Transfer(&Spi, address_pointer, data_read, 2);
-		if (Status != XST_SUCCESS) {
-			xil_printf("failure2\n\r");
-			return XST_FAILURE;
-	}
-	Status=XSpi_Transfer(&Spi, data_pointer, (data_read+2), 1);
-	if (Status != XST_SUCCESS) {
-		xil_printf("failure2\n\r");
-		return XST_FAILURE;
-	}
-	if(Status!=XST_SUCCESS) xil_printf("Sending failure\n\r");
+	data_read[0] = 	WB_SpiTransfer(address_pointer[0], device);
+	data_read[1] = 	WB_SpiTransfer(address_pointer[1], device);
+	data_read[2] = 	WB_SpiTransfer(data, device);
 	xil_printf("%d\n\r", *(data_read));
 	xil_printf("%d\n\r", *(data_read+1));
 	xil_printf("%d\n\r", *(data_read+2));
-	return Status;
 }
 
 
@@ -251,7 +242,7 @@ int main(void)
 	measureDACPLLFreq(&freqDAC, &freqPLL);
 
 	configure_ADF4002();
-
+	spi_read_data(0x8000, 0x99, SPI_CS_AD9516_SEL);
 /*
 	u32 a=0;
 	while(1)

@@ -38,6 +38,7 @@ begin
         else
             counter <= counter+1;
 
+
             if((dac_meas_s xor dac_meas) = '1')then
                  counts_dac_s <= counts_dac_s+1;
             end if;

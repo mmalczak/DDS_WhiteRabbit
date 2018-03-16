@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Mar 15 11:32:30 2018" VIVADOVERSION="2017.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Mar 16 17:26:37 2018" VIVADOVERSION="2017.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="xilinx.com:zc706:part0:1.4" DEVICE="7z045" NAME="design_1" PACKAGE="ffg900" SPEEDGRADE="-2"/>
 
@@ -2969,7 +2969,11 @@
         </PORT>
         <PORT DIR="O" NAME="drdy_o" SIGIS="undef"/>
         <PORT DIR="O" NAME="ready_o" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="7" NAME="data_o" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="7" NAME="data_o" RIGHT="0" SIGIS="undef" SIGNAME="spi_master_0_data_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="wb_test_slave_0" PORT="wbt_spi_data_in_i"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" NAME="spi_cs_n_o" SIGIS="undef"/>
         <PORT DIR="O" NAME="spi_sclk_o" SIGIS="undef" SIGNAME="spi_master_0_spi_sclk_o">
           <CONNECTIONS>
@@ -3150,6 +3154,11 @@
         <PORT DIR="O" NAME="wbt_pll2_reset_n_o" SIGIS="undef" SIGNAME="wb_test_slave_0_wbt_pll2_reset_n_o">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="wbt_pll2_reset_n_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="wbt_spi_data_in_i" RIGHT="0" SIGIS="undef" SIGNAME="spi_master_0_data_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="spi_master_0" PORT="data_o"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

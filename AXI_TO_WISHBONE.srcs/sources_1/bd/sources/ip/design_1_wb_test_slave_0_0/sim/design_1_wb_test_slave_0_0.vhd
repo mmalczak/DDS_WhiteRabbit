@@ -78,7 +78,8 @@ ENTITY design_1_wb_test_slave_0_0 IS
     wbt_spi_cs_ad9510_o : OUT STD_LOGIC;
     wbt_spi_data_o : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
     wbt_adf4002_le_o : OUT STD_LOGIC;
-    wbt_pll2_reset_n_o : OUT STD_LOGIC
+    wbt_pll2_reset_n_o : OUT STD_LOGIC;
+    wbt_spi_data_in_i : IN STD_LOGIC_VECTOR(7 DOWNTO 0)
   );
 END design_1_wb_test_slave_0_0;
 
@@ -110,7 +111,8 @@ ARCHITECTURE design_1_wb_test_slave_0_0_arch OF design_1_wb_test_slave_0_0 IS
       wbt_spi_cs_ad9510_o : OUT STD_LOGIC;
       wbt_spi_data_o : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
       wbt_adf4002_le_o : OUT STD_LOGIC;
-      wbt_pll2_reset_n_o : OUT STD_LOGIC
+      wbt_pll2_reset_n_o : OUT STD_LOGIC;
+      wbt_spi_data_in_i : IN STD_LOGIC_VECTOR(7 DOWNTO 0)
     );
   END COMPONENT wb_test_slave;
 BEGIN
@@ -139,6 +141,7 @@ BEGIN
       wbt_spi_cs_ad9510_o => wbt_spi_cs_ad9510_o,
       wbt_spi_data_o => wbt_spi_data_o,
       wbt_adf4002_le_o => wbt_adf4002_le_o,
-      wbt_pll2_reset_n_o => wbt_pll2_reset_n_o
+      wbt_pll2_reset_n_o => wbt_pll2_reset_n_o,
+      wbt_spi_data_in_i => wbt_spi_data_in_i
     );
 END design_1_wb_test_slave_0_0_arch;

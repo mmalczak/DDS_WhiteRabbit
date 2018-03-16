@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.1 (lin64) Build 1846317 Fri Apr 14 18:54:47 MDT 2017
---Date        : Wed Mar 14 15:04:00 2018
+--Date        : Thu Mar 15 11:32:29 2018
 --Host        : milosz-System-Product-Name running 64-bit Linux Mint 18.2 Sonya
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -44,14 +44,18 @@ entity design_1_wrapper is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     IBUF_DS_N : in STD_LOGIC_VECTOR ( 17 downto 0 );
     IBUF_DS_P : in STD_LOGIC_VECTOR ( 17 downto 0 );
+    PD_CLK : out STD_LOGIC;
+    PD_DATA : out STD_LOGIC;
     PLL1_SYNCB : out STD_LOGIC_VECTOR ( 0 to 0 );
     led : out STD_LOGIC;
     przycisk : in STD_LOGIC;
     save : in STD_LOGIC_VECTOR ( 39 downto 0 );
     spi_miso_i_1 : in STD_LOGIC;
-    spi_mosi_o : out STD_LOGIC;
-    spi_sclk_o : out STD_LOGIC;
+    spi_mosi_ad95xx_o : out STD_LOGIC;
+    spi_sclk_ad95xx_o : out STD_LOGIC;
+    wbt_adf4002_le_o : out STD_LOGIC;
     wbt_led_o : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    wbt_pll2_reset_n_o : out STD_LOGIC;
     wbt_spi_cs_ad9510_o : out STD_LOGIC;
     wbt_spi_cs_ad9516_o : out STD_LOGIC
   );
@@ -96,11 +100,15 @@ architecture STRUCTURE of design_1_wrapper is
     PLL1_SYNCB : out STD_LOGIC_VECTOR ( 0 to 0 );
     przycisk : in STD_LOGIC;
     led : out STD_LOGIC;
-    spi_sclk_o : out STD_LOGIC;
-    spi_mosi_o : out STD_LOGIC;
+    spi_sclk_ad95xx_o : out STD_LOGIC;
+    spi_mosi_ad95xx_o : out STD_LOGIC;
     spi_miso_i_1 : in STD_LOGIC;
     wbt_spi_cs_ad9516_o : out STD_LOGIC;
-    wbt_spi_cs_ad9510_o : out STD_LOGIC
+    wbt_spi_cs_ad9510_o : out STD_LOGIC;
+    wbt_adf4002_le_o : out STD_LOGIC;
+    wbt_pll2_reset_n_o : out STD_LOGIC;
+    PD_CLK : out STD_LOGIC;
+    PD_DATA : out STD_LOGIC
   );
   end component design_1;
 begin
@@ -137,14 +145,18 @@ design_1_i: component design_1
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
       IBUF_DS_N(17 downto 0) => IBUF_DS_N(17 downto 0),
       IBUF_DS_P(17 downto 0) => IBUF_DS_P(17 downto 0),
+      PD_CLK => PD_CLK,
+      PD_DATA => PD_DATA,
       PLL1_SYNCB(0) => PLL1_SYNCB(0),
       led => led,
       przycisk => przycisk,
       save(39 downto 0) => save(39 downto 0),
       spi_miso_i_1 => spi_miso_i_1,
-      spi_mosi_o => spi_mosi_o,
-      spi_sclk_o => spi_sclk_o,
+      spi_mosi_ad95xx_o => spi_mosi_ad95xx_o,
+      spi_sclk_ad95xx_o => spi_sclk_ad95xx_o,
+      wbt_adf4002_le_o => wbt_adf4002_le_o,
       wbt_led_o(1 downto 0) => wbt_led_o(1 downto 0),
+      wbt_pll2_reset_n_o => wbt_pll2_reset_n_o,
       wbt_spi_cs_ad9510_o => wbt_spi_cs_ad9510_o,
       wbt_spi_cs_ad9516_o => wbt_spi_cs_ad9516_o
     );

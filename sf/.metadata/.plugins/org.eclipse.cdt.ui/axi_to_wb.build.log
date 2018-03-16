@@ -1,8 +1,56 @@
-15:29:58 **** Incremental Build of configuration Debug for project axi_to_wb ****
+17:06:40 **** Auto Build of configuration Debug for project axi_to_wb ****
 make pre-build main-build 
 a9-linaro-pre-build-step
  
-make: Nothing to be done for 'main-build'.
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'spi_send_data':
+../src/spi_mine.c:133:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_mine.c:132:5: warning: unused variable 'data_pointer' [-Wunused-variable]
+  u8 data_pointer[1] = {data};
+     ^~~~~~~~~~~~
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:179:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:243:16: warning: unused variable 'D' [-Wunused-variable]
+  int P=0, I=0, D=0;
+                ^
+../src/spi_mine.c:243:11: warning: unused variable 'I' [-Wunused-variable]
+  int P=0, I=0, D=0;
+           ^
+../src/spi_mine.c:243:6: warning: unused variable 'P' [-Wunused-variable]
+  int P=0, I=0, D=0;
+      ^
+../src/spi_mine.c:242:12: warning: unused variable 'prDiff' [-Wunused-variable]
+  int diff, prDiff;
+            ^~~~~~
+../src/spi_mine.c:237:15: warning: unused variable 'prFreqDAC' [-Wunused-variable]
+  u32 freqDAC, prFreqDAC;
+               ^~~~~~~~~
+../src/spi_mine.c:236:15: warning: unused variable 'prFreqPLL' [-Wunused-variable]
+  u32 freqPLL, prFreqPLL;
+               ^~~~~~~~~
+../src/spi_mine.c:287:2: warning: 'diff' is used uninitialized in this function [-Wuninitialized]
+  xil_printf("diff freq = %d \n\r", diff);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  31572	   1156	2054304	2087032	 1fd878	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
 
-15:29:58 Build Finished (took 140ms)
+17:06:40 Build Finished (took 221ms)
 

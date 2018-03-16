@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.1 (lin64) Build 1846317 Fri Apr 14 18:54:47 MDT 2017
---Date        : Wed Mar 14 15:04:00 2018
+--Date        : Thu Mar 15 11:32:29 2018
 --Host        : milosz-System-Product-Name running 64-bit Linux Mint 18.2 Sonya
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -1248,19 +1248,23 @@ entity design_1 is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     IBUF_DS_N : in STD_LOGIC_VECTOR ( 17 downto 0 );
     IBUF_DS_P : in STD_LOGIC_VECTOR ( 17 downto 0 );
+    PD_CLK : out STD_LOGIC;
+    PD_DATA : out STD_LOGIC;
     PLL1_SYNCB : out STD_LOGIC_VECTOR ( 0 to 0 );
     led : out STD_LOGIC;
     przycisk : in STD_LOGIC;
     save : in STD_LOGIC_VECTOR ( 39 downto 0 );
     spi_miso_i_1 : in STD_LOGIC;
-    spi_mosi_o : out STD_LOGIC;
-    spi_sclk_o : out STD_LOGIC;
+    spi_mosi_ad95xx_o : out STD_LOGIC;
+    spi_sclk_ad95xx_o : out STD_LOGIC;
+    wbt_adf4002_le_o : out STD_LOGIC;
     wbt_led_o : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    wbt_pll2_reset_n_o : out STD_LOGIC;
     wbt_spi_cs_ad9510_o : out STD_LOGIC;
     wbt_spi_cs_ad9516_o : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=22,numReposBlks=18,numNonXlnxBlks=6,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=6,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=1,da_clkrst_cnt=1,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=21,numReposBlks=17,numNonXlnxBlks=6,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=6,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=1,da_clkrst_cnt=1,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
@@ -1496,21 +1500,11 @@ architecture STRUCTURE of design_1 is
     wbt_spi_cpol_o : out STD_LOGIC;
     wbt_spi_cs_ad9516_o : out STD_LOGIC;
     wbt_spi_cs_ad9510_o : out STD_LOGIC;
-    wbt_spi_data_o : out STD_LOGIC_VECTOR ( 7 downto 0 )
+    wbt_spi_data_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    wbt_adf4002_le_o : out STD_LOGIC;
+    wbt_pll2_reset_n_o : out STD_LOGIC
   );
   end component design_1_wb_test_slave_0_0;
-  component design_1_ila_0_1 is
-  port (
-    clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe2 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe3 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe4 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe5 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe6 : in STD_LOGIC_VECTOR ( 7 downto 0 )
-  );
-  end component design_1_ila_0_1;
   signal CLK0_OUT_IBUF_OUT : STD_LOGIC_VECTOR ( 0 to 0 );
   signal CLK1_OUT_IBUF_OUT : STD_LOGIC_VECTOR ( 0 to 0 );
   signal CLK2_out_IBUF_OUT : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -1624,10 +1618,12 @@ architecture STRUCTURE of design_1 is
   signal util_ds_buf_0_IBUF_OUT : STD_LOGIC_VECTOR ( 17 downto 0 );
   signal wb_test_slave_0_wb_ack_o : STD_LOGIC;
   signal wb_test_slave_0_wb_dat_o : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal wb_test_slave_0_wbt_adf4002_le_o : STD_LOGIC;
   signal wb_test_slave_0_wbt_cnt_mask_o : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal wb_test_slave_0_wbt_dds_o : STD_LOGIC_VECTOR ( 27 downto 0 );
   signal wb_test_slave_0_wbt_led_o : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal wb_test_slave_0_wbt_pll1_syncb_o : STD_LOGIC;
+  signal wb_test_slave_0_wbt_pll2_reset_n_o : STD_LOGIC;
   signal wb_test_slave_0_wbt_spi_cpol_o : STD_LOGIC;
   signal wb_test_slave_0_wbt_spi_cs_ad9510_o : STD_LOGIC;
   signal wb_test_slave_0_wbt_spi_cs_ad9516_o : STD_LOGIC;
@@ -1668,14 +1664,18 @@ begin
   IBUF_DS_P_1_1(0) <= CLK1_OUT_P(0);
   IBUF_DS_P_1_2(0) <= CLK0_OUT_P(0);
   IBUF_DS_P_2_1(0) <= CLK2_OUT_P(0);
+  PD_CLK <= spi_master_0_spi_sclk_o;
+  PD_DATA <= spi_master_0_spi_mosi_o;
   PLL1_SYNCB(0) <= wb_test_slave_0_wbt_pll1_syncb_o;
   led <= przycisk_1;
   przycisk_1 <= przycisk;
   save_1(39 downto 0) <= save(39 downto 0);
   spi_miso_i_1_1 <= spi_miso_i_1;
-  spi_mosi_o <= spi_master_0_spi_mosi_o;
-  spi_sclk_o <= spi_master_0_spi_sclk_o;
+  spi_mosi_ad95xx_o <= spi_master_0_spi_mosi_o;
+  spi_sclk_ad95xx_o <= spi_master_0_spi_sclk_o;
+  wbt_adf4002_le_o <= wb_test_slave_0_wbt_adf4002_le_o;
   wbt_led_o(1 downto 0) <= wb_test_slave_0_wbt_led_o(1 downto 0);
+  wbt_pll2_reset_n_o <= wb_test_slave_0_wbt_pll2_reset_n_o;
   wbt_spi_cs_ad9510_o <= wb_test_slave_0_wbt_spi_cs_ad9510_o;
   wbt_spi_cs_ad9516_o <= wb_test_slave_0_wbt_spi_cs_ad9516_o;
 CLK0_OUT: component design_1_util_ds_buf_1_1
@@ -1761,17 +1761,6 @@ freq_high_measure_0: component design_1_freq_high_measure_0_0
       counts_pll(31 downto 0) => freq_high_measure_0_counts_pll(31 downto 0),
       dac_meas => CLK0_OUT_IBUF_OUT(0),
       pll_meas => CLK2_out_IBUF_OUT(0)
-    );
-ila_0: component design_1_ila_0_1
-     port map (
-      clk => processing_system7_0_FCLK_CLK0,
-      probe0(0) => processing_system7_0_FCLK_RESET0_N,
-      probe1(0) => wb_test_slave_0_wbt_spi_start_o,
-      probe2(0) => wb_test_slave_0_wbt_spi_cpol_o,
-      probe3(0) => spi_master_0_spi_sclk_o,
-      probe4(0) => spi_master_0_spi_mosi_o,
-      probe5(0) => wb_test_slave_0_wbt_spi_cs_ad9516_o,
-      probe6(7 downto 0) => wb_test_slave_0_wbt_spi_data_o(7 downto 0)
     );
 processing_system7_0: component design_1_processing_system7_0_0
      port map (
@@ -1974,11 +1963,13 @@ wb_test_slave_0: component design_1_wb_test_slave_0_0
       wb_stall_o => NLW_wb_test_slave_0_wb_stall_o_UNCONNECTED,
       wb_stb_i => axil2wb_0_wb_stb_o,
       wb_we_i => axil2wb_0_wb_we_o,
+      wbt_adf4002_le_o => wb_test_slave_0_wbt_adf4002_le_o,
       wbt_cnt_mask_o(31 downto 0) => wb_test_slave_0_wbt_cnt_mask_o(31 downto 0),
       wbt_dds_freq_i(31 downto 0) => freq_high_measure_0_counts_dac(31 downto 0),
       wbt_dds_o(27 downto 0) => wb_test_slave_0_wbt_dds_o(27 downto 0),
       wbt_led_o(1 downto 0) => wb_test_slave_0_wbt_led_o(1 downto 0),
       wbt_pll1_syncb_o => wb_test_slave_0_wbt_pll1_syncb_o,
+      wbt_pll2_reset_n_o => wb_test_slave_0_wbt_pll2_reset_n_o,
       wbt_pll_freq_i(31 downto 0) => freq_high_measure_0_counts_pll(31 downto 0),
       wbt_spi_cpol_o => wb_test_slave_0_wbt_spi_cpol_o,
       wbt_spi_cs_ad9510_o => wb_test_slave_0_wbt_spi_cs_ad9510_o,

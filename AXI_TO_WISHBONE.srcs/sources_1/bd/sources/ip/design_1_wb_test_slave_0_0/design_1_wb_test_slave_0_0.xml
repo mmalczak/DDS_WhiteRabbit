@@ -14,7 +14,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:510ba3a6</spirit:value>
+            <spirit:value>7:ff127bdf</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -29,11 +29,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Mar 13 16:44:45 UTC 2018</spirit:value>
+            <spirit:value>Thu Mar 15 10:22:09 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:510ba3a6</spirit:value>
+            <spirit:value>7:ff127bdf</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -45,7 +45,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:7ba18e8b</spirit:value>
+            <spirit:value>7:b1eb53b2</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -60,11 +60,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Mar 13 16:44:45 UTC 2018</spirit:value>
+            <spirit:value>Thu Mar 15 10:22:09 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:7ba18e8b</spirit:value>
+            <spirit:value>7:b1eb53b2</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -390,6 +390,32 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>wbt_adf4002_le_o</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>wbt_pll2_reset_n_o</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
               <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
               <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>

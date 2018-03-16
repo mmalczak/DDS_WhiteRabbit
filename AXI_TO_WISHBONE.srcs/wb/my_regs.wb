@@ -152,7 +152,31 @@ peripheral {
 			access_dev = READ_ONLY;
 		};
 	};
-
+    reg {
+		name = "ADF4002_LE register";
+		description = "A register defining the state of ADF4002_LE";
+		prefix = "adf4002_le";
+		field {
+			name = "ADF4002_LE";
+			description = "Defines the state of ADF4002_LE";
+			type = BIT;
+			access_bus = READ_WRITE;
+			access_dev = READ_ONLY;
+		};
+	};
+    reg {
+		name = "PLL2_RESET_N register";
+		description = "A register defining the state of PLL2_RESET_N";
+		prefix = "pll2_reset_n";
+		field {
+			name = "PLL2_RESET_N";
+			description = "Defines the state of PLL2_RESET_N";
+			type = BIT;
+			access_bus = READ_WRITE;
+			access_dev = READ_ONLY;
+		};
+	};
+ 
 
 
 };

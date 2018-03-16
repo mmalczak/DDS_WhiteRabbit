@@ -175,14 +175,18 @@ proc create_root_design { parentCell } {
   set DAC_DAT_P [ create_bd_port -dir O -from 13 -to 0 -type clk DAC_DAT_P ]
   set IBUF_DS_N [ create_bd_port -dir I -from 17 -to 0 -type clk IBUF_DS_N ]
   set IBUF_DS_P [ create_bd_port -dir I -from 17 -to 0 -type clk IBUF_DS_P ]
+  set PD_CLK [ create_bd_port -dir O PD_CLK ]
+  set PD_DATA [ create_bd_port -dir O PD_DATA ]
   set PLL1_SYNCB [ create_bd_port -dir O -from 0 -to 0 PLL1_SYNCB ]
   set led [ create_bd_port -dir O led ]
   set przycisk [ create_bd_port -dir I przycisk ]
   set save [ create_bd_port -dir I -from 39 -to 0 save ]
   set spi_miso_i_1 [ create_bd_port -dir I spi_miso_i_1 ]
-  set spi_mosi_o [ create_bd_port -dir O spi_mosi_o ]
-  set spi_sclk_o [ create_bd_port -dir O spi_sclk_o ]
+  set spi_mosi_ad95xx_o [ create_bd_port -dir O spi_mosi_ad95xx_o ]
+  set spi_sclk_ad95xx_o [ create_bd_port -dir O spi_sclk_ad95xx_o ]
+  set wbt_adf4002_le_o [ create_bd_port -dir O wbt_adf4002_le_o ]
   set wbt_led_o [ create_bd_port -dir O -from 1 -to 0 wbt_led_o ]
+  set wbt_pll2_reset_n_o [ create_bd_port -dir O wbt_pll2_reset_n_o ]
   set wbt_spi_cs_ad9510_o [ create_bd_port -dir O wbt_spi_cs_ad9510_o ]
   set wbt_spi_cs_ad9516_o [ create_bd_port -dir O wbt_spi_cs_ad9516_o ]
 
@@ -267,18 +271,6 @@ CONFIG.use_bram_block {Stand_Alone} \
      return 1
    }
   
-  # Create instance: ila_0, and set properties
-  set ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.2 ila_0 ]
-  set_property -dict [ list \
-CONFIG.ALL_PROBE_SAME_MU {false} \
-CONFIG.C_DATA_DEPTH {8192} \
-CONFIG.C_ENABLE_ILA_AXI_MON {false} \
-CONFIG.C_MONITOR_TYPE {Native} \
-CONFIG.C_NUM_OF_PROBES {7} \
-CONFIG.C_PROBE6_MU_CNT {8} \
-CONFIG.C_PROBE6_WIDTH {8} \
- ] $ila_0
-
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
   set_property -dict [ list \
@@ -864,27 +856,29 @@ CONFIG.CONST_VAL {0} \
   connect_bd_net -net counter_DAC_0_dac_sierra [get_bd_pins blk_mem_gen_1/addra] [get_bd_pins counter_DAC_0/dac_sierra]
   connect_bd_net -net freq_high_measure_0_counts_dac [get_bd_pins freq_high_measure_0/counts_dac] [get_bd_pins wb_test_slave_0/wbt_dds_freq_i]
   connect_bd_net -net freq_high_measure_0_counts_pll [get_bd_pins freq_high_measure_0/counts_pll] [get_bd_pins wb_test_slave_0/wbt_pll_freq_i]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axil2wb_0/S_AXI_ACLK] [get_bd_pins freq_high_measure_0/clk] [get_bd_pins ila_0/clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0_axi_periph/ACLK] [get_bd_pins processing_system7_0_axi_periph/M00_ACLK] [get_bd_pins processing_system7_0_axi_periph/M01_ACLK] [get_bd_pins processing_system7_0_axi_periph/S00_ACLK] [get_bd_pins rst_processing_system7_0_50M/slowest_sync_clk] [get_bd_pins spi_master_0/clk_sys_i]
-  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins ila_0/probe0] [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_processing_system7_0_50M/ext_reset_in] [get_bd_pins spi_master_0/rst_n_i]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axil2wb_0/S_AXI_ACLK] [get_bd_pins freq_high_measure_0/clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0_axi_periph/ACLK] [get_bd_pins processing_system7_0_axi_periph/M00_ACLK] [get_bd_pins processing_system7_0_axi_periph/M01_ACLK] [get_bd_pins processing_system7_0_axi_periph/S00_ACLK] [get_bd_pins rst_processing_system7_0_50M/slowest_sync_clk] [get_bd_pins spi_master_0/clk_sys_i]
+  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_processing_system7_0_50M/ext_reset_in] [get_bd_pins spi_master_0/rst_n_i]
   connect_bd_net -net przycisk_1 [get_bd_ports led] [get_bd_ports przycisk]
   connect_bd_net -net rst_processing_system7_0_50M_interconnect_aresetn [get_bd_pins processing_system7_0_axi_periph/ARESETN] [get_bd_pins rst_processing_system7_0_50M/interconnect_aresetn]
   connect_bd_net -net rst_processing_system7_0_50M_peripheral_aresetn [get_bd_pins axil2wb_0/S_AXI_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M00_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M01_ARESETN] [get_bd_pins processing_system7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_processing_system7_0_50M/peripheral_aresetn]
   connect_bd_net -net save_1 [get_bd_ports save] [get_bd_pins do_nothing_0/s_mo]
-  connect_bd_net -net spi_master_0_spi_mosi_o [get_bd_ports spi_mosi_o] [get_bd_pins ila_0/probe4] [get_bd_pins spi_master_0/spi_mosi_o]
-  connect_bd_net -net spi_master_0_spi_sclk_o [get_bd_ports spi_sclk_o] [get_bd_pins ila_0/probe3] [get_bd_pins spi_master_0/spi_sclk_o]
+  connect_bd_net -net spi_master_0_spi_mosi_o [get_bd_ports PD_DATA] [get_bd_ports spi_mosi_ad95xx_o] [get_bd_pins spi_master_0/spi_mosi_o]
+  connect_bd_net -net spi_master_0_spi_sclk_o [get_bd_ports PD_CLK] [get_bd_ports spi_sclk_ad95xx_o] [get_bd_pins spi_master_0/spi_sclk_o]
   connect_bd_net -net spi_miso_i_1_1 [get_bd_ports spi_miso_i_1] [get_bd_pins spi_master_0/spi_miso_i]
   connect_bd_net -net util_ds_buf_0_IBUF_OUT [get_bd_pins do_nothing_0/s_lvds] [get_bd_pins util_ds_buf_0/IBUF_OUT]
   connect_bd_net -net wb_test_slave_0_wb_ack_o [get_bd_pins axil2wb_0/wb_ack_i] [get_bd_pins wb_test_slave_0/wb_ack_o]
   connect_bd_net -net wb_test_slave_0_wb_dat_o [get_bd_pins axil2wb_0/wb_dat_i] [get_bd_pins wb_test_slave_0/wb_dat_o]
+  connect_bd_net -net wb_test_slave_0_wbt_adf4002_le_o [get_bd_ports wbt_adf4002_le_o] [get_bd_pins wb_test_slave_0/wbt_adf4002_le_o]
   connect_bd_net -net wb_test_slave_0_wbt_cnt_mask_o [get_bd_pins freq_high_measure_0/counter_mask] [get_bd_pins wb_test_slave_0/wbt_cnt_mask_o]
   connect_bd_net -net wb_test_slave_0_wbt_dds_o [get_bd_pins counter_DAC_0/step] [get_bd_pins wb_test_slave_0/wbt_dds_o]
   connect_bd_net -net wb_test_slave_0_wbt_led_o [get_bd_ports wbt_led_o] [get_bd_pins wb_test_slave_0/wbt_led_o]
   connect_bd_net -net wb_test_slave_0_wbt_pll1_syncb_o [get_bd_ports PLL1_SYNCB] [get_bd_pins wb_test_slave_0/wbt_pll1_syncb_o]
-  connect_bd_net -net wb_test_slave_0_wbt_spi_cpol_o [get_bd_pins ila_0/probe2] [get_bd_pins spi_master_0/cpol_i] [get_bd_pins wb_test_slave_0/wbt_spi_cpol_o]
+  connect_bd_net -net wb_test_slave_0_wbt_pll2_reset_n_o [get_bd_ports wbt_pll2_reset_n_o] [get_bd_pins wb_test_slave_0/wbt_pll2_reset_n_o]
+  connect_bd_net -net wb_test_slave_0_wbt_spi_cpol_o [get_bd_pins spi_master_0/cpol_i] [get_bd_pins wb_test_slave_0/wbt_spi_cpol_o]
   connect_bd_net -net wb_test_slave_0_wbt_spi_cs_ad9510_o [get_bd_ports wbt_spi_cs_ad9510_o] [get_bd_pins wb_test_slave_0/wbt_spi_cs_ad9510_o]
-  connect_bd_net -net wb_test_slave_0_wbt_spi_cs_ad9516_o [get_bd_ports wbt_spi_cs_ad9516_o] [get_bd_pins ila_0/probe5] [get_bd_pins wb_test_slave_0/wbt_spi_cs_ad9516_o]
-  connect_bd_net -net wb_test_slave_0_wbt_spi_data_o [get_bd_pins ila_0/probe6] [get_bd_pins spi_master_0/data_i] [get_bd_pins wb_test_slave_0/wbt_spi_data_o]
-  connect_bd_net -net wb_test_slave_0_wbt_spi_start_o [get_bd_pins ila_0/probe1] [get_bd_pins spi_master_0/start_i] [get_bd_pins wb_test_slave_0/wbt_spi_start_o]
+  connect_bd_net -net wb_test_slave_0_wbt_spi_cs_ad9516_o [get_bd_ports wbt_spi_cs_ad9516_o] [get_bd_pins wb_test_slave_0/wbt_spi_cs_ad9516_o]
+  connect_bd_net -net wb_test_slave_0_wbt_spi_data_o [get_bd_pins spi_master_0/data_i] [get_bd_pins wb_test_slave_0/wbt_spi_data_o]
+  connect_bd_net -net wb_test_slave_0_wbt_spi_start_o [get_bd_pins spi_master_0/start_i] [get_bd_pins wb_test_slave_0/wbt_spi_start_o]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins axil2wb_0/wb_err_i] [get_bd_pins xlconstant_0/dout]
 
   # Create address segments

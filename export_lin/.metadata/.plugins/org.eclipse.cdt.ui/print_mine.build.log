@@ -1,0 +1,25 @@
+17:33:15 **** Auto Build of configuration Release for project print_mine ****
+make all 
+Building file: ../src/helloworld.c
+Invoking: ARM v7 Linux gcc compiler
+arm-linux-gnueabihf-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/helloworld.o" -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function ‘main’:
+../src/helloworld.c:33:4: warning: implicit declaration of function ‘error’ [-Wimplicit-function-declaration]
+    error("sysconf() error");
+    ^~~~~
+Finished building: ../src/helloworld.c
+ 
+Building target: print_mine.elf
+Invoking: ARM v7 Linux gcc linker
+arm-linux-gnueabihf-gcc  -o "print_mine.elf"  ./src/helloworld.o   
+Finished building target: print_mine.elf
+ 
+Invoking: ARM v7 Linux Print Size
+arm-linux-gnueabihf-size print_mine.elf  |tee "print_mine.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   1280	    300	      8	   1588	    634	print_mine.elf
+Finished building: print_mine.elf.size
+ 
+
+17:33:15 Build Finished (took 415ms)
+

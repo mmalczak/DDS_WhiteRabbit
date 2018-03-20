@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:54:47 MDT 2017
+# 
+# Start of session at: Tue Feb 20 15:27:38 2018
+# Process ID: 3739
+# Current directory: /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/export_lin/webtalk
+# Command line: wbtcv -mode batch -source sdk_webtalk.tcl
+# Log file: /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/export_lin/webtalk/webtalk.log
+# Journal file: /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/export_lin/webtalk/webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

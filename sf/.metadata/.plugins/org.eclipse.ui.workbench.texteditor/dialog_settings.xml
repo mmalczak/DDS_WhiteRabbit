@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="XSP_MASTER_OPTION" key="selection"/>
+		<item value="0x43C" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="0x000"/>
 			<item value="XSP_MASTER_OPTION"/>
 			<item value="master"/>
 			<item value="_options"/>
@@ -16,10 +17,11 @@
 			<item value="XSP_*_OPTIONS"/>
 		</list>
 		<list key="replacehistory">
+			<item value="0x43C"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="277" key="DIALOG_WIDTH"/>
+		<item value="281" key="DIALOG_WIDTH"/>
 		<item value="1|Noto Sans|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="434" key="DIALOG_HEIGHT"/>
 		<item value="823" key="DIALOG_X_ORIGIN"/>

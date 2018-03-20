@@ -1,29 +1,28 @@
 #include "xparameters.h"
-#include "xspi.h"
-#include "xspi_l.h"
 #include "xil_printf.h"
 #include "xil_io.h"
 
+#include "my_regs.h"
 
 #define DDS_BASE_FREQUENCY 244140
 #define FREQ_MEAS_BASE_FREQUENCY 50000000
 //#define FREQ_MEAS_BASE_FREQUENCY 900000000
-
-#define LED_ADDR 0x43C00000
-#define PLL_SYNC_ADDR 0x43C00004
-#define DDS_ADDR 0x43C00008
-#define PLL_FREQ_ADDR 0x43C0000C
-#define DAC_FREQ_ADDR 0x43C00010
-#define FREQ_CNT_MASK_ADDR 0x43C00014
-#define SPI_START_ADDR 0x43C00018
-#define SPI_CPOL_ADDR 0x43C0001C
-#define SPI_CS_AD9516_ADDR 0x43C00020
-#define SPI_CS_AD9510_ADDR 0x43C00024
-#define SPI_DATA_ADDR 0x43C00028
-#define SPI_LE_ADF4002_ADDR 0x43C0002C
-#define PLL2_RESET_N_ADDR 0x43C00030
-#define SPI_DATA_IN_ADDR 0x43C00034
-
+/*
+#define WBT_REG_LED 0x43C00000
+#define WBT_REG_PLL1_SYNCB 0x43C00004
+#define WBT_REG_DDS 0x43C00008
+#define WBT_REG_PLL_FREQ 0x43C0000C
+#define WBT_REG_DDS_FREQ 0x43C00010
+#define WBT_REG_CNT_MASK 0x43C00014
+#define WBT_REG_SPI_START 0x43C00018
+#define WBT_REG_SPI_CPOL 0x43C0001C
+#define WBT_REG_SPI_CS_AD9516 0x43C00020
+#define WBT_REG_SPI_CS_AD9510 0x43C00024
+#define WBT_REG_SPI_DATA 0x43C00028
+#define WBT_REG_ADF4002_LE 0x43C0002C
+#define WBT_REG_PLL2_RESET_N 0x43C00030
+#define WBT_REG_SPI_DATA_IN 0x43C00034
+*/
 #define SPI_CS_AD9516_SEL 0
 #define SPI_CS_AD9510_SEL 1
 #define SPI_LE_ADF4002_SEL 2
@@ -32,68 +31,56 @@
 
 void setSpiStart(u32 value)
 {
-	Xil_Out32(SPI_START_ADDR, value);
+	Xil_Out32(WBT_REG_SPI_START, value);
+}
+void setSpiADC_Start(u32 value)
+{
+	Xil_Out32(WBT_REG_SPI_ADC_START, value);
 }
 
 void setSpiCPol(u32 value)
 {
-	Xil_Out32(SPI_CPOL_ADDR, value);
+	Xil_Out32(WBT_REG_SPI_CPOL, value);
+}
+void setSpiADC_CPol(u32 value)
+{
+	Xil_Out32(WBT_REG_SPI_ADC_CPOL, value);
 }
 void setCS_AD9516(u32 value)
 {
-	Xil_Out32(SPI_CS_AD9516_ADDR, value);
+	Xil_Out32(WBT_REG_SPI_CS_AD9516, value);
 }
 void setCS_AD9510(u32 value)
 {
-	Xil_Out32(SPI_CS_AD9510_ADDR, value);
+	Xil_Out32(WBT_REG_SPI_CS_AD9510, value);
+}
+void setCNV_AD7980(u32 value)
+{
+	Xil_Out32(WBT_REG_SPI_ADC_CNV, value);
 }
 void setLE_ADF4002(u32 value)
 {
-	Xil_Out32(SPI_LE_ADF4002_ADDR, value);
+	Xil_Out32(WBT_REG_ADF4002_LE, value);
 }
 void setPLL2_RESET_N(u32 value)
 {
-	Xil_Out32(PLL2_RESET_N_ADDR, value);
+	Xil_Out32(WBT_REG_PLL2_RESET_N, value);
 }
 void setSpiData(u32 value)
 {
-	Xil_Out32(SPI_DATA_ADDR, value);
+	Xil_Out32(WBT_REG_SPI_DATA, value);
 }
 
 int SpiSelfTestExample(u16 DeviceId);
 
-XSpi Spi; /* The instance of the SPI device */
 
 void AD95xx_spi_init(void);
 void configure_AD9516(void);
 void configure_AD9510_internal_signal(void);
 void configure_AD9510_external_signal(void);
 void configure_ADF4002(void);
-/*
-void WB_SpiTransfer(u8 data, u8 device)
-{
-	setSpiData((u32)data);
-	switch(device)
-	{
-	case SPI_CS_AD9516_SEL : setCS_AD9516(0); break;
-	case SPI_CS_AD9510_SEL : setCS_AD9510(0); break;
-	case SPI_LE_ADF4002_SEL : setLE_ADF4002(0); break;
-	default: xil_printf("Wrong CS value\n\r");
-	}
-	setSpiStart(1);
-	for(int i=0; i<4;i++);
-	setSpiStart(0);
-	for(int i=0; i<1024;i++);
-	switch(device)
-	{
-	case SPI_CS_AD9516_SEL : setCS_AD9516(1); break;
-	case SPI_CS_AD9510_SEL : setCS_AD9510(1); break;
-	case SPI_LE_ADF4002_SEL : setLE_ADF4002(1); break;
-	default: xil_printf("Wrong CS value\n\r");
-	}
-	for(int i=0; i<4;i++);
 
-}*/
+
 u8 WB_SpiTransfer(u8 dataSend, u8 device)
 {
 	setSpiData((u32)dataSend);
@@ -116,7 +103,7 @@ u8 WB_SpiTransfer(u8 dataSend, u8 device)
 	default: xil_printf("Wrong CS value\n\r");
 	}
 	for(int i=0; i<4;i++);
-	return (u8)(Xil_In32(SPI_DATA_IN_ADDR));
+	return (u8)(Xil_In32(WBT_REG_SPI_DATA_IN));
 }
 
 void spi_adf4002_send_data(u32 data)
@@ -132,11 +119,10 @@ int spi_send_data(u16 address, u8 data, u8 device)
 	u8 address_pointer[2] = {(u8)(address>>8), (u8)address};
 	u8 data_pointer[1] = {data};
 	u8 data_read[3];
-	int Status=XST_SUCCESS;
 	WB_SpiTransfer(address_pointer[0], device);
 	WB_SpiTransfer(address_pointer[1], device);
 	WB_SpiTransfer(data, device);
-	return Status;
+	return 1;
 }
 void spi_read_data(u16 address, u8 data, u8 device)
 {
@@ -152,36 +138,50 @@ void spi_read_data(u16 address, u8 data, u8 device)
 }
 
 
+u16 WB_SpiADC_Transfer()
+{
+	setCNV_AD7980(0);
+	setSpiADC_Start(1);
+	for(int i=0; i<4;i++);
+	setSpiADC_Start(0);
+	for(int i=0; i<1024;i++);
+	setCNV_AD7980(1);
+	for(int i=0; i<4;i++);
+	return (u16)(Xil_In32(WBT_REG_SPI_ADC_DATA_IN));
+}
+
+
+
 void ppl1_syncb_on(u8 on)
 {
 	u32 a;
-	a = Xil_In32(PLL_SYNC_ADDR);
+	a = Xil_In32(WBT_REG_PLL1_SYNCB);
 	if(on==1)
 	{
-		Xil_Out32(PLL_SYNC_ADDR, a|(u32)1);
+		Xil_Out32(WBT_REG_PLL1_SYNCB, a|(u32)1);
 	}
 	else
 	{
-		Xil_Out32(PLL_SYNC_ADDR, a&(u32)0xfffffffe);
+		Xil_Out32(WBT_REG_PLL1_SYNCB, a&(u32)0xfffffffe);
 	}
 }
 void led_on(u8 on)
 {
 	u32 a;
-	a = Xil_In32(LED_ADDR);
+	a = Xil_In32(WBT_REG_LED);
 	if(on==1)
 	{
-		Xil_Out32(LED_ADDR, 3);
+		Xil_Out32(WBT_REG_LED, 3);
 	}
 	else
 	{
-		Xil_Out32(LED_ADDR, 0);
+		Xil_Out32(WBT_REG_LED, 0);
 	}
 }
 
 void setDDSStep(u32 step)
 {
-	Xil_Out32(DDS_ADDR, step);
+	Xil_Out32(WBT_REG_DDS, step);
 }
 
 void setDDSFrequency(u32 freq)
@@ -200,7 +200,7 @@ void setDDSFrequency(u32 freq)
 
 void setFreqCounterMaskReg(u32 mask)
 {
-	Xil_Out32(FREQ_CNT_MASK_ADDR, mask);
+	Xil_Out32(WBT_REG_CNT_MASK, mask);
 }
 
 
@@ -210,8 +210,8 @@ void measureDACPLLFreq(u32* freqDAC, u32* freqPLL)
 	u32 countsDAC=0;
 	u32 countsPLL=0;
 
-	countsPLL=Xil_In32(PLL_FREQ_ADDR);
-	countsDAC=Xil_In32(DAC_FREQ_ADDR);
+	countsPLL=Xil_In32(WBT_REG_PLL_FREQ);
+	countsDAC=Xil_In32(WBT_REG_DDS_FREQ);
 
 	*freqDAC = (u32)(countsDAC*0.3725);
 	*freqPLL = (u32)(countsPLL*0.3725);
@@ -265,12 +265,17 @@ int main(void)
 
 	}
 */
+	xil_printf("adc = %d \n\r", WB_SpiADC_Transfer());
+	for(int i=0; i<1000000; i++);
+	xil_printf("adc = %d \n\r", WB_SpiADC_Transfer());
+
 	while(freqDACSet>13000000)
 	{
 		freqDACSet--;
 		for(int i=0; i<10000;i++);
 		setDDSFrequency(freqDACSet);
 	}
+	xil_printf("adc = %d \n\r", WB_SpiADC_Transfer());
 
 
 	xil_printf("pll freq = %d \n\r", freqPLL);
@@ -281,8 +286,7 @@ int main(void)
 
 	xil_printf("Sukces\n\r");
 
-
-	return XST_SUCCESS;
+	return 1;
 }
 
 
@@ -296,6 +300,13 @@ void AD95xx_spi_init(void)
 	setCS_AD9510(1);
 	setLE_ADF4002(1);
 }
+
+void ADC_spi_init(void)
+{
+	setSpiADC_CPol(0);
+	setCNV_AD7980(1);
+}
+
 
 
 union

@@ -109,6 +109,15 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/imports/wb/my_regs.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PSRCDIR/wb/my_regs.vhd"/>
+          <Attr Name="ImportTime" Val="1521462571"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/new/freq_measure.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
@@ -123,14 +132,27 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/sinus.coe">
+      <File Path="$PSRCDIR/sources_1/imports/AXI_TO_WISHBONE_edit_slave/sinus.coe">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/sinus.coe"/>
+          <Attr Name="ImportTime" Val="1519827164"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/sinus2.coe">
+      <File Path="$PSRCDIR/sources_1/imports/AXI_TO_WISHBONE_edit_slave/sinus2.coe">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/sinus2.coe"/>
+          <Attr Name="ImportTime" Val="1519827907"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/wb/my_regs2.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PSRCDIR/wb/my_regs2.vhd"/>
+          <Attr Name="ImportTime" Val="1521558953"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>

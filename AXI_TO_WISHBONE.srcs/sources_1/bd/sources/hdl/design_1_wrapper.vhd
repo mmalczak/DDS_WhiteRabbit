@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.1 (lin64) Build 1846317 Fri Apr 14 18:54:47 MDT 2017
---Date        : Fri Mar 16 17:26:36 2018
+--Date        : Tue Mar 20 17:02:45 2018
 --Host        : milosz-System-Product-Name running 64-bit Linux Mint 18.2 Sonya
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -50,12 +50,16 @@ entity design_1_wrapper is
     led : out STD_LOGIC;
     przycisk : in STD_LOGIC;
     save : in STD_LOGIC_VECTOR ( 39 downto 0 );
+    spi_miso_i : in STD_LOGIC;
     spi_miso_i_1 : in STD_LOGIC;
     spi_mosi_ad95xx_o : out STD_LOGIC;
     spi_sclk_ad95xx_o : out STD_LOGIC;
+    spi_sclk_o : out STD_LOGIC;
     wbt_adf4002_le_o : out STD_LOGIC;
     wbt_led_o : out STD_LOGIC_VECTOR ( 1 downto 0 );
     wbt_pll2_reset_n_o : out STD_LOGIC;
+    wbt_spi_adc_cnv_o : out STD_LOGIC;
+    wbt_spi_adc_sdi_o : out STD_LOGIC;
     wbt_spi_cs_ad9510_o : out STD_LOGIC;
     wbt_spi_cs_ad9516_o : out STD_LOGIC
   );
@@ -101,14 +105,18 @@ architecture STRUCTURE of design_1_wrapper is
     przycisk : in STD_LOGIC;
     led : out STD_LOGIC;
     spi_sclk_ad95xx_o : out STD_LOGIC;
+    PD_CLK : out STD_LOGIC;
     spi_mosi_ad95xx_o : out STD_LOGIC;
+    PD_DATA : out STD_LOGIC;
     spi_miso_i_1 : in STD_LOGIC;
     wbt_spi_cs_ad9516_o : out STD_LOGIC;
     wbt_spi_cs_ad9510_o : out STD_LOGIC;
     wbt_adf4002_le_o : out STD_LOGIC;
     wbt_pll2_reset_n_o : out STD_LOGIC;
-    PD_CLK : out STD_LOGIC;
-    PD_DATA : out STD_LOGIC
+    wbt_spi_adc_cnv_o : out STD_LOGIC;
+    wbt_spi_adc_sdi_o : out STD_LOGIC;
+    spi_sclk_o : out STD_LOGIC;
+    spi_miso_i : in STD_LOGIC
   );
   end component design_1;
 begin
@@ -151,12 +159,16 @@ design_1_i: component design_1
       led => led,
       przycisk => przycisk,
       save(39 downto 0) => save(39 downto 0),
+      spi_miso_i => spi_miso_i,
       spi_miso_i_1 => spi_miso_i_1,
       spi_mosi_ad95xx_o => spi_mosi_ad95xx_o,
       spi_sclk_ad95xx_o => spi_sclk_ad95xx_o,
+      spi_sclk_o => spi_sclk_o,
       wbt_adf4002_le_o => wbt_adf4002_le_o,
       wbt_led_o(1 downto 0) => wbt_led_o(1 downto 0),
       wbt_pll2_reset_n_o => wbt_pll2_reset_n_o,
+      wbt_spi_adc_cnv_o => wbt_spi_adc_cnv_o,
+      wbt_spi_adc_sdi_o => wbt_spi_adc_sdi_o,
       wbt_spi_cs_ad9510_o => wbt_spi_cs_ad9510_o,
       wbt_spi_cs_ad9516_o => wbt_spi_cs_ad9516_o
     );

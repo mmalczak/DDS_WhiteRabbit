@@ -191,4 +191,70 @@ peripheral {
 	};
 
 
+
+
+    reg {
+		name = "SPI_ADC_START register";
+		description = "A register defining the state of SPI_ADC_START";
+		prefix = "spi_adc_start";
+		field {
+			name = "SPI_ADC_START";
+			description = "Defines the state of SPI_ADC_START";
+			type = BIT;
+			access_bus = READ_WRITE;
+			access_dev = READ_ONLY;
+		};
+	};
+    reg {
+		name = "SPI_ADC_CPOL register";
+		description = "A register defining the state of SPI_ADC_CPOL";
+		prefix = "spi_adc_cpol";
+		field {
+			name = "SPI_ADC_CPOL";
+			description = "Defines the state of SPI_ADC_CPOL";
+			type = BIT;
+			access_bus = READ_WRITE;
+			access_dev = READ_ONLY;
+		};
+	};
+    reg {
+		name = "SPI_ADC_CNV register";
+		description = "A register defining the state of SPI_ADC_CNV";
+		prefix = "spi_adc_cnv";
+		field {
+			name = "SPI_ADC_CNV";
+			description = "Defines the state of SPI_ADC_CNV";
+			type = BIT;
+			access_bus = READ_WRITE;
+			access_dev = READ_ONLY;
+		};
+	};
+    reg {
+		name = "SPI_ADC_DATA_IN register";
+		description = "A register defining the state of SPI_ADC_DATA_IN";
+		prefix = "spi_adc_data_in";
+		field {
+			name = "SPI_ADC_DATA_IN";
+			description = "Defines the state of SPI_ADC_DATA_IN";
+			type = SLV;
+			size = 16;
+			access_bus = READ_ONLY;
+			access_dev = WRITE_ONLY;
+		};
+	};
+    reg {
+		name = "SPI_ADC_SDI register";
+		description = "A register defining the state of SPI_ADC_SDI";
+		prefix = "spi_adc_sdi";
+		field {
+			name = "SPI_ADC_SDI";
+			description = "Defines the state of SPI_ADC_SDI";
+			type = BIT;
+			access_bus = READ_WRITE;
+			access_dev = READ_ONLY;
+		};
+	};
+
+
+
 };

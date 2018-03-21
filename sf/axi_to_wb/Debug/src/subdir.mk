@@ -8,16 +8,19 @@ LD_SRCS += \
 
 C_SRCS += \
 ../src/axi_to_wb.c \
+../src/spi_ADC.c \
 ../src/spi_general.c \
 ../src/spi_mine.c 
 
 OBJS += \
 ./src/axi_to_wb.o \
+./src/spi_ADC.o \
 ./src/spi_general.o \
 ./src/spi_mine.o 
 
 C_DEPS += \
 ./src/axi_to_wb.d \
+./src/spi_ADC.d \
 ./src/spi_general.d \
 ./src/spi_mine.d 
 

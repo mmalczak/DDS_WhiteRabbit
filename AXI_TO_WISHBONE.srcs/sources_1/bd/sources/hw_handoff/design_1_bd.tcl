@@ -278,7 +278,7 @@ CONFIG.use_bram_block {Stand_Alone} \
   # Create instance: ila_0, and set properties
   set ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.2 ila_0 ]
   set_property -dict [ list \
-CONFIG.C_DATA_DEPTH {16384} \
+CONFIG.C_DATA_DEPTH {131072} \
 CONFIG.C_ENABLE_ILA_AXI_MON {false} \
 CONFIG.C_MONITOR_TYPE {Native} \
 CONFIG.C_NUM_OF_PROBES {4} \
@@ -827,6 +827,7 @@ CONFIG.NUM_MI {2} \
      return 1
    }
     set_property -dict [ list \
+CONFIG.g_div_ratio_log2 {1} \
 CONFIG.g_num_data_bits {16} \
  ] $spi_adc
 

@@ -1520,6 +1520,7 @@
         <spirit:componentRef spirit:library="module_ref" spirit:name="spi_master" spirit:vendor="user.org" spirit:version="1.0"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_spi_master_1_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="g_div_ratio_log2">1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="g_num_data_bits">16</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="bd:referenceName">spi_master</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="bd:subInstancePath"></spirit:configurableElementValue>
@@ -1534,7 +1535,7 @@
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_ila_0_1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_PROBE4_WIDTH">1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_PROBE3_WIDTH">16</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="C_DATA_DEPTH">16384</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_DATA_DEPTH">131072</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_NUM_OF_PROBES">4</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_ENABLE_ILA_AXI_MON">false</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_MONITOR_TYPE">Native</spirit:configurableElementValue>

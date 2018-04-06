@@ -100,7 +100,7 @@ ARCHITECTURE design_1_spi_master_1_0_arch OF design_1_spi_master_1_0 IS
 BEGIN
   U0 : spi_master
     GENERIC MAP (
-      g_div_ratio_log2 => 4,
+      g_div_ratio_log2 => 1,
       g_num_data_bits => 16
     )
     PORT MAP (

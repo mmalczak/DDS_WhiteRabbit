@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Mar 20 17:02:46 2018" VIVADOVERSION="2017.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Apr  6 15:44:35 2018" VIVADOVERSION="2017.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="xilinx.com:zc706:part0:1.4" DEVICE="7z045" NAME="design_1" PACKAGE="ffg900" SPEEDGRADE="-2"/>
 
@@ -868,7 +868,7 @@
         <PARAMETER NAME="C_NUM_MONITOR_SLOTS" VALUE="1"/>
         <PARAMETER NAME="C_ENABLE_ILA_AXI_MON" VALUE="0"/>
         <PARAMETER NAME="C_NUM_OF_PROBES" VALUE="4"/>
-        <PARAMETER NAME="C_DATA_DEPTH" VALUE="16384"/>
+        <PARAMETER NAME="C_DATA_DEPTH" VALUE="131072"/>
         <PARAMETER NAME="C_MAJOR_VERSION" VALUE="2017"/>
         <PARAMETER NAME="C_MINOR_VERSION" VALUE="1"/>
         <PARAMETER NAME="C_BUILD_REVISION" VALUE="0"/>
@@ -6289,7 +6289,7 @@
     <MODULE FULLNAME="/spi_adc" HWVERSION="1.0" INSTANCE="spi_adc" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="spi_master" VLNV="user.org:module_ref:spi_master:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="g_div_ratio_log2" VALUE="4"/>
+        <PARAMETER NAME="g_div_ratio_log2" VALUE="1"/>
         <PARAMETER NAME="g_num_data_bits" VALUE="16"/>
         <PARAMETER NAME="Component_Name" VALUE="design_1_spi_master_1_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>

@@ -275,30 +275,48 @@ void spi_read_data(u16 address, u8 data, u8 device)
 void configure_ADF4002(void)
 {
 	ADF4002_InitTypeDef ADF4002_Struct;
-	// initialization latch
+	// initialization latch +
 	ADF4002_Struct.initialization_function_Latch.initialization_function_Latch=0;
-	ADF4002_Struct.initialization_function_Latch.currentSetting2=0b100;
-	ADF4002_Struct.initialization_function_Latch.currentSetting1=0b100;
+	ADF4002_Struct.initialization_function_Latch.currentSetting2=0b111;
+	ADF4002_Struct.initialization_function_Latch.currentSetting1=0b111;
 	ADF4002_Struct.initialization_function_Latch.timerCounterControl=0b0011;
 	ADF4002_Struct.initialization_function_Latch.PD_polarity=1;
 	ADF4002_Struct.initialization_function_Latch.fastlockEnable=0;
 	ADF4002_Struct.initialization_function_Latch.fastlockMode=0;
-	ADF4002_Struct.initialization_function_Latch.MUXOUT_CONTROL=0b010;
+	ADF4002_Struct.initialization_function_Latch.MUXOUT_CONTROL=0b100;
 	ADF4002_Struct.initialization_function_Latch.controlBits=0b11;
 	spi_adf4002_send_data(ADF4002_Struct.initialization_function_Latch.initialization_function_Latch);
+	//xil_printf(" initialization latch %d\n\r", ADF4002_Struct.initialization_function_Latch.initialization_function_Latch);
+	/*spi_adf4002_send_data(13);
+	spi_adf4002_send_data(12);
+	spi_adf4002_send_data(0x101);
+	spi_adf4002_send_data(0x100004);*/
 
-	//function latch
+	//function latch +
 	ADF4002_Struct.initialization_function_Latch.controlBits=0b10;
 	spi_adf4002_send_data(ADF4002_Struct.initialization_function_Latch.initialization_function_Latch);
+	//xil_printf(" function latch %d\n\r", ADF4002_Struct.initialization_function_Latch.initialization_function_Latch);
+
+
+	//N counter latch +
+		ADF4002_Struct.NCounterLatch.NCounterLatch=0;
+		ADF4002_Struct.NCounterLatch.Ncounter=1;
+		ADF4002_Struct.NCounterLatch.controlBits=1;
+		spi_adf4002_send_data(ADF4002_Struct.NCounterLatch.NCounterLatch);
+		//xil_printf(" N counter latch %d\n\r", ADF4002_Struct.NCounterLatch.NCounterLatch);
+
 
 	//reference counter latch
 	ADF4002_Struct.referenceCounterLatch.referenceCounterLatch=0;
-	ADF4002_Struct.referenceCounterLatch.referenceCounter=1<<6;
+	//ADF4002_Struct.referenceCounterLatch.referenceCounter=1<<6;
+	ADF4002_Struct.referenceCounterLatch.referenceCounter=1;
+	ADF4002_Struct.referenceCounterLatch.antiBacklashWidth = 0b00;
 	spi_adf4002_send_data(ADF4002_Struct.referenceCounterLatch.referenceCounterLatch);
+	//xil_printf(" reference counter latch %d\n\r", ADF4002_Struct.referenceCounterLatch.referenceCounterLatch);
 
-	//N counter latch
-	ADF4002_Struct.NCounterLatch.NCounterLatch=0;
-	ADF4002_Struct.NCounterLatch.Ncounter=1;
-	ADF4002_Struct.NCounterLatch.controlBits=1;
-	spi_adf4002_send_data(ADF4002_Struct.NCounterLatch.NCounterLatch);
+
+
+
+
+
 }

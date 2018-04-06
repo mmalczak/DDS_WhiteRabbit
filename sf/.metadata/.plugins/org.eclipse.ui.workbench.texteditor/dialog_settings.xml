@@ -2,26 +2,27 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="0x43C" key="selection"/>
+		<item value="setPLL2_RESET_N" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="setPLL2_RESET_N"/>
+			<item value="WBT_REG_PLL2_RESET_N"/>
+			<item value="Frequency to"/>
+			<item value="Frequenc"/>
+			<item value="Frequenct"/>
 			<item value="0x000"/>
 			<item value="XSP_MASTER_OPTION"/>
 			<item value="master"/>
-			<item value="_options"/>
-			<item value="Spi"/>
-			<item value="xspi"/>
-			<item value="XSP_*_OPTIONS"/>
 		</list>
 		<list key="replacehistory">
 			<item value="0x43C"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="281" key="DIALOG_WIDTH"/>
+		<item value="283" key="DIALOG_WIDTH"/>
 		<item value="1|Noto Sans|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="434" key="DIALOG_HEIGHT"/>
 		<item value="823" key="DIALOG_X_ORIGIN"/>

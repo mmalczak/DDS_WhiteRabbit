@@ -119,6 +119,25 @@ void manualFreqControl(u32 freqDACSet)
 	}
 
 }
+double frequencyAccumulator(void);
+void manual()
+{
+	char c;
+	double a;
+	while(1)
+	{
+		c=getchar();
+		if(c!='\r')
+		{
+			switch(c)
+			{
+			case 'm': frequencyAccumulator();break;
+			default: xil_printf("Wrong value\n\r");break;
+			}
+		}
+	}
+
+}
 void freqSweep(u32 upperFreq, u32 lowerFreq)
 {
 	u32 freqDACSet = upperFreq;
@@ -155,6 +174,58 @@ void balanceFrequency(void)
 	}
 */
 }
+/*
+void balancePLL(void)
+{
+	s32 freqDACSet = 28000000;
+	s32 err, prErr;
+	s32 f[4]={0, 0, 0, 0};
+	(s32)(WB_SpiADC_Transfer());
+	s32 P, I=0, D, PID;
+	s64 errSum=0;
+	u32 i=0;
+	while(1)
+	{
+		f[i] = ((s32)(WB_SpiADC_Transfer()))-(1<<15);
+		i++;
+		i=i&3;
+		err=0;
+		for(int j=0; j<4; j++)
+		{
+			err = err+f[j];
+		}
+		err=err/4;
+		freqDACSet = freqDACSet + err;
+		setDDSFrequency((u32)freqDACSet);
+	}
+}*/
+
+double frequencyAccumulator(void)
+{
+	static double err, err_pr, freq = 28000000.0;
+	static double a=1.1, b=2.2;
+	err_pr = err;
+	err = ((double)(WB_SpiADC_Transfer()))-(1<<15);
+	freq = freq - err*(a+b) - err_pr*(a-b);
+	return freq;
+}
+u32 frequencyFilter(void)
+{
+	static double freq, freq_pr, control;
+	static double a=3.3, b=4.4;
+	freq_pr = freq;
+	freq = frequencyAccumulator();
+	control = (freq+freq_pr)*a - b*control;
+	return (u32)control;
+}
+void balancePLL(void)
+{
+	while(1)
+	{
+		setDDSFrequency(frequencyFilter());
+	}
+}
+
 
 int main(void)
 {
@@ -164,11 +235,12 @@ int main(void)
 	u32 freqDACSet=28000000;
 	configure_AD9516();
 	ppl1_syncb_on(1);
-	configure_AD9510_internal_signal();
+	configure_AD9510_external_signal();
 	setDDSFrequency(freqDACSet);
 	setFreqCounterMaskReg((u32)0x04000000);
 	configure_ADF4002();
-	setReferencePLLCounter(8,8);
+	//setReferencePLLCounter(8,8);
+	balancePLL();
 	xil_printf("Sukces\n\r");
 
 	return 1;

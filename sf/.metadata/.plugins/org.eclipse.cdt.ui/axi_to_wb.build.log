@@ -1,31 +1,8 @@
-15:27:46 **** Auto Build of configuration Debug for project axi_to_wb ****
+16:18:01 **** Auto Build of configuration Debug for project axi_to_wb ****
 make pre-build main-build 
 a9-linaro-pre-build-step
  
-Building file: ../src/spi_mine.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
-../src/spi_mine.c: In function 'led_on':
-../src/spi_mine.c:38:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
-  u32 a;
-      ^
-../src/spi_mine.c: In function 'manualFreqControl':
-../src/spi_mine.c:99:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
-   c=getchar();
-     ^~~~~~~
-Finished building: ../src/spi_mine.c
- 
-Building target: axi_to_wb.elf
-Invoking: ARM v7 gcc linker
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: axi_to_wb.elf
- 
-Invoking: ARM v7 Print Size
-arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  36604	   2188	2054256	2093048	 1feff8	axi_to_wb.elf
-Finished building: axi_to_wb.elf.size
- 
+make: Nothing to be done for 'main-build'.
 
-15:27:46 Build Finished (took 222ms)
+16:18:01 Build Finished (took 148ms)
 

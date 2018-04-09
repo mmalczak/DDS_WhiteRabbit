@@ -198,25 +198,28 @@ void balancePLL(void)
 		freqDACSet = freqDACSet + err;
 		setDDSFrequency((u32)freqDACSet);
 	}
-}*/
-
+}
+*/
 double frequencyAccumulator(void)
 {
 	static double err, err_pr, freq = 28000000.0;
-	static double a=1.1, b=2.2;
+	static double a=2.03e-5, b=0.00486;
 	err_pr = err;
-	err = ((double)(WB_SpiADC_Transfer()))-(1<<15);
+	err = ((double)(WB_SpiADC_Transfer()))-(double)(1<<15);
+	//err=err/1000;
 	freq = freq - err*(a+b) - err_pr*(a-b);
+	//freq = freq + err;
 	return freq;
 }
 u32 frequencyFilter(void)
 {
 	static double freq, freq_pr, control;
-	static double a=3.3, b=4.4;
+	static double c=0.4, d=-0.2;
 	freq_pr = freq;
 	freq = frequencyAccumulator();
-	control = (freq+freq_pr)*a - b*control;
+	control = (freq+freq_pr)*c - d*control;
 	return (u32)control;
+	//return (u32)frequencyAccumulator();
 }
 void balancePLL(void)
 {
@@ -241,6 +244,7 @@ int main(void)
 	configure_ADF4002();
 	//setReferencePLLCounter(8,8);
 	balancePLL();
+	//setDDSFrequency(28000000);
 	xil_printf("Sukces\n\r");
 
 	return 1;

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Apr  6 15:44:35 2018" VIVADOVERSION="2017.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Apr 13 17:54:51 2018" VIVADOVERSION="2017.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="xilinx.com:zc706:part0:1.4" DEVICE="7z045" NAME="design_1" PACKAGE="ffg900" SPEEDGRADE="-2"/>
 
@@ -100,22 +100,22 @@
         <CONNECTION INSTANCE="External_Ports" PORT="przycisk"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="spi_sclk_ad95xx_o" SIGIS="undef" SIGNAME="spi_master_0_spi_sclk_o">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="spi_master_0" PORT="spi_sclk_o"/>
-      </CONNECTIONS>
-    </PORT>
     <PORT DIR="O" NAME="PD_CLK" SIGIS="undef" SIGNAME="spi_master_0_spi_sclk_o">
       <CONNECTIONS>
         <CONNECTION INSTANCE="spi_master_0" PORT="spi_sclk_o"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="spi_mosi_ad95xx_o" SIGIS="undef" SIGNAME="spi_master_0_spi_mosi_o">
+    <PORT DIR="O" NAME="spi_sclk_ad95xx_o" SIGIS="undef" SIGNAME="spi_master_0_spi_sclk_o">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="spi_master_0" PORT="spi_sclk_o"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="PD_DATA" SIGIS="undef" SIGNAME="spi_master_0_spi_mosi_o">
       <CONNECTIONS>
         <CONNECTION INSTANCE="spi_master_0" PORT="spi_mosi_o"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="PD_DATA" SIGIS="undef" SIGNAME="spi_master_0_spi_mosi_o">
+    <PORT DIR="O" NAME="spi_mosi_ad95xx_o" SIGIS="undef" SIGNAME="spi_master_0_spi_mosi_o">
       <CONNECTIONS>
         <CONNECTION INSTANCE="spi_master_0" PORT="spi_mosi_o"/>
       </CONNECTIONS>
@@ -360,6 +360,51 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
+    <MODULE FULLNAME="/PLL_filter_0" HWVERSION="1.0" INSTANCE="PLL_filter_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="PLL_filter" VLNV="user.org:module_ref:PLL_filter:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_PLL_filter_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="axil2wb_0_wb_clk_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axil2wb_0" PORT="wb_clk_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="res" SIGIS="undef" SIGNAME="processing_system7_0_FCLK_RESET0_N">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_RESET0_N"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="start" SIGIS="undef" SIGNAME="spi_adc_drdy_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="spi_adc" PORT="drdy_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="err" RIGHT="0" SIGIS="undef" SIGNAME="my_regs_wbt_filter_out_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="my_regs" PORT="wbt_filter_out_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="x0" RIGHT="0" SIGIS="undef" SIGNAME="my_regs_wbt_x0_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="my_regs" PORT="wbt_x0_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="x1" RIGHT="0" SIGIS="undef" SIGNAME="my_regs_wbt_x1_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="my_regs" PORT="wbt_x1_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="freq" RIGHT="0" SIGIS="undef" SIGNAME="PLL_filter_0_freq">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="my_regs" PORT="wbt_filter_in_i"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
     <MODULE FULLNAME="/axil2wb_0" HWVERSION="1.0" INSTANCE="axil2wb_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axil2wb" VLNV="user.org:module_ref:axil2wb:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
@@ -472,6 +517,7 @@
         <PORT DIR="O" NAME="wb_clk_o" SIGIS="undef" SIGNAME="axil2wb_0_wb_clk_o">
           <CONNECTIONS>
             <CONNECTION INSTANCE="my_regs" PORT="clk_sys_i"/>
+            <CONNECTION INSTANCE="PLL_filter_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="wb_rst_o" SIGIS="undef" SIGNAME="axil2wb_0_wb_rst_o">
@@ -867,7 +913,7 @@
         <PARAMETER NAME="C_SLOT_0_AXI_PROTOCOL" VALUE="AXI4"/>
         <PARAMETER NAME="C_NUM_MONITOR_SLOTS" VALUE="1"/>
         <PARAMETER NAME="C_ENABLE_ILA_AXI_MON" VALUE="0"/>
-        <PARAMETER NAME="C_NUM_OF_PROBES" VALUE="4"/>
+        <PARAMETER NAME="C_NUM_OF_PROBES" VALUE="6"/>
         <PARAMETER NAME="C_DATA_DEPTH" VALUE="131072"/>
         <PARAMETER NAME="C_MAJOR_VERSION" VALUE="2017"/>
         <PARAMETER NAME="C_MINOR_VERSION" VALUE="1"/>
@@ -4012,6 +4058,16 @@
             <CONNECTION INSTANCE="spi_adc" PORT="data_o"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" LEFT="0" NAME="probe4" RIGHT="0" SIGIS="undef" SIGNAME="spi_adc_ready_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="spi_adc" PORT="ready_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="probe5" RIGHT="0" SIGIS="undef" SIGNAME="spi_adc_drdy_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="spi_adc" PORT="drdy_o"/>
+          </CONNECTIONS>
+        </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
@@ -4167,6 +4223,26 @@
         <PORT DIR="O" NAME="wbt_spi_adc_sdi_o" SIGIS="undef" SIGNAME="my_regs_wbt_spi_adc_sdi_o">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="wbt_spi_adc_sdi_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="wbt_filter_in_i" RIGHT="0" SIGIS="undef" SIGNAME="PLL_filter_0_freq">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PLL_filter_0" PORT="freq"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="wbt_filter_out_o" RIGHT="0" SIGIS="undef" SIGNAME="my_regs_wbt_filter_out_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PLL_filter_0" PORT="err"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="wbt_x0_o" RIGHT="0" SIGIS="undef" SIGNAME="my_regs_wbt_x0_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PLL_filter_0" PORT="x0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="wbt_x1_o" RIGHT="0" SIGIS="undef" SIGNAME="my_regs_wbt_x1_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PLL_filter_0" PORT="x1"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -5331,6 +5407,7 @@
             <CONNECTION INSTANCE="rst_processing_system7_0_50M" PORT="ext_reset_in"/>
             <CONNECTION INSTANCE="spi_master_0" PORT="rst_n_i"/>
             <CONNECTION INSTANCE="spi_adc" PORT="rst_n_i"/>
+            <CONNECTION INSTANCE="PLL_filter_0" PORT="res"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" LEFT="53" NAME="MIO" RIGHT="0" SIGIS="undef"/>
@@ -6320,12 +6397,21 @@
             <CONNECTION INSTANCE="xlconstant_1" PORT="dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="drdy_o" SIGIS="undef"/>
-        <PORT DIR="O" NAME="ready_o" SIGIS="undef"/>
+        <PORT DIR="O" NAME="drdy_o" SIGIS="undef" SIGNAME="spi_adc_drdy_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ila_0" PORT="probe5"/>
+            <CONNECTION INSTANCE="PLL_filter_0" PORT="start"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="ready_o" SIGIS="undef" SIGNAME="spi_adc_ready_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ila_0" PORT="probe4"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" LEFT="15" NAME="data_o" RIGHT="0" SIGIS="undef" SIGNAME="spi_adc_data_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="my_regs" PORT="wbt_spi_adc_data_in_i"/>
             <CONNECTION INSTANCE="ila_0" PORT="probe3"/>
+            <CONNECTION INSTANCE="my_regs" PORT="wbt_spi_adc_data_in_i"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="spi_cs_n_o" SIGIS="undef"/>
@@ -6388,14 +6474,14 @@
         <PORT DIR="O" NAME="spi_cs_n_o" SIGIS="undef"/>
         <PORT DIR="O" NAME="spi_sclk_o" SIGIS="undef" SIGNAME="spi_master_0_spi_sclk_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="PD_CLK"/>
             <CONNECTION INSTANCE="External_Ports" PORT="spi_sclk_ad95xx_o"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="PD_CLK"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="spi_mosi_o" SIGIS="undef" SIGNAME="spi_master_0_spi_mosi_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="PD_DATA"/>
             <CONNECTION INSTANCE="External_Ports" PORT="spi_mosi_ad95xx_o"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="PD_DATA"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="spi_miso_i" SIGIS="undef" SIGNAME="External_Ports_spi_miso_i_1">

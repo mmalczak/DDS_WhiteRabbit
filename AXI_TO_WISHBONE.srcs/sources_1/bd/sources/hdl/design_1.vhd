@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.1 (lin64) Build 1846317 Fri Apr 14 18:54:47 MDT 2017
---Date        : Fri Apr  6 15:44:33 2018
+--Date        : Fri Apr 13 17:54:50 2018
 --Host        : milosz-System-Product-Name running 64-bit Linux Mint 18.2 Sonya
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -1196,7 +1196,7 @@ entity design_1 is
     wbt_spi_cs_ad9516_o : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=25,numReposBlks=21,numNonXlnxBlks=7,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=7,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=1,da_clkrst_cnt=1,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=26,numReposBlks=22,numNonXlnxBlks=8,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=8,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=1,da_clkrst_cnt=1,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
@@ -1409,6 +1409,44 @@ architecture STRUCTURE of design_1 is
     counts_pll : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   end component design_1_freq_high_measure_0_0;
+  component design_1_spi_master_1_0 is
+  port (
+    clk_sys_i : in STD_LOGIC;
+    rst_n_i : in STD_LOGIC;
+    start_i : in STD_LOGIC;
+    cpol_i : in STD_LOGIC;
+    data_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    drdy_o : out STD_LOGIC;
+    ready_o : out STD_LOGIC;
+    data_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    spi_cs_n_o : out STD_LOGIC;
+    spi_sclk_o : out STD_LOGIC;
+    spi_mosi_o : out STD_LOGIC;
+    spi_miso_i : in STD_LOGIC
+  );
+  end component design_1_spi_master_1_0;
+  component design_1_ila_0_1 is
+  port (
+    clk : in STD_LOGIC;
+    probe0 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe2 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe3 : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    probe4 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe5 : in STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component design_1_ila_0_1;
+  component design_1_xlconstant_1_0 is
+  port (
+    dout : out STD_LOGIC_VECTOR ( 15 downto 0 )
+  );
+  end component design_1_xlconstant_1_0;
+  component design_1_xlslice_0_0 is
+  port (
+    Din : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    Dout : out STD_LOGIC_VECTOR ( 4 downto 0 )
+  );
+  end component design_1_xlslice_0_0;
   component design_1_wb_test_slave_0_0 is
   port (
     rst_n_i : in STD_LOGIC;
@@ -1440,45 +1478,24 @@ architecture STRUCTURE of design_1 is
     wbt_spi_adc_cpol_o : out STD_LOGIC;
     wbt_spi_adc_cnv_o : out STD_LOGIC;
     wbt_spi_adc_data_in_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    wbt_spi_adc_sdi_o : out STD_LOGIC
+    wbt_spi_adc_sdi_o : out STD_LOGIC;
+    wbt_filter_in_i : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    wbt_filter_out_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    wbt_x0_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    wbt_x1_o : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   end component design_1_wb_test_slave_0_0;
-  component design_1_spi_master_1_0 is
-  port (
-    clk_sys_i : in STD_LOGIC;
-    rst_n_i : in STD_LOGIC;
-    start_i : in STD_LOGIC;
-    cpol_i : in STD_LOGIC;
-    data_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    drdy_o : out STD_LOGIC;
-    ready_o : out STD_LOGIC;
-    data_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    spi_cs_n_o : out STD_LOGIC;
-    spi_sclk_o : out STD_LOGIC;
-    spi_mosi_o : out STD_LOGIC;
-    spi_miso_i : in STD_LOGIC
-  );
-  end component design_1_spi_master_1_0;
-  component design_1_ila_0_1 is
+  component design_1_PLL_filter_0_0 is
   port (
     clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe2 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe3 : in STD_LOGIC_VECTOR ( 15 downto 0 )
+    res : in STD_LOGIC;
+    start : in STD_LOGIC;
+    err : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    x0 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    x1 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    freq : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
-  end component design_1_ila_0_1;
-  component design_1_xlconstant_1_0 is
-  port (
-    dout : out STD_LOGIC_VECTOR ( 15 downto 0 )
-  );
-  end component design_1_xlconstant_1_0;
-  component design_1_xlslice_0_0 is
-  port (
-    Din : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    Dout : out STD_LOGIC_VECTOR ( 4 downto 0 )
-  );
-  end component design_1_xlslice_0_0;
+  end component design_1_PLL_filter_0_0;
   signal CLK0_OUT_IBUF_OUT : STD_LOGIC_VECTOR ( 0 to 0 );
   signal CLK1_OUT_IBUF_OUT : STD_LOGIC_VECTOR ( 0 to 0 );
   signal CLK2_out_IBUF_OUT : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -1492,6 +1509,7 @@ architecture STRUCTURE of design_1 is
   signal IBUF_DS_P_1_1 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal IBUF_DS_P_1_2 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal IBUF_DS_P_2_1 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal PLL_filter_0_freq : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal axil2wb_0_wb_addr_o : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal axil2wb_0_wb_clk_o : STD_LOGIC;
   signal axil2wb_0_wb_cyc_o : STD_LOGIC;
@@ -1504,10 +1522,13 @@ architecture STRUCTURE of design_1 is
   signal counter_DAC_0_dac_sierra : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal freq_high_measure_0_counts_dac : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal freq_high_measure_0_counts_pll : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal my_regs_wbt_filter_out_o : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal my_regs_wbt_spi_adc_cnv_o : STD_LOGIC;
   signal my_regs_wbt_spi_adc_cpol_o : STD_LOGIC;
   signal my_regs_wbt_spi_adc_sdi_o : STD_LOGIC;
   signal my_regs_wbt_spi_adc_start_o : STD_LOGIC;
+  signal my_regs_wbt_x0_o : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal my_regs_wbt_x1_o : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal processing_system7_0_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal processing_system7_0_DDR_BA : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal processing_system7_0_DDR_CAS_N : STD_LOGIC;
@@ -1591,6 +1612,8 @@ architecture STRUCTURE of design_1 is
   signal rst_processing_system7_0_50M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal save_1 : STD_LOGIC_VECTOR ( 39 downto 0 );
   signal spi_adc_data_o : STD_LOGIC_VECTOR ( 15 downto 0 );
+  signal spi_adc_drdy_o : STD_LOGIC;
+  signal spi_adc_ready_o : STD_LOGIC;
   signal spi_adc_spi_sclk_o : STD_LOGIC;
   signal spi_master_0_data_o : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal spi_master_0_spi_mosi_o : STD_LOGIC;
@@ -1635,8 +1658,6 @@ architecture STRUCTURE of design_1 is
   signal NLW_rst_processing_system7_0_50M_mb_reset_UNCONNECTED : STD_LOGIC;
   signal NLW_rst_processing_system7_0_50M_bus_struct_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_rst_processing_system7_0_50M_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal NLW_spi_adc_drdy_o_UNCONNECTED : STD_LOGIC;
-  signal NLW_spi_adc_ready_o_UNCONNECTED : STD_LOGIC;
   signal NLW_spi_adc_spi_cs_n_o_UNCONNECTED : STD_LOGIC;
   signal NLW_spi_adc_spi_mosi_o_UNCONNECTED : STD_LOGIC;
   signal NLW_spi_master_0_drdy_o_UNCONNECTED : STD_LOGIC;
@@ -1694,6 +1715,16 @@ DAC_DAT: component design_1_util_ds_buf_1_2
       OBUF_DS_N(13 downto 0) => DAC_DAT_OBUF_DS_N(13 downto 0),
       OBUF_DS_P(13 downto 0) => DAC_DAT_OBUF_DS_P(13 downto 0),
       OBUF_IN(13 downto 0) => blk_mem_gen_1_douta(13 downto 0)
+    );
+PLL_filter_0: component design_1_PLL_filter_0_0
+     port map (
+      clk => axil2wb_0_wb_clk_o,
+      err(31 downto 0) => my_regs_wbt_filter_out_o(31 downto 0),
+      freq(31 downto 0) => PLL_filter_0_freq(31 downto 0),
+      res => processing_system7_0_FCLK_RESET0_N,
+      start => spi_adc_drdy_o,
+      x0(31 downto 0) => my_regs_wbt_x0_o(31 downto 0),
+      x1(31 downto 0) => my_regs_wbt_x1_o(31 downto 0)
     );
 axil2wb_0: component design_1_axil2wb_0_0
      port map (
@@ -1761,7 +1792,9 @@ ila_0: component design_1_ila_0_1
       probe0(0) => my_regs_wbt_spi_adc_start_o,
       probe1(0) => spi_miso_i_2,
       probe2(0) => spi_adc_spi_sclk_o,
-      probe3(15 downto 0) => spi_adc_data_o(15 downto 0)
+      probe3(15 downto 0) => spi_adc_data_o(15 downto 0),
+      probe4(0) => spi_adc_ready_o,
+      probe5(0) => spi_adc_drdy_o
     );
 my_regs: component design_1_wb_test_slave_0_0
      port map (
@@ -1780,6 +1813,8 @@ my_regs: component design_1_wb_test_slave_0_0
       wbt_cnt_mask_o(31 downto 0) => wb_test_slave_0_wbt_cnt_mask_o(31 downto 0),
       wbt_dds_freq_i(31 downto 0) => freq_high_measure_0_counts_dac(31 downto 0),
       wbt_dds_o(27 downto 0) => wb_test_slave_0_wbt_dds_o(27 downto 0),
+      wbt_filter_in_i(31 downto 0) => PLL_filter_0_freq(31 downto 0),
+      wbt_filter_out_o(31 downto 0) => my_regs_wbt_filter_out_o(31 downto 0),
       wbt_led_o(1 downto 0) => wb_test_slave_0_wbt_led_o(1 downto 0),
       wbt_pll1_syncb_o => wb_test_slave_0_wbt_pll1_syncb_o,
       wbt_pll2_reset_n_o => wb_test_slave_0_wbt_pll2_reset_n_o,
@@ -1794,7 +1829,9 @@ my_regs: component design_1_wb_test_slave_0_0
       wbt_spi_cs_ad9516_o => wb_test_slave_0_wbt_spi_cs_ad9516_o,
       wbt_spi_data_in_i(7 downto 0) => spi_master_0_data_o(7 downto 0),
       wbt_spi_data_o(7 downto 0) => wb_test_slave_0_wbt_spi_data_o(7 downto 0),
-      wbt_spi_start_o => wb_test_slave_0_wbt_spi_start_o
+      wbt_spi_start_o => wb_test_slave_0_wbt_spi_start_o,
+      wbt_x0_o(31 downto 0) => my_regs_wbt_x0_o(31 downto 0),
+      wbt_x1_o(31 downto 0) => my_regs_wbt_x1_o(31 downto 0)
     );
 processing_system7_0: component design_1_processing_system7_0_0
      port map (
@@ -1971,8 +2008,8 @@ spi_adc: component design_1_spi_master_1_0
       cpol_i => my_regs_wbt_spi_adc_cpol_o,
       data_i(15 downto 0) => xlconstant_1_dout(15 downto 0),
       data_o(15 downto 0) => spi_adc_data_o(15 downto 0),
-      drdy_o => NLW_spi_adc_drdy_o_UNCONNECTED,
-      ready_o => NLW_spi_adc_ready_o_UNCONNECTED,
+      drdy_o => spi_adc_drdy_o,
+      ready_o => spi_adc_ready_o,
       rst_n_i => processing_system7_0_FCLK_RESET0_N,
       spi_cs_n_o => NLW_spi_adc_spi_cs_n_o_UNCONNECTED,
       spi_miso_i => spi_miso_i_2,

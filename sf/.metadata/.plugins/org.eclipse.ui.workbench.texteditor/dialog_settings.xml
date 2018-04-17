@@ -2,18 +2,18 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="setPLL2_RESET_N" key="selection"/>
+		<item value="0x43C" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="0x000"/>
 			<item value="setPLL2_RESET_N"/>
 			<item value="WBT_REG_PLL2_RESET_N"/>
 			<item value="Frequency to"/>
 			<item value="Frequenc"/>
 			<item value="Frequenct"/>
-			<item value="0x000"/>
 			<item value="XSP_MASTER_OPTION"/>
 			<item value="master"/>
 		</list>

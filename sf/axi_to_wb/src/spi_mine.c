@@ -2,6 +2,8 @@
 #include "xil_printf.h"
 #include "xil_io.h"
 
+#include "xil_cache.h"
+
 #include "my_regs.h"
 #include "spi_general.h"
 #include "spi_ADC.h"
@@ -119,7 +121,7 @@ void manualFreqControl(u32 freqDACSet)
 	}
 
 }
-double frequencyAccumulator(void);
+/*double frequencyAccumulator(void);
 void manual()
 {
 	char c;
@@ -137,7 +139,7 @@ void manual()
 		}
 	}
 
-}
+}*/
 void freqSweep(u32 upperFreq, u32 lowerFreq)
 {
 	u32 freqDACSet = upperFreq;
@@ -200,21 +202,87 @@ void balancePLL(void)
 	}
 }
 */
+
 double frequencyAccumulator(void)
 {
-	static double err, err_pr, freq = 28000000.0;
-	static double a=2.03e-5, b=0.00486;
+	static double err, err_pr, freq = 25000000.0;
+	static double a=5.3e-5, b=0.0483;
 	err_pr = err;
 	err = ((double)(WB_SpiADC_Transfer()))-(double)(1<<15);
+	//xil_printf("err = %d \n\r", (s32)err);
 	//err=err/1000;
+	//freq = freq - err*(a+b) - err_pr*(a-b);
 	freq = freq - err*(a+b) - err_pr*(a-b);
+//freq = freq + err;
+	return freq;
+}
+
+/*u32 frequencyAccumulator(void)
+{
+	static double err, err_pr;
+	u32 freq;
+	static double a=5.3e-5, b=0.0483;
+	err = WB_SpiADC_Transfer();
+	Xil_Out32(WBT_REG_FILTER_OUT, err);
+	freq = Xil_In32(WBT_REG_FILTER_IN);
+
+	return freq;
+}*/
+/*double frequencyAccumulator(void)
+{
+	static double err, err_pr, err_pr_pr, freq = 28000000.0, freq_pr;
+	static double T2 = 0.8e-3;
+	static double o =0.33, p = 0.67, r = 5.6, s = 3.08, u = -2.51;
+
+	static double a=5.08e-6, b=0.00486;
+	err_pr_pr = err_pr;
+	err_pr = err;
+	err = ((double)(WB_SpiADC_Transfer()))-(double)(1<<15);
+	freq_pr = freq;
+	freq = freq - err*(a+b) - err_pr*(a-b);
+	return freq;
+}*/
+/*double frequencyAccumulator(void)
+{
+	static double err, err_pr, err_pr_pr, freq = 28000000.0, freq_pr;
+	static double T2 = 0.8e-3;
+	static double o =0.33, p = 0.67, r = 5.6, s = 3.08, u = -2.51;
+	err_pr_pr = err_pr;
+	err_pr = err;
+	err = ((double)(WB_SpiADC_Transfer()))-(double)(1<<15);
+	freq_pr = freq;
+	freq = o*freq +  freq_pr*p;//  + r * err + s * err_pr + u * err_pr_pr;
+	return freq;
+}*/
+/*double frequencyAccumulatorF1(void)
+{
+	static double err, err_pr, freq = 28000000.0;
+	static double T2 = 0.8e-3;
+	err_pr = err;
+	err = ((double)(WB_SpiADC_Transfer()))-(double)(1<<15);
+	//xil_printf("err = %d \n\r", (s32)err);
+	//err=err/1000;
+	freq = freq + T2*err + T2*err_pr;
 	//freq = freq + err;
 	return freq;
 }
+double frequencyAccumulatorF2(void)
+{
+	static double err, err_pr, freq;
+	static double h = 0.668, i = 6994, j = -3141;
+	err_pr = err;
+	err = frequencyAccumulatorF1();
+	//xil_printf("err = %d \n\r", (s32)err);
+	//err=err/1000;
+	freq = h*freq - i*err - j*err_pr;
+	//freq = freq + err;
+	return freq;
+}*/
+
 u32 frequencyFilter(void)
 {
 	static double freq, freq_pr, control;
-	static double c=0.4, d=-0.2;
+	static double c=0.1206, d=-0.7587;
 	freq_pr = freq;
 	freq = frequencyAccumulator();
 	control = (freq+freq_pr)*c - d*control;
@@ -225,7 +293,7 @@ void balancePLL(void)
 {
 	while(1)
 	{
-		setDDSFrequency(frequencyFilter());
+		setDDSStep((u32)frequencyAccumulator());
 	}
 }
 
@@ -235,14 +303,22 @@ int main(void)
 	AD95xx_spi_init();
 	ADC_spi_init();
 	setPLL2_RESET_N(1);
-	u32 freqDACSet=28000000;
+	u32 freqDACSet=25000000;
 	configure_AD9516();
 	ppl1_syncb_on(1);
-	configure_AD9510_external_signal();
+	configure_AD9510_internal_signal();
 	setDDSFrequency(freqDACSet);
 	setFreqCounterMaskReg((u32)0x04000000);
 	configure_ADF4002();
-	//setReferencePLLCounter(8,8);
+	setReferencePLLCounter(12,12);
+	//Xil_DCacheEnable();
+	//Xil_DCacheFlush();
+	Xil_Out32(WBT_REG_X0, 811228);
+	Xil_Out32(WBT_REG_X1, 0xFFF3A616);
+
+	/*Xil_Out32(WBT_REG_X0, 28);
+	Xil_Out32(WBT_REG_X1, 0xFFFFFFF6);
+*/
 	balancePLL();
 	//setDDSFrequency(28000000);
 	xil_printf("Sukces\n\r");

@@ -36,85 +36,92 @@ preplace inst xlslice_0 -pg 1 -lvl 5 -y 340 -defaultsOSRD
 preplace inst do_nothing_0 -pg 1 -lvl 2 -y 1430 -defaultsOSRD
 preplace inst xlconstant_0 -pg 1 -lvl 2 -y 300 -defaultsOSRD
 preplace inst xlconstant_1 -pg 1 -lvl 6 -y 1160 -defaultsOSRD
-preplace inst my_regs -pg 1 -lvl 7 -y 160 -defaultsOSRD
-preplace inst spi_adc -pg 1 -lvl 7 -y 1110 -defaultsOSRD
+preplace inst my_regs -pg 1 -lvl 7 -y 130 -defaultsOSRD
+preplace inst spi_adc -pg 1 -lvl 7 -y 1090 -defaultsOSRD
 preplace inst CLK2_out -pg 1 -lvl 1 -y 1100 -defaultsOSRD
-preplace inst spi_master_0 -pg 1 -lvl 7 -y 810 -defaultsOSRD
+preplace inst spi_master_0 -pg 1 -lvl 7 -y 820 -defaultsOSRD
 preplace inst axil2wb_0 -pg 1 -lvl 4 -y 50 -defaultsOSRD
 preplace inst rst_processing_system7_0_50M -pg 1 -lvl 1 -y 180 -defaultsOSRD
 preplace inst blk_mem_gen_1 -pg 1 -lvl 6 -y 790 -defaultsOSRD
 preplace inst ila_0 -pg 1 -lvl 7 -y 1310 -defaultsOSRD
 preplace inst counter_DAC_0 -pg 1 -lvl 4 -y 890 -defaultsOSRD
 preplace inst CLK0_OUT -pg 1 -lvl 1 -y 910 -defaultsOSRD
-preplace inst DAC_DAT -pg 1 -lvl 7 -y 660 -defaultsOSRD
+preplace inst DAC_DAT -pg 1 -lvl 7 -y 670 -defaultsOSRD
+preplace inst PLL_filter_0 -pg 1 -lvl 7 -y 520 -defaultsOSRD
 preplace inst freq_high_measure_0 -pg 1 -lvl 3 -y 1150 -defaultsOSRD
 preplace inst util_ds_buf_0 -pg 1 -lvl 1 -y 1540 -defaultsOSRD
 preplace inst processing_system7_0_axi_periph -pg 1 -lvl 2 -y 130 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 1 -y 550 -defaultsOSRD
-preplace netloc processing_system7_0_DDR 1 1 7 NJ 470 NJ 470 NJ 470 NJ 470 NJ 470 NJ 470 NJ
-preplace netloc xlconstant_1_dout 1 6 1 2100
-preplace netloc spi_miso_i_1_1 1 0 7 -160J 980 NJ 980 NJ 980 NJ 980 1590J 870 NJ 870 2100J
-preplace netloc spi_master_0_spi_mosi_o 1 7 1 2790
-preplace netloc freq_high_measure_0_counts_dac 1 3 4 1130 230 NJ 230 NJ 230 NJ
-preplace netloc przycisk_1 1 0 8 NJ 700 300J 610 NJ 610 NJ 610 NJ 610 NJ 610 2100J 600 2800J
-preplace netloc DAC_DAT_OBUF_DS_P 1 7 1 2790
-preplace netloc my_regs_wbt_spi_adc_sdi_o 1 7 1 NJ
-preplace netloc wb_test_slave_0_wbt_spi_cpol_o 1 6 2 2140 400 2720
-preplace netloc blk_mem_gen_1_douta 1 5 2 1840J 660 NJ
-preplace netloc processing_system7_0_axi_periph_M00_AXI 1 2 2 660 0 NJ
-preplace netloc spi_adc_data_o 1 6 2 2120 1010 2700
-preplace netloc wb_test_slave_0_wbt_dds_o 1 3 5 1140 960 NJ 960 NJ 960 NJ 960 2760
-preplace netloc wb_test_slave_0_wbt_pll1_syncb_o 1 7 1 2790
-preplace netloc axil2wb_0_wb_we_o 1 4 3 NJ 60 NJ 60 2100J
-preplace netloc wb_test_slave_0_wb_dat_o 1 3 5 1130J -70 NJ -70 NJ -70 NJ -70 2720
-preplace netloc axil2wb_0_wb_rst_o 1 4 3 NJ 0 NJ 0 2150J
-preplace netloc rst_processing_system7_0_50M_interconnect_aresetn 1 1 1 290
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 270
-preplace netloc wb_test_slave_0_wbt_cnt_mask_o 1 2 6 690 990 NJ 990 1600J 980 NJ 980 NJ 980 2750
-preplace netloc IBUF_DS_P_1_1 1 0 1 -160
-preplace netloc IBUF_DS_N_2_1 1 0 1 -150J
-preplace netloc IBUF_DS_P_1_2 1 0 1 NJ
-preplace netloc axil2wb_0_wb_stb_o 1 4 3 NJ 100 NJ 100 2080J
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 7 -150 680 280 680 NJ 680 NJ 680 NJ 680 N 680 2080
-preplace netloc wb_test_slave_0_wbt_spi_cs_ad9510_o 1 7 1 2790
-preplace netloc wb_test_slave_0_wbt_spi_start_o 1 6 2 2160 420 2730
-preplace netloc CLK2_out_IBUF_OUT 1 1 2 NJ 1100 660
-preplace netloc rst_processing_system7_0_50M_peripheral_aresetn 1 1 3 300 350 680J 40 NJ
-preplace netloc my_regs_wbt_spi_adc_cpol_o 1 6 2 2130 380 2700
-preplace netloc freq_high_measure_0_counts_pll 1 3 4 1120 210 NJ 210 NJ 210 NJ
-preplace netloc save_1 1 0 2 NJ 1430 270
-preplace netloc util_ds_buf_0_IBUF_OUT 1 1 1 290
-preplace netloc axil2wb_0_wb_dat_o 1 4 3 NJ 40 NJ 40 2130J
-preplace netloc axil2wb_0_wb_addr_o 1 4 1 1580
-preplace netloc spi_miso_i_2 1 0 7 NJ 1310 NJ 1310 NJ 1310 NJ 1310 NJ 1310 N 1310 2110
-preplace netloc spi_master_0_spi_sclk_o 1 7 1 2800
-preplace netloc IBUF_DS_N_1 1 0 1 -160
-preplace netloc xlconstant_0_dout 1 2 2 690J 80 NJ
-preplace netloc axil2wb_0_wb_clk_o 1 4 3 NJ -20 NJ -20 2160J
-preplace netloc processing_system7_0_FIXED_IO 1 1 7 NJ 490 NJ 490 NJ 490 NJ 490 NJ 490 NJ 490 NJ
-preplace netloc wb_test_slave_0_wbt_spi_cs_ad9516_o 1 7 1 2800
+preplace netloc processing_system7_0_FIXED_IO 1 1 7 310J 420 NJ 420 NJ 420 NJ 420 NJ 420 NJ 420 2870J
+preplace netloc przycisk_1 1 0 8 NJ 700 NJ 700 NJ 700 NJ 700 NJ 700 NJ 700 2100J 920 2900J
+preplace netloc spi_miso_i_1_1 1 0 7 -160J 980 NJ 980 NJ 980 NJ 980 1600J 870 NJ 870 NJ
 preplace netloc counter_DAC_0_dac_sierra 1 4 2 1580J 780 N
-preplace netloc IBUF_DS_P_1 1 0 1 -150
-preplace netloc axil2wb_0_wb_sel_o 1 4 3 NJ 80 NJ 80 2120J
-preplace netloc axil2wb_0_wb_cyc_o 1 4 3 NJ 120 NJ 120 2090J
-preplace netloc wb_test_slave_0_wbt_adf4002_le_o 1 7 1 2780
-preplace netloc wb_test_slave_0_wbt_spi_data_o 1 6 2 2150 410 2710
-preplace netloc CLK0_OUT_IBUF_OUT 1 1 2 NJ 910 670
-preplace netloc CLK1_OUT_IBUF_OUT 1 1 5 NJ 780 NJ 780 1110J 800 NJ 800 NJ
-preplace netloc my_regs_wbt_spi_adc_start_o 1 6 2 2150 1000 2740
-preplace netloc spi_adc_spi_sclk_o 1 6 2 2160 1210 2750
-preplace netloc my_regs_wbt_spi_adc_cnv_o 1 7 1 N
-preplace netloc spi_master_0_data_o 1 6 2 2160 390 2700
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 7 -160 90 280 600 680J 600 1110J 600 NJ 600 N 600 2090
-preplace netloc wb_test_slave_0_wbt_led_o 1 7 1 2800
-preplace netloc DAC_DAT_OBUF_DS_N 1 7 1 2780
+preplace netloc my_regs_wbt_x0_o 1 6 2 2210 -150 2790
 preplace netloc IBUF_DS_N_1_1 1 0 1 -150
-preplace netloc xlslice_0_Dout 1 5 2 1840 90 NJ
-preplace netloc wb_test_slave_0_wbt_pll2_reset_n_o 1 7 1 2770
-preplace netloc IBUF_DS_P_2_1 1 0 1 NJ
+preplace netloc save_1 1 0 2 NJ 1430 280
 preplace netloc IBUF_DS_N_1_2 1 0 1 NJ
-preplace netloc wb_test_slave_0_wb_ack_o 1 3 5 1120J -90 NJ -90 NJ -90 NJ -90 2730
-levelinfo -pg 1 -180 60 490 910 1390 1730 1970 2460 3320 -top -520 -bot 1700
+preplace netloc DAC_DAT_OBUF_DS_N 1 7 1 2860
+preplace netloc axil2wb_0_wb_stb_o 1 4 3 NJ 100 NJ 100 2090J
+preplace netloc spi_adc_data_o 1 6 2 2160 980 2750
+preplace netloc wb_test_slave_0_wb_dat_o 1 3 5 1130J -190 NJ -190 NJ -190 NJ -190 2760
+preplace netloc my_regs_wbt_spi_adc_sdi_o 1 7 1 2830J
+preplace netloc my_regs_wbt_spi_adc_start_o 1 6 2 2240 930 2750
+preplace netloc my_regs_wbt_spi_adc_cnv_o 1 7 1 2840
+preplace netloc axil2wb_0_wb_cyc_o 1 4 3 1590J 80 NJ 80 2120J
+preplace netloc DAC_DAT_OBUF_DS_P 1 7 1 2880
+preplace netloc util_ds_buf_0_IBUF_OUT 1 1 1 300
+preplace netloc axil2wb_0_wb_dat_o 1 4 3 NJ 40 NJ 40 2140J
+preplace netloc processing_system7_0_DDR 1 1 7 300J 390 NJ 390 NJ 390 NJ 390 NJ 390 NJ 390 2890J
+preplace netloc wb_test_slave_0_wb_ack_o 1 3 5 1120J -210 NJ -210 NJ -210 NJ -210 2770
+preplace netloc CLK1_OUT_IBUF_OUT 1 1 5 NJ 780 NJ 780 1110J 800 NJ 800 NJ
+preplace netloc wb_test_slave_0_wbt_spi_start_o 1 6 2 2220 -120 2730
+preplace netloc wb_test_slave_0_wbt_led_o 1 7 1 2900
+preplace netloc wb_test_slave_0_wbt_spi_cs_ad9516_o 1 7 1 2880
+preplace netloc xlconstant_1_dout 1 6 1 2100
+preplace netloc rst_processing_system7_0_50M_interconnect_aresetn 1 1 1 280
+preplace netloc wb_test_slave_0_wbt_adf4002_le_o 1 7 1 2860
+preplace netloc IBUF_DS_P_1 1 0 1 -150
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 7 -150 680 290 630 NJ 630 NJ 630 NJ 630 N 630 2120
+preplace netloc freq_high_measure_0_counts_dac 1 3 4 1130 190 NJ 190 NJ 190 NJ
+preplace netloc blk_mem_gen_1_douta 1 5 2 1850J 670 NJ
+preplace netloc spi_master_0_spi_sclk_o 1 7 1 2890
+preplace netloc wb_test_slave_0_wbt_spi_data_o 1 6 2 2180 -130 2740
+preplace netloc IBUF_DS_N_2_1 1 0 1 -150J
+preplace netloc xlslice_0_Dout 1 5 2 1850 50 NJ
+preplace netloc spi_adc_ready_o 1 6 2 2230 990 2730
+preplace netloc PLL_filter_0_freq 1 6 2 2250 410 2730
+preplace netloc wb_test_slave_0_wbt_pll2_reset_n_o 1 7 1 2850
+preplace netloc axil2wb_0_wb_addr_o 1 4 1 1600
+preplace netloc spi_adc_spi_sclk_o 1 6 2 2250 1190 2890
+preplace netloc IBUF_DS_P_2_1 1 0 1 NJ
+preplace netloc my_regs_wbt_filter_out_o 1 6 2 2200 -170 2810
+preplace netloc axil2wb_0_wb_sel_o 1 4 3 1580J 90 NJ 90 2100J
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 7 -160 90 270 610 680J 610 1110J 610 NJ 610 N 610 2090
+preplace netloc my_regs_wbt_spi_adc_cpol_o 1 6 2 2150 -160 2780
+preplace netloc wb_test_slave_0_wbt_spi_cpol_o 1 6 2 2170 -140 2750
+preplace netloc axil2wb_0_wb_we_o 1 4 3 NJ 60 NJ 60 2110J
+preplace netloc spi_master_0_data_o 1 6 2 2240 400 2740
+preplace netloc IBUF_DS_N_1 1 0 1 -160
+preplace netloc wb_test_slave_0_wbt_spi_cs_ad9510_o 1 7 1 2870
+preplace netloc processing_system7_0_axi_periph_M00_AXI 1 2 2 660 0 NJ
+preplace netloc my_regs_wbt_x1_o 1 6 2 2230 380 2730
+preplace netloc rst_processing_system7_0_50M_peripheral_aresetn 1 1 3 310 350 670J 40 NJ
+preplace netloc IBUF_DS_P_1_1 1 0 1 -160
+preplace netloc IBUF_DS_P_1_2 1 0 1 NJ
+preplace netloc wb_test_slave_0_wbt_cnt_mask_o 1 2 6 670 1230 NJ 1230 NJ 1230 NJ 1230 2130J 1200 2820
+preplace netloc CLK2_out_IBUF_OUT 1 1 2 NJ 1100 660
+preplace netloc wb_test_slave_0_wbt_pll1_syncb_o 1 7 1 2890
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 290
+preplace netloc CLK0_OUT_IBUF_OUT 1 1 2 NJ 910 670
+preplace netloc xlconstant_0_dout 1 2 2 680J 80 NJ
+preplace netloc spi_adc_drdy_o 1 6 2 2190 970 2740
+preplace netloc spi_miso_i_2 1 0 7 -160J 1290 NJ 1290 NJ 1290 NJ 1290 NJ 1290 N 1290 2110
+preplace netloc wb_test_slave_0_wbt_dds_o 1 3 5 1140 960 NJ 960 NJ 960 NJ 960 2800
+preplace netloc axil2wb_0_wb_rst_o 1 4 3 NJ 0 NJ 0 2140J
+preplace netloc spi_master_0_spi_mosi_o 1 7 1 2880
+preplace netloc freq_high_measure_0_counts_pll 1 3 4 1120 170 NJ 170 NJ 170 NJ
+preplace netloc axil2wb_0_wb_clk_o 1 4 3 NJ -20 NJ -20 2130J
+levelinfo -pg 1 -180 60 490 910 1390 1740 1980 2490 3320 -top -520 -bot 1700
 ",
 }
 {

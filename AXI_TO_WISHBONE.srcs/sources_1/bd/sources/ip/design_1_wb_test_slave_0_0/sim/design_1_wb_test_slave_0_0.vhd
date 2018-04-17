@@ -84,7 +84,11 @@ ENTITY design_1_wb_test_slave_0_0 IS
     wbt_spi_adc_cpol_o : OUT STD_LOGIC;
     wbt_spi_adc_cnv_o : OUT STD_LOGIC;
     wbt_spi_adc_data_in_i : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-    wbt_spi_adc_sdi_o : OUT STD_LOGIC
+    wbt_spi_adc_sdi_o : OUT STD_LOGIC;
+    wbt_filter_in_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+    wbt_filter_out_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    wbt_x0_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    wbt_x1_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
   );
 END design_1_wb_test_slave_0_0;
 
@@ -122,7 +126,11 @@ ARCHITECTURE design_1_wb_test_slave_0_0_arch OF design_1_wb_test_slave_0_0 IS
       wbt_spi_adc_cpol_o : OUT STD_LOGIC;
       wbt_spi_adc_cnv_o : OUT STD_LOGIC;
       wbt_spi_adc_data_in_i : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-      wbt_spi_adc_sdi_o : OUT STD_LOGIC
+      wbt_spi_adc_sdi_o : OUT STD_LOGIC;
+      wbt_filter_in_i : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+      wbt_filter_out_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+      wbt_x0_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+      wbt_x1_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
     );
   END COMPONENT wb_test_slave;
 BEGIN
@@ -157,6 +165,10 @@ BEGIN
       wbt_spi_adc_cpol_o => wbt_spi_adc_cpol_o,
       wbt_spi_adc_cnv_o => wbt_spi_adc_cnv_o,
       wbt_spi_adc_data_in_i => wbt_spi_adc_data_in_i,
-      wbt_spi_adc_sdi_o => wbt_spi_adc_sdi_o
+      wbt_spi_adc_sdi_o => wbt_spi_adc_sdi_o,
+      wbt_filter_in_i => wbt_filter_in_i,
+      wbt_filter_out_o => wbt_filter_out_o,
+      wbt_x0_o => wbt_x0_o,
+      wbt_x1_o => wbt_x1_o
     );
 END design_1_wb_test_slave_0_0_arch;

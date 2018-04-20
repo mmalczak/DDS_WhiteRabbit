@@ -214,7 +214,7 @@ double frequencyAccumulator(void)
 	err_idx = (err_idx+1)&3;
 	freq_idx = (freq_idx +1)&3;
 
-	err[err_idx] = ((double)(WB_SpiADC_Transfer()))-(double)(1<<15);
+	err[err_idx] = ((double)(WB_SpiADC_Transfer()))-(double)(1<<15)+(double)(1<<13);
 	freq[freq_idx] = freq[(freq_idx-1)&3] - (a+b) * err[err_idx] - (a-b) * err[(err_idx-1)&3];
 	return freq[freq_idx];
 }
@@ -288,7 +288,8 @@ int main(void)
 	Xil_Out32(WBT_REG_X1, 0xFFFFFFF6);
 */
 	balancePLL();
-	//setDDSFrequency(28000000);
+	//setDDSFrequency(30000000);
+	//xil_printf(" adc value = %d\n\r", measure_ADC());
 	xil_printf("Sukces\n\r");
 
 	return 1;

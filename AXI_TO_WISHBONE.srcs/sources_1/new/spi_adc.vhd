@@ -23,7 +23,6 @@ end spi_adc;
 
 architecture behavioral of spi_adc is
 
-
   signal rx_sreg : std_logic_vector(15 downto 0);
 
   type   t_state is (IDLE, CONV, TRANS_0, TRANS_1, FIN);
@@ -70,10 +69,10 @@ begin  -- rtl
             rx_sreg <= rx_sreg(14 downto 0) & spi_miso_i;
             if(counter = "1111") then
                 state <= FIN;
+                sdi <= '1';
             end if;
           when FIN =>
             sclk <= '0';
-            sdi <= '1';
             cnv <= '0';
             data_o <= rx_sreg;
             state <= IDLE;
@@ -82,7 +81,6 @@ begin  -- rtl
     end if;
   end process;
 
-  -- SCLK polarity control
   spi_sclk_o <= (clk_sys_i) and sclk;
   
 end behavioral;

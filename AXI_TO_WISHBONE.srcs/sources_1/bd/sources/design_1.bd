@@ -769,25 +769,25 @@
           </spirit:wire>
         </spirit:port>
         <spirit:port>
-          <spirit:name>spi_sclk_ad95xx_o</spirit:name>
-          <spirit:wire>
-            <spirit:direction>out</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
           <spirit:name>PD_CLK</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
           </spirit:wire>
         </spirit:port>
         <spirit:port>
-          <spirit:name>spi_mosi_ad95xx_o</spirit:name>
+          <spirit:name>spi_sclk_ad95xx_o</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
           </spirit:wire>
         </spirit:port>
         <spirit:port>
           <spirit:name>PD_DATA</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>spi_mosi_ad95xx_o</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
           </spirit:wire>
@@ -1505,19 +1505,6 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>spi_adc</spirit:instanceName>
-        <spirit:componentRef spirit:library="module_ref" spirit:name="spi_master" spirit:vendor="user.org" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_spi_master_1_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="g_div_ratio_log2">1</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="g_num_data_bits">16</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:referenceName">spi_master</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:subInstancePath"></spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:referenceType">hdl</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:BoundaryCRC">0x0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
         <spirit:instanceName>ila_0</spirit:instanceName>
         <spirit:componentRef spirit:library="ip" spirit:name="ila" spirit:vendor="xilinx.com" spirit:version="6.2"/>
         <spirit:configurableElementValues>
@@ -1528,15 +1515,6 @@
           <spirit:configurableElementValue spirit:referenceId="C_NUM_OF_PROBES">8</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_ENABLE_ILA_AXI_MON">false</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_MONITOR_TYPE">Native</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>xlconstant_1</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="xlconstant" spirit:vendor="xilinx.com" spirit:version="1.1"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_xlconstant_1_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="CONST_WIDTH">16</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="CONST_VAL">0</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -1570,6 +1548,45 @@
           <spirit:configurableElementValue spirit:referenceId="bd:BoundaryCRC">0x0</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>spi_adc_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="module_ref" spirit:name="spi_adc" spirit:vendor="user.org" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_spi_adc_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:referenceName">spi_adc</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:subInstancePath"></spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:referenceType">hdl</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:BoundaryCRC">0x0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>clk_wiz_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="clk_wiz" spirit:vendor="xilinx.com" spirit:version="5.4"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_clk_wiz_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="PRIMITIVE">PLL</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="PRIM_IN_FREQ">50</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="CLKIN1_JITTER_PS">200.0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="CLKOUT1_USED">true</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="CLKOUT1_REQUESTED_OUT_FREQ">12.5</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="CLKOUT1_DRIVES">BUFG</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="CLKOUT2_DRIVES">BUFG</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="CLKOUT3_DRIVES">BUFG</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="CLKOUT4_DRIVES">BUFG</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="CLKOUT5_DRIVES">BUFG</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="CLKOUT6_DRIVES">BUFG</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="CLKOUT7_DRIVES">BUFG</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="USE_LOCKED">false</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="USE_RESET">false</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="MMCM_DIVCLK_DIVIDE">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="MMCM_CLKFBOUT_MULT_F">33</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="MMCM_CLKIN1_PERIOD">20.000</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="MMCM_COMPENSATION">ZHOLD</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="MMCM_CLKOUT0_DIVIDE_F">66</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="CLKOUT1_JITTER">443.268</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="CLKOUT1_PHASE_ERROR">261.747</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
     </spirit:componentInstances>
     <spirit:interconnections>
       <spirit:interconnection>
@@ -1596,16 +1613,16 @@
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="S00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M01_ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="spi_adc" spirit:portRef="clk_sys_i"/>
         <spirit:internalPortReference spirit:componentRef="ila_0" spirit:portRef="clk"/>
+        <spirit:internalPortReference spirit:componentRef="clk_wiz_0" spirit:portRef="clk_in1"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>processing_system7_0_FCLK_RESET0_N</spirit:name>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="FCLK_RESET0_N"/>
         <spirit:internalPortReference spirit:componentRef="rst_processing_system7_0_50M" spirit:portRef="ext_reset_in"/>
         <spirit:internalPortReference spirit:componentRef="spi_master_0" spirit:portRef="rst_n_i"/>
-        <spirit:internalPortReference spirit:componentRef="spi_adc" spirit:portRef="rst_n_i"/>
         <spirit:internalPortReference spirit:componentRef="PLL_filter_0" spirit:portRef="res"/>
+        <spirit:internalPortReference spirit:componentRef="spi_adc_0" spirit:portRef="rst_n_i"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>rst_processing_system7_0_50M_peripheral_aresetn</spirit:name>
@@ -1795,14 +1812,14 @@
       <spirit:adHocConnection>
         <spirit:name>spi_master_0_spi_sclk_o</spirit:name>
         <spirit:internalPortReference spirit:componentRef="spi_master_0" spirit:portRef="spi_sclk_o"/>
-        <spirit:externalPortReference spirit:portRef="PD_CLK"/>
         <spirit:externalPortReference spirit:portRef="spi_sclk_ad95xx_o"/>
+        <spirit:externalPortReference spirit:portRef="PD_CLK"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>spi_master_0_spi_mosi_o</spirit:name>
         <spirit:internalPortReference spirit:componentRef="spi_master_0" spirit:portRef="spi_mosi_o"/>
-        <spirit:externalPortReference spirit:portRef="PD_DATA"/>
         <spirit:externalPortReference spirit:portRef="spi_mosi_ad95xx_o"/>
+        <spirit:externalPortReference spirit:portRef="PD_DATA"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>spi_miso_i_1_1</spirit:name>
@@ -1813,6 +1830,7 @@
         <spirit:name>wb_test_slave_0_wbt_spi_start_o</spirit:name>
         <spirit:internalPortReference spirit:componentRef="my_regs" spirit:portRef="wbt_spi_start_o"/>
         <spirit:internalPortReference spirit:componentRef="spi_master_0" spirit:portRef="start_i"/>
+        <spirit:internalPortReference spirit:componentRef="ila_0" spirit:portRef="probe4"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>wb_test_slave_0_wbt_spi_cpol_o</spirit:name>
@@ -1851,49 +1869,39 @@
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>my_regs_wbt_spi_adc_cnv_o</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="my_regs" spirit:portRef="wbt_spi_adc_cnv_o"/>
+        <spirit:internalPortReference spirit:componentRef="spi_adc_0" spirit:portRef="cnv"/>
         <spirit:externalPortReference spirit:portRef="wbt_spi_adc_cnv_o"/>
         <spirit:internalPortReference spirit:componentRef="ila_0" spirit:portRef="probe6"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>my_regs_wbt_spi_adc_sdi_o</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="my_regs" spirit:portRef="wbt_spi_adc_sdi_o"/>
+        <spirit:internalPortReference spirit:componentRef="spi_adc_0" spirit:portRef="sdi"/>
         <spirit:externalPortReference spirit:portRef="wbt_spi_adc_sdi_o"/>
         <spirit:internalPortReference spirit:componentRef="ila_0" spirit:portRef="probe7"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>spi_adc_spi_sclk_o</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="spi_adc" spirit:portRef="spi_sclk_o"/>
+        <spirit:internalPortReference spirit:componentRef="spi_adc_0" spirit:portRef="spi_sclk_o"/>
         <spirit:externalPortReference spirit:portRef="spi_sclk_o"/>
         <spirit:internalPortReference spirit:componentRef="ila_0" spirit:portRef="probe2"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>spi_miso_i_2</spirit:name>
         <spirit:externalPortReference spirit:portRef="spi_miso_i"/>
-        <spirit:internalPortReference spirit:componentRef="spi_adc" spirit:portRef="spi_miso_i"/>
         <spirit:internalPortReference spirit:componentRef="ila_0" spirit:portRef="probe1"/>
+        <spirit:internalPortReference spirit:componentRef="spi_adc_0" spirit:portRef="spi_miso_i"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>my_regs_wbt_spi_adc_start_o</spirit:name>
         <spirit:internalPortReference spirit:componentRef="my_regs" spirit:portRef="wbt_spi_adc_start_o"/>
-        <spirit:internalPortReference spirit:componentRef="spi_adc" spirit:portRef="start_i"/>
         <spirit:internalPortReference spirit:componentRef="ila_0" spirit:portRef="probe0"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>my_regs_wbt_spi_adc_cpol_o</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="my_regs" spirit:portRef="wbt_spi_adc_cpol_o"/>
-        <spirit:internalPortReference spirit:componentRef="spi_adc" spirit:portRef="cpol_i"/>
+        <spirit:internalPortReference spirit:componentRef="spi_adc_0" spirit:portRef="start_i"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>spi_adc_data_o</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="spi_adc" spirit:portRef="data_o"/>
+        <spirit:internalPortReference spirit:componentRef="spi_adc_0" spirit:portRef="data_o"/>
         <spirit:internalPortReference spirit:componentRef="ila_0" spirit:portRef="probe3"/>
         <spirit:internalPortReference spirit:componentRef="my_regs" spirit:portRef="wbt_spi_adc_data_in_i"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>xlconstant_1_dout</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="xlconstant_1" spirit:portRef="dout"/>
-        <spirit:internalPortReference spirit:componentRef="spi_adc" spirit:portRef="data_i"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>xlslice_0_Dout</spirit:name>
@@ -1906,13 +1914,7 @@
         <spirit:internalPortReference spirit:componentRef="xlslice_0" spirit:portRef="Din"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>spi_adc_ready_o</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="spi_adc" spirit:portRef="ready_o"/>
-        <spirit:internalPortReference spirit:componentRef="ila_0" spirit:portRef="probe4"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
         <spirit:name>spi_adc_drdy_o</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="spi_adc" spirit:portRef="drdy_o"/>
         <spirit:internalPortReference spirit:componentRef="ila_0" spirit:portRef="probe5"/>
         <spirit:internalPortReference spirit:componentRef="PLL_filter_0" spirit:portRef="start"/>
       </spirit:adHocConnection>
@@ -1935,6 +1937,11 @@
         <spirit:name>my_regs_wbt_x1_o</spirit:name>
         <spirit:internalPortReference spirit:componentRef="my_regs" spirit:portRef="wbt_x1_o"/>
         <spirit:internalPortReference spirit:componentRef="PLL_filter_0" spirit:portRef="x1"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>clk_wiz_0_clk_out1</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="clk_wiz_0" spirit:portRef="clk_out1"/>
+        <spirit:internalPortReference spirit:componentRef="spi_adc_0" spirit:portRef="clk_sys_i"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>

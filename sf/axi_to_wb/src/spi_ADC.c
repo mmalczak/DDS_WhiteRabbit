@@ -29,27 +29,23 @@ void setCNV_AD7980(u32 value)
 
 u16 WB_SpiADC_Transfer()
 {
-	setCNV_AD7980(1);
-	setSpiADC_SDI(0);
-	for(int i=0; i<40;i++);
 	setSpiADC_Start(1);
 	for(int i=0; i<4;i++);
 	setSpiADC_Start(0);
-	for(int i=0; i<320;i++);
-	setSpiADC_SDI(1);
-	setCNV_AD7980(0);
+	for(int i=0; i<320*4;i++);
 	return (u16)(Xil_In32(WBT_REG_SPI_ADC_DATA_IN));
 }
-u16 measure_ADC()
+s16 measure_ADC()
 {
-	u32 value = 0;
-	u16 WB_SpiADC_Transfer();
+	double value = 0;
+	WB_SpiADC_Transfer();
 	for(int i = 0; i<100; i++)
 	{
-		value = value + (u32)(WB_SpiADC_Transfer());
+		value = value + 	((double)(WB_SpiADC_Transfer()))-(double)(1<<15);
+
 	}
 	value = value/101;
-	return (u16)(value);
+	return (s16)(value);
 }
 void ADC_spi_init(void)
 {

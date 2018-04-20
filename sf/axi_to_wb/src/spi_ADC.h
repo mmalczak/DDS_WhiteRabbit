@@ -22,7 +22,7 @@ void setSpiADC_SDI(u32 value);
 void setSpiADC_CPol(u32 value);
 void setCNV_AD7980(u32 value);
 u16 WB_SpiADC_Transfer();
-u16 measure_ADC();
+s16 measure_ADC();
 void ADC_spi_init(void);
 
 

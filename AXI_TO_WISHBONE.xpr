@@ -100,6 +100,12 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/spi_adc.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/bd/sources/design_1.bd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../sources/design_1.bd"/>
@@ -150,13 +156,6 @@
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/sinus2.coe"/>
           <Attr Name="ImportTime" Val="1519827907"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/spi_adc.vhd">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>

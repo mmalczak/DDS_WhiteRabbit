@@ -289,10 +289,10 @@ CONFIG.use_bram_block {Stand_Alone} \
   # Create instance: ila_0, and set properties
   set ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.2 ila_0 ]
   set_property -dict [ list \
-CONFIG.C_DATA_DEPTH {131072} \
+CONFIG.C_DATA_DEPTH {8192} \
 CONFIG.C_ENABLE_ILA_AXI_MON {false} \
 CONFIG.C_MONITOR_TYPE {Native} \
-CONFIG.C_NUM_OF_PROBES {6} \
+CONFIG.C_NUM_OF_PROBES {8} \
 CONFIG.C_PROBE3_WIDTH {16} \
 CONFIG.C_PROBE4_WIDTH {1} \
  ] $ila_0
@@ -913,9 +913,9 @@ CONFIG.DOUT_WIDTH {5} \
   connect_bd_net -net freq_high_measure_0_counts_dac [get_bd_pins freq_high_measure_0/counts_dac] [get_bd_pins my_regs/wbt_dds_freq_i]
   connect_bd_net -net freq_high_measure_0_counts_pll [get_bd_pins freq_high_measure_0/counts_pll] [get_bd_pins my_regs/wbt_pll_freq_i]
   connect_bd_net -net my_regs_wbt_filter_out_o [get_bd_pins PLL_filter_0/err] [get_bd_pins my_regs/wbt_filter_out_o]
-  connect_bd_net -net my_regs_wbt_spi_adc_cnv_o [get_bd_ports wbt_spi_adc_cnv_o] [get_bd_pins my_regs/wbt_spi_adc_cnv_o]
+  connect_bd_net -net my_regs_wbt_spi_adc_cnv_o [get_bd_ports wbt_spi_adc_cnv_o] [get_bd_pins ila_0/probe6] [get_bd_pins my_regs/wbt_spi_adc_cnv_o]
   connect_bd_net -net my_regs_wbt_spi_adc_cpol_o [get_bd_pins my_regs/wbt_spi_adc_cpol_o] [get_bd_pins spi_adc/cpol_i]
-  connect_bd_net -net my_regs_wbt_spi_adc_sdi_o [get_bd_ports wbt_spi_adc_sdi_o] [get_bd_pins my_regs/wbt_spi_adc_sdi_o]
+  connect_bd_net -net my_regs_wbt_spi_adc_sdi_o [get_bd_ports wbt_spi_adc_sdi_o] [get_bd_pins ila_0/probe7] [get_bd_pins my_regs/wbt_spi_adc_sdi_o]
   connect_bd_net -net my_regs_wbt_spi_adc_start_o [get_bd_pins ila_0/probe0] [get_bd_pins my_regs/wbt_spi_adc_start_o] [get_bd_pins spi_adc/start_i]
   connect_bd_net -net my_regs_wbt_x0_o [get_bd_pins PLL_filter_0/x0] [get_bd_pins my_regs/wbt_x0_o]
   connect_bd_net -net my_regs_wbt_x1_o [get_bd_pins PLL_filter_0/x1] [get_bd_pins my_regs/wbt_x1_o]

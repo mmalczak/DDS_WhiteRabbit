@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.1 (lin64) Build 1846317 Fri Apr 14 18:54:47 MDT 2017
---Date        : Fri Apr 13 17:54:50 2018
+--Date        : Tue Apr 17 16:09:43 2018
 --Host        : milosz-System-Product-Name running 64-bit Linux Mint 18.2 Sonya
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -1433,7 +1433,9 @@ architecture STRUCTURE of design_1 is
     probe2 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe3 : in STD_LOGIC_VECTOR ( 15 downto 0 );
     probe4 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe5 : in STD_LOGIC_VECTOR ( 0 to 0 )
+    probe5 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe6 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe7 : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component design_1_ila_0_1;
   component design_1_xlconstant_1_0 is
@@ -1794,7 +1796,9 @@ ila_0: component design_1_ila_0_1
       probe2(0) => spi_adc_spi_sclk_o,
       probe3(15 downto 0) => spi_adc_data_o(15 downto 0),
       probe4(0) => spi_adc_ready_o,
-      probe5(0) => spi_adc_drdy_o
+      probe5(0) => spi_adc_drdy_o,
+      probe6(0) => my_regs_wbt_spi_adc_cnv_o,
+      probe7(0) => my_regs_wbt_spi_adc_sdi_o
     );
 my_regs: component design_1_wb_test_slave_0_0
      port map (

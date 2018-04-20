@@ -35,7 +35,7 @@ u16 WB_SpiADC_Transfer()
 	setSpiADC_Start(1);
 	for(int i=0; i<4;i++);
 	setSpiADC_Start(0);
-	for(int i=0; i<60;i++);
+	for(int i=0; i<320;i++);
 	setSpiADC_SDI(1);
 	setCNV_AD7980(0);
 	return (u16)(Xil_In32(WBT_REG_SPI_ADC_DATA_IN));

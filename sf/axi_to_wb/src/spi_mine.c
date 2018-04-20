@@ -202,21 +202,23 @@ void balancePLL(void)
 	}
 }
 */
-
+// Dziala najlepiej na ten moment, tyle że duży jitter
 double frequencyAccumulator(void)
 {
-	static double err, err_pr, freq = 25000000.0;
-	static double a=5.3e-5, b=0.0483;
-	err_pr = err;
-	err = ((double)(WB_SpiADC_Transfer()))-(double)(1<<15);
-	//xil_printf("err = %d \n\r", (s32)err);
-	//err=err/1000;
-	//freq = freq - err*(a+b) - err_pr*(a-b);
-	freq = freq - err*(a+b) - err_pr*(a-b);
-//freq = freq + err;
-	return freq;
-}
+//chyba 100 Hz i 10 stopni
+	static double a=4.55421686746988E-05, b=	0.0483;
 
+//	static double a=5.3e-5, b=0.0483;
+	static double err[4], freq[4]={25000000.0, 25000000.0};
+	static u8 err_idx=0, freq_idx=0;
+	err_idx = (err_idx+1)&3;
+	freq_idx = (freq_idx +1)&3;
+
+	err[err_idx] = ((double)(WB_SpiADC_Transfer()))-(double)(1<<15);
+	freq[freq_idx] = freq[(freq_idx-1)&3] - (a+b) * err[err_idx] - (a-b) * err[(err_idx-1)&3];
+	return freq[freq_idx];
+}
+// na FPGA
 /*u32 frequencyAccumulator(void)
 {
 	static double err, err_pr;
@@ -228,56 +230,22 @@ double frequencyAccumulator(void)
 
 	return freq;
 }*/
-/*double frequencyAccumulator(void)
-{
-	static double err, err_pr, err_pr_pr, freq = 28000000.0, freq_pr;
-	static double T2 = 0.8e-3;
-	static double o =0.33, p = 0.67, r = 5.6, s = 3.08, u = -2.51;
 
-	static double a=5.08e-6, b=0.00486;
-	err_pr_pr = err_pr;
-	err_pr = err;
-	err = ((double)(WB_SpiADC_Transfer()))-(double)(1<<15);
-	freq_pr = freq;
-	freq = freq - err*(a+b) - err_pr*(a-b);
-	return freq;
-}*/
+//Układ który chciałem użyć, nie dziala
 /*double frequencyAccumulator(void)
 {
-	static double err, err_pr, err_pr_pr, freq = 28000000.0, freq_pr;
-	static double T2 = 0.8e-3;
-	static double o =0.33, p = 0.67, r = 5.6, s = 3.08, u = -2.51;
-	err_pr_pr = err_pr;
-	err_pr = err;
-	err = ((double)(WB_SpiADC_Transfer()))-(double)(1<<15);
-	freq_pr = freq;
-	freq = o*freq +  freq_pr*p;//  + r * err + s * err_pr + u * err_pr_pr;
-	return freq;
+	static double	o=	1.9727047146	,p=	-0.9727047146	,r=	-0.0659904631	,s=	-0.0001446979	,u=	0.0658457652	;
+	static double err[4], freq[4]={25000000.0, 0.0, 0.0, 25000000};
+	static u8 err_idx, freq_idx;
+	err_idx = (err_idx+1)&3;
+	freq_idx = (freq_idx +1)&3;
+	err[err_idx] = ((double)(WB_SpiADC_Transfer()))-(double)(1<<15);
+	freq[freq_idx] = o*freq[(freq_idx-1)&3] + p*freq[(freq_idx-2)&3] + r * err[err_idx] + s * err[(err_idx-1)&3] + u * err[(err_idx-2)&3];
+
+	return freq[freq_idx];
 }*/
-/*double frequencyAccumulatorF1(void)
-{
-	static double err, err_pr, freq = 28000000.0;
-	static double T2 = 0.8e-3;
-	err_pr = err;
-	err = ((double)(WB_SpiADC_Transfer()))-(double)(1<<15);
-	//xil_printf("err = %d \n\r", (s32)err);
-	//err=err/1000;
-	freq = freq + T2*err + T2*err_pr;
-	//freq = freq + err;
-	return freq;
-}
-double frequencyAccumulatorF2(void)
-{
-	static double err, err_pr, freq;
-	static double h = 0.668, i = 6994, j = -3141;
-	err_pr = err;
-	err = frequencyAccumulatorF1();
-	//xil_printf("err = %d \n\r", (s32)err);
-	//err=err/1000;
-	freq = h*freq - i*err - j*err_pr;
-	//freq = freq + err;
-	return freq;
-}*/
+
+
 
 u32 frequencyFilter(void)
 {
@@ -310,7 +278,7 @@ int main(void)
 	setDDSFrequency(freqDACSet);
 	setFreqCounterMaskReg((u32)0x04000000);
 	configure_ADF4002();
-	setReferencePLLCounter(12,12);
+	setReferencePLLCounter(9,9);
 	//Xil_DCacheEnable();
 	//Xil_DCacheFlush();
 	Xil_Out32(WBT_REG_X0, 811228);

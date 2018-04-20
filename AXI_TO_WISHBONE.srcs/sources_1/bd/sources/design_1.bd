@@ -769,25 +769,25 @@
           </spirit:wire>
         </spirit:port>
         <spirit:port>
-          <spirit:name>PD_CLK</spirit:name>
-          <spirit:wire>
-            <spirit:direction>out</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
           <spirit:name>spi_sclk_ad95xx_o</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
           </spirit:wire>
         </spirit:port>
         <spirit:port>
-          <spirit:name>PD_DATA</spirit:name>
+          <spirit:name>PD_CLK</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
           </spirit:wire>
         </spirit:port>
         <spirit:port>
           <spirit:name>spi_mosi_ad95xx_o</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>PD_DATA</spirit:name>
           <spirit:wire>
             <spirit:direction>out</spirit:direction>
           </spirit:wire>
@@ -1524,8 +1524,8 @@
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_ila_0_1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_PROBE4_WIDTH">1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_PROBE3_WIDTH">16</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="C_DATA_DEPTH">131072</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="C_NUM_OF_PROBES">6</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_DATA_DEPTH">8192</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_NUM_OF_PROBES">8</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_ENABLE_ILA_AXI_MON">false</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_MONITOR_TYPE">Native</spirit:configurableElementValue>
         </spirit:configurableElementValues>
@@ -1592,12 +1592,12 @@
         <spirit:internalPortReference spirit:componentRef="axil2wb_0" spirit:portRef="S_AXI_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="spi_master_0" spirit:portRef="clk_sys_i"/>
         <spirit:internalPortReference spirit:componentRef="freq_high_measure_0" spirit:portRef="clk"/>
-        <spirit:internalPortReference spirit:componentRef="spi_adc" spirit:portRef="clk_sys_i"/>
-        <spirit:internalPortReference spirit:componentRef="ila_0" spirit:portRef="clk"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="ACLK"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="S00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M01_ACLK"/>
+        <spirit:internalPortReference spirit:componentRef="spi_adc" spirit:portRef="clk_sys_i"/>
+        <spirit:internalPortReference spirit:componentRef="ila_0" spirit:portRef="clk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>processing_system7_0_FCLK_RESET0_N</spirit:name>
@@ -1795,14 +1795,14 @@
       <spirit:adHocConnection>
         <spirit:name>spi_master_0_spi_sclk_o</spirit:name>
         <spirit:internalPortReference spirit:componentRef="spi_master_0" spirit:portRef="spi_sclk_o"/>
-        <spirit:externalPortReference spirit:portRef="spi_sclk_ad95xx_o"/>
         <spirit:externalPortReference spirit:portRef="PD_CLK"/>
+        <spirit:externalPortReference spirit:portRef="spi_sclk_ad95xx_o"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>spi_master_0_spi_mosi_o</spirit:name>
         <spirit:internalPortReference spirit:componentRef="spi_master_0" spirit:portRef="spi_mosi_o"/>
-        <spirit:externalPortReference spirit:portRef="spi_mosi_ad95xx_o"/>
         <spirit:externalPortReference spirit:portRef="PD_DATA"/>
+        <spirit:externalPortReference spirit:portRef="spi_mosi_ad95xx_o"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>spi_miso_i_1_1</spirit:name>
@@ -1853,11 +1853,13 @@
         <spirit:name>my_regs_wbt_spi_adc_cnv_o</spirit:name>
         <spirit:internalPortReference spirit:componentRef="my_regs" spirit:portRef="wbt_spi_adc_cnv_o"/>
         <spirit:externalPortReference spirit:portRef="wbt_spi_adc_cnv_o"/>
+        <spirit:internalPortReference spirit:componentRef="ila_0" spirit:portRef="probe6"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>my_regs_wbt_spi_adc_sdi_o</spirit:name>
         <spirit:internalPortReference spirit:componentRef="my_regs" spirit:portRef="wbt_spi_adc_sdi_o"/>
         <spirit:externalPortReference spirit:portRef="wbt_spi_adc_sdi_o"/>
+        <spirit:internalPortReference spirit:componentRef="ila_0" spirit:portRef="probe7"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>spi_adc_spi_sclk_o</spirit:name>

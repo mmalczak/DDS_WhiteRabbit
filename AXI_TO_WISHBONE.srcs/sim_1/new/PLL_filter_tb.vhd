@@ -48,14 +48,27 @@ begin
   stimulus: process
   begin
   
+  res <= '0';
+  start <= '0';
+  wait for clk_period;
   res <= '1';
-  x1<=X"00000000";
-  x0<=X"00000001";
+  x1<=X"00800000";
+  x0<=X"01000000";
   start <= '1';
   wait for clk_period;
   start <= '0';
-  err <= X"00000001";
-  wait for 100000 ns;
+  err <= "00000000000000001000000000000100";
+  wait for clk_period*4;
+   start <= '1';
+   wait for clk_period;
+   start <= '0';
+   wait for clk_period*4;
+   start <= '1';
+   wait for clk_period;
+   start <= '0';
+      
+    
+  wait for 1000 ns;
     
     assert false severity failure;
 

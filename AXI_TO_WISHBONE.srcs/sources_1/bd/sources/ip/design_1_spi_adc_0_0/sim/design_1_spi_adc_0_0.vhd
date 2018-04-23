@@ -59,6 +59,7 @@ ENTITY design_1_spi_adc_0_0 IS
     rst_n_i : IN STD_LOGIC;
     start_i : IN STD_LOGIC;
     data_o : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+    data_ready : OUT STD_LOGIC;
     cnv : OUT STD_LOGIC;
     sdi : OUT STD_LOGIC;
     spi_sclk_o : OUT STD_LOGIC;
@@ -75,6 +76,7 @@ ARCHITECTURE design_1_spi_adc_0_0_arch OF design_1_spi_adc_0_0 IS
       rst_n_i : IN STD_LOGIC;
       start_i : IN STD_LOGIC;
       data_o : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+      data_ready : OUT STD_LOGIC;
       cnv : OUT STD_LOGIC;
       sdi : OUT STD_LOGIC;
       spi_sclk_o : OUT STD_LOGIC;
@@ -88,6 +90,7 @@ BEGIN
       rst_n_i => rst_n_i,
       start_i => start_i,
       data_o => data_o,
+      data_ready => data_ready,
       cnv => cnv,
       sdi => sdi,
       spi_sclk_o => spi_sclk_o,

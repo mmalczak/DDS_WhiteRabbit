@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.1 (lin64) Build 1846317 Fri Apr 14 18:54:47 MDT 2017
---Date        : Fri Apr 20 15:55:20 2018
+--Date        : Mon Apr 23 17:19:53 2018
 --Host        : milosz-System-Product-Name running 64-bit Linux Mint 18.2 Sonya
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -1466,6 +1466,12 @@ architecture STRUCTURE of design_1 is
     wbt_x1_o : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   end component design_1_wb_test_slave_0_0;
+  component design_1_clk_wiz_0_0 is
+  port (
+    clk_in1 : in STD_LOGIC;
+    clk_out1 : out STD_LOGIC
+  );
+  end component design_1_clk_wiz_0_0;
   component design_1_PLL_filter_0_0 is
   port (
     clk : in STD_LOGIC;
@@ -1483,18 +1489,13 @@ architecture STRUCTURE of design_1 is
     rst_n_i : in STD_LOGIC;
     start_i : in STD_LOGIC;
     data_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    data_ready : out STD_LOGIC;
     cnv : out STD_LOGIC;
     sdi : out STD_LOGIC;
     spi_sclk_o : out STD_LOGIC;
     spi_miso_i : in STD_LOGIC
   );
   end component design_1_spi_adc_0_0;
-  component design_1_clk_wiz_0_0 is
-  port (
-    clk_in1 : in STD_LOGIC;
-    clk_out1 : out STD_LOGIC
-  );
-  end component design_1_clk_wiz_0_0;
   signal CLK0_OUT_IBUF_OUT : STD_LOGIC_VECTOR ( 0 to 0 );
   signal CLK1_OUT_IBUF_OUT : STD_LOGIC_VECTOR ( 0 to 0 );
   signal CLK2_out_IBUF_OUT : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -1610,6 +1611,7 @@ architecture STRUCTURE of design_1 is
   signal rst_processing_system7_0_50M_interconnect_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal rst_processing_system7_0_50M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal save_1 : STD_LOGIC_VECTOR ( 39 downto 0 );
+  signal spi_adc_0_data_ready : STD_LOGIC;
   signal spi_adc_data_o : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal spi_adc_spi_sclk_o : STD_LOGIC;
   signal spi_master_0_data_o : STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -1633,9 +1635,7 @@ architecture STRUCTURE of design_1 is
   signal wb_test_slave_0_wbt_spi_start_o : STD_LOGIC;
   signal xlconstant_0_dout : STD_LOGIC_VECTOR ( 0 to 0 );
   signal xlslice_0_Dout : STD_LOGIC_VECTOR ( 4 downto 0 );
-  signal NLW_PLL_filter_0_start_UNCONNECTED : STD_LOGIC;
   signal NLW_do_nothing_0_s_out_UNCONNECTED : STD_LOGIC_VECTOR ( 57 downto 0 );
-  signal NLW_ila_0_probe5_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_my_regs_wb_stall_o_UNCONNECTED : STD_LOGIC;
   signal NLW_my_regs_wbt_spi_adc_cnv_o_UNCONNECTED : STD_LOGIC;
   signal NLW_my_regs_wbt_spi_adc_cpol_o_UNCONNECTED : STD_LOGIC;
@@ -1721,7 +1721,7 @@ PLL_filter_0: component design_1_PLL_filter_0_0
       err(31 downto 0) => my_regs_wbt_filter_out_o(31 downto 0),
       freq(31 downto 0) => PLL_filter_0_freq(31 downto 0),
       res => processing_system7_0_FCLK_RESET0_N,
-      start => NLW_PLL_filter_0_start_UNCONNECTED,
+      start => spi_adc_0_data_ready,
       x0(31 downto 0) => my_regs_wbt_x0_o(31 downto 0),
       x1(31 downto 0) => my_regs_wbt_x1_o(31 downto 0)
     );
@@ -1798,7 +1798,7 @@ ila_0: component design_1_ila_0_1
       probe2(0) => spi_adc_spi_sclk_o,
       probe3(15 downto 0) => spi_adc_data_o(15 downto 0),
       probe4(0) => wb_test_slave_0_wbt_spi_start_o,
-      probe5(0) => NLW_ila_0_probe5_UNCONNECTED(0),
+      probe5(0) => my_regs_wbt_spi_adc_start_o,
       probe6(0) => my_regs_wbt_spi_adc_cnv_o,
       probe7(0) => my_regs_wbt_spi_adc_sdi_o
     );
@@ -2013,6 +2013,7 @@ spi_adc_0: component design_1_spi_adc_0_0
       clk_sys_i => clk_wiz_0_clk_out1,
       cnv => my_regs_wbt_spi_adc_cnv_o,
       data_o(15 downto 0) => spi_adc_data_o(15 downto 0),
+      data_ready => spi_adc_0_data_ready,
       rst_n_i => processing_system7_0_FCLK_RESET0_N,
       sdi => my_regs_wbt_spi_adc_sdi_o,
       spi_miso_i => spi_miso_i_2,

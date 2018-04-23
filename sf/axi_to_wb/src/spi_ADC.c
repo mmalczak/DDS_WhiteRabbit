@@ -32,7 +32,7 @@ u16 WB_SpiADC_Transfer()
 	setSpiADC_Start(1);
 	for(int i=0; i<4;i++);
 	setSpiADC_Start(0);
-	for(int i=0; i<320*4;i++);
+	for(int i=0; i<320;i++);
 	return (u16)(Xil_In32(WBT_REG_SPI_ADC_DATA_IN));
 }
 s16 measure_ADC()

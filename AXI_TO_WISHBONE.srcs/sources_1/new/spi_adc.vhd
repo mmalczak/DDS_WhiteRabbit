@@ -11,6 +11,7 @@ entity spi_adc is
 
     -- data read from selected slave, valid when ready_o == 1.
     data_o : out std_logic_vector(15 downto 0);
+    data_ready : out std_logic;
 
     -- these are obvious
     cnv : out std_logic;
@@ -44,12 +45,14 @@ begin  -- rtl
         counter    <= (others => '0');
         cnv <= '0';
         sdi <= '1';
+        data_ready <= '0';
       else
         case state is
           -- Waits for start of transfer command
           when IDLE =>
             sclk    <= '0';
             counter <= (others => '0');
+            data_ready <= '0';
             if(start_i = '1') then
               state      <= CONV;
               cnv <= '1';
@@ -75,6 +78,7 @@ begin  -- rtl
             sclk <= '0';
             cnv <= '0';
             data_o <= rx_sreg;
+            data_ready <= '1';
             state <= IDLE;
         end case;
       end if;

@@ -203,7 +203,7 @@ void balancePLL(void)
 }
 */
 // Dziala najlepiej na ten moment, tyle że duży jitter
-double frequencyAccumulator(void)
+/*double frequencyAccumulator(void)
 {
 //chyba 100 Hz i 10 stopni
 	static double a=4.55421686746988E-05, b=	0.0483;
@@ -217,9 +217,9 @@ double frequencyAccumulator(void)
 	err[err_idx] = ((double)(WB_SpiADC_Transfer()))-(double)(1<<15)+(double)(1<<13);
 	freq[freq_idx] = freq[(freq_idx-1)&3] - (a+b) * err[err_idx] - (a-b) * err[(err_idx-1)&3];
 	return freq[freq_idx];
-}
+}*/
 // na FPGA
-/*u32 frequencyAccumulator(void)
+u32 frequencyAccumulator(void)
 {
 	static double err, err_pr;
 	u32 freq;
@@ -229,7 +229,7 @@ double frequencyAccumulator(void)
 	freq = Xil_In32(WBT_REG_FILTER_IN);
 
 	return freq;
-}*/
+}
 
 //Układ który chciałem użyć, nie dziala
 /*double frequencyAccumulator(void)
@@ -265,6 +265,24 @@ void balancePLL(void)
 	}
 }
 
+void filterConstants(void)
+{
+	double a=5.3e-5, b=0.0483;
+	double x0_d, x1_d;
+	s32 x0_s, x1_s;
+
+	x0_d = a+b;
+	x1_d = a-b;
+	x0_d = x0_d * (1<<24);
+	x1_d = x1_d * (1<<24);
+	x0_s = (s32)x0_d;
+	x1_s = (s32)x1_d;
+
+	Xil_Out32(WBT_REG_X0, (u32)x0_s);
+	Xil_Out32(WBT_REG_X1, (u32)x1_s);
+
+}
+
 
 int main(void)
 {
@@ -281,12 +299,14 @@ int main(void)
 	setReferencePLLCounter(9,9);
 	//Xil_DCacheEnable();
 	//Xil_DCacheFlush();
-	Xil_Out32(WBT_REG_X0, 811228);
-	Xil_Out32(WBT_REG_X1, 0xFFF3A616);
+	//Xil_Out32(WBT_REG_X0, 811228);
+	//Xil_Out32(WBT_REG_X1, 0xFFF3A616);
+	filterConstants();
 
 	/*Xil_Out32(WBT_REG_X0, 28);
 	Xil_Out32(WBT_REG_X1, 0xFFFFFFF6);
 */
+
 	balancePLL();
 	//setDDSFrequency(30000000);
 	//xil_printf(" adc value = %d\n\r", measure_ADC());

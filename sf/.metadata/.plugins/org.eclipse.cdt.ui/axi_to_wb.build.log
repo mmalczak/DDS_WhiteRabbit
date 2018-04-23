@@ -1,4 +1,4 @@
-16:25:15 **** Incremental Build of configuration Debug for project axi_to_wb ****
+17:16:18 **** Auto Build of configuration Debug for project axi_to_wb ****
 make pre-build main-build 
 a9-linaro-pre-build-step
  
@@ -13,6 +13,24 @@ arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AX
 ../src/spi_mine.c:101:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
    c=getchar();
      ^~~~~~~
+../src/spi_mine.c: In function 'frequencyAccumulator':
+../src/spi_mine.c:226:26: warning: unused variable 'b' [-Wunused-variable]
+  static double a=5.3e-5, b=0.0483;
+                          ^
+../src/spi_mine.c:226:16: warning: unused variable 'a' [-Wunused-variable]
+  static double a=5.3e-5, b=0.0483;
+                ^
+../src/spi_mine.c:224:21: warning: unused variable 'err_pr' [-Wunused-variable]
+  static double err, err_pr;
+                     ^~~~~~
+At top level:
+../src/spi_mine.c:224:21: warning: 'err_pr' defined but not used [-Wunused-variable]
+../src/spi_mine.c:226:16: warning: 'a' defined but not used [-Wunused-variable]
+  static double a=5.3e-5, b=0.0483;
+                ^
+../src/spi_mine.c:226:26: warning: 'b' defined but not used [-Wunused-variable]
+  static double a=5.3e-5, b=0.0483;
+                          ^
 Finished building: ../src/spi_mine.c
  
 Building target: axi_to_wb.elf
@@ -23,9 +41,9 @@ Finished building target: axi_to_wb.elf
 Invoking: ARM v7 Print Size
 arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  37244	   2260	2030320	2069824	 1f9540	axi_to_wb.elf
+  37052	   2228	2030288	2069568	 1f9440	axi_to_wb.elf
 Finished building: axi_to_wb.elf.size
  
 
-16:25:15 Build Finished (took 293ms)
+17:16:18 Build Finished (took 238ms)
 

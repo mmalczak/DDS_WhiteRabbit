@@ -22,10 +22,8 @@ signal freq_s : signed(31 downto 0);
 signal result_1 : signed(63 downto 0);
 signal result_2 : signed(63 downto 0);
 
-signal result_11 : signed(31 downto 0);
-signal result_22 : signed(31 downto 0);
 
-type   t_state is (IDLE, READ, FILTER);
+type   t_state is (IDLE, READ, FILTER0, FILTER1);
 signal state : t_state;
 
 
@@ -35,6 +33,12 @@ begin
 process(clk)
 begin
     if(res = '0') then 
+        state <= IDLE;
+        err_s <= (others => '0');
+        err_pr <= (others => '0');
+        freq_s <= X"017D7840";
+        result_1 <= (others => '0');
+        result_2 <= (others => '0');
     elsif(clk'event and clk='1')then
         case state is
             when IDLE =>
@@ -46,15 +50,13 @@ begin
             when READ =>
                 err_pr <= err_s;
                 err_s <= err - "01000000000000000";
-                state <= FILTER;
-           when FILTER =>
-
+                state <= FILTER0;
+           when FILTER0 =>
                 result_1 <= err_s * x0;
                 result_2 <= err_pr*x1;
-                result_11 <= result_1(63) & result_1(54 downto 24);
-                result_22 <= result_2(63) & result_2(54 downto 24);
-                freq_s <= freq_s - result_11;
-                freq_s <= freq_s - result_22;
+                state <= FILTER1; 
+           when FILTER1 =>
+                freq_s <= freq_s - (result_1(63) & result_1(54 downto 24)) - (result_2(63) & result_2(54 downto 24));
                 state <= IDLE;
         end case;
     end if;

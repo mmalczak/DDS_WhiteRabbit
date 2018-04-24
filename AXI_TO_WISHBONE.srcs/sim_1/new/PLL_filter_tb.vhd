@@ -52,21 +52,34 @@ begin
   start <= '0';
   wait for clk_period;
   res <= '1';
-  x1<=X"00800000";
-  x0<=X"01000000";
+  x1<=X"11800000";
+  x0<=X"01054000";
+  err <= "00000000000000000010101010000000";
   start <= '1';
   wait for clk_period;
   start <= '0';
-  err <= "00000000000000001000000000000100";
-  wait for clk_period*4;
-   start <= '1';
-   wait for clk_period;
-   start <= '0';
-   wait for clk_period*4;
-   start <= '1';
-   wait for clk_period;
-   start <= '0';
-      
+wait for clk_period*4;
+      start <= '1';
+wait for clk_period;
+start <= '0';
+wait for clk_period*4;
+         
+    start <= '1';
+wait for clk_period;
+start <= '0';
+wait for clk_period*4;
+         
+    start <= '1';
+wait for clk_period;
+start <= '0';
+wait for clk_period*4;
+         
+    start <= '1';
+wait for clk_period;
+start <= '0';
+wait for clk_period*4;
+         
+         
     
   wait for 1000 ns;
     

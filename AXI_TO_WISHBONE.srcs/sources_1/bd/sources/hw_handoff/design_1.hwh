@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Apr 23 17:19:53 2018" VIVADOVERSION="2017.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Apr 24 12:47:35 2018" VIVADOVERSION="2017.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="xilinx.com:zc706:part0:1.4" DEVICE="7z045" NAME="design_1" PACKAGE="ffg900" SPEEDGRADE="-2"/>
 
@@ -100,22 +100,22 @@
         <CONNECTION INSTANCE="External_Ports" PORT="przycisk"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="spi_sclk_ad95xx_o" SIGIS="undef" SIGNAME="spi_master_0_spi_sclk_o">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="spi_master_0" PORT="spi_sclk_o"/>
-      </CONNECTIONS>
-    </PORT>
     <PORT DIR="O" NAME="PD_CLK" SIGIS="undef" SIGNAME="spi_master_0_spi_sclk_o">
       <CONNECTIONS>
         <CONNECTION INSTANCE="spi_master_0" PORT="spi_sclk_o"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="spi_mosi_ad95xx_o" SIGIS="undef" SIGNAME="spi_master_0_spi_mosi_o">
+    <PORT DIR="O" NAME="spi_sclk_ad95xx_o" SIGIS="undef" SIGNAME="spi_master_0_spi_sclk_o">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="spi_master_0" PORT="spi_sclk_o"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="PD_DATA" SIGIS="undef" SIGNAME="spi_master_0_spi_mosi_o">
       <CONNECTIONS>
         <CONNECTION INSTANCE="spi_master_0" PORT="spi_mosi_o"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="PD_DATA" SIGIS="undef" SIGNAME="spi_master_0_spi_mosi_o">
+    <PORT DIR="O" NAME="spi_mosi_ad95xx_o" SIGIS="undef" SIGNAME="spi_master_0_spi_mosi_o">
       <CONNECTIONS>
         <CONNECTION INSTANCE="spi_master_0" PORT="spi_mosi_o"/>
       </CONNECTIONS>
@@ -5989,8 +5989,8 @@
           <CONNECTIONS>
             <CONNECTION INSTANCE="rst_processing_system7_0_50M" PORT="ext_reset_in"/>
             <CONNECTION INSTANCE="spi_master_0" PORT="rst_n_i"/>
-            <CONNECTION INSTANCE="PLL_filter_0" PORT="res"/>
             <CONNECTION INSTANCE="spi_adc_0" PORT="rst_n_i"/>
+            <CONNECTION INSTANCE="PLL_filter_0" PORT="res"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" LEFT="53" NAME="MIO" RIGHT="0" SIGIS="undef"/>
@@ -7049,14 +7049,14 @@
         <PORT DIR="O" NAME="spi_cs_n_o" SIGIS="undef"/>
         <PORT DIR="O" NAME="spi_sclk_o" SIGIS="undef" SIGNAME="spi_master_0_spi_sclk_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="PD_CLK"/>
             <CONNECTION INSTANCE="External_Ports" PORT="spi_sclk_ad95xx_o"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="PD_CLK"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="spi_mosi_o" SIGIS="undef" SIGNAME="spi_master_0_spi_mosi_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="PD_DATA"/>
             <CONNECTION INSTANCE="External_Ports" PORT="spi_mosi_ad95xx_o"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="PD_DATA"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="spi_miso_i" SIGIS="undef" SIGNAME="External_Ports_spi_miso_i_1">

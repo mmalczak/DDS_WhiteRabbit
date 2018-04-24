@@ -143,7 +143,7 @@ begin
                 state <= FILTER1; 
            when FILTER1 =>
                 freq_s <= freq_s - (result_1(63) & result_1(54 downto 24)) - (result_2(63) & result_2(54 downto 24));
-                freq_s2 <= freq_s2 - (result_1(47 downto 24)) - (result_2(47 downto 24));
+                freq_s2 <= freq_s2 - (result_12(47 downto 24)) - (result_22(47 downto 24));
                 state <= IDLE;
         end case;
     end if;

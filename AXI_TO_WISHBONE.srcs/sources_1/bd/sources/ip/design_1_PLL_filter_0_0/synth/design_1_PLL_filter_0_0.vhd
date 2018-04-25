@@ -58,7 +58,7 @@ ENTITY design_1_PLL_filter_0_0 IS
     clk : IN STD_LOGIC;
     res : IN STD_LOGIC;
     start : IN STD_LOGIC;
-    err : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+    err : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     x0 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     x1 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     freq : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
@@ -73,7 +73,7 @@ ARCHITECTURE design_1_PLL_filter_0_0_arch OF design_1_PLL_filter_0_0 IS
       clk : IN STD_LOGIC;
       res : IN STD_LOGIC;
       start : IN STD_LOGIC;
-      err : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+      err : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
       x0 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
       x1 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
       freq : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)

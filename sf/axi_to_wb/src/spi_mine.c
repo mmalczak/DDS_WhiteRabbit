@@ -203,7 +203,7 @@ void balancePLL(void)
 }
 */
 // Dziala najlepiej na ten moment, tyle że duży jitter
-double frequencyAccumulator(void)
+/*double frequencyAccumulator(void)
 {
 //chyba 100 Hz i 10 stopni
 	static double a=4.55421686746988E-05, b=	0.0483;
@@ -217,9 +217,9 @@ double frequencyAccumulator(void)
 	err[err_idx] = ((double)(WB_SpiADC_Transfer()))-(double)(1<<15)+(double)(1<<13);
 	freq[freq_idx] = freq[(freq_idx-1)&3] - (a+b) * err[err_idx] - (a-b) * err[(err_idx-1)&3];
 	return freq[freq_idx];
-}
+}*/
 // na FPGA
-/*u32 frequencyAccumulator(void)
+u32 frequencyAccumulator(void)
 {
 	static double err, err_pr;
 	u32 freq;
@@ -229,7 +229,7 @@ double frequencyAccumulator(void)
 	freq = Xil_In32(WBT_REG_FILTER_IN);
 
 	return freq;
-}*/
+}
 
 //Układ który chciałem użyć, nie dziala
 /*double frequencyAccumulator(void)

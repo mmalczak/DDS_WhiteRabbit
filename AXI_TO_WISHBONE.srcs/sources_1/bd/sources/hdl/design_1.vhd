@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.1 (lin64) Build 1846317 Fri Apr 14 18:54:47 MDT 2017
---Date        : Tue Apr 24 12:47:34 2018
+--Date        : Wed Apr 25 11:46:09 2018
 --Host        : milosz-System-Product-Name running 64-bit Linux Mint 18.2 Sonya
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -1195,10 +1195,10 @@ entity design_1 is
     wbt_spi_cs_ad9510_o : out STD_LOGIC;
     wbt_spi_cs_ad9516_o : out STD_LOGIC
   );
-  attribute core_generation_info : string;
-  attribute core_generation_info of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=26,numReposBlks=22,numNonXlnxBlks=8,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=8,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=1,da_clkrst_cnt=1,synth_mode=Global}";
-  attribute hw_handoff : string;
-  attribute hw_handoff of design_1 : entity is "design_1.hwdef";
+  attribute CORE_GENERATION_INFO : string;
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=25,numReposBlks=21,numNonXlnxBlks=8,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=8,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=1,da_clkrst_cnt=1,synth_mode=Global}";
+  attribute HW_HANDOFF : string;
+  attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
 
 architecture STRUCTURE of design_1 is
@@ -1409,19 +1409,6 @@ architecture STRUCTURE of design_1 is
     counts_pll : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   end component design_1_freq_high_measure_0_0;
-  component design_1_ila_0_1 is
-  port (
-    clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe2 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe3 : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    probe4 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe5 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe6 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe7 : in STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component design_1_ila_0_1;
   component design_1_xlslice_0_0 is
   port (
     Din : in STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -1490,7 +1477,7 @@ architecture STRUCTURE of design_1 is
     clk : in STD_LOGIC;
     res : in STD_LOGIC;
     start : in STD_LOGIC;
-    err : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    err : in STD_LOGIC_VECTOR ( 15 downto 0 );
     x0 : in STD_LOGIC_VECTOR ( 31 downto 0 );
     x1 : in STD_LOGIC_VECTOR ( 31 downto 0 );
     freq : out STD_LOGIC_VECTOR ( 31 downto 0 )
@@ -1718,7 +1705,7 @@ DAC_DAT: component design_1_util_ds_buf_1_2
 PLL_filter_0: component design_1_PLL_filter_0_0
      port map (
       clk => axil2wb_0_wb_clk_o,
-      err(31 downto 0) => my_regs_wbt_filter_out_o(31 downto 0),
+      err(15 downto 0) => my_regs_wbt_filter_out_o(15 downto 0),
       freq(31 downto 0) => PLL_filter_0_freq(31 downto 0),
       res => processing_system7_0_FCLK_RESET0_N,
       start => spi_adc_0_data_ready,
@@ -1789,18 +1776,6 @@ freq_high_measure_0: component design_1_freq_high_measure_0_0
       counts_pll(31 downto 0) => freq_high_measure_0_counts_pll(31 downto 0),
       dac_meas => CLK0_OUT_IBUF_OUT(0),
       pll_meas => CLK2_out_IBUF_OUT(0)
-    );
-ila_0: component design_1_ila_0_1
-     port map (
-      clk => processing_system7_0_FCLK_CLK0,
-      probe0(0) => my_regs_wbt_spi_adc_start_o,
-      probe1(0) => spi_miso_i_2,
-      probe2(0) => spi_adc_spi_sclk_o,
-      probe3(15 downto 0) => spi_adc_data_o(15 downto 0),
-      probe4(0) => wb_test_slave_0_wbt_spi_start_o,
-      probe5(0) => my_regs_wbt_spi_adc_start_o,
-      probe6(0) => my_regs_wbt_spi_adc_cnv_o,
-      probe7(0) => my_regs_wbt_spi_adc_sdi_o
     );
 my_regs: component design_1_wb_test_slave_0_0
      port map (

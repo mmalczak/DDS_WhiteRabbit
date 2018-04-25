@@ -312,17 +312,6 @@ CONFIG.USE_RESET {false} \
      return 1
    }
   
-  # Create instance: ila_0, and set properties
-  set ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.2 ila_0 ]
-  set_property -dict [ list \
-CONFIG.C_DATA_DEPTH {8192} \
-CONFIG.C_ENABLE_ILA_AXI_MON {false} \
-CONFIG.C_MONITOR_TYPE {Native} \
-CONFIG.C_NUM_OF_PROBES {8} \
-CONFIG.C_PROBE3_WIDTH {16} \
-CONFIG.C_PROBE4_WIDTH {1} \
- ] $ila_0
-
   # Create instance: my_regs, and set properties
   set block_name wb_test_slave
   set block_cell_name my_regs
@@ -929,25 +918,25 @@ CONFIG.DOUT_WIDTH {5} \
   connect_bd_net -net freq_high_measure_0_counts_dac [get_bd_pins freq_high_measure_0/counts_dac] [get_bd_pins my_regs/wbt_dds_freq_i]
   connect_bd_net -net freq_high_measure_0_counts_pll [get_bd_pins freq_high_measure_0/counts_pll] [get_bd_pins my_regs/wbt_pll_freq_i]
   connect_bd_net -net my_regs_wbt_filter_out_o [get_bd_pins PLL_filter_0/err] [get_bd_pins my_regs/wbt_filter_out_o]
-  connect_bd_net -net my_regs_wbt_spi_adc_cnv_o [get_bd_ports wbt_spi_adc_cnv_o] [get_bd_pins ila_0/probe6] [get_bd_pins spi_adc_0/cnv]
-  connect_bd_net -net my_regs_wbt_spi_adc_sdi_o [get_bd_ports wbt_spi_adc_sdi_o] [get_bd_pins ila_0/probe7] [get_bd_pins spi_adc_0/sdi]
-  connect_bd_net -net my_regs_wbt_spi_adc_start_o [get_bd_pins ila_0/probe0] [get_bd_pins ila_0/probe5] [get_bd_pins my_regs/wbt_spi_adc_start_o] [get_bd_pins spi_adc_0/start_i]
+  connect_bd_net -net my_regs_wbt_spi_adc_cnv_o [get_bd_ports wbt_spi_adc_cnv_o] [get_bd_pins spi_adc_0/cnv]
+  connect_bd_net -net my_regs_wbt_spi_adc_sdi_o [get_bd_ports wbt_spi_adc_sdi_o] [get_bd_pins spi_adc_0/sdi]
+  connect_bd_net -net my_regs_wbt_spi_adc_start_o [get_bd_pins my_regs/wbt_spi_adc_start_o] [get_bd_pins spi_adc_0/start_i]
   connect_bd_net -net my_regs_wbt_x0_o [get_bd_pins PLL_filter_0/x0] [get_bd_pins my_regs/wbt_x0_o]
   connect_bd_net -net my_regs_wbt_x1_o [get_bd_pins PLL_filter_0/x1] [get_bd_pins my_regs/wbt_x1_o]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axil2wb_0/S_AXI_ACLK] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins freq_high_measure_0/clk] [get_bd_pins ila_0/clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0_axi_periph/ACLK] [get_bd_pins processing_system7_0_axi_periph/M00_ACLK] [get_bd_pins processing_system7_0_axi_periph/M01_ACLK] [get_bd_pins processing_system7_0_axi_periph/S00_ACLK] [get_bd_pins rst_processing_system7_0_50M/slowest_sync_clk] [get_bd_pins spi_master_0/clk_sys_i]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axil2wb_0/S_AXI_ACLK] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins freq_high_measure_0/clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0_axi_periph/ACLK] [get_bd_pins processing_system7_0_axi_periph/M00_ACLK] [get_bd_pins processing_system7_0_axi_periph/M01_ACLK] [get_bd_pins processing_system7_0_axi_periph/S00_ACLK] [get_bd_pins rst_processing_system7_0_50M/slowest_sync_clk] [get_bd_pins spi_master_0/clk_sys_i]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins PLL_filter_0/res] [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_processing_system7_0_50M/ext_reset_in] [get_bd_pins spi_adc_0/rst_n_i] [get_bd_pins spi_master_0/rst_n_i]
   connect_bd_net -net przycisk_1 [get_bd_ports led] [get_bd_ports przycisk]
   connect_bd_net -net rst_processing_system7_0_50M_interconnect_aresetn [get_bd_pins processing_system7_0_axi_periph/ARESETN] [get_bd_pins rst_processing_system7_0_50M/interconnect_aresetn]
   connect_bd_net -net rst_processing_system7_0_50M_peripheral_aresetn [get_bd_pins axil2wb_0/S_AXI_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M00_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M01_ARESETN] [get_bd_pins processing_system7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_processing_system7_0_50M/peripheral_aresetn]
   connect_bd_net -net save_1 [get_bd_ports save] [get_bd_pins do_nothing_0/s_mo]
   connect_bd_net -net spi_adc_0_data_ready [get_bd_pins PLL_filter_0/start] [get_bd_pins spi_adc_0/data_ready]
-  connect_bd_net -net spi_adc_data_o [get_bd_pins ila_0/probe3] [get_bd_pins my_regs/wbt_spi_adc_data_in_i] [get_bd_pins spi_adc_0/data_o]
-  connect_bd_net -net spi_adc_spi_sclk_o [get_bd_ports spi_sclk_o] [get_bd_pins ila_0/probe2] [get_bd_pins spi_adc_0/spi_sclk_o]
+  connect_bd_net -net spi_adc_data_o [get_bd_pins my_regs/wbt_spi_adc_data_in_i] [get_bd_pins spi_adc_0/data_o]
+  connect_bd_net -net spi_adc_spi_sclk_o [get_bd_ports spi_sclk_o] [get_bd_pins spi_adc_0/spi_sclk_o]
   connect_bd_net -net spi_master_0_data_o [get_bd_pins my_regs/wbt_spi_data_in_i] [get_bd_pins spi_master_0/data_o]
   connect_bd_net -net spi_master_0_spi_mosi_o [get_bd_ports PD_DATA] [get_bd_ports spi_mosi_ad95xx_o] [get_bd_pins spi_master_0/spi_mosi_o]
   connect_bd_net -net spi_master_0_spi_sclk_o [get_bd_ports PD_CLK] [get_bd_ports spi_sclk_ad95xx_o] [get_bd_pins spi_master_0/spi_sclk_o]
   connect_bd_net -net spi_miso_i_1_1 [get_bd_ports spi_miso_i_1] [get_bd_pins spi_master_0/spi_miso_i]
-  connect_bd_net -net spi_miso_i_2 [get_bd_ports spi_miso_i] [get_bd_pins ila_0/probe1] [get_bd_pins spi_adc_0/spi_miso_i]
+  connect_bd_net -net spi_miso_i_2 [get_bd_ports spi_miso_i] [get_bd_pins spi_adc_0/spi_miso_i]
   connect_bd_net -net util_ds_buf_0_IBUF_OUT [get_bd_pins do_nothing_0/s_lvds] [get_bd_pins util_ds_buf_0/IBUF_OUT]
   connect_bd_net -net wb_test_slave_0_wb_ack_o [get_bd_pins axil2wb_0/wb_ack_i] [get_bd_pins my_regs/wb_ack_o]
   connect_bd_net -net wb_test_slave_0_wb_dat_o [get_bd_pins axil2wb_0/wb_dat_i] [get_bd_pins my_regs/wb_dat_o]
@@ -961,7 +950,7 @@ CONFIG.DOUT_WIDTH {5} \
   connect_bd_net -net wb_test_slave_0_wbt_spi_cs_ad9510_o [get_bd_ports wbt_spi_cs_ad9510_o] [get_bd_pins my_regs/wbt_spi_cs_ad9510_o]
   connect_bd_net -net wb_test_slave_0_wbt_spi_cs_ad9516_o [get_bd_ports wbt_spi_cs_ad9516_o] [get_bd_pins my_regs/wbt_spi_cs_ad9516_o]
   connect_bd_net -net wb_test_slave_0_wbt_spi_data_o [get_bd_pins my_regs/wbt_spi_data_o] [get_bd_pins spi_master_0/data_i]
-  connect_bd_net -net wb_test_slave_0_wbt_spi_start_o [get_bd_pins ila_0/probe4] [get_bd_pins my_regs/wbt_spi_start_o] [get_bd_pins spi_master_0/start_i]
+  connect_bd_net -net wb_test_slave_0_wbt_spi_start_o [get_bd_pins my_regs/wbt_spi_start_o] [get_bd_pins spi_master_0/start_i]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins axil2wb_0/wb_err_i] [get_bd_pins xlconstant_0/dout]
   connect_bd_net -net xlslice_0_Dout [get_bd_pins my_regs/wb_adr_i] [get_bd_pins xlslice_0/Dout]
 

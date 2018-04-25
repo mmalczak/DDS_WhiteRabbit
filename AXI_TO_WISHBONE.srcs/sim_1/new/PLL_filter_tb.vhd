@@ -11,7 +11,7 @@ architecture bench of PLL_filter_tb is
       Port ( clk : in std_logic;
              res : in std_logic;
              start : in std_logic;
-             err : in signed(31 downto 0);
+             err : in signed(15 downto 0);
              x0 : in signed(31 downto 0);
              x1 : in signed(31 downto 0);
              freq : out std_logic_vector(31 downto 0)
@@ -21,7 +21,7 @@ architecture bench of PLL_filter_tb is
   signal clk: std_logic;
   signal res: std_logic;
   signal start: std_logic;
-  signal err: signed(31 downto 0);
+  signal err: signed(15 downto 0);
   signal x0: signed(31 downto 0);
   signal x1: signed(31 downto 0);
   signal freq: std_logic_vector(31 downto 0) ;
@@ -54,7 +54,7 @@ begin
   res <= '1';
   x1<=X"11800000";
   x0<=X"01054000";
-  err <= "00000000000000000010101010000000";
+  err <= "0010101010000000";
   start <= '1';
   wait for clk_period;
   start <= '0';

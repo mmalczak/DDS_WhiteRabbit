@@ -4,7 +4,7 @@
  *  Created on: Mar 21, 2018
  *      Author: milosz
  */
-
+/*
 #include "spi_ADC.h"
 
 
@@ -53,7 +53,7 @@ void ADC_spi_init(void)
 	setSpiADC_CPol(1);
 	setCNV_AD7980(0);
 }
-
+*/
 
 
 

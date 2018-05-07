@@ -46,54 +46,63 @@
 -- 
 -- DO NOT MODIFY THIS FILE.
 
--- IP VLNV: user.org:module_ref:PLL_filter:1.0
+-- IP VLNV: user.org:module_ref:PLL_loop:1.0
 -- IP Revision: 1
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-ENTITY design_1_PLL_filter_0_0 IS
+ENTITY design_1_PLL_loop_0_0 IS
   PORT (
-    clk : IN STD_LOGIC;
+    clk_50 : IN STD_LOGIC;
+    clk_12_5 : IN STD_LOGIC;
     res : IN STD_LOGIC;
-    start : IN STD_LOGIC;
-    err : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     x0 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     x1 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-    freq : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+    spi_miso_i : IN STD_LOGIC;
+    adc_offset : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+    timer : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+    freq : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    cnv : OUT STD_LOGIC;
+    sdi : OUT STD_LOGIC;
+    spi_sclk_o : OUT STD_LOGIC
   );
-END design_1_PLL_filter_0_0;
+END design_1_PLL_loop_0_0;
 
-ARCHITECTURE design_1_PLL_filter_0_0_arch OF design_1_PLL_filter_0_0 IS
+ARCHITECTURE design_1_PLL_loop_0_0_arch OF design_1_PLL_loop_0_0 IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings : STRING;
-  ATTRIBUTE DowngradeIPIdentifiedWarnings OF design_1_PLL_filter_0_0_arch: ARCHITECTURE IS "yes";
-  COMPONENT PLL_filter IS
+  ATTRIBUTE DowngradeIPIdentifiedWarnings OF design_1_PLL_loop_0_0_arch: ARCHITECTURE IS "yes";
+  COMPONENT PLL_loop IS
     PORT (
-      clk : IN STD_LOGIC;
+      clk_50 : IN STD_LOGIC;
+      clk_12_5 : IN STD_LOGIC;
       res : IN STD_LOGIC;
-      start : IN STD_LOGIC;
-      err : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
       x0 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
       x1 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-      freq : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+      spi_miso_i : IN STD_LOGIC;
+      adc_offset : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+      timer : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+      freq : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+      cnv : OUT STD_LOGIC;
+      sdi : OUT STD_LOGIC;
+      spi_sclk_o : OUT STD_LOGIC
     );
-  END COMPONENT PLL_filter;
-  ATTRIBUTE X_CORE_INFO : STRING;
-  ATTRIBUTE X_CORE_INFO OF design_1_PLL_filter_0_0_arch: ARCHITECTURE IS "PLL_filter,Vivado 2017.1";
-  ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
-  ATTRIBUTE CHECK_LICENSE_TYPE OF design_1_PLL_filter_0_0_arch : ARCHITECTURE IS "design_1_PLL_filter_0_0,PLL_filter,{}";
-  ATTRIBUTE X_INTERFACE_INFO : STRING;
-  ATTRIBUTE X_INTERFACE_INFO OF clk: SIGNAL IS "xilinx.com:signal:clock:1.0 clk CLK";
+  END COMPONENT PLL_loop;
 BEGIN
-  U0 : PLL_filter
+  U0 : PLL_loop
     PORT MAP (
-      clk => clk,
+      clk_50 => clk_50,
+      clk_12_5 => clk_12_5,
       res => res,
-      start => start,
-      err => err,
       x0 => x0,
       x1 => x1,
-      freq => freq
+      spi_miso_i => spi_miso_i,
+      adc_offset => adc_offset,
+      timer => timer,
+      freq => freq,
+      cnv => cnv,
+      sdi => sdi,
+      spi_sclk_o => spi_sclk_o
     );
-END design_1_PLL_filter_0_0_arch;
+END design_1_PLL_loop_0_0_arch;

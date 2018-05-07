@@ -9,6 +9,7 @@ entity PLL_filter is
            err : in signed(15 downto 0);
            x0 : in signed(31 downto 0);
            x1 : in signed(31 downto 0);
+           adc_offset : in signed(15 downto 0);
            freq : out signed(31 downto 0)
            );
 end PLL_filter;
@@ -47,13 +48,14 @@ begin
                 end if;
             when READ =>
                 err_pr <= err_s;
-                err_s <= err - "1000000000000000";
+                err_s <= err - adc_offset;
                 state <= FILTER0;
            when FILTER0 =>
                 result_1 <= err_s * x0;
                 result_2 <= err_pr*x1;
                 state <= FILTER1; 
            when FILTER1 =>
+           --współczynniki filtru 24 bity po przecinku
                 freq_s <= freq_s - (result_1(47 downto 24)) - (result_2(47 downto 24));
                 state <= IDLE;
         end case;

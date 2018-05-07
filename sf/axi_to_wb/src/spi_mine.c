@@ -6,7 +6,7 @@
 
 #include "my_regs.h"
 #include "spi_general.h"
-#include "spi_ADC.h"
+//#include "spi_ADC.h"
 
 
 #define DDS_BASE_FREQUENCY 244140
@@ -52,6 +52,11 @@ void led_on(u8 on)
 void setDDSStep(u32 step)
 {
 	Xil_Out32(WBT_REG_DDS, step);
+}
+
+void setADCoffset(u16 offset)
+{
+	Xil_Out32(WBT_REG_ADC_OFFSET, offset);
 }
 
 void setDDSFrequency(u32 freq)
@@ -116,16 +121,15 @@ void manualFreqControl(u32 freqDACSet)
 			default: xil_printf("Wrong value\n\r");break;
 			}
 			setDDSFrequency(freqDACSet);
-			xil_printf("adc = %d \n\r", measure_ADC());
+		//	xil_printf("adc = %d \n\r", measure_ADC());
 		}
 	}
 
 }
-/*double frequencyAccumulator(void);
-void manual()
+void manualOffsetControl()
 {
 	char c;
-	double a;
+	u16 offset = 0b0110000000000000;
 	while(1)
 	{
 		c=getchar();
@@ -133,13 +137,24 @@ void manual()
 		{
 			switch(c)
 			{
-			case 'm': frequencyAccumulator();break;
-			default: xil_printf("Wrong value\n\r");break;
+			case '9': offset++;break;
+			case '8': offset--;break;
+			case 'i': offset+=10;break;
+			case 'u': offset-=10;break;
+			case 'k': offset+=100;break;
+			case 'j': offset-=100;break;
+			case 'm': offset+=1000;break;
+			case 'n': offset-=1000;break;
+						default: xil_printf("Wrong value\n\r");break;
 			}
+			setADCoffset(offset);
+			xil_printf("offset = %d \n\r", offset);
 		}
 	}
 
-}*/
+}
+
+
 void freqSweep(u32 upperFreq, u32 lowerFreq)
 {
 	u32 freqDACSet = upperFreq;
@@ -152,56 +167,6 @@ void freqSweep(u32 upperFreq, u32 lowerFreq)
 	}
 }
 
-void balanceFrequency(void)
-{
-/*
-	u32 a=0;
-	while(1)
-	{
-
-		prFreqDAC = freqDAC;
-		measureDACPLLFreq(&freqDAC, &freqPLL);
-		if(prFreqDAC != freqDAC)
-		{
-
-			diff=freqDAC - freqPLL;
-			diff = diff/2;
-
-			xil_printf("pll freq = %d \n\r", freqPLL);
-			xil_printf("dac freq = %d \n\r", freqDAC);
-
-			freqDACSet = freqDACSet - diff;
-			setDDSFrequency(freqDACSet);
-		}
-	}
-*/
-}
-/*
-void balancePLL(void)
-{
-	s32 freqDACSet = 28000000;
-	s32 err, prErr;
-	s32 f[4]={0, 0, 0, 0};
-	(s32)(WB_SpiADC_Transfer());
-	s32 P, I=0, D, PID;
-	s64 errSum=0;
-	u32 i=0;
-	while(1)
-	{
-		f[i] = ((s32)(WB_SpiADC_Transfer()))-(1<<15);
-		i++;
-		i=i&3;
-		err=0;
-		for(int j=0; j<4; j++)
-		{
-			err = err+f[j];
-		}
-		err=err/4;
-		freqDACSet = freqDACSet + err;
-		setDDSFrequency((u32)freqDACSet);
-	}
-}
-*/
 // Dziala najlepiej na ten moment, tyle że duży jitter
 /*double frequencyAccumulator(void)
 {
@@ -219,7 +184,7 @@ void balancePLL(void)
 	return freq[freq_idx];
 }*/
 // na FPGA
-u32 frequencyAccumulator(void)
+/*u32 frequencyAccumulator(void)
 {
 	static double err, err_pr;
 	u32 freq;
@@ -229,41 +194,9 @@ u32 frequencyAccumulator(void)
 	freq = Xil_In32(WBT_REG_FILTER_IN);
 
 	return freq;
-}
-
-//Układ który chciałem użyć, nie dziala
-/*double frequencyAccumulator(void)
-{
-	static double	o=	1.9727047146	,p=	-0.9727047146	,r=	-0.0659904631	,s=	-0.0001446979	,u=	0.0658457652	;
-	static double err[4], freq[4]={25000000.0, 0.0, 0.0, 25000000};
-	static u8 err_idx, freq_idx;
-	err_idx = (err_idx+1)&3;
-	freq_idx = (freq_idx +1)&3;
-	err[err_idx] = ((double)(WB_SpiADC_Transfer()))-(double)(1<<15);
-	freq[freq_idx] = o*freq[(freq_idx-1)&3] + p*freq[(freq_idx-2)&3] + r * err[err_idx] + s * err[(err_idx-1)&3] + u * err[(err_idx-2)&3];
-
-	return freq[freq_idx];
 }*/
 
 
-
-u32 frequencyFilter(void)
-{
-	static double freq, freq_pr, control;
-	static double c=0.1206, d=-0.7587;
-	freq_pr = freq;
-	freq = frequencyAccumulator();
-	control = (freq+freq_pr)*c - d*control;
-	return (u32)control;
-	//return (u32)frequencyAccumulator();
-}
-void balancePLL(void)
-{
-	while(1)
-	{
-		setDDSStep((u32)frequencyAccumulator());
-	}
-}
 
 void filterConstants(void)
 {
@@ -282,12 +215,20 @@ void filterConstants(void)
 	Xil_Out32(WBT_REG_X1, (u32)x1_s);
 
 }
+void setSpiADC_Start(u32 value)
+{
+	Xil_Out32(WBT_REG_SPI_ADC_START, value);
+}
 
+void setLOOP_timer(u16 time)
+{
+	Xil_Out32(WBT_REG_LOOP_TIMER, time);
+}
 
 int main(void)
 {
 	AD95xx_spi_init();
-	ADC_spi_init();
+	//ADC_spi_init();
 	setPLL2_RESET_N(1);
 	u32 freqDACSet=25000000;
 	configure_AD9516();
@@ -297,19 +238,14 @@ int main(void)
 	setFreqCounterMaskReg((u32)0x04000000);
 	configure_ADF4002();
 	setReferencePLLCounter(9,9);
-	//Xil_DCacheEnable();
-	//Xil_DCacheFlush();
-	//Xil_Out32(WBT_REG_X0, 811228);
-	//Xil_Out32(WBT_REG_X1, 0xFFF3A616);
+
 	filterConstants();
+	setADCoffset(0b0110000000000000);
+	setLOOP_timer(344);
 
-	/*Xil_Out32(WBT_REG_X0, 28);
-	Xil_Out32(WBT_REG_X1, 0xFFFFFFF6);
-*/
+	manualOffsetControl();
 
-	balancePLL();
-	//setDDSFrequency(30000000);
-	//xil_printf(" adc value = %d\n\r", measure_ADC());
+
 	xil_printf("Sukces\n\r");
 
 	return 1;

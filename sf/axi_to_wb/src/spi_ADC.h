@@ -4,7 +4,7 @@
  *  Created on: Mar 21, 2018
  *      Author: milosz
  */
-
+/*
 #ifndef SRC_SPI_ADC_H_
 #define SRC_SPI_ADC_H_
 
@@ -28,3 +28,4 @@ void ADC_spi_init(void);
 
 
 #endif /* SRC_SPI_ADC_H_ */
+*/

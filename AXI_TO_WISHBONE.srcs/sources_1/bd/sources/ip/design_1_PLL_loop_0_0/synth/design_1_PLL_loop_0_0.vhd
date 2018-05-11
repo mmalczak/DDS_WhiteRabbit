@@ -66,6 +66,11 @@ ENTITY design_1_PLL_loop_0_0 IS
     freq : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     cnv : OUT STD_LOGIC;
     sdi : OUT STD_LOGIC;
+    err_s_test : OUT STD_LOGIC_VECTOR(16 DOWNTO 0);
+    err_pr_test : OUT STD_LOGIC_VECTOR(16 DOWNTO 0);
+    result_1_test : OUT STD_LOGIC_VECTOR(24 DOWNTO 0);
+    result_2_test : OUT STD_LOGIC_VECTOR(24 DOWNTO 0);
+    err_test : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
     spi_sclk_o : OUT STD_LOGIC
   );
 END design_1_PLL_loop_0_0;
@@ -86,6 +91,11 @@ ARCHITECTURE design_1_PLL_loop_0_0_arch OF design_1_PLL_loop_0_0 IS
       freq : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
       cnv : OUT STD_LOGIC;
       sdi : OUT STD_LOGIC;
+      err_s_test : OUT STD_LOGIC_VECTOR(16 DOWNTO 0);
+      err_pr_test : OUT STD_LOGIC_VECTOR(16 DOWNTO 0);
+      result_1_test : OUT STD_LOGIC_VECTOR(24 DOWNTO 0);
+      result_2_test : OUT STD_LOGIC_VECTOR(24 DOWNTO 0);
+      err_test : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
       spi_sclk_o : OUT STD_LOGIC
     );
   END COMPONENT PLL_loop;
@@ -107,6 +117,11 @@ BEGIN
       freq => freq,
       cnv => cnv,
       sdi => sdi,
+      err_s_test => err_s_test,
+      err_pr_test => err_pr_test,
+      result_1_test => result_1_test,
+      result_2_test => result_2_test,
+      err_test => err_test,
       spi_sclk_o => spi_sclk_o
     );
 END design_1_PLL_loop_0_0_arch;

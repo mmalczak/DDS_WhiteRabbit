@@ -55,10 +55,11 @@ begin
   start <= '0';
   wait for clk_period;
   res <= '1';
-  x1<=X"11800000";
+  --x1<=X"11800000";
+  x1 <= X"00000000";
   x0<=X"01054000";
-  err <= "0010101010000000";
-  adc_offset <= "1000000000000000";
+  err <= "0100000000000001";
+  adc_offset <= "0100000000000000";
   start <= '1';
   wait for clk_period;
   start <= '0';
@@ -67,25 +68,28 @@ wait for clk_period*4;
 wait for clk_period;
 start <= '0';
 wait for clk_period*4;
-         
-    start <= '1';
+
+  err <= "0000000000000000";         
+start <= '1';
 wait for clk_period;
 start <= '0';
 wait for clk_period*4;
          
-    start <= '1';
+  err <= "0100000000000001";
+start <= '1';
 wait for clk_period;
 start <= '0';
 wait for clk_period*4;
-         
-    start <= '1';
+          
+  err <= "1000000000000001";
+start <= '1';
 wait for clk_period;
 start <= '0';
 wait for clk_period*4;
          
          
     
-  wait for 1000 ns;
+  wait for 100 ns;
     
     assert false severity failure;
 

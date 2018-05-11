@@ -15,6 +15,11 @@ entity PLL_loop is
 		freq : out std_logic_vector(31 downto 0);
 		cnv : out std_logic;
 		sdi : out std_logic;
+		err_s_test : out std_logic_vector(16 downto 0);
+		err_pr_test : out std_logic_vector(16 downto 0);
+		result_1_test : out std_logic_vector(24 downto 0);
+		result_2_test : out std_logic_vector(24 downto 0); 
+		err_test : out std_logic_vector(15 downto 0);
 		spi_sclk_o : out std_logic
 	 );
 end PLL_loop;
@@ -29,6 +34,10 @@ component PLL_filter is
            x0 : in std_logic_vector(31 downto 0);
            x1 : in std_logic_vector(31 downto 0);
            adc_offset : in std_logic_vector(15 downto 0);
+           err_s_test : out std_logic_vector(16 downto 0);
+           err_pr_test : out std_logic_vector(16 downto 0);
+           result_1_test : out std_logic_vector(24 downto 0);
+           result_2_test : out std_logic_vector(24 downto 0);
            freq : out std_logic_vector(31 downto 0)
            );
 end component;
@@ -74,6 +83,10 @@ signal data_ready_to_start_s : std_logic;
 
 signal counter : unsigned(15 downto 0);
 
+signal err_s_test_s : std_logic_vector(16 downto 0);
+signal err_pr_test_s : std_logic_vector(16 downto 0);
+signal result_1_test_s: std_logic_vector(24 downto 0);
+signal result_2_test_s: std_logic_vector(24 downto 0);
 
 begin
 
@@ -85,6 +98,10 @@ begin
 		x0 => x0_s,
 		x1 => x1_s,
 		adc_offset => adc_offset_s,
+		err_s_test => err_s_test_s,
+		err_pr_test => err_pr_test_s,
+		result_1_test => result_1_test_s,
+		result_2_test => result_2_test_s,
 		freq => freq_s
 	);
 	
@@ -132,6 +149,10 @@ freq <= freq_s;
 cnv <= cnv_s;
 sdi <= sdi_s;
 spi_sclk_o <= spi_sclk_o_s;
-
+err_s_test <= err_s_test_s;
+err_pr_test <= err_pr_test_s;
+result_1_test<= result_1_test_s;
+result_2_test<= result_2_test_s; 
+err_test <= data_o_to_err_s;
 
 end Behavioral;

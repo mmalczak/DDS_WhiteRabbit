@@ -10,18 +10,22 @@ entity PLL_filter is
            x0 : in signed(31 downto 0);
            x1 : in signed(31 downto 0);
            adc_offset : in signed(15 downto 0);
+           err_s_test : out signed(16 downto 0);
+           err_pr_test : out signed(16 downto 0);
+           result_1_test : out signed(24 downto 0);
+           result_2_test : out signed(24 downto 0);
            freq : out signed(31 downto 0)
            );
 end PLL_filter;
 
 architecture Behavioral of PLL_filter is
 
-signal err_s : signed(15 downto 0);
-signal err_pr : signed(15 downto 0);
+signal err_s : signed(16 downto 0);
+signal err_pr : signed(16 downto 0);
 signal freq_s : signed(31 downto 0);
 
-signal result_1 : signed(47 downto 0);
-signal result_2 : signed(47 downto 0);
+signal result_1 : signed(48 downto 0);
+signal result_2 : signed(48 downto 0);
 
 
 type   t_state is (IDLE, READ, FILTER0, FILTER1);
@@ -48,20 +52,24 @@ begin
                 end if;
             when READ =>
                 err_pr <= err_s;
-                err_s <= err - adc_offset;
+                err_s <= signed('0'&err) - signed('0'&adc_offset);
                 state <= FILTER0;
            when FILTER0 =>
                 result_1 <= err_s * x0;
                 result_2 <= err_pr*x1;
                 state <= FILTER1; 
            when FILTER1 =>
-           --współczynniki filtru 24 bity po przecinku
-                freq_s <= freq_s - (result_1(47 downto 24)) - (result_2(47 downto 24));
-                state <= IDLE;
+                --współczynniki filtru 24 bity po przecinku
+                 freq_s <= freq_s - (result_1(48 downto 24))- (result_2(48 downto 24));
+                 state <= IDLE;
         end case;
     end if;
 end process;
 
 freq <= freq_s;
+err_s_test <= err_s;
+err_pr_test <= err_pr;
+result_1_test <= result_1(48 downto 24);
+result_2_test <= result_2(48 downto 24);
 
 end Behavioral;

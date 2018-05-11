@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri May 11 17:36:32 2018" VIVADOVERSION="2017.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri May 11 18:00:31 2018" VIVADOVERSION="2017.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="xilinx.com:zc706:part0:1.4" DEVICE="7z045" NAME="design_1" PACKAGE="ffg900" SPEEDGRADE="-2"/>
 
@@ -276,7 +276,7 @@
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="O" LEFT="0" NAME="IBUF_OUT" RIGHT="0" SIGIS="clk" SIGNAME="CLK1_OUT_IBUF_OUT">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_0" PORT="clk"/>
+            <CONNECTION INSTANCE="PLL_loop_0" PORT="clk_dds"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -340,9 +340,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" LEFT="13" NAME="OBUF_IN" RIGHT="0" SIGIS="clk" SIGNAME="DDS_0_douta">
+        <PORT CLKFREQUENCY="100000000" DIR="I" LEFT="13" NAME="OBUF_IN" RIGHT="0" SIGIS="clk" SIGNAME="PLL_loop_0_dout_dds">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DDS_0" PORT="douta"/>
+            <CONNECTION INSTANCE="PLL_loop_0" PORT="dout_dds"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="O" LEFT="13" NAME="OBUF_DS_P" RIGHT="0" SIGIS="clk" SIGNAME="DAC_DAT_OBUF_DS_P">
@@ -358,31 +358,6 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE FULLNAME="/DDS_0" HWVERSION="1.0" INSTANCE="DDS_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="DDS" VLNV="user.org:module_ref:DDS:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_DDS_0_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="CLK1_OUT_IBUF_OUT">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="CLK1_OUT" PORT="IBUF_OUT"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="27" NAME="freq" RIGHT="0" SIGIS="undef" SIGNAME="PLL_loop_0_freq">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="PLL_loop_0" PORT="freq"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="13" NAME="douta" RIGHT="0" SIGIS="undef" SIGNAME="DDS_0_douta">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="DAC_DAT" PORT="OBUF_IN"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
     <MODULE FULLNAME="/PLL_loop_0" HWVERSION="1.0" INSTANCE="PLL_loop_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="PLL_loop" VLNV="user.org:module_ref:PLL_loop:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
@@ -393,6 +368,11 @@
         <PORT DIR="I" NAME="clk_50" SIGIS="undef" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clk_dds" SIGIS="undef" SIGNAME="CLK1_OUT_IBUF_OUT">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CLK1_OUT" PORT="IBUF_OUT"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="res" SIGIS="undef" SIGNAME="processing_system7_0_FCLK_RESET0_N">
@@ -425,12 +405,6 @@
             <CONNECTION INSTANCE="my_regs" PORT="wbt_loop_timer_o"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="freq" RIGHT="0" SIGIS="undef" SIGNAME="PLL_loop_0_freq">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="my_regs" PORT="wbt_filter_in_i"/>
-            <CONNECTION INSTANCE="DDS_0" PORT="freq"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" NAME="cnv" SIGIS="undef" SIGNAME="PLL_loop_0_cnv">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="wbt_spi_adc_cnv_o"/>
@@ -444,6 +418,11 @@
         <PORT DIR="O" NAME="spi_sclk_o" SIGIS="undef" SIGNAME="PLL_loop_0_spi_sclk_o">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="spi_sclk_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="13" NAME="dout_dds" RIGHT="0" SIGIS="undef" SIGNAME="PLL_loop_0_dout_dds">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DAC_DAT" PORT="OBUF_IN"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -854,11 +833,7 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="wbt_spi_adc_start_o" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="31" NAME="wbt_filter_in_i" RIGHT="0" SIGIS="undef" SIGNAME="PLL_loop_0_freq">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="PLL_loop_0" PORT="freq"/>
-          </CONNECTIONS>
-        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="wbt_filter_in_i" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="31" NAME="wbt_x0_o" RIGHT="0" SIGIS="undef" SIGNAME="my_regs_wbt_x0_o">
           <CONNECTIONS>
             <CONNECTION INSTANCE="PLL_loop_0" PORT="x0"/>

@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.1 (lin64) Build 1846317 Fri Apr 14 18:54:47 MDT 2017
---Date        : Fri May 11 17:36:31 2018
+--Date        : Fri May 11 18:00:31 2018
 --Host        : milosz-System-Product-Name running 64-bit Linux Mint 18.2 Sonya
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -1196,7 +1196,7 @@ entity design_1 is
     wbt_spi_cs_ad9516_o : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=22,numReposBlks=18,numNonXlnxBlks=7,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=7,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=1,da_clkrst_cnt=1,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=21,numReposBlks=17,numNonXlnxBlks=6,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=6,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=1,da_clkrst_cnt=1,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
@@ -1436,26 +1436,20 @@ architecture STRUCTURE of design_1 is
     wbt_loop_timer_o : out STD_LOGIC_VECTOR ( 15 downto 0 )
   );
   end component design_1_wb_test_slave_0_0;
-  component design_1_DDS_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    freq : in STD_LOGIC_VECTOR ( 27 downto 0 );
-    douta : out STD_LOGIC_VECTOR ( 13 downto 0 )
-  );
-  end component design_1_DDS_0_0;
   component design_1_PLL_loop_0_0 is
   port (
     clk_50 : in STD_LOGIC;
+    clk_dds : in STD_LOGIC;
     res : in STD_LOGIC;
     x0 : in STD_LOGIC_VECTOR ( 31 downto 0 );
     x1 : in STD_LOGIC_VECTOR ( 31 downto 0 );
     spi_miso_i : in STD_LOGIC;
     adc_offset : in STD_LOGIC_VECTOR ( 15 downto 0 );
     timer : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    freq : out STD_LOGIC_VECTOR ( 31 downto 0 );
     cnv : out STD_LOGIC;
     sdi : out STD_LOGIC;
-    spi_sclk_o : out STD_LOGIC
+    spi_sclk_o : out STD_LOGIC;
+    dout_dds : out STD_LOGIC_VECTOR ( 13 downto 0 )
   );
   end component design_1_PLL_loop_0_0;
   signal CLK0_OUT_IBUF_OUT : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -1463,7 +1457,6 @@ architecture STRUCTURE of design_1 is
   signal CLK2_out_IBUF_OUT : STD_LOGIC_VECTOR ( 0 to 0 );
   signal DAC_DAT_OBUF_DS_N : STD_LOGIC_VECTOR ( 13 downto 0 );
   signal DAC_DAT_OBUF_DS_P : STD_LOGIC_VECTOR ( 13 downto 0 );
-  signal DDS_0_douta : STD_LOGIC_VECTOR ( 13 downto 0 );
   signal IBUF_DS_N_1 : STD_LOGIC_VECTOR ( 17 downto 0 );
   signal IBUF_DS_N_1_1 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal IBUF_DS_N_1_2 : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -1472,8 +1465,8 @@ architecture STRUCTURE of design_1 is
   signal IBUF_DS_P_1_1 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal IBUF_DS_P_1_2 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal IBUF_DS_P_2_1 : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal PLL_filter_0_freq : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal PLL_loop_0_cnv : STD_LOGIC;
+  signal PLL_loop_0_dout_dds : STD_LOGIC_VECTOR ( 13 downto 0 );
   signal PLL_loop_0_sdi : STD_LOGIC;
   signal PLL_loop_0_spi_sclk_o : STD_LOGIC;
   signal axil2wb_0_wb_addr_o : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -1669,20 +1662,15 @@ DAC_DAT: component design_1_util_ds_buf_1_2
      port map (
       OBUF_DS_N(13 downto 0) => DAC_DAT_OBUF_DS_N(13 downto 0),
       OBUF_DS_P(13 downto 0) => DAC_DAT_OBUF_DS_P(13 downto 0),
-      OBUF_IN(13 downto 0) => DDS_0_douta(13 downto 0)
-    );
-DDS_0: component design_1_DDS_0_0
-     port map (
-      clk => CLK1_OUT_IBUF_OUT(0),
-      douta(13 downto 0) => DDS_0_douta(13 downto 0),
-      freq(27 downto 0) => PLL_filter_0_freq(27 downto 0)
+      OBUF_IN(13 downto 0) => PLL_loop_0_dout_dds(13 downto 0)
     );
 PLL_loop_0: component design_1_PLL_loop_0_0
      port map (
       adc_offset(15 downto 0) => my_regs_wbt_adc_offset_o(15 downto 0),
       clk_50 => processing_system7_0_FCLK_CLK0,
+      clk_dds => CLK1_OUT_IBUF_OUT(0),
       cnv => PLL_loop_0_cnv,
-      freq(31 downto 0) => PLL_filter_0_freq(31 downto 0),
+      dout_dds(13 downto 0) => PLL_loop_0_dout_dds(13 downto 0),
       res => processing_system7_0_FCLK_RESET0_N,
       sdi => PLL_loop_0_sdi,
       spi_miso_i => spi_miso_i_2,
@@ -1757,7 +1745,7 @@ my_regs: component design_1_wb_test_slave_0_0
       wbt_cnt_mask_o(31 downto 0) => wb_test_slave_0_wbt_cnt_mask_o(31 downto 0),
       wbt_dds_freq_i(31 downto 0) => freq_high_measure_0_counts_dac(31 downto 0),
       wbt_dds_o(27 downto 0) => NLW_my_regs_wbt_dds_o_UNCONNECTED(27 downto 0),
-      wbt_filter_in_i(31 downto 0) => PLL_filter_0_freq(31 downto 0),
+      wbt_filter_in_i(31 downto 0) => B"00000000000000000000000000000000",
       wbt_led_o(1 downto 0) => wb_test_slave_0_wbt_led_o(1 downto 0),
       wbt_loop_timer_o(15 downto 0) => my_regs_wbt_loop_timer_o(15 downto 0),
       wbt_pll1_syncb_o => wb_test_slave_0_wbt_pll1_syncb_o,

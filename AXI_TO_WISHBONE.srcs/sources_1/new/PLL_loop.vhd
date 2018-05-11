@@ -4,6 +4,7 @@ use IEEE.numeric_std.all;
 entity PLL_loop is
   Port (   	 
 		clk_50 : in std_logic;
+		clk_dds : in std_logic;
 		res : in std_logic;
 		x0 : in std_logic_vector(31 downto 0);
 		x1 : in std_logic_vector(31 downto 0);
@@ -11,7 +12,7 @@ entity PLL_loop is
 		adc_offset : in std_logic_vector(15 downto 0);
 		timer : in unsigned(15 downto 0);
 
-		freq : out std_logic_vector(31 downto 0);
+--		freq : out std_logic_vector(31 downto 0);
 		cnv : out std_logic;
 		sdi : out std_logic;
 --		err_s_test : out std_logic_vector(16 downto 0);
@@ -19,7 +20,8 @@ entity PLL_loop is
 --		result_1_test : out std_logic_vector(24 downto 0);
 --		result_2_test : out std_logic_vector(24 downto 0); 
 --		err_test : out std_logic_vector(15 downto 0);
-		spi_sclk_o : out std_logic
+		spi_sclk_o : out std_logic;
+		dout_dds : out std_logic_vector(13 downto 0)
 	 );
 end PLL_loop;
 
@@ -31,6 +33,14 @@ architecture Behavioral of PLL_loop is
 --	probe0 : IN STD_LOGIC_VECTOR(16 DOWNTO 0)
 --);
 --end component;
+
+component DDS is
+    Port(
+	clk : in std_logic;
+	freq : in std_logic_vector(27 downto 0);
+	douta : out std_logic_vector(13 downto 0)
+	);
+end component;
 
 component pll_inst is
     port(
@@ -69,6 +79,10 @@ component spi_adc is
     );
 
 end component;
+
+--DDS signals
+signal clk_dds_s : std_logic;
+signal dout_dds_s : std_logic_vector(13 downto 0);
 
 signal clk_50_s : std_logic;
 signal clk_12_5_s : std_logic;
@@ -128,6 +142,12 @@ begin
 		clk_out1 => clk_12_5_s,
 		clk_in1 => clk_50_s
 	);
+
+	DDS_inst : DDS port map(
+		clk => clk_dds_s,
+		freq => freq_s(27 downto 0),  --should modify this
+		douta => dout_dds_s 
+	);
 --	PROBE : ila_0
 --	port map(
 --		clk => clk_50_s,
@@ -155,13 +175,16 @@ begin
     end if;
 end process;
 
+--dds
+clk_dds_s <= clk_dds;
+dout_dds <= dout_dds_s;
+
 clk_50_s <= clk_50;
 res_s <= res;
 x0_s <= x0;
 x1_s <= x1;
 adc_offset_s <= adc_offset;
 spi_miso_i_s <= spi_miso_i;
-freq <= freq_s;
 cnv <= cnv_s;
 sdi <= sdi_s;
 spi_sclk_o <= spi_sclk_o_s;

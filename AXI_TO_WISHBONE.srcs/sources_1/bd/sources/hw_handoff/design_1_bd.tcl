@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# DDS, PLL_loop, axil2wb, do_nothing, freq_high_measure, wb_test_slave, spi_master
+# PLL_loop, axil2wb, do_nothing, freq_high_measure, wb_test_slave, spi_master
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -210,17 +210,6 @@ CONFIG.C_BUF_TYPE {OBUFDS} \
 CONFIG.C_SIZE {14} \
  ] $DAC_DAT
 
-  # Create instance: DDS_0, and set properties
-  set block_name DDS
-  set block_cell_name DDS_0
-  if { [catch {set DDS_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $DDS_0 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
   # Create instance: PLL_loop_0, and set properties
   set block_name PLL_loop
   set block_cell_name PLL_loop_0
@@ -833,11 +822,10 @@ CONFIG.DOUT_WIDTH {5} \
 
   # Create port connections
   connect_bd_net -net CLK0_OUT_IBUF_OUT [get_bd_pins CLK0_OUT/IBUF_OUT] [get_bd_pins freq_high_measure_0/dac_meas]
-  connect_bd_net -net CLK1_OUT_IBUF_OUT [get_bd_pins CLK1_OUT/IBUF_OUT] [get_bd_pins DDS_0/clk]
+  connect_bd_net -net CLK1_OUT_IBUF_OUT [get_bd_pins CLK1_OUT/IBUF_OUT] [get_bd_pins PLL_loop_0/clk_dds]
   connect_bd_net -net CLK2_out_IBUF_OUT [get_bd_pins CLK2_out/IBUF_OUT] [get_bd_pins freq_high_measure_0/pll_meas]
   connect_bd_net -net DAC_DAT_OBUF_DS_N [get_bd_ports DAC_DAT_N] [get_bd_pins DAC_DAT/OBUF_DS_N]
   connect_bd_net -net DAC_DAT_OBUF_DS_P [get_bd_ports DAC_DAT_P] [get_bd_pins DAC_DAT/OBUF_DS_P]
-  connect_bd_net -net DDS_0_douta [get_bd_pins DAC_DAT/OBUF_IN] [get_bd_pins DDS_0/douta]
   connect_bd_net -net IBUF_DS_N_1 [get_bd_ports IBUF_DS_N] [get_bd_pins util_ds_buf_0/IBUF_DS_N]
   connect_bd_net -net IBUF_DS_N_1_1 [get_bd_ports CLK1_OUT_N] [get_bd_pins CLK1_OUT/IBUF_DS_N]
   connect_bd_net -net IBUF_DS_N_1_2 [get_bd_ports CLK0_OUT_N] [get_bd_pins CLK0_OUT/IBUF_DS_N]
@@ -846,8 +834,8 @@ CONFIG.DOUT_WIDTH {5} \
   connect_bd_net -net IBUF_DS_P_1_1 [get_bd_ports CLK1_OUT_P] [get_bd_pins CLK1_OUT/IBUF_DS_P]
   connect_bd_net -net IBUF_DS_P_1_2 [get_bd_ports CLK0_OUT_P] [get_bd_pins CLK0_OUT/IBUF_DS_P]
   connect_bd_net -net IBUF_DS_P_2_1 [get_bd_ports CLK2_OUT_P] [get_bd_pins CLK2_out/IBUF_DS_P]
-  connect_bd_net -net PLL_filter_0_freq [get_bd_pins DDS_0/freq] [get_bd_pins PLL_loop_0/freq] [get_bd_pins my_regs/wbt_filter_in_i]
   connect_bd_net -net PLL_loop_0_cnv [get_bd_ports wbt_spi_adc_cnv_o] [get_bd_pins PLL_loop_0/cnv]
+  connect_bd_net -net PLL_loop_0_dout_dds [get_bd_pins DAC_DAT/OBUF_IN] [get_bd_pins PLL_loop_0/dout_dds]
   connect_bd_net -net PLL_loop_0_sdi [get_bd_ports wbt_spi_adc_sdi_o] [get_bd_pins PLL_loop_0/sdi]
   connect_bd_net -net PLL_loop_0_spi_sclk_o [get_bd_ports spi_sclk_o] [get_bd_pins PLL_loop_0/spi_sclk_o]
   connect_bd_net -net axil2wb_0_wb_addr_o [get_bd_pins axil2wb_0/wb_addr_o] [get_bd_pins xlslice_0/Din]

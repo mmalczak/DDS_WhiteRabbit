@@ -56,7 +56,6 @@ USE ieee.numeric_std.ALL;
 ENTITY design_1_PLL_loop_0_0 IS
   PORT (
     clk_50 : IN STD_LOGIC;
-    clk_12_5 : IN STD_LOGIC;
     res : IN STD_LOGIC;
     x0 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     x1 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -66,11 +65,6 @@ ENTITY design_1_PLL_loop_0_0 IS
     freq : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     cnv : OUT STD_LOGIC;
     sdi : OUT STD_LOGIC;
-    err_s_test : OUT STD_LOGIC_VECTOR(16 DOWNTO 0);
-    err_pr_test : OUT STD_LOGIC_VECTOR(16 DOWNTO 0);
-    result_1_test : OUT STD_LOGIC_VECTOR(24 DOWNTO 0);
-    result_2_test : OUT STD_LOGIC_VECTOR(24 DOWNTO 0);
-    err_test : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
     spi_sclk_o : OUT STD_LOGIC
   );
 END design_1_PLL_loop_0_0;
@@ -81,7 +75,6 @@ ARCHITECTURE design_1_PLL_loop_0_0_arch OF design_1_PLL_loop_0_0 IS
   COMPONENT PLL_loop IS
     PORT (
       clk_50 : IN STD_LOGIC;
-      clk_12_5 : IN STD_LOGIC;
       res : IN STD_LOGIC;
       x0 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
       x1 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -91,11 +84,6 @@ ARCHITECTURE design_1_PLL_loop_0_0_arch OF design_1_PLL_loop_0_0 IS
       freq : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
       cnv : OUT STD_LOGIC;
       sdi : OUT STD_LOGIC;
-      err_s_test : OUT STD_LOGIC_VECTOR(16 DOWNTO 0);
-      err_pr_test : OUT STD_LOGIC_VECTOR(16 DOWNTO 0);
-      result_1_test : OUT STD_LOGIC_VECTOR(24 DOWNTO 0);
-      result_2_test : OUT STD_LOGIC_VECTOR(24 DOWNTO 0);
-      err_test : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
       spi_sclk_o : OUT STD_LOGIC
     );
   END COMPONENT PLL_loop;
@@ -107,7 +95,6 @@ BEGIN
   U0 : PLL_loop
     PORT MAP (
       clk_50 => clk_50,
-      clk_12_5 => clk_12_5,
       res => res,
       x0 => x0,
       x1 => x1,
@@ -117,11 +104,6 @@ BEGIN
       freq => freq,
       cnv => cnv,
       sdi => sdi,
-      err_s_test => err_s_test,
-      err_pr_test => err_pr_test,
-      result_1_test => result_1_test,
-      result_2_test => result_2_test,
-      err_test => err_test,
       spi_sclk_o => spi_sclk_o
     );
 END design_1_PLL_loop_0_0_arch;

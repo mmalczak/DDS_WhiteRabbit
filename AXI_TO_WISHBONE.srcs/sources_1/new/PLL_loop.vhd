@@ -4,7 +4,6 @@ use IEEE.numeric_std.all;
 entity PLL_loop is
   Port (   	 
 		clk_50 : in std_logic;
-		clk_12_5 : in std_logic;
 		res : in std_logic;
 		x0 : in std_logic_vector(31 downto 0);
 		x1 : in std_logic_vector(31 downto 0);
@@ -15,16 +14,30 @@ entity PLL_loop is
 		freq : out std_logic_vector(31 downto 0);
 		cnv : out std_logic;
 		sdi : out std_logic;
-		err_s_test : out std_logic_vector(16 downto 0);
-		err_pr_test : out std_logic_vector(16 downto 0);
-		result_1_test : out std_logic_vector(24 downto 0);
-		result_2_test : out std_logic_vector(24 downto 0); 
-		err_test : out std_logic_vector(15 downto 0);
+--		err_s_test : out std_logic_vector(16 downto 0);
+--		err_pr_test : out std_logic_vector(16 downto 0);
+--		result_1_test : out std_logic_vector(24 downto 0);
+--		result_2_test : out std_logic_vector(24 downto 0); 
+--		err_test : out std_logic_vector(15 downto 0);
 		spi_sclk_o : out std_logic
 	 );
 end PLL_loop;
 
 architecture Behavioral of PLL_loop is
+
+--component ila_0
+--PORT (
+--	clk : IN STD_LOGIC;
+--	probe0 : IN STD_LOGIC_VECTOR(16 DOWNTO 0)
+--);
+--end component;
+
+component pll_inst is
+    port(
+	clk_out1 : out std_logic;
+	clk_in1 : in std_logic
+);
+end component;
 
 component PLL_filter is
     Port ( clk : in std_logic;
@@ -34,10 +47,10 @@ component PLL_filter is
            x0 : in std_logic_vector(31 downto 0);
            x1 : in std_logic_vector(31 downto 0);
            adc_offset : in std_logic_vector(15 downto 0);
-           err_s_test : out std_logic_vector(16 downto 0);
-           err_pr_test : out std_logic_vector(16 downto 0);
-           result_1_test : out std_logic_vector(24 downto 0);
-           result_2_test : out std_logic_vector(24 downto 0);
+--           err_s_test : out std_logic_vector(16 downto 0);
+--           err_pr_test : out std_logic_vector(16 downto 0);
+--           result_1_test : out std_logic_vector(24 downto 0);
+--           result_2_test : out std_logic_vector(24 downto 0);
            freq : out std_logic_vector(31 downto 0)
            );
 end component;
@@ -46,14 +59,9 @@ component spi_adc is
   port (
     clk_sys_i : in std_logic;
     rst_n_i   : in std_logic;
-
     start_i : in std_logic;
-
-    -- data read from selected slave, valid when ready_o == 1.
     data_o : out std_logic_vector(15 downto 0);
     data_ready : out std_logic;
-
-    -- these are obvious
     cnv : out std_logic;
     sdi : out std_logic;
     spi_sclk_o : out std_logic;
@@ -83,10 +91,10 @@ signal data_ready_to_start_s : std_logic;
 
 signal counter : unsigned(15 downto 0);
 
-signal err_s_test_s : std_logic_vector(16 downto 0);
-signal err_pr_test_s : std_logic_vector(16 downto 0);
-signal result_1_test_s: std_logic_vector(24 downto 0);
-signal result_2_test_s: std_logic_vector(24 downto 0);
+--signal err_s_test_s : std_logic_vector(16 downto 0);
+--signal err_pr_test_s : std_logic_vector(16 downto 0);
+--signal result_1_test_s: std_logic_vector(24 downto 0);
+--signal result_2_test_s: std_logic_vector(24 downto 0);
 
 begin
 
@@ -98,10 +106,10 @@ begin
 		x0 => x0_s,
 		x1 => x1_s,
 		adc_offset => adc_offset_s,
-		err_s_test => err_s_test_s,
-		err_pr_test => err_pr_test_s,
-		result_1_test => result_1_test_s,
-		result_2_test => result_2_test_s,
+--		err_s_test => err_s_test_s,
+--		err_pr_test => err_pr_test_s,
+--		result_1_test => result_1_test_s,
+--		result_2_test => result_2_test_s,
 		freq => freq_s
 	);
 	
@@ -116,6 +124,15 @@ begin
 		spi_sclk_o => spi_sclk_o_s,
 		spi_miso_i => spi_miso_i_s	
 	);
+	PLL : pll_inst port map(
+		clk_out1 => clk_12_5_s,
+		clk_in1 => clk_50_s
+	);
+--	PROBE : ila_0
+--	port map(
+--		clk => clk_50_s,
+--		probe0 => err_s_test_s
+--	);
 
 
 process(clk_50)
@@ -139,7 +156,6 @@ begin
 end process;
 
 clk_50_s <= clk_50;
-clk_12_5_s <= clk_12_5;
 res_s <= res;
 x0_s <= x0;
 x1_s <= x1;
@@ -149,10 +165,5 @@ freq <= freq_s;
 cnv <= cnv_s;
 sdi <= sdi_s;
 spi_sclk_o <= spi_sclk_o_s;
-err_s_test <= err_s_test_s;
-err_pr_test <= err_pr_test_s;
-result_1_test<= result_1_test_s;
-result_2_test<= result_2_test_s; 
-err_test <= data_o_to_err_s;
 
 end Behavioral;

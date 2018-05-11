@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# PLL_loop, axil2wb, counter_DAC, do_nothing, freq_high_measure, wb_test_slave, pll_inst, spi_master
+# DDS, PLL_loop, axil2wb, do_nothing, freq_high_measure, wb_test_slave, spi_master
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -210,6 +210,17 @@ CONFIG.C_BUF_TYPE {OBUFDS} \
 CONFIG.C_SIZE {14} \
  ] $DAC_DAT
 
+  # Create instance: DDS_0, and set properties
+  set block_name DDS
+  set block_cell_name DDS_0
+  if { [catch {set DDS_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $DDS_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: PLL_loop_0, and set properties
   set block_name PLL_loop
   set block_cell_name PLL_loop_0
@@ -228,38 +239,6 @@ CONFIG.C_SIZE {14} \
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    } elseif { $axil2wb_0 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
-  # Create instance: blk_mem_gen_1, and set properties
-  set blk_mem_gen_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.3 blk_mem_gen_1 ]
-  set_property -dict [ list \
-CONFIG.Byte_Size {9} \
-CONFIG.Coe_File {../../../../imports/AXI_TO_WISHBONE_edit_slave/sinus2.coe} \
-CONFIG.Enable_32bit_Address {false} \
-CONFIG.Enable_A {Always_Enabled} \
-CONFIG.Load_Init_File {true} \
-CONFIG.Memory_Type {Single_Port_ROM} \
-CONFIG.Port_A_Write_Rate {0} \
-CONFIG.Read_Width_A {14} \
-CONFIG.Read_Width_B {14} \
-CONFIG.Register_PortA_Output_of_Memory_Primitives {false} \
-CONFIG.Use_Byte_Write_Enable {false} \
-CONFIG.Use_RSTA_Pin {false} \
-CONFIG.Write_Depth_A {1024} \
-CONFIG.Write_Width_A {14} \
-CONFIG.Write_Width_B {14} \
-CONFIG.use_bram_block {Stand_Alone} \
- ] $blk_mem_gen_1
-
-  # Create instance: counter_DAC_0, and set properties
-  set block_name counter_DAC
-  set block_cell_name counter_DAC_0
-  if { [catch {set counter_DAC_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $counter_DAC_0 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
@@ -286,23 +265,6 @@ CONFIG.use_bram_block {Stand_Alone} \
      return 1
    }
   
-  # Create instance: ila_0, and set properties
-  set ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.2 ila_0 ]
-  set_property -dict [ list \
-CONFIG.C_DATA_DEPTH {65536} \
-CONFIG.C_ENABLE_ILA_AXI_MON {false} \
-CONFIG.C_MONITOR_TYPE {Native} \
-CONFIG.C_NUM_OF_PROBES {8} \
-CONFIG.C_PROBE0_WIDTH {17} \
-CONFIG.C_PROBE1_WIDTH {17} \
-CONFIG.C_PROBE2_WIDTH {25} \
-CONFIG.C_PROBE3_WIDTH {25} \
-CONFIG.C_PROBE4_WIDTH {32} \
-CONFIG.C_PROBE5_WIDTH {32} \
-CONFIG.C_PROBE6_WIDTH {32} \
-CONFIG.C_PROBE7_WIDTH {16} \
- ] $ila_0
-
   # Create instance: my_regs, and set properties
   set block_name wb_test_slave
   set block_cell_name my_regs
@@ -310,17 +272,6 @@ CONFIG.C_PROBE7_WIDTH {16} \
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    } elseif { $my_regs eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
-  # Create instance: pll_inst_0, and set properties
-  set block_name pll_inst
-  set block_cell_name pll_inst_0
-  if { [catch {set pll_inst_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $pll_inst_0 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
@@ -882,10 +833,11 @@ CONFIG.DOUT_WIDTH {5} \
 
   # Create port connections
   connect_bd_net -net CLK0_OUT_IBUF_OUT [get_bd_pins CLK0_OUT/IBUF_OUT] [get_bd_pins freq_high_measure_0/dac_meas]
-  connect_bd_net -net CLK1_OUT_IBUF_OUT [get_bd_pins CLK1_OUT/IBUF_OUT] [get_bd_pins blk_mem_gen_1/clka] [get_bd_pins counter_DAC_0/clk]
+  connect_bd_net -net CLK1_OUT_IBUF_OUT [get_bd_pins CLK1_OUT/IBUF_OUT] [get_bd_pins DDS_0/clk]
   connect_bd_net -net CLK2_out_IBUF_OUT [get_bd_pins CLK2_out/IBUF_OUT] [get_bd_pins freq_high_measure_0/pll_meas]
   connect_bd_net -net DAC_DAT_OBUF_DS_N [get_bd_ports DAC_DAT_N] [get_bd_pins DAC_DAT/OBUF_DS_N]
   connect_bd_net -net DAC_DAT_OBUF_DS_P [get_bd_ports DAC_DAT_P] [get_bd_pins DAC_DAT/OBUF_DS_P]
+  connect_bd_net -net DDS_0_douta [get_bd_pins DAC_DAT/OBUF_IN] [get_bd_pins DDS_0/douta]
   connect_bd_net -net IBUF_DS_N_1 [get_bd_ports IBUF_DS_N] [get_bd_pins util_ds_buf_0/IBUF_DS_N]
   connect_bd_net -net IBUF_DS_N_1_1 [get_bd_ports CLK1_OUT_N] [get_bd_pins CLK1_OUT/IBUF_DS_N]
   connect_bd_net -net IBUF_DS_N_1_2 [get_bd_ports CLK0_OUT_N] [get_bd_pins CLK0_OUT/IBUF_DS_N]
@@ -894,13 +846,8 @@ CONFIG.DOUT_WIDTH {5} \
   connect_bd_net -net IBUF_DS_P_1_1 [get_bd_ports CLK1_OUT_P] [get_bd_pins CLK1_OUT/IBUF_DS_P]
   connect_bd_net -net IBUF_DS_P_1_2 [get_bd_ports CLK0_OUT_P] [get_bd_pins CLK0_OUT/IBUF_DS_P]
   connect_bd_net -net IBUF_DS_P_2_1 [get_bd_ports CLK2_OUT_P] [get_bd_pins CLK2_out/IBUF_DS_P]
-  connect_bd_net -net PLL_filter_0_freq [get_bd_pins PLL_loop_0/freq] [get_bd_pins counter_DAC_0/step] [get_bd_pins ila_0/probe6] [get_bd_pins my_regs/wbt_filter_in_i]
+  connect_bd_net -net PLL_filter_0_freq [get_bd_pins DDS_0/freq] [get_bd_pins PLL_loop_0/freq] [get_bd_pins my_regs/wbt_filter_in_i]
   connect_bd_net -net PLL_loop_0_cnv [get_bd_ports wbt_spi_adc_cnv_o] [get_bd_pins PLL_loop_0/cnv]
-  connect_bd_net -net PLL_loop_0_err_pr_test [get_bd_pins PLL_loop_0/err_pr_test] [get_bd_pins ila_0/probe1]
-  connect_bd_net -net PLL_loop_0_err_s_test [get_bd_pins PLL_loop_0/err_s_test] [get_bd_pins ila_0/probe0]
-  connect_bd_net -net PLL_loop_0_err_test [get_bd_pins PLL_loop_0/err_test] [get_bd_pins ila_0/probe7]
-  connect_bd_net -net PLL_loop_0_result_1_test [get_bd_pins PLL_loop_0/result_1_test] [get_bd_pins ila_0/probe2]
-  connect_bd_net -net PLL_loop_0_result_2_test [get_bd_pins PLL_loop_0/result_2_test] [get_bd_pins ila_0/probe3]
   connect_bd_net -net PLL_loop_0_sdi [get_bd_ports wbt_spi_adc_sdi_o] [get_bd_pins PLL_loop_0/sdi]
   connect_bd_net -net PLL_loop_0_spi_sclk_o [get_bd_ports spi_sclk_o] [get_bd_pins PLL_loop_0/spi_sclk_o]
   connect_bd_net -net axil2wb_0_wb_addr_o [get_bd_pins axil2wb_0/wb_addr_o] [get_bd_pins xlslice_0/Din]
@@ -911,16 +858,13 @@ CONFIG.DOUT_WIDTH {5} \
   connect_bd_net -net axil2wb_0_wb_sel_o [get_bd_pins axil2wb_0/wb_sel_o] [get_bd_pins my_regs/wb_sel_i]
   connect_bd_net -net axil2wb_0_wb_stb_o [get_bd_pins axil2wb_0/wb_stb_o] [get_bd_pins my_regs/wb_stb_i]
   connect_bd_net -net axil2wb_0_wb_we_o [get_bd_pins axil2wb_0/wb_we_o] [get_bd_pins my_regs/wb_we_i]
-  connect_bd_net -net blk_mem_gen_1_douta [get_bd_pins DAC_DAT/OBUF_IN] [get_bd_pins blk_mem_gen_1/douta]
-  connect_bd_net -net counter_DAC_0_dac_sierra [get_bd_pins blk_mem_gen_1/addra] [get_bd_pins counter_DAC_0/dac_sierra]
   connect_bd_net -net freq_high_measure_0_counts_dac [get_bd_pins freq_high_measure_0/counts_dac] [get_bd_pins my_regs/wbt_dds_freq_i]
   connect_bd_net -net freq_high_measure_0_counts_pll [get_bd_pins freq_high_measure_0/counts_pll] [get_bd_pins my_regs/wbt_pll_freq_i]
   connect_bd_net -net my_regs_wbt_adc_offset_o [get_bd_pins PLL_loop_0/adc_offset] [get_bd_pins my_regs/wbt_adc_offset_o]
   connect_bd_net -net my_regs_wbt_loop_timer_o [get_bd_pins PLL_loop_0/timer] [get_bd_pins my_regs/wbt_loop_timer_o]
-  connect_bd_net -net my_regs_wbt_x0_o [get_bd_pins PLL_loop_0/x0] [get_bd_pins ila_0/probe4] [get_bd_pins my_regs/wbt_x0_o]
-  connect_bd_net -net my_regs_wbt_x1_o [get_bd_pins PLL_loop_0/x1] [get_bd_pins ila_0/probe5] [get_bd_pins my_regs/wbt_x1_o]
-  connect_bd_net -net pll_inst_0_clk_out1 [get_bd_pins PLL_loop_0/clk_12_5] [get_bd_pins pll_inst_0/clk_out1]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins PLL_loop_0/clk_50] [get_bd_pins axil2wb_0/S_AXI_ACLK] [get_bd_pins freq_high_measure_0/clk] [get_bd_pins ila_0/clk] [get_bd_pins pll_inst_0/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0_axi_periph/ACLK] [get_bd_pins processing_system7_0_axi_periph/M00_ACLK] [get_bd_pins processing_system7_0_axi_periph/M01_ACLK] [get_bd_pins processing_system7_0_axi_periph/S00_ACLK] [get_bd_pins rst_processing_system7_0_50M/slowest_sync_clk] [get_bd_pins spi_master_0/clk_sys_i]
+  connect_bd_net -net my_regs_wbt_x0_o [get_bd_pins PLL_loop_0/x0] [get_bd_pins my_regs/wbt_x0_o]
+  connect_bd_net -net my_regs_wbt_x1_o [get_bd_pins PLL_loop_0/x1] [get_bd_pins my_regs/wbt_x1_o]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins PLL_loop_0/clk_50] [get_bd_pins axil2wb_0/S_AXI_ACLK] [get_bd_pins freq_high_measure_0/clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0_axi_periph/ACLK] [get_bd_pins processing_system7_0_axi_periph/M00_ACLK] [get_bd_pins processing_system7_0_axi_periph/M01_ACLK] [get_bd_pins processing_system7_0_axi_periph/S00_ACLK] [get_bd_pins rst_processing_system7_0_50M/slowest_sync_clk] [get_bd_pins spi_master_0/clk_sys_i]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins PLL_loop_0/res] [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_processing_system7_0_50M/ext_reset_in] [get_bd_pins spi_master_0/rst_n_i]
   connect_bd_net -net przycisk_1 [get_bd_ports led] [get_bd_ports przycisk]
   connect_bd_net -net rst_processing_system7_0_50M_interconnect_aresetn [get_bd_pins processing_system7_0_axi_periph/ARESETN] [get_bd_pins rst_processing_system7_0_50M/interconnect_aresetn]

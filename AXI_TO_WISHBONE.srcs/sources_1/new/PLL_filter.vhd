@@ -10,10 +10,10 @@ entity PLL_filter is
            x0 : in signed(31 downto 0);
            x1 : in signed(31 downto 0);
            adc_offset : in signed(15 downto 0);
-           err_s_test : out signed(16 downto 0);
-           err_pr_test : out signed(16 downto 0);
-           result_1_test : out signed(24 downto 0);
-           result_2_test : out signed(24 downto 0);
+--           err_s_test : out signed(16 downto 0);
+--           err_pr_test : out signed(16 downto 0);
+--           result_1_test : out signed(24 downto 0);
+--           result_2_test : out signed(24 downto 0);
            freq : out signed(31 downto 0)
            );
 end PLL_filter;
@@ -67,9 +67,9 @@ begin
 end process;
 
 freq <= freq_s;
-err_s_test <= err_s;
-err_pr_test <= err_pr;
-result_1_test <= result_1(48 downto 24);
-result_2_test <= result_2(48 downto 24);
-
+--err_s_test <= err_s;
+--err_pr_test <= err_pr;
+--result_1_test <= result_1(48 downto 24);
+--result_2_test <= result_2(48 downto 24);
+--
 end Behavioral;

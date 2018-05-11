@@ -2,9 +2,9 @@
 <Root MajorVersion="0" MinorVersion="33">
   <CompositeFile CompositeFileTopName="design_1" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1526031691"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1526031691"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1526031691"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1526052992"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1526052992"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1526052992"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>
@@ -94,14 +94,6 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/design_1_counter_DAC_0_0/design_1_counter_DAC_0_0.xci" Type="IP">
-        <Instance HierarchyPath="counter_DAC_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="ip/design_1_util_ds_buf_1_1/design_1_util_ds_buf_1_1.xci" Type="IP">
         <Instance HierarchyPath="CLK0_OUT"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -112,14 +104,6 @@
       </File>
       <File Name="ip/design_1_util_ds_buf_1_4/design_1_util_ds_buf_1_4.xci" Type="IP">
         <Instance HierarchyPath="CLK2_out"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/design_1_blk_mem_gen_1_0/design_1_blk_mem_gen_1_0.xci" Type="IP">
-        <Instance HierarchyPath="blk_mem_gen_1"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -158,22 +142,14 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/design_1_ila_0_0/design_1_ila_0_0.xci" Type="IP">
-        <Instance HierarchyPath="ila_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="hdl/design_1.vhd" Type="VHDL">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/design_1_pll_inst_0_0/design_1_pll_inst_0_0.xci" Type="IP">
-        <Instance HierarchyPath="pll_inst_0"/>
+      <File Name="ip/design_1_DDS_0_0/design_1_DDS_0_0.xci" Type="IP">
+        <Instance HierarchyPath="DDS_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>

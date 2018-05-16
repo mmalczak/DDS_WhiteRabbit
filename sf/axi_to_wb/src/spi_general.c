@@ -10,28 +10,28 @@
 
 void setSpiStart(u32 value)
 {
-	Xil_Out32(WBT_REG_SPI_START, value);
+	Xil_Out32(WBS_REG_SPI_START, value);
 }
 
 void setSpiCPol(u32 value)
 {
-	Xil_Out32(WBT_REG_SPI_CPOL, value);
+	Xil_Out32(WBS_REG_SPI_CPOL, value);
 }
 void setCS_AD9516(u32 value)
 {
-	Xil_Out32(WBT_REG_SPI_CS_AD9516, value);
+	Xil_Out32(WBS_REG_SPI_CS_AD9516, value);
 }
 void setCS_AD9510(u32 value)
 {
-	Xil_Out32(WBT_REG_SPI_CS_AD9510, value);
+	Xil_Out32(WBS_REG_SPI_CS_AD9510, value);
 }
 void setLE_ADF4002(u32 value)
 {
-	Xil_Out32(WBT_REG_ADF4002_LE, value);
+	Xil_Out32(WBS_REG_ADF4002_LE, value);
 }
 void setSpiData(u32 value)
 {
-	Xil_Out32(WBT_REG_SPI_DATA, value);
+	Xil_Out32(WBS_REG_SPI_DATA, value);
 }
 
 void AD95xx_spi_init(void)
@@ -238,7 +238,7 @@ u8 WB_SpiTransfer(u8 dataSend, u8 device)
 	default: xil_printf("Wrong CS value\n\r");
 	}
 	for(int i=0; i<4;i++);
-	return (u8)(Xil_In32(WBT_REG_SPI_DATA_IN));
+	return (u8)(Xil_In32(WBS_REG_SPI_DATA_IN));
 }
 
 void spi_adf4002_send_data(u32 data)

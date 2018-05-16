@@ -1,8 +1,8 @@
 peripheral {
-	name = "TEST_regs";
+	name = "wb_interconnect";
 	description = "Set f registers used to test my AXI4-Lite to WB bridge";
-	hdl_entity = "wb_test_slave";
-	prefix = "wbt";
+	hdl_entity = "wb_slave";
+	prefix = "wbs";
 
 	reg {
 		name = "LEDS register";
@@ -33,19 +33,6 @@ peripheral {
 		};
 	};
 
-	reg {
-		name = "DDS register";
-		description = "A register defining the frequency of DDS";
-		prefix = "dds";
-		field {
-			name = "DDS";
-			description = "Bits in this register define the frequency of DDS";
-			type = SLV;
-			size = 28;
-			access_bus = READ_WRITE;
-			access_dev = READ_ONLY;
-		};
-	};
 
 	reg {
 		name = "PLL frequency measurement register";
@@ -185,36 +172,6 @@ peripheral {
 			description = "Defines the state of SPI_DATA_IN";
 			type = SLV;
 			size = 8;
-			access_bus = READ_ONLY;
-			access_dev = WRITE_ONLY;
-		};
-	};
-
-
-
-
-    reg {
-		name = "SPI_ADC_START register";
-		description = "A register defining the state of SPI_ADC_START";
-		prefix = "spi_adc_start";
-		field {
-			name = "SPI_ADC_START";
-			description = "Defines the state of SPI_ADC_START";
-			type = BIT;
-			access_bus = READ_WRITE;
-			access_dev = READ_ONLY;
-		};
-	};
-   
-    reg {
-		name = "FILTER_IN register";
-		description = "A register defining the state of FILTER_IN";
-		prefix = "filter_in";
-		field {
-			name = "FILTER_IN";
-			description = "Defines the state of FILTER_IN";
-			type = SLV;
-			size = 32;
 			access_bus = READ_ONLY;
 			access_dev = WRITE_ONLY;
 		};

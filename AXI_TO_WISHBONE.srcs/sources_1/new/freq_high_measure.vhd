@@ -3,53 +3,75 @@ use IEEE.STD_LOGIC_1164.ALL;
 use ieee.std_logic_unsigned.all;
 
 entity freq_high_measure is
-    Port ( clk : in STD_LOGIC;
-           dac_meas : in STD_LOGIC;
+    Port ( 
+	   clk : in STD_LOGIC;
+    	   res : in std_logic;
            pll_meas : in STD_LOGIC;
            counter_mask : in std_logic_vector(31 downto 0);
-           counts_dac : out STD_LOGIC_VECTOR (31 downto 0);
            counts_pll : out STD_LOGIC_VECTOR (31 downto 0));
 end freq_high_measure;
 
 architecture Behavioral of freq_high_measure is
 
 signal counter : std_logic_vector(31 downto 0);
-
-signal dac_meas_s : std_logic;
-signal pll_meas_s : std_logic;
-
-signal counts_dac_s : std_logic_vector(31 downto 0);
 signal counts_pll_s : std_logic_vector(31 downto 0);
+signal res_pll : std_logic;
+type   t_state is (IDLE, COUNT_IDLE, COUNT_PLL);
+signal state : t_state;
+
+
+component ila_0
+PORT (
+	clk : IN STD_LOGIC;
+	probe0 : IN STD_LOGIC_VECTOR(31 DOWNTO 0)
+	probe1 : IN STD_LOGIC_VECTOR(31 DOWNTO 0)
+);
+end component;
+signal probe0_s : std_logic_vector(31 downto 0);
+signal probe1_s : std_logic_vector(31 downto 0);
 
 begin
-
 process(clk)
 begin
-    if(clk'event and clk='1')then
-        dac_meas_s <= dac_meas;
-        pll_meas_s <= pll_meas;
-       
-        if(counter=counter_mask)then
-            counts_pll<=counts_pll_s;
-            counts_dac<=counts_dac_s;
-            counts_dac_s <= (others=>'0');
-            counts_pll_s <= (others=>'0');
-            counter <= (others=>'0');
-        else
-            counter <= counter+1;
-
-
-            if((dac_meas_s xor dac_meas) = '1')then
-                 counts_dac_s <= counts_dac_s+1;
-            end if;
-    
-            if((pll_meas_s xor pll_meas) = '1')then
-                 counts_pll_s <= counts_pll_s+1;
-            end if;
-        end if;
-    end if;    
-
+	if(res = '0') then 
+		state <= IDLE;
+	elsif(clk'event and clk='1')then
+		case state is
+			when IDLE =>
+				res_pll<='0';
+				counter <= (others => '0');
+				state <= COUNT_IDLE;
+			when COUNT_IDLE =>
+				if(counter = "100000")then
+					counter <= (others => '0');
+					state <= COUNT_PLL;
+					res_pll <= '1';
+				else 
+					counter <= counter+1;
+				end if;
+			when COUNT_PLL =>
+			        if(counter=counter_mask)then
+					counter <= (others => '0');
+					state <= IDLE;
+					counts_pll <= counts_pll_s;
+				else
+					counter <= counter+1;
+				end if;
+		end case;
+	end if;		
 end process;
 
+process(pll_meas)
+begin
+	if(pll_meas'event and pll_meas = '1')then
+		if(res_pll = '0')then
+			counts_pll_s <= (others=>'0');
+		else
+			counts_pll_s <= counts_pll_s + 1; 		
+		end if;
+	end if;
+end process;
+probe0_s <= counter;
+probe1_s <= counts_pll_s;
 
 end Behavioral;

@@ -1,6 +1,9 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.all;
+Library UNISIM;
+use UNISIM.vcomponents.all;
+
 entity PLL_loop is
   Port (   	 
 		clk_50 : in std_logic;
@@ -21,7 +24,8 @@ entity PLL_loop is
 --		result_2_test : out std_logic_vector(24 downto 0); 
 --		err_test : out std_logic_vector(15 downto 0);
 		spi_sclk_o : out std_logic;
-		dout_dds : out std_logic_vector(13 downto 0)
+		dout_dds_P : out std_logic_vector(13 downto 0);
+		dout_dds_N : out std_logic_vector(13 downto 0)
 	 );
 end PLL_loop;
 
@@ -33,6 +37,7 @@ architecture Behavioral of PLL_loop is
 --	probe0 : IN STD_LOGIC_VECTOR(16 DOWNTO 0)
 --);
 --end component;
+
 
 component DDS is
     Port(
@@ -83,6 +88,11 @@ end component;
 --DDS signals
 signal clk_dds_s : std_logic;
 signal dout_dds_s : std_logic_vector(13 downto 0);
+
+signal dout_dds_N_s : std_logic_vector(13 downto 0);
+signal dout_dds_P_s : std_logic_vector(13 downto 0); 
+
+
 
 signal clk_50_s : std_logic;
 signal clk_12_5_s : std_logic;
@@ -148,6 +158,21 @@ begin
 		freq => freq_s(27 downto 0),  --should modify this
 		douta => dout_dds_s 
 	);
+
+	DDS_out_port_gen:
+	for J in 0 to 13 generate
+	OBUFDS_inst : OBUFDS
+	generic map(
+		IOSTANDARD=>"DEFAULT",--SpecifytheoutputI/Ostandard
+		SLEW=>"SLOW")
+	port map(
+		O=>dout_dds_P_s(J), --Diff_p output
+		OB=>dout_dds_N_s(J), --Diff_n output
+		I=>dout_dds_s(J) --Buffer input
+	);
+	end generate DDS_out_port_gen;
+
+
 --	PROBE : ila_0
 --	port map(
 --		clk => clk_50_s,
@@ -177,7 +202,8 @@ end process;
 
 --dds
 clk_dds_s <= clk_dds;
-dout_dds <= dout_dds_s;
+dout_dds_P <= dout_dds_P_s;
+dout_dds_N <= dout_dds_N_s;
 
 clk_50_s <= clk_50;
 res_s <= res;

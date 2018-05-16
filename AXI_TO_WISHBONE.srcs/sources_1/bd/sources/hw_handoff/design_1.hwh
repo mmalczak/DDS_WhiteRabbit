@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri May 11 18:00:31 2018" VIVADOVERSION="2017.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed May 16 16:47:06 2018" VIVADOVERSION="2017.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="xilinx.com:zc706:part0:1.4" DEVICE="7z045" NAME="design_1" PACKAGE="ffg900" SPEEDGRADE="-2"/>
 
@@ -50,19 +50,19 @@
         <CONNECTION INSTANCE="CLK1_OUT" PORT="IBUF_DS_N"/>
       </CONNECTIONS>
     </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="O" LEFT="13" NAME="DAC_DAT_P" RIGHT="0" SIGIS="clk" SIGNAME="DAC_DAT_OBUF_DS_P">
+    <PORT CLKFREQUENCY="100000000" DIR="O" LEFT="13" NAME="DAC_DAT_P" RIGHT="0" SIGIS="clk" SIGNAME="PLL_loop_0_dout_dds_P">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="DAC_DAT" PORT="OBUF_DS_P"/>
+        <CONNECTION INSTANCE="PLL_loop_0" PORT="dout_dds_P"/>
       </CONNECTIONS>
     </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="O" LEFT="13" NAME="DAC_DAT_N" RIGHT="0" SIGIS="clk" SIGNAME="DAC_DAT_OBUF_DS_N">
+    <PORT CLKFREQUENCY="100000000" DIR="O" LEFT="13" NAME="DAC_DAT_N" RIGHT="0" SIGIS="clk" SIGNAME="PLL_loop_0_dout_dds_N">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="DAC_DAT" PORT="OBUF_DS_N"/>
+        <CONNECTION INSTANCE="PLL_loop_0" PORT="dout_dds_N"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="1" NAME="wbt_led_o" RIGHT="0" SIGIS="undef" SIGNAME="my_regs_wbt_led_o">
+    <PORT DIR="O" LEFT="1" NAME="wbt_led_o" RIGHT="0" SIGIS="undef" SIGNAME="wb_slave_0_wbs_led_o">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="my_regs" PORT="wbt_led_o"/>
+        <CONNECTION INSTANCE="wb_slave_0" PORT="wbs_led_o"/>
       </CONNECTIONS>
     </PORT>
     <PORT CLKFREQUENCY="100000000" DIR="I" LEFT="0" NAME="CLK0_OUT_P" RIGHT="0" SIGIS="clk" SIGNAME="External_Ports_CLK0_OUT_P">
@@ -85,9 +85,9 @@
         <CONNECTION INSTANCE="CLK2_out" PORT="IBUF_DS_N"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="0" NAME="PLL1_SYNCB" RIGHT="0" SIGIS="undef" SIGNAME="my_regs_wbt_pll1_syncb_o">
+    <PORT DIR="O" LEFT="0" NAME="PLL1_SYNCB" RIGHT="0" SIGIS="undef" SIGNAME="wb_slave_0_wbs_pll1_syncb_o">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="my_regs" PORT="wbt_pll1_syncb_o"/>
+        <CONNECTION INSTANCE="wb_slave_0" PORT="wbs_pll1_syncb_o"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="przycisk" SIGIS="undef" SIGNAME="External_Ports_przycisk">
@@ -125,24 +125,24 @@
         <CONNECTION INSTANCE="spi_master_0" PORT="spi_miso_i"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="wbt_spi_cs_ad9516_o" SIGIS="undef" SIGNAME="my_regs_wbt_spi_cs_ad9516_o">
+    <PORT DIR="O" NAME="wbt_spi_cs_ad9516_o" SIGIS="undef" SIGNAME="wb_slave_0_wbs_spi_cs_ad9516_o">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="my_regs" PORT="wbt_spi_cs_ad9516_o"/>
+        <CONNECTION INSTANCE="wb_slave_0" PORT="wbs_spi_cs_ad9516_o"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="wbt_spi_cs_ad9510_o" SIGIS="undef" SIGNAME="my_regs_wbt_spi_cs_ad9510_o">
+    <PORT DIR="O" NAME="wbt_spi_cs_ad9510_o" SIGIS="undef" SIGNAME="wb_slave_0_wbs_spi_cs_ad9510_o">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="my_regs" PORT="wbt_spi_cs_ad9510_o"/>
+        <CONNECTION INSTANCE="wb_slave_0" PORT="wbs_spi_cs_ad9510_o"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="wbt_adf4002_le_o" SIGIS="undef" SIGNAME="my_regs_wbt_adf4002_le_o">
+    <PORT DIR="O" NAME="wbt_adf4002_le_o" SIGIS="undef" SIGNAME="wb_slave_0_wbs_adf4002_le_o">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="my_regs" PORT="wbt_adf4002_le_o"/>
+        <CONNECTION INSTANCE="wb_slave_0" PORT="wbs_adf4002_le_o"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="wbt_pll2_reset_n_o" SIGIS="undef" SIGNAME="my_regs_wbt_pll2_reset_n_o">
+    <PORT DIR="O" NAME="wbt_pll2_reset_n_o" SIGIS="undef" SIGNAME="wb_slave_0_wbs_pll2_reset_n_o">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="my_regs" PORT="wbt_pll2_reset_n_o"/>
+        <CONNECTION INSTANCE="wb_slave_0" PORT="wbs_pll2_reset_n_o"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="spi_miso_i" SIGIS="undef" SIGNAME="External_Ports_spi_miso_i">
@@ -236,11 +236,7 @@
             <CONNECTION INSTANCE="External_Ports" PORT="CLK0_OUT_N"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="O" LEFT="0" NAME="IBUF_OUT" RIGHT="0" SIGIS="clk" SIGNAME="CLK0_OUT_IBUF_OUT">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="freq_high_measure_0" PORT="dac_meas"/>
-          </CONNECTIONS>
-        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="O" LEFT="0" NAME="IBUF_OUT" RIGHT="0" SIGIS="clk"/>
       </PORTS>
       <BUSINTERFACES>
         <BUSINTERFACE BUSNAME="__NOC__" NAME="CLK_IN_D" TYPE="TARGET" VLNV="xilinx.com:interface:diff_clock:1.0">
@@ -329,35 +325,6 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE FULLNAME="/DAC_DAT" HWVERSION="2.1" INSTANCE="DAC_DAT" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_ds_buf" VLNV="xilinx.com:ip:util_ds_buf:2.1">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="C_BUF_TYPE" VALUE="OBUFDS"/>
-        <PARAMETER NAME="C_SIZE" VALUE="14"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_util_ds_buf_1_2"/>
-        <PARAMETER NAME="USE_BOARD_FLOW" VALUE="false"/>
-        <PARAMETER NAME="DIFF_CLK_IN_BOARD_INTERFACE" VALUE="Custom"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" LEFT="13" NAME="OBUF_IN" RIGHT="0" SIGIS="clk" SIGNAME="PLL_loop_0_dout_dds">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="PLL_loop_0" PORT="dout_dds"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="O" LEFT="13" NAME="OBUF_DS_P" RIGHT="0" SIGIS="clk" SIGNAME="DAC_DAT_OBUF_DS_P">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="DAC_DAT_P"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="O" LEFT="13" NAME="OBUF_DS_N" RIGHT="0" SIGIS="clk" SIGNAME="DAC_DAT_OBUF_DS_N">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="DAC_DAT_N"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
     <MODULE FULLNAME="/PLL_loop_0" HWVERSION="1.0" INSTANCE="PLL_loop_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="PLL_loop" VLNV="user.org:module_ref:PLL_loop:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
@@ -380,14 +347,14 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_RESET0_N"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="x0" RIGHT="0" SIGIS="undef" SIGNAME="my_regs_wbt_x0_o">
+        <PORT DIR="I" LEFT="31" NAME="x0" RIGHT="0" SIGIS="undef" SIGNAME="wb_slave_0_wbs_x0_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="my_regs" PORT="wbt_x0_o"/>
+            <CONNECTION INSTANCE="wb_slave_0" PORT="wbs_x0_o"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="x1" RIGHT="0" SIGIS="undef" SIGNAME="my_regs_wbt_x1_o">
+        <PORT DIR="I" LEFT="31" NAME="x1" RIGHT="0" SIGIS="undef" SIGNAME="wb_slave_0_wbs_x1_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="my_regs" PORT="wbt_x1_o"/>
+            <CONNECTION INSTANCE="wb_slave_0" PORT="wbs_x1_o"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="spi_miso_i" SIGIS="undef" SIGNAME="External_Ports_spi_miso_i">
@@ -395,14 +362,14 @@
             <CONNECTION INSTANCE="External_Ports" PORT="spi_miso_i"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="15" NAME="adc_offset" RIGHT="0" SIGIS="undef" SIGNAME="my_regs_wbt_adc_offset_o">
+        <PORT DIR="I" LEFT="15" NAME="adc_offset" RIGHT="0" SIGIS="undef" SIGNAME="wb_slave_0_wbs_adc_offset_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="my_regs" PORT="wbt_adc_offset_o"/>
+            <CONNECTION INSTANCE="wb_slave_0" PORT="wbs_adc_offset_o"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="15" NAME="timer" RIGHT="0" SIGIS="undef" SIGNAME="my_regs_wbt_loop_timer_o">
+        <PORT DIR="I" LEFT="15" NAME="timer" RIGHT="0" SIGIS="undef" SIGNAME="wb_slave_0_wbs_loop_timer_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="my_regs" PORT="wbt_loop_timer_o"/>
+            <CONNECTION INSTANCE="wb_slave_0" PORT="wbs_loop_timer_o"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="cnv" SIGIS="undef" SIGNAME="PLL_loop_0_cnv">
@@ -420,9 +387,14 @@
             <CONNECTION INSTANCE="External_Ports" PORT="spi_sclk_o"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="13" NAME="dout_dds" RIGHT="0" SIGIS="undef" SIGNAME="PLL_loop_0_dout_dds">
+        <PORT DIR="O" LEFT="13" NAME="dout_dds_P" RIGHT="0" SIGIS="undef" SIGNAME="PLL_loop_0_dout_dds_P">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="DAC_DAT" PORT="OBUF_IN"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="DAC_DAT_P"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="13" NAME="dout_dds_N" RIGHT="0" SIGIS="undef" SIGNAME="PLL_loop_0_dout_dds_N">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="DAC_DAT_N"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -539,12 +511,12 @@
         </PORT>
         <PORT DIR="O" NAME="wb_clk_o" SIGIS="undef" SIGNAME="axil2wb_0_wb_clk_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="my_regs" PORT="clk_sys_i"/>
+            <CONNECTION INSTANCE="wb_slave_0" PORT="clk_sys_i"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="wb_rst_o" SIGIS="undef" SIGNAME="axil2wb_0_wb_rst_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="my_regs" PORT="rst_n_i"/>
+            <CONNECTION INSTANCE="wb_slave_0" PORT="rst_n_i"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="wb_addr_o" RIGHT="0" SIGIS="undef" SIGNAME="axil2wb_0_wb_addr_o">
@@ -554,32 +526,32 @@
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="wb_dat_o" RIGHT="0" SIGIS="undef" SIGNAME="axil2wb_0_wb_dat_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="my_regs" PORT="wb_dat_i"/>
+            <CONNECTION INSTANCE="wb_slave_0" PORT="wb_dat_i"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="wb_we_o" SIGIS="undef" SIGNAME="axil2wb_0_wb_we_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="my_regs" PORT="wb_we_i"/>
+            <CONNECTION INSTANCE="wb_slave_0" PORT="wb_we_i"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="3" NAME="wb_sel_o" RIGHT="0" SIGIS="undef" SIGNAME="axil2wb_0_wb_sel_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="my_regs" PORT="wb_sel_i"/>
+            <CONNECTION INSTANCE="wb_slave_0" PORT="wb_sel_i"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="wb_stb_o" SIGIS="undef" SIGNAME="axil2wb_0_wb_stb_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="my_regs" PORT="wb_stb_i"/>
+            <CONNECTION INSTANCE="wb_slave_0" PORT="wb_stb_i"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="wb_cyc_o" SIGIS="undef" SIGNAME="axil2wb_0_wb_cyc_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="my_regs" PORT="wb_cyc_i"/>
+            <CONNECTION INSTANCE="wb_slave_0" PORT="wb_cyc_i"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="wb_dat_i" RIGHT="0" SIGIS="undef" SIGNAME="my_regs_wb_dat_o">
+        <PORT DIR="I" LEFT="31" NAME="wb_dat_i" RIGHT="0" SIGIS="undef" SIGNAME="wb_slave_0_wb_dat_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="my_regs" PORT="wb_dat_o"/>
+            <CONNECTION INSTANCE="wb_slave_0" PORT="wb_dat_o"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="wb_err_i" SIGIS="undef" SIGNAME="xlconstant_0_dout">
@@ -587,9 +559,9 @@
             <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="wb_ack_i" SIGIS="undef" SIGNAME="my_regs_wb_ack_o">
+        <PORT DIR="I" NAME="wb_ack_i" SIGIS="undef" SIGNAME="wb_slave_0_wb_ack_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="my_regs" PORT="wb_ack_o"/>
+            <CONNECTION INSTANCE="wb_slave_0" PORT="wb_ack_o"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -621,8 +593,8 @@
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="design_1_processing_system7_0_0_FCLK_CLK0"/>
-          <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
-          <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
+          <PARAMETER NAME="NUM_READ_THREADS" VALUE="4"/>
+          <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="4"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
           <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
           <PORTMAPS>
@@ -680,9 +652,9 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="dac_meas" SIGIS="undef" SIGNAME="CLK0_OUT_IBUF_OUT">
+        <PORT DIR="I" NAME="res" SIGIS="undef" SIGNAME="processing_system7_0_FCLK_RESET0_N">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="CLK0_OUT" PORT="IBUF_OUT"/>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_RESET0_N"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="pll_meas" SIGIS="undef" SIGNAME="CLK2_out_IBUF_OUT">
@@ -690,168 +662,14 @@
             <CONNECTION INSTANCE="CLK2_out" PORT="IBUF_OUT"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="counter_mask" RIGHT="0" SIGIS="undef" SIGNAME="my_regs_wbt_cnt_mask_o">
+        <PORT DIR="I" LEFT="31" NAME="counter_mask" RIGHT="0" SIGIS="undef" SIGNAME="wb_slave_0_wbs_cnt_mask_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="my_regs" PORT="wbt_cnt_mask_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="counts_dac" RIGHT="0" SIGIS="undef" SIGNAME="freq_high_measure_0_counts_dac">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="my_regs" PORT="wbt_dds_freq_i"/>
+            <CONNECTION INSTANCE="wb_slave_0" PORT="wbs_cnt_mask_o"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="counts_pll" RIGHT="0" SIGIS="undef" SIGNAME="freq_high_measure_0_counts_pll">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="my_regs" PORT="wbt_pll_freq_i"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE FULLNAME="/my_regs" HWVERSION="1.0" INSTANCE="my_regs" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="wb_test_slave" VLNV="user.org:module_ref:wb_test_slave:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_wb_test_slave_0_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="I" NAME="rst_n_i" SIGIS="undef" SIGNAME="axil2wb_0_wb_rst_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axil2wb_0" PORT="wb_rst_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="clk_sys_i" SIGIS="undef" SIGNAME="axil2wb_0_wb_clk_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axil2wb_0" PORT="wb_clk_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="4" NAME="wb_adr_i" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_0_Dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="xlslice_0" PORT="Dout"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="wb_dat_i" RIGHT="0" SIGIS="undef" SIGNAME="axil2wb_0_wb_dat_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axil2wb_0" PORT="wb_dat_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="wb_dat_o" RIGHT="0" SIGIS="undef" SIGNAME="my_regs_wb_dat_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axil2wb_0" PORT="wb_dat_i"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="wb_cyc_i" SIGIS="undef" SIGNAME="axil2wb_0_wb_cyc_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axil2wb_0" PORT="wb_cyc_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="3" NAME="wb_sel_i" RIGHT="0" SIGIS="undef" SIGNAME="axil2wb_0_wb_sel_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axil2wb_0" PORT="wb_sel_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="wb_stb_i" SIGIS="undef" SIGNAME="axil2wb_0_wb_stb_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axil2wb_0" PORT="wb_stb_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="wb_we_i" SIGIS="undef" SIGNAME="axil2wb_0_wb_we_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axil2wb_0" PORT="wb_we_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="wb_ack_o" SIGIS="undef" SIGNAME="my_regs_wb_ack_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axil2wb_0" PORT="wb_ack_i"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="wb_stall_o" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="1" NAME="wbt_led_o" RIGHT="0" SIGIS="undef" SIGNAME="my_regs_wbt_led_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="wbt_led_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="wbt_pll1_syncb_o" SIGIS="undef" SIGNAME="my_regs_wbt_pll1_syncb_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="PLL1_SYNCB"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="27" NAME="wbt_dds_o" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="31" NAME="wbt_pll_freq_i" RIGHT="0" SIGIS="undef" SIGNAME="freq_high_measure_0_counts_pll">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="freq_high_measure_0" PORT="counts_pll"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="wbt_dds_freq_i" RIGHT="0" SIGIS="undef" SIGNAME="freq_high_measure_0_counts_dac">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="freq_high_measure_0" PORT="counts_dac"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="wbt_cnt_mask_o" RIGHT="0" SIGIS="undef" SIGNAME="my_regs_wbt_cnt_mask_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="freq_high_measure_0" PORT="counter_mask"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="wbt_spi_start_o" SIGIS="undef" SIGNAME="my_regs_wbt_spi_start_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="spi_master_0" PORT="start_i"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="wbt_spi_cpol_o" SIGIS="undef" SIGNAME="my_regs_wbt_spi_cpol_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="spi_master_0" PORT="cpol_i"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="wbt_spi_cs_ad9516_o" SIGIS="undef" SIGNAME="my_regs_wbt_spi_cs_ad9516_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="wbt_spi_cs_ad9516_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="wbt_spi_cs_ad9510_o" SIGIS="undef" SIGNAME="my_regs_wbt_spi_cs_ad9510_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="wbt_spi_cs_ad9510_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="7" NAME="wbt_spi_data_o" RIGHT="0" SIGIS="undef" SIGNAME="my_regs_wbt_spi_data_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="spi_master_0" PORT="data_i"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="wbt_adf4002_le_o" SIGIS="undef" SIGNAME="my_regs_wbt_adf4002_le_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="wbt_adf4002_le_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="wbt_pll2_reset_n_o" SIGIS="undef" SIGNAME="my_regs_wbt_pll2_reset_n_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="wbt_pll2_reset_n_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="7" NAME="wbt_spi_data_in_i" RIGHT="0" SIGIS="undef" SIGNAME="spi_master_0_data_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="spi_master_0" PORT="data_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="wbt_spi_adc_start_o" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="31" NAME="wbt_filter_in_i" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="31" NAME="wbt_x0_o" RIGHT="0" SIGIS="undef" SIGNAME="my_regs_wbt_x0_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="PLL_loop_0" PORT="x0"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="wbt_x1_o" RIGHT="0" SIGIS="undef" SIGNAME="my_regs_wbt_x1_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="PLL_loop_0" PORT="x1"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="15" NAME="wbt_adc_offset_o" RIGHT="0" SIGIS="undef" SIGNAME="my_regs_wbt_adc_offset_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="PLL_loop_0" PORT="adc_offset"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="15" NAME="wbt_loop_timer_o" RIGHT="0" SIGIS="undef" SIGNAME="my_regs_wbt_loop_timer_o">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="PLL_loop_0" PORT="timer"/>
+            <CONNECTION INSTANCE="wb_slave_0" PORT="wbs_pll_freq_i"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -2002,12 +1820,11 @@
             <CONNECTION INSTANCE="rst_processing_system7_0_50M" PORT="slowest_sync_clk"/>
             <CONNECTION INSTANCE="axil2wb_0" PORT="S_AXI_ACLK"/>
             <CONNECTION INSTANCE="spi_master_0" PORT="clk_sys_i"/>
-            <CONNECTION INSTANCE="freq_high_measure_0" PORT="clk"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M00_ACLK"/>
-            <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_ACLK"/>
             <CONNECTION INSTANCE="PLL_loop_0" PORT="clk_50"/>
+            <CONNECTION INSTANCE="freq_high_measure_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
@@ -2015,6 +1832,7 @@
             <CONNECTION INSTANCE="rst_processing_system7_0_50M" PORT="ext_reset_in"/>
             <CONNECTION INSTANCE="spi_master_0" PORT="rst_n_i"/>
             <CONNECTION INSTANCE="PLL_loop_0" PORT="res"/>
+            <CONNECTION INSTANCE="freq_high_measure_0" PORT="res"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" LEFT="53" NAME="MIO" RIGHT="0" SIGIS="undef"/>
@@ -2177,7 +1995,7 @@
       </DOCUMENTS>
       <PARAMETERS>
         <PARAMETER NAME="NUM_SI" VALUE="1"/>
-        <PARAMETER NAME="NUM_MI" VALUE="2"/>
+        <PARAMETER NAME="NUM_MI" VALUE="1"/>
         <PARAMETER NAME="STRATEGY" VALUE="0"/>
         <PARAMETER NAME="ENABLE_ADVANCED_OPTIONS" VALUE="0"/>
         <PARAMETER NAME="ENABLE_PROTOCOL_CHECKERS" VALUE="0"/>
@@ -2524,16 +2342,6 @@
             <CONNECTION INSTANCE="rst_processing_system7_0_50M" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M01_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M01_ARESETN" SIGIS="rst" SIGNAME="rst_processing_system7_0_50M_peripheral_aresetn">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="rst_processing_system7_0_50M" PORT="peripheral_aresetn"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" NAME="S00_AXI_arvalid" SIGIS="undef" SIGNAME="processing_system7_0_M_AXI_GP0_ARVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ARVALID"/>
@@ -2809,25 +2617,6 @@
             <CONNECTION INSTANCE="axil2wb_0" PORT="S_AXI_RREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M01_AXI_awaddr" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M01_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M01_AXI_awvalid" SIGIS="undef"/>
-        <PORT DIR="I" NAME="M01_AXI_awready" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M01_AXI_wdata" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M01_AXI_wstrb" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M01_AXI_wvalid" SIGIS="undef"/>
-        <PORT DIR="I" NAME="M01_AXI_wready" SIGIS="undef"/>
-        <PORT DIR="I" NAME="M01_AXI_bresp" SIGIS="undef"/>
-        <PORT DIR="I" NAME="M01_AXI_bvalid" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M01_AXI_bready" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M01_AXI_araddr" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M01_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M01_AXI_arvalid" SIGIS="undef"/>
-        <PORT DIR="I" NAME="M01_AXI_arready" SIGIS="undef"/>
-        <PORT DIR="I" NAME="M01_AXI_rdata" SIGIS="undef"/>
-        <PORT DIR="I" NAME="M01_AXI_rresp" SIGIS="undef"/>
-        <PORT DIR="I" NAME="M01_AXI_rvalid" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M01_AXI_rready" SIGIS="undef"/>
       </PORTS>
       <BUSINTERFACES>
         <BUSINTERFACE BUSNAME="processing_system7_0_M_AXI_GP0" DATAWIDTH="32" NAME="S00_AXI" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
@@ -2893,29 +2682,6 @@
             <PORTMAP LOGICAL="RREADY" PHYSICAL="M00_AXI_rready"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="__NOC__" NAME="M01_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
-          <PORTMAPS>
-            <PORTMAP LOGICAL="AWADDR" PHYSICAL="M01_AXI_awaddr"/>
-            <PORTMAP LOGICAL="AWPROT" PHYSICAL="M01_AXI_awprot"/>
-            <PORTMAP LOGICAL="AWVALID" PHYSICAL="M01_AXI_awvalid"/>
-            <PORTMAP LOGICAL="AWREADY" PHYSICAL="M01_AXI_awready"/>
-            <PORTMAP LOGICAL="WDATA" PHYSICAL="M01_AXI_wdata"/>
-            <PORTMAP LOGICAL="WSTRB" PHYSICAL="M01_AXI_wstrb"/>
-            <PORTMAP LOGICAL="WVALID" PHYSICAL="M01_AXI_wvalid"/>
-            <PORTMAP LOGICAL="WREADY" PHYSICAL="M01_AXI_wready"/>
-            <PORTMAP LOGICAL="BRESP" PHYSICAL="M01_AXI_bresp"/>
-            <PORTMAP LOGICAL="BVALID" PHYSICAL="M01_AXI_bvalid"/>
-            <PORTMAP LOGICAL="BREADY" PHYSICAL="M01_AXI_bready"/>
-            <PORTMAP LOGICAL="ARADDR" PHYSICAL="M01_AXI_araddr"/>
-            <PORTMAP LOGICAL="ARPROT" PHYSICAL="M01_AXI_arprot"/>
-            <PORTMAP LOGICAL="ARVALID" PHYSICAL="M01_AXI_arvalid"/>
-            <PORTMAP LOGICAL="ARREADY" PHYSICAL="M01_AXI_arready"/>
-            <PORTMAP LOGICAL="RDATA" PHYSICAL="M01_AXI_rdata"/>
-            <PORTMAP LOGICAL="RRESP" PHYSICAL="M01_AXI_rresp"/>
-            <PORTMAP LOGICAL="RVALID" PHYSICAL="M01_AXI_rvalid"/>
-            <PORTMAP LOGICAL="RREADY" PHYSICAL="M01_AXI_rready"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
     <MODULE FULLNAME="/rst_processing_system7_0_50M" HWVERSION="5.0" INSTANCE="rst_processing_system7_0_50M" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="proc_sys_reset" VLNV="xilinx.com:ip:proc_sys_reset:5.0">
@@ -2964,7 +2730,6 @@
             <CONNECTION INSTANCE="axil2wb_0" PORT="S_AXI_ARESETN"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S00_ARESETN"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M00_ARESETN"/>
-            <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_ARESETN"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -2989,26 +2754,26 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_RESET0_N"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="start_i" SIGIS="undef" SIGNAME="my_regs_wbt_spi_start_o">
+        <PORT DIR="I" NAME="start_i" SIGIS="undef" SIGNAME="wb_slave_0_wbs_spi_start_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="my_regs" PORT="wbt_spi_start_o"/>
+            <CONNECTION INSTANCE="wb_slave_0" PORT="wbs_spi_start_o"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="cpol_i" SIGIS="undef" SIGNAME="my_regs_wbt_spi_cpol_o">
+        <PORT DIR="I" NAME="cpol_i" SIGIS="undef" SIGNAME="wb_slave_0_wbs_spi_cpol_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="my_regs" PORT="wbt_spi_cpol_o"/>
+            <CONNECTION INSTANCE="wb_slave_0" PORT="wbs_spi_cpol_o"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="7" NAME="data_i" RIGHT="0" SIGIS="undef" SIGNAME="my_regs_wbt_spi_data_o">
+        <PORT DIR="I" LEFT="7" NAME="data_i" RIGHT="0" SIGIS="undef" SIGNAME="wb_slave_0_wbs_spi_data_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="my_regs" PORT="wbt_spi_data_o"/>
+            <CONNECTION INSTANCE="wb_slave_0" PORT="wbs_spi_data_o"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="drdy_o" SIGIS="undef"/>
         <PORT DIR="O" NAME="ready_o" SIGIS="undef"/>
         <PORT DIR="O" LEFT="7" NAME="data_o" RIGHT="0" SIGIS="undef" SIGNAME="spi_master_0_data_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="my_regs" PORT="wbt_spi_data_in_i"/>
+            <CONNECTION INSTANCE="wb_slave_0" PORT="wbs_spi_data_in_i"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="spi_cs_n_o" SIGIS="undef"/>
@@ -3070,6 +2835,148 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
+    <MODULE FULLNAME="/wb_slave_0" HWVERSION="1.0" INSTANCE="wb_slave_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="wb_slave" VLNV="user.org:module_ref:wb_slave:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_wb_slave_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="rst_n_i" SIGIS="undef" SIGNAME="axil2wb_0_wb_rst_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axil2wb_0" PORT="wb_rst_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clk_sys_i" SIGIS="undef" SIGNAME="axil2wb_0_wb_clk_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axil2wb_0" PORT="wb_clk_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="4" NAME="wb_adr_i" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_0_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlslice_0" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="wb_dat_i" RIGHT="0" SIGIS="undef" SIGNAME="axil2wb_0_wb_dat_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axil2wb_0" PORT="wb_dat_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="wb_dat_o" RIGHT="0" SIGIS="undef" SIGNAME="wb_slave_0_wb_dat_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axil2wb_0" PORT="wb_dat_i"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="wb_cyc_i" SIGIS="undef" SIGNAME="axil2wb_0_wb_cyc_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axil2wb_0" PORT="wb_cyc_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="wb_sel_i" RIGHT="0" SIGIS="undef" SIGNAME="axil2wb_0_wb_sel_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axil2wb_0" PORT="wb_sel_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="wb_stb_i" SIGIS="undef" SIGNAME="axil2wb_0_wb_stb_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axil2wb_0" PORT="wb_stb_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="wb_we_i" SIGIS="undef" SIGNAME="axil2wb_0_wb_we_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axil2wb_0" PORT="wb_we_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="wb_ack_o" SIGIS="undef" SIGNAME="wb_slave_0_wb_ack_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axil2wb_0" PORT="wb_ack_i"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="wb_stall_o" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="1" NAME="wbs_led_o" RIGHT="0" SIGIS="undef" SIGNAME="wb_slave_0_wbs_led_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="wbt_led_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="wbs_pll1_syncb_o" SIGIS="undef" SIGNAME="wb_slave_0_wbs_pll1_syncb_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="PLL1_SYNCB"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="wbs_pll_freq_i" RIGHT="0" SIGIS="undef" SIGNAME="freq_high_measure_0_counts_pll">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="freq_high_measure_0" PORT="counts_pll"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="wbs_dds_freq_i" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="31" NAME="wbs_cnt_mask_o" RIGHT="0" SIGIS="undef" SIGNAME="wb_slave_0_wbs_cnt_mask_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="freq_high_measure_0" PORT="counter_mask"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="wbs_spi_start_o" SIGIS="undef" SIGNAME="wb_slave_0_wbs_spi_start_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="spi_master_0" PORT="start_i"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="wbs_spi_cpol_o" SIGIS="undef" SIGNAME="wb_slave_0_wbs_spi_cpol_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="spi_master_0" PORT="cpol_i"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="wbs_spi_cs_ad9516_o" SIGIS="undef" SIGNAME="wb_slave_0_wbs_spi_cs_ad9516_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="wbt_spi_cs_ad9516_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="wbs_spi_cs_ad9510_o" SIGIS="undef" SIGNAME="wb_slave_0_wbs_spi_cs_ad9510_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="wbt_spi_cs_ad9510_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="wbs_spi_data_o" RIGHT="0" SIGIS="undef" SIGNAME="wb_slave_0_wbs_spi_data_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="spi_master_0" PORT="data_i"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="wbs_adf4002_le_o" SIGIS="undef" SIGNAME="wb_slave_0_wbs_adf4002_le_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="wbt_adf4002_le_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="wbs_pll2_reset_n_o" SIGIS="undef" SIGNAME="wb_slave_0_wbs_pll2_reset_n_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="wbt_pll2_reset_n_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="wbs_spi_data_in_i" RIGHT="0" SIGIS="undef" SIGNAME="spi_master_0_data_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="spi_master_0" PORT="data_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="wbs_x0_o" RIGHT="0" SIGIS="undef" SIGNAME="wb_slave_0_wbs_x0_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PLL_loop_0" PORT="x0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="wbs_x1_o" RIGHT="0" SIGIS="undef" SIGNAME="wb_slave_0_wbs_x1_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PLL_loop_0" PORT="x1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="15" NAME="wbs_adc_offset_o" RIGHT="0" SIGIS="undef" SIGNAME="wb_slave_0_wbs_adc_offset_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PLL_loop_0" PORT="adc_offset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="15" NAME="wbs_loop_timer_o" RIGHT="0" SIGIS="undef" SIGNAME="wb_slave_0_wbs_loop_timer_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PLL_loop_0" PORT="timer"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
     <MODULE FULLNAME="/xlconstant_0" HWVERSION="1.1" INSTANCE="xlconstant_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
       <DOCUMENTS/>
       <PARAMETERS>
@@ -3105,7 +3012,7 @@
         </PORT>
         <PORT DIR="O" LEFT="4" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_0_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="my_regs" PORT="wb_adr_i"/>
+            <CONNECTION INSTANCE="wb_slave_0" PORT="wb_adr_i"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

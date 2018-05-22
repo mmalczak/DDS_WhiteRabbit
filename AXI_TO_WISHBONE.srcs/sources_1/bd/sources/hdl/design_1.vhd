@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.1 (lin64) Build 1846317 Fri Apr 14 18:54:47 MDT 2017
---Date        : Mon May 21 14:17:59 2018
+--Date        : Tue May 22 17:42:25 2018
 --Host        : milosz-System-Product-Name running 64-bit Linux Mint 18.2 Sonya
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -808,23 +808,6 @@ architecture STRUCTURE of design_1 is
     wbs_loop_timer_o : out STD_LOGIC_VECTOR ( 15 downto 0 )
   );
   end component design_1_wb_slave_0_0;
-  component design_1_PLL_loop_0_0 is
-  port (
-    clk_50 : in STD_LOGIC;
-    clk_dds : in STD_LOGIC;
-    res : in STD_LOGIC;
-    x0 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    x1 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    spi_miso_i : in STD_LOGIC;
-    adc_offset : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    timer : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    cnv : out STD_LOGIC;
-    sdi : out STD_LOGIC;
-    spi_sclk_o : out STD_LOGIC;
-    dout_dds_P : out STD_LOGIC_VECTOR ( 13 downto 0 );
-    dout_dds_N : out STD_LOGIC_VECTOR ( 13 downto 0 )
-  );
-  end component design_1_PLL_loop_0_0;
   component design_1_axil2wb_0_0 is
   port (
     S_AXI_ACLK : in STD_LOGIC;
@@ -866,6 +849,23 @@ architecture STRUCTURE of design_1 is
     s_out : out STD_LOGIC_VECTOR ( 57 downto 0 )
   );
   end component design_1_do_nothing_0_0;
+  component design_1_PLL_loop_0_0 is
+  port (
+    clk_50 : in STD_LOGIC;
+    clk_dds : in STD_LOGIC;
+    res : in STD_LOGIC;
+    x0 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    x1 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    spi_miso_i : in STD_LOGIC;
+    adc_offset : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    timer : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    cnv : out STD_LOGIC;
+    sdi : out STD_LOGIC;
+    spi_sclk_o : out STD_LOGIC;
+    dout_dds_P : out STD_LOGIC_VECTOR ( 13 downto 0 );
+    dout_dds_N : out STD_LOGIC_VECTOR ( 13 downto 0 )
+  );
+  end component design_1_PLL_loop_0_0;
   component design_1_freq_high_measure_0_0 is
   port (
     clk : in STD_LOGIC;

@@ -35,34 +35,36 @@ begin
 
 process(clk)
 begin
-    if(res = '0') then 
-        state <= IDLE;
-        err_s <= (others => '0');
-        err_pr <= (others => '0');
-        freq_s <= X"017D7840";
-        result_1 <= (others => '0');
-        result_2 <= (others => '0');
-    elsif(clk'event and clk='1')then
-        case state is
-            when IDLE =>
-                if(start='1')then
-                    state <= READ;
-                else
-                    state <= IDLE;
-                end if;
-            when READ =>
-                err_pr <= err_s;
-                err_s <= signed('0'&err) - signed('0'&adc_offset);
-                state <= FILTER0;
-           when FILTER0 =>
-                result_1 <= err_s * x0;
-                result_2 <= err_pr*x1;
-                state <= FILTER1; 
-           when FILTER1 =>
-                --współczynniki filtru 24 bity po przecinku
-                 freq_s <= freq_s - (result_1(48 downto 24))- (result_2(48 downto 24));
-                 state <= IDLE;
-        end case;
+    if(clk'event and clk='1')then
+        if(res = '0') then 
+                state <= IDLE;
+                err_s <= (others => '0');
+                err_pr <= (others => '0');
+                freq_s <= X"017D7840";
+                result_1 <= (others => '0');
+                result_2 <= (others => '0');
+        else 
+            case state is
+                when IDLE =>
+                    if(start='1')then
+                        state <= READ;
+                    else
+                        state <= IDLE;
+                    end if;
+                when READ =>
+                    err_pr <= err_s;
+                    err_s <= signed('0'&err) - signed('0'&adc_offset);
+                    state <= FILTER0;
+               when FILTER0 =>
+                    result_1 <= err_s * x0;
+                    result_2 <= err_pr*x1;
+                    state <= FILTER1; 
+               when FILTER1 =>
+                    --współczynniki filtru 24 bity po przecinku
+                     freq_s <= freq_s - (result_1(48 downto 24))- (result_2(48 downto 24));
+                     state <= IDLE;
+            end case;
+        end if;
     end if;
 end process;
 

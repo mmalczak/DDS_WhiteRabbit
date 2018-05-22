@@ -52,7 +52,7 @@ begin
 PLLE2_ADV_inst : PLLE2_ADV
 generic map (
 	BANDWIDTH => "optimized",
-	COMPENSATION => "ZHILD",
+	COMPENSATION => "ZHOLD",
 	STARTUP_WAIT => "FALSE",
 	DIVCLK_DIVIDE => 2,
 	CLKFBOUT_MULT => 33,

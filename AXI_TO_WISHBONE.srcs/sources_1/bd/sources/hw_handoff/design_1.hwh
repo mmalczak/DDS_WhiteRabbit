@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon May 21 14:18:00 2018" VIVADOVERSION="2017.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue May 22 17:42:26 2018" VIVADOVERSION="2017.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="xilinx.com:zc706:part0:1.4" DEVICE="7z045" NAME="design_1" PACKAGE="ffg900" SPEEDGRADE="-2"/>
 
@@ -1858,11 +1858,11 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ACLK"/>
             <CONNECTION INSTANCE="rst_processing_system7_0_50M" PORT="slowest_sync_clk"/>
             <CONNECTION INSTANCE="spi_master_0" PORT="clk_sys_i"/>
-            <CONNECTION INSTANCE="PLL_loop_0" PORT="clk_50"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M00_ACLK"/>
             <CONNECTION INSTANCE="axil2wb_0" PORT="S_AXI_ACLK"/>
+            <CONNECTION INSTANCE="PLL_loop_0" PORT="clk_50"/>
             <CONNECTION INSTANCE="freq_high_measure_0" PORT="clk"/>
             <CONNECTION INSTANCE="freq_high_measure_1" PORT="clk"/>
           </CONNECTIONS>

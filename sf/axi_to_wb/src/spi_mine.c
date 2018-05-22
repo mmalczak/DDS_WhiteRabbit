@@ -244,7 +244,7 @@ int main(void)
 	u32 freqDACSet=25000000;
 	configure_AD9516();
 	ppl1_syncb_on(1);
-	configure_AD9510_external_signal();
+	configure_AD9510_internal_signal();
 
 
 	setFreqCounterMaskReg(FREQ_COUNTER_MASK_REG);
@@ -252,13 +252,13 @@ int main(void)
 	configure_ADF4002();
 	//setReferencePLLCounter(10);
 	//setReferencePLLCounter(1);
-
+	setReferencePLLCounter(8);
 	filterConstants();
 	setADCoffset(0b0110000000000000);
 	setLOOP_timer(344);
 
 	manualOffsetControl();
-	setReferencePLLCounter(0);
+	//setReferencePLLCounter(0);
 
 	//chooseDivider();
 

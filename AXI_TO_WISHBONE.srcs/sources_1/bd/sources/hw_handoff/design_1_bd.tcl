@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# PLL_loop, axil2wb, do_nothing, freq_high_measure, spi_master, wb_slave
+# PLL_loop, axil2wb, do_nothing, freq_high_measure, freq_high_measure, spi_master, wb_slave
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -225,6 +225,11 @@ proc create_root_design { parentCell } {
      return 1
    }
   
+  set_property -dict [ list \
+CONFIG.NUM_READ_OUTSTANDING {1} \
+CONFIG.NUM_WRITE_OUTSTANDING {1} \
+ ] [get_bd_intf_pins /axil2wb_0/S_AXI]
+
   # Create instance: do_nothing_0, and set properties
   set block_name do_nothing
   set block_cell_name do_nothing_0
@@ -243,6 +248,17 @@ proc create_root_design { parentCell } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    } elseif { $freq_high_measure_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: freq_high_measure_1, and set properties
+  set block_name freq_high_measure
+  set block_cell_name freq_high_measure_1
+  if { [catch {set freq_high_measure_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $freq_high_measure_1 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
@@ -814,7 +830,7 @@ CONFIG.DOUT_WIDTH {5} \
   connect_bd_intf_net -intf_net processing_system7_0_axi_periph_M00_AXI [get_bd_intf_pins axil2wb_0/S_AXI] [get_bd_intf_pins processing_system7_0_axi_periph/M00_AXI]
 
   # Create port connections
-  connect_bd_net -net CLK0_OUT_IBUF_OUT [get_bd_pins CLK0_OUT/IBUF_OUT]
+  connect_bd_net -net CLK0_OUT_IBUF_OUT [get_bd_pins CLK0_OUT/IBUF_OUT] [get_bd_pins freq_high_measure_1/pll_meas]
   connect_bd_net -net CLK1_OUT_IBUF_OUT [get_bd_pins CLK1_OUT/IBUF_OUT] [get_bd_pins PLL_loop_0/clk_dds]
   connect_bd_net -net CLK2_out_IBUF_OUT [get_bd_pins CLK2_out/IBUF_OUT] [get_bd_pins freq_high_measure_0/pll_meas]
   connect_bd_net -net IBUF_DS_N_1 [get_bd_ports IBUF_DS_N] [get_bd_pins util_ds_buf_0/IBUF_DS_N]
@@ -839,8 +855,9 @@ CONFIG.DOUT_WIDTH {5} \
   connect_bd_net -net axil2wb_0_wb_stb_o [get_bd_pins axil2wb_0/wb_stb_o] [get_bd_pins wb_slave_0/wb_stb_i]
   connect_bd_net -net axil2wb_0_wb_we_o [get_bd_pins axil2wb_0/wb_we_o] [get_bd_pins wb_slave_0/wb_we_i]
   connect_bd_net -net freq_high_measure_0_counts_pll [get_bd_pins freq_high_measure_0/counts_pll] [get_bd_pins wb_slave_0/wbs_pll_freq_i]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins PLL_loop_0/clk_50] [get_bd_pins axil2wb_0/S_AXI_ACLK] [get_bd_pins freq_high_measure_0/clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0_axi_periph/ACLK] [get_bd_pins processing_system7_0_axi_periph/M00_ACLK] [get_bd_pins processing_system7_0_axi_periph/S00_ACLK] [get_bd_pins rst_processing_system7_0_50M/slowest_sync_clk] [get_bd_pins spi_master_0/clk_sys_i]
-  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins PLL_loop_0/res] [get_bd_pins freq_high_measure_0/res] [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_processing_system7_0_50M/ext_reset_in] [get_bd_pins spi_master_0/rst_n_i]
+  connect_bd_net -net freq_high_measure_1_counts_pll [get_bd_pins freq_high_measure_1/counts_pll] [get_bd_pins wb_slave_0/wbs_dds_freq_i]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins PLL_loop_0/clk_50] [get_bd_pins axil2wb_0/S_AXI_ACLK] [get_bd_pins freq_high_measure_0/clk] [get_bd_pins freq_high_measure_1/clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0_axi_periph/ACLK] [get_bd_pins processing_system7_0_axi_periph/M00_ACLK] [get_bd_pins processing_system7_0_axi_periph/S00_ACLK] [get_bd_pins rst_processing_system7_0_50M/slowest_sync_clk] [get_bd_pins spi_master_0/clk_sys_i]
+  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins PLL_loop_0/res] [get_bd_pins freq_high_measure_0/res] [get_bd_pins freq_high_measure_1/res] [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_processing_system7_0_50M/ext_reset_in] [get_bd_pins spi_master_0/rst_n_i]
   connect_bd_net -net przycisk_1 [get_bd_ports led] [get_bd_ports przycisk]
   connect_bd_net -net rst_processing_system7_0_50M_interconnect_aresetn [get_bd_pins processing_system7_0_axi_periph/ARESETN] [get_bd_pins rst_processing_system7_0_50M/interconnect_aresetn]
   connect_bd_net -net rst_processing_system7_0_50M_peripheral_aresetn [get_bd_pins axil2wb_0/S_AXI_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M00_ARESETN] [get_bd_pins processing_system7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_processing_system7_0_50M/peripheral_aresetn]
@@ -855,7 +872,7 @@ CONFIG.DOUT_WIDTH {5} \
   connect_bd_net -net wb_slave_0_wb_dat_o [get_bd_pins axil2wb_0/wb_dat_i] [get_bd_pins wb_slave_0/wb_dat_o]
   connect_bd_net -net wb_slave_0_wbs_adc_offset_o [get_bd_pins PLL_loop_0/adc_offset] [get_bd_pins wb_slave_0/wbs_adc_offset_o]
   connect_bd_net -net wb_slave_0_wbs_adf4002_le_o [get_bd_ports wbt_adf4002_le_o] [get_bd_pins wb_slave_0/wbs_adf4002_le_o]
-  connect_bd_net -net wb_slave_0_wbs_cnt_mask_o [get_bd_pins freq_high_measure_0/counter_mask] [get_bd_pins wb_slave_0/wbs_cnt_mask_o]
+  connect_bd_net -net wb_slave_0_wbs_cnt_mask_o [get_bd_pins freq_high_measure_0/counter_mask] [get_bd_pins freq_high_measure_1/counter_mask] [get_bd_pins wb_slave_0/wbs_cnt_mask_o]
   connect_bd_net -net wb_slave_0_wbs_led_o [get_bd_ports wbt_led_o] [get_bd_pins wb_slave_0/wbs_led_o]
   connect_bd_net -net wb_slave_0_wbs_loop_timer_o [get_bd_pins PLL_loop_0/timer] [get_bd_pins wb_slave_0/wbs_loop_timer_o]
   connect_bd_net -net wb_slave_0_wbs_pll1_syncb_o [get_bd_ports PLL1_SYNCB] [get_bd_pins wb_slave_0/wbs_pll1_syncb_o]

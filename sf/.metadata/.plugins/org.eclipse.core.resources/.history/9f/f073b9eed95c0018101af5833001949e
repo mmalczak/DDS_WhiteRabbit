@@ -131,12 +131,8 @@ void manualOffsetControl()
 			case 'j': offset-=100;break;
 			case 'm': offset+=1000;break;
 			case 'n': offset-=1000;break;
-			case 'f':
-				{
-					xil_printf("freq PLL = %d \n\r", measurePLLFreq(FREQ_COUNTER_MASK_REG));
-					xil_printf("freq DDS = %d \n\r", measureDDSFreq(FREQ_COUNTER_MASK_REG));
-				};break;
-			default: xil_printf("Wrong value\n\r");break;
+			case 'f': xil_printf("freq = %d \n\r", measurePLLFreq(FREQ_COUNTER_MASK_REG));break;
+						default: xil_printf("Wrong value\n\r");break;
 			}
 			setADCoffset(offset);
 			xil_printf("offset = %d \n\r", offset);

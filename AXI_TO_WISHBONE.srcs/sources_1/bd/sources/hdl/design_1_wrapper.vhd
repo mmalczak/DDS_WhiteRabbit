@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.1 (lin64) Build 1846317 Fri Apr 14 18:54:47 MDT 2017
---Date        : Wed May 16 16:47:05 2018
+--Date        : Mon May 21 14:17:59 2018
 --Host        : milosz-System-Product-Name running 64-bit Linux Mint 18.2 Sonya
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -94,29 +94,29 @@ architecture STRUCTURE of design_1_wrapper is
     save : in STD_LOGIC_VECTOR ( 39 downto 0 );
     CLK1_OUT_P : in STD_LOGIC_VECTOR ( 0 to 0 );
     CLK1_OUT_N : in STD_LOGIC_VECTOR ( 0 to 0 );
-    DAC_DAT_P : out STD_LOGIC_VECTOR ( 13 downto 0 );
-    DAC_DAT_N : out STD_LOGIC_VECTOR ( 13 downto 0 );
-    wbt_led_o : out STD_LOGIC_VECTOR ( 1 downto 0 );
     CLK0_OUT_P : in STD_LOGIC_VECTOR ( 0 to 0 );
     CLK0_OUT_N : in STD_LOGIC_VECTOR ( 0 to 0 );
     CLK2_OUT_P : in STD_LOGIC_VECTOR ( 0 to 0 );
     CLK2_OUT_N : in STD_LOGIC_VECTOR ( 0 to 0 );
-    PLL1_SYNCB : out STD_LOGIC_VECTOR ( 0 to 0 );
     przycisk : in STD_LOGIC;
     led : out STD_LOGIC;
-    spi_sclk_ad95xx_o : out STD_LOGIC;
     PD_CLK : out STD_LOGIC;
-    spi_mosi_ad95xx_o : out STD_LOGIC;
+    spi_sclk_ad95xx_o : out STD_LOGIC;
     PD_DATA : out STD_LOGIC;
+    spi_mosi_ad95xx_o : out STD_LOGIC;
     spi_miso_i_1 : in STD_LOGIC;
+    spi_miso_i : in STD_LOGIC;
+    wbt_spi_adc_cnv_o : out STD_LOGIC;
+    wbt_spi_adc_sdi_o : out STD_LOGIC;
+    spi_sclk_o : out STD_LOGIC;
+    wbt_led_o : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    PLL1_SYNCB : out STD_LOGIC_VECTOR ( 0 to 0 );
     wbt_spi_cs_ad9516_o : out STD_LOGIC;
     wbt_spi_cs_ad9510_o : out STD_LOGIC;
     wbt_adf4002_le_o : out STD_LOGIC;
     wbt_pll2_reset_n_o : out STD_LOGIC;
-    spi_miso_i : in STD_LOGIC;
-    wbt_spi_adc_cnv_o : out STD_LOGIC;
-    wbt_spi_adc_sdi_o : out STD_LOGIC;
-    spi_sclk_o : out STD_LOGIC
+    DAC_DAT_P : out STD_LOGIC_VECTOR ( 13 downto 0 );
+    DAC_DAT_N : out STD_LOGIC_VECTOR ( 13 downto 0 )
   );
   end component design_1;
 begin

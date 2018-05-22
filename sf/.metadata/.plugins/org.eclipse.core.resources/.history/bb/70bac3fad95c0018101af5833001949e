@@ -133,8 +133,8 @@ void manualOffsetControl()
 			case 'n': offset-=1000;break;
 			case 'f':
 				{
-					xil_printf("freq PLL = %d \n\r", measurePLLFreq(FREQ_COUNTER_MASK_REG));
-					xil_printf("freq DDS = %d \n\r", measureDDSFreq(FREQ_COUNTER_MASK_REG));
+					xil_printf("freq = %d \n\r", measurePLLFreq(FREQ_COUNTER_MASK_REG));
+					xil_printf("freq = %d \n\r", measurePLLFreq(FREQ_COUNTER_MASK_REG));
 				};break;
 			default: xil_printf("Wrong value\n\r");break;
 			}

@@ -80,15 +80,6 @@ u32 measurePLLFreq(u32 freqCounterMaskReg)
 	freq = freq/((double)freqCounterMaskReg);
 	return (u32)(freq);
 }
-u32 measureDDSFreq(u32 freqCounterMaskReg)
-{
-	u32 countsPLL=Xil_In32(WBS_REG_DDS_FREQ);  // number of counts of PLL clock
-	double freq = (double)countsPLL*50000000;  // number of counts of reference clock
-											   // output is given with freq = ((countsPLL)/freqCounterMaskReg)*50000000
-
-	freq = freq/((double)freqCounterMaskReg);
-	return (u32)(freq);
-}
 void setReferencePLLCounter(u8 div)
 {
 	//divide freq by 2^div
@@ -131,12 +122,8 @@ void manualOffsetControl()
 			case 'j': offset-=100;break;
 			case 'm': offset+=1000;break;
 			case 'n': offset-=1000;break;
-			case 'f':
-				{
-					xil_printf("freq PLL = %d \n\r", measurePLLFreq(FREQ_COUNTER_MASK_REG));
-					xil_printf("freq DDS = %d \n\r", measureDDSFreq(FREQ_COUNTER_MASK_REG));
-				};break;
-			default: xil_printf("Wrong value\n\r");break;
+			case 'f': xil_printf("freq = %d \n\r", measurePLLFreq(FREQ_COUNTER_MASK_REG));break;
+						default: xil_printf("Wrong value\n\r");break;
 			}
 			setADCoffset(offset);
 			xil_printf("offset = %d \n\r", offset);

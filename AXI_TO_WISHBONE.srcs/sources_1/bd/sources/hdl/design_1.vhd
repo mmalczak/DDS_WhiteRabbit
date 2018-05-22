@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.1 (lin64) Build 1846317 Fri Apr 14 18:54:47 MDT 2017
---Date        : Wed May 16 16:47:05 2018
+--Date        : Mon May 21 14:17:59 2018
 --Host        : milosz-System-Product-Name running 64-bit Linux Mint 18.2 Sonya
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -629,7 +629,7 @@ entity design_1 is
     wbt_spi_cs_ad9516_o : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=17,numReposBlks=15,numNonXlnxBlks=6,numHierBlks=2,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=6,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=1,da_clkrst_cnt=1,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=18,numReposBlks=16,numNonXlnxBlks=7,numHierBlks=2,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=7,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=1,da_clkrst_cnt=1,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
@@ -726,40 +726,6 @@ architecture STRUCTURE of design_1 is
     dout : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component design_1_xlconstant_0_0;
-  component design_1_axil2wb_0_0 is
-  port (
-    S_AXI_ACLK : in STD_LOGIC;
-    S_AXI_ARESETN : in STD_LOGIC;
-    S_AXI_AWADDR : in STD_LOGIC_VECTOR ( 14 downto 0 );
-    S_AXI_AWVALID : in STD_LOGIC;
-    S_AXI_AWREADY : out STD_LOGIC;
-    S_AXI_WDATA : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    S_AXI_WSTRB : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    S_AXI_WVALID : in STD_LOGIC;
-    S_AXI_WREADY : out STD_LOGIC;
-    S_AXI_ARADDR : in STD_LOGIC_VECTOR ( 14 downto 0 );
-    S_AXI_ARVALID : in STD_LOGIC;
-    S_AXI_ARREADY : out STD_LOGIC;
-    S_AXI_RDATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    S_AXI_RRESP : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    S_AXI_RVALID : out STD_LOGIC;
-    S_AXI_RREADY : in STD_LOGIC;
-    S_AXI_BRESP : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    S_AXI_BVALID : out STD_LOGIC;
-    S_AXI_BREADY : in STD_LOGIC;
-    wb_clk_o : out STD_LOGIC;
-    wb_rst_o : out STD_LOGIC;
-    wb_addr_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    wb_dat_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    wb_we_o : out STD_LOGIC;
-    wb_sel_o : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    wb_stb_o : out STD_LOGIC;
-    wb_cyc_o : out STD_LOGIC;
-    wb_dat_i : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    wb_err_i : in STD_LOGIC;
-    wb_ack_i : in STD_LOGIC
-  );
-  end component design_1_axil2wb_0_0;
   component design_1_util_ds_buf_0_0 is
   port (
     IBUF_DS_P : in STD_LOGIC_VECTOR ( 17 downto 0 );
@@ -767,13 +733,6 @@ architecture STRUCTURE of design_1 is
     IBUF_OUT : out STD_LOGIC_VECTOR ( 17 downto 0 )
   );
   end component design_1_util_ds_buf_0_0;
-  component design_1_do_nothing_0_0 is
-  port (
-    s_lvds : in STD_LOGIC_VECTOR ( 17 downto 0 );
-    s_mo : in STD_LOGIC_VECTOR ( 39 downto 0 );
-    s_out : out STD_LOGIC_VECTOR ( 57 downto 0 )
-  );
-  end component design_1_do_nothing_0_0;
   component design_1_util_ds_buf_1_0 is
   port (
     IBUF_DS_P : in STD_LOGIC_VECTOR ( 0 to 0 );
@@ -866,6 +825,47 @@ architecture STRUCTURE of design_1 is
     dout_dds_N : out STD_LOGIC_VECTOR ( 13 downto 0 )
   );
   end component design_1_PLL_loop_0_0;
+  component design_1_axil2wb_0_0 is
+  port (
+    S_AXI_ACLK : in STD_LOGIC;
+    S_AXI_ARESETN : in STD_LOGIC;
+    S_AXI_AWADDR : in STD_LOGIC_VECTOR ( 14 downto 0 );
+    S_AXI_AWVALID : in STD_LOGIC;
+    S_AXI_AWREADY : out STD_LOGIC;
+    S_AXI_WDATA : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    S_AXI_WSTRB : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    S_AXI_WVALID : in STD_LOGIC;
+    S_AXI_WREADY : out STD_LOGIC;
+    S_AXI_ARADDR : in STD_LOGIC_VECTOR ( 14 downto 0 );
+    S_AXI_ARVALID : in STD_LOGIC;
+    S_AXI_ARREADY : out STD_LOGIC;
+    S_AXI_RDATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    S_AXI_RRESP : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    S_AXI_RVALID : out STD_LOGIC;
+    S_AXI_RREADY : in STD_LOGIC;
+    S_AXI_BRESP : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    S_AXI_BVALID : out STD_LOGIC;
+    S_AXI_BREADY : in STD_LOGIC;
+    wb_clk_o : out STD_LOGIC;
+    wb_rst_o : out STD_LOGIC;
+    wb_addr_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    wb_dat_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    wb_we_o : out STD_LOGIC;
+    wb_sel_o : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    wb_stb_o : out STD_LOGIC;
+    wb_cyc_o : out STD_LOGIC;
+    wb_dat_i : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    wb_err_i : in STD_LOGIC;
+    wb_ack_i : in STD_LOGIC
+  );
+  end component design_1_axil2wb_0_0;
+  component design_1_do_nothing_0_0 is
+  port (
+    s_lvds : in STD_LOGIC_VECTOR ( 17 downto 0 );
+    s_mo : in STD_LOGIC_VECTOR ( 39 downto 0 );
+    s_out : out STD_LOGIC_VECTOR ( 57 downto 0 )
+  );
+  end component design_1_do_nothing_0_0;
   component design_1_freq_high_measure_0_0 is
   port (
     clk : in STD_LOGIC;
@@ -875,6 +875,15 @@ architecture STRUCTURE of design_1 is
     counts_pll : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   end component design_1_freq_high_measure_0_0;
+  component design_1_freq_high_measure_0_1 is
+  port (
+    clk : in STD_LOGIC;
+    res : in STD_LOGIC;
+    pll_meas : in STD_LOGIC;
+    counter_mask : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    counts_pll : out STD_LOGIC_VECTOR ( 31 downto 0 )
+  );
+  end component design_1_freq_high_measure_0_1;
   signal CLK0_OUT_IBUF_OUT : STD_LOGIC_VECTOR ( 0 to 0 );
   signal CLK1_OUT_IBUF_OUT : STD_LOGIC_VECTOR ( 0 to 0 );
   signal CLK2_out_IBUF_OUT : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -900,6 +909,7 @@ architecture STRUCTURE of design_1 is
   signal axil2wb_0_wb_stb_o : STD_LOGIC;
   signal axil2wb_0_wb_we_o : STD_LOGIC;
   signal freq_high_measure_0_counts_pll : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal freq_high_measure_1_counts_pll : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal processing_system7_0_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal processing_system7_0_DDR_BA : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal processing_system7_0_DDR_CAS_N : STD_LOGIC;
@@ -1129,6 +1139,14 @@ freq_high_measure_0: component design_1_freq_high_measure_0_0
       pll_meas => CLK2_out_IBUF_OUT(0),
       res => processing_system7_0_FCLK_RESET0_N
     );
+freq_high_measure_1: component design_1_freq_high_measure_0_1
+     port map (
+      clk => processing_system7_0_FCLK_CLK0,
+      counter_mask(31 downto 0) => wb_slave_0_wbs_cnt_mask_o(31 downto 0),
+      counts_pll(31 downto 0) => freq_high_measure_1_counts_pll(31 downto 0),
+      pll_meas => CLK0_OUT_IBUF_OUT(0),
+      res => processing_system7_0_FCLK_RESET0_N
+    );
 processing_system7_0: component design_1_processing_system7_0_0
      port map (
       DDR_Addr(14 downto 0) => DDR_addr(14 downto 0),
@@ -1314,7 +1332,7 @@ wb_slave_0: component design_1_wb_slave_0_0
       wbs_adc_offset_o(15 downto 0) => wb_slave_0_wbs_adc_offset_o(15 downto 0),
       wbs_adf4002_le_o => wb_slave_0_wbs_adf4002_le_o,
       wbs_cnt_mask_o(31 downto 0) => wb_slave_0_wbs_cnt_mask_o(31 downto 0),
-      wbs_dds_freq_i(31 downto 0) => B"00000000000000000000000000000000",
+      wbs_dds_freq_i(31 downto 0) => freq_high_measure_1_counts_pll(31 downto 0),
       wbs_led_o(1 downto 0) => wb_slave_0_wbs_led_o(1 downto 0),
       wbs_loop_timer_o(15 downto 0) => wb_slave_0_wbs_loop_timer_o(15 downto 0),
       wbs_pll1_syncb_o => wb_slave_0_wbs_pll1_syncb_o,

@@ -15681,3 +15681,1566 @@ make pre-build main-build
 a9-linaro-pre-build-step
  
 make: Nothing to be done for 'main-build'.
+14:01:39 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:07:26 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:13:46 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:30:44 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:36:19 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:44:13 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:34:39 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+18:24:54 **** Build of project axi_to_wb_bsp ****
+make -k all 
+Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_3/src
+make -C ps7_cortexa9_0/libsrc/qspips_v3_3/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_3/src
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_3/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_2/src
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_2/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/standalone_v6_2/src
+make -C ps7_cortexa9_0/libsrc/standalone_v6_2/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_4/src
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_4/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/ttcps_v3_3/src
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_3/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_4/src
+make -C ps7_cortexa9_0/libsrc/emacps_v3_4/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_2/src
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_4/src
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_4/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_2/src
+make -C ps7_cortexa9_0/libsrc/sdps_v3_2/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/iicps_v3_5/src
+make -C ps7_cortexa9_0/libsrc/iicps_v3_5/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/scugic_v3_6/src
+make -C ps7_cortexa9_0/libsrc/scugic_v3_6/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_4/src
+make -C ps7_cortexa9_0/libsrc/uartps_v3_4/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_4/src
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_3/src
+make -C ps7_cortexa9_0/libsrc/qspips_v3_3/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Compiling qspips
+Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_3/src
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_3/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Compiling dmaps
+Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Compiling ddrps
+Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_2/src
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_2/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Compiling gpiops
+Running Make libs in ps7_cortexa9_0/libsrc/standalone_v6_2/src
+make -C ps7_cortexa9_0/libsrc/standalone_v6_2/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Compiling standalone
+Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_4/src
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_4/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Compiling cpu_cortexa9
+Running Make libs in ps7_cortexa9_0/libsrc/ttcps_v3_3/src
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_3/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Compiling ttcps
+Running Make libs in ps7_cortexa9_0/libsrc/emacps_v3_4/src
+make -C ps7_cortexa9_0/libsrc/emacps_v3_4/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Compiling emacps
+Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_2/src
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Compiling xadcps
+Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_4/src
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_4/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Compiling devcfg
+Running Make libs in ps7_cortexa9_0/libsrc/sdps_v3_2/src
+make -C ps7_cortexa9_0/libsrc/sdps_v3_2/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Compiling sdps
+Running Make libs in ps7_cortexa9_0/libsrc/iicps_v3_5/src
+make -C ps7_cortexa9_0/libsrc/iicps_v3_5/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Compiling iicps
+Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Compiling scuwdt
+Running Make libs in ps7_cortexa9_0/libsrc/scugic_v3_6/src
+make -C ps7_cortexa9_0/libsrc/scugic_v3_6/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Compiling scugic
+xscugic_g.c:53:2: warning: missing initializer for field 'HandlerTable' of 'XScuGic_Config {aka struct <anonymous>}' [-Wmissing-field-initializers]
+  }
+  ^
+In file included from xscugic_g.c:41:0:
+xscugic.h:217:27: note: 'HandlerTable' declared here
+  XScuGic_VectorTableEntry HandlerTable[XSCUGIC_MAX_NUM_INTR_INPUTS];/**<
+                           ^~~~~~~~~~~~
+Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_4/src
+make -C ps7_cortexa9_0/libsrc/uartps_v3_4/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Compiling uartps
+Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_4/src
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Compiling usbps
+Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Compiling coresightps_dcc
+Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Compiling scutimer
+Finished building libraries
+18:25:02 **** Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_general.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_general.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_general.d" -MT"src/spi_general.o" -o "src/spi_general.o" "../src/spi_general.c"
+../src/spi_general.c: In function 'spi_send_data':
+../src/spi_general.c:256:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_general.c:255:5: warning: unused variable 'data_pointer' [-Wunused-variable]
+  u8 data_pointer[1] = {data};
+     ^~~~~~~~~~~~
+../src/spi_general.c: In function 'spi_read_data':
+../src/spi_general.c:265:5: warning: unused variable 'data_pointer' [-Wunused-variable]
+  u8 data_pointer[1] = {data};
+     ^~~~~~~~~~~~
+Finished building: ../src/spi_general.c
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:244:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36104	   2188	2030248	2068540	 1f903c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+18:38:06 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+18:44:22 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:275:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36440	   2188	2030248	2068876	 1f918c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+18:44:28 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:275:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36440	   2188	2030248	2068876	 1f918c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+18:44:31 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+18:45:15 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+18:46:24 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:275:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36440	   2188	2030248	2068876	 1f918c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+18:46:25 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+18:47:13 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:275:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36440	   2188	2030248	2068876	 1f918c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+18:51:30 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:275:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36440	   2188	2030248	2068876	 1f918c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+18:52:07 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_general.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_general.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_general.d" -MT"src/spi_general.o" -o "src/spi_general.o" "../src/spi_general.c"
+../src/spi_general.c: In function 'spi_send_data':
+../src/spi_general.c:257:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_general.c:256:5: warning: unused variable 'data_pointer' [-Wunused-variable]
+  u8 data_pointer[1] = {data};
+     ^~~~~~~~~~~~
+../src/spi_general.c: In function 'spi_read_data':
+../src/spi_general.c:266:5: warning: unused variable 'data_pointer' [-Wunused-variable]
+  u8 data_pointer[1] = {data};
+     ^~~~~~~~~~~~
+Finished building: ../src/spi_general.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36440	   2188	2030248	2068876	 1f918c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+18:52:09 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_general.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_general.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_general.d" -MT"src/spi_general.o" -o "src/spi_general.o" "../src/spi_general.c"
+../src/spi_general.c: In function 'spi_send_data':
+../src/spi_general.c:257:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_general.c:256:5: warning: unused variable 'data_pointer' [-Wunused-variable]
+  u8 data_pointer[1] = {data};
+     ^~~~~~~~~~~~
+../src/spi_general.c: In function 'spi_read_data':
+../src/spi_general.c:266:5: warning: unused variable 'data_pointer' [-Wunused-variable]
+  u8 data_pointer[1] = {data};
+     ^~~~~~~~~~~~
+Finished building: ../src/spi_general.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36440	   2188	2030248	2068876	 1f918c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+18:52:42 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+19:00:50 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_general.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_general.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_general.d" -MT"src/spi_general.o" -o "src/spi_general.o" "../src/spi_general.c"
+../src/spi_general.c: In function 'spi_send_data':
+../src/spi_general.c:256:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_general.c:255:5: warning: unused variable 'data_pointer' [-Wunused-variable]
+  u8 data_pointer[1] = {data};
+     ^~~~~~~~~~~~
+../src/spi_general.c: In function 'spi_read_data':
+../src/spi_general.c:265:5: warning: unused variable 'data_pointer' [-Wunused-variable]
+  u8 data_pointer[1] = {data};
+     ^~~~~~~~~~~~
+Finished building: ../src/spi_general.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36440	   2188	2030248	2068876	 1f918c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+15:41:39 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+16:18:53 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+16:27:35 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:40:35 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:275:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36440	   2188	2030248	2068876	 1f918c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+14:40:36 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:06:42 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:14:15 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:31:14 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+16:06:46 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+11:17:14 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+12:58:19 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:17:32 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:34:20 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:51:44 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+12:30:29 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+13:42:39 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:10:16 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:10:23 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:10:32 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:14:51 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:275:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36376	   2188	2030248	2068812	 1f914c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+14:14:53 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:15:13 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:275:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36376	   2188	2030248	2068812	 1f914c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+14:17:22 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:275:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36376	   2188	2030248	2068812	 1f914c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+14:18:22 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:275:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36440	   2188	2030248	2068876	 1f918c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+14:20:37 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'manualDelayControl':
+../src/spi_mine.c:150:13: error: invalid suffix "b" on integer constant
+  u8 delay = 0b;
+             ^~
+../src/spi_mine.c:151:11: error: invalid suffix "b" on integer constant
+  u8 cap = 0b;;
+           ^~
+../src/spi_mine.c:152:15: error: invalid suffix "b" on integer constant
+  u8 current = 0b;
+               ^~
+../src/spi_mine.c:152:5: warning: unused variable 'current' [-Wunused-variable]
+  u8 current = 0b;
+     ^~~~~~~
+../src/spi_mine.c:151:5: warning: unused variable 'cap' [-Wunused-variable]
+  u8 cap = 0b;;
+     ^~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:277:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+src/subdir.mk:30: recipe for target 'src/spi_mine.o' failed
+make: *** [src/spi_mine.o] Error 1
+14:20:51 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'manualDelayControl':
+../src/spi_mine.c:150:13: error: invalid suffix "b" on integer constant
+  u8 delay = 0b;
+             ^~
+../src/spi_mine.c:151:11: error: invalid suffix "b" on integer constant
+src/subdir.mk:30: recipe for target 'src/spi_mine.o' failed
+  u8 cap = 0b;
+           ^~
+../src/spi_mine.c:152:15: error: invalid suffix "b" on integer constant
+  u8 current = 0b;
+               ^~
+../src/spi_mine.c:152:5: warning: unused variable 'current' [-Wunused-variable]
+  u8 current = 0b;
+     ^~~~~~~
+../src/spi_mine.c:151:5: warning: unused variable 'cap' [-Wunused-variable]
+  u8 cap = 0b;
+     ^~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:277:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+make: *** [src/spi_mine.o] Error 1
+14:21:11 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'manualDelayControl':
+../src/spi_mine.c:152:5: warning: unused variable 'current' [-Wunused-variable]
+  u8 current = 0;
+     ^~~~~~~
+../src/spi_mine.c:151:5: warning: unused variable 'cap' [-Wunused-variable]
+  u8 cap = 0;
+     ^~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:277:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36440	   2188	2030248	2068876	 1f918c	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+14:24:30 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'manualDelayControl':
+../src/spi_mine.c:164:19: error: expected ';' before numeric constant
+    case 'u': cap--0;break;
+                   ^
+../src/spi_mine.c:173:33: error: expected ')' before ';' token
+    spi_send_data(0x00A1, cap_cur;, SPI_CS_AD9516_SEL);
+                                 ^
+../src/spi_mine.c:173:4: error: too few arguments to function 'spi_send_data'
+    spi_send_data(0x00A1, cap_cur;, SPI_CS_AD9516_SEL);
+    ^~~~~~~~~~~~~
+In file included from ../src/spi_mine.c:8:0:
+../src/spi_general.h:102:5: note: declared here
+ int spi_send_data(u16 address, u8 data, u8 device);
+     ^~~~~~~~~~~~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:281:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+make: *** [src/spi_mine.o] Error 1
+src/subdir.mk:30: recipe for target 'src/spi_mine.o' failed
+14:24:36 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'manualDelayControl':
+../src/spi_mine.c:173:33: error: expected ')' before ';' token
+    spi_send_data(0x00A1, cap_cur;, SPI_CS_AD9516_SEL);
+                                 ^
+../src/spi_mine.c:173:4: error: too few arguments to function 'spi_send_data'
+    spi_send_data(0x00A1, cap_cur;, SPI_CS_AD9516_SEL);
+    ^~~~~~~~~~~~~
+In file included from ../src/spi_mine.c:8:0:
+../src/spi_general.h:102:5: note: declared here
+ int spi_send_data(u16 address, u8 data, u8 device);
+     ^~~~~~~~~~~~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:281:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+make: *** [src/spi_mine.o] Error 1
+src/subdir.mk:30: recipe for target 'src/spi_mine.o' failed
+14:24:42 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:281:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36504	   2188	2030248	2068940	 1f91cc	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+14:24:45 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:24:55 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:28:06 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'manualDelayControl':
+../src/spi_mine.c:180:36: error: 'cap_current' undeclared (first use in this function)
+    xil_printf("cap_cur = %d \n\r", cap_current);
+                                    ^~~~~~~~~~~
+../src/spi_mine.c:180:36: note: each undeclared identifier is reported only once for each function it appears in
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:285:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+make: *** [src/spi_mine.o] Error 1
+src/subdir.mk:30: recipe for target 'src/spi_mine.o' failed
+14:28:08 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'manualDelayControl':
+../src/spi_mine.c:180:36: error: 'cap_current' undeclared (first use in this function)
+    xil_printf("cap_cur = %d \n\r", cap_current);
+                                    ^~~~~~~~~~~
+../src/spi_mine.c:180:36: note: each undeclared identifier is reported only once for each function it appears in
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:285:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+make: *** [src/spi_mine.o] Error 1
+src/subdir.mk:30: recipe for target 'src/spi_mine.o' failed
+14:28:18 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:285:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36608	   2188	2030248	2069044	 1f9234	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+14:28:19 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:29:23 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'manualDelayControl':
+../src/spi_mine.c:165:14: error: 'current' undeclared (first use in this function)
+    case 'k': current++;break;
+              ^~~~~~~
+../src/spi_mine.c:165:14: note: each undeclared identifier is reported only once for each function it appears in
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:285:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+src/subdir.mk:30: recipe for target 'src/spi_mine.o' failed
+make: *** [src/spi_mine.o] Error 1
+14:29:47 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:285:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36608	   2188	2030248	2069044	 1f9234	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+14:29:48 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:30:06 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:285:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36608	   2188	2030248	2069044	 1f9234	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+14:30:08 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:31:23 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:285:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36608	   2188	2030248	2069044	 1f9234	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+14:31:24 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+14:32:44 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:285:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36608	   2188	2030248	2069044	 1f9234	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+14:49:19 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:285:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36608	   2188	2030248	2069044	 1f9234	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+15:14:19 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:14:43 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:17:39 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:285:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36608	   2188	2030248	2069044	 1f9234	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+15:17:40 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:20:26 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:285:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36608	   2188	2030248	2069044	 1f9234	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+15:20:30 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:285:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36608	   2188	2030248	2069044	 1f9234	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+15:20:33 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:285:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36608	   2188	2030248	2069044	 1f9234	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+15:22:21 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:285:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36608	   2188	2030248	2069044	 1f9234	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+15:24:11 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:24:51 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_mine.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_mine.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_mine.d" -MT"src/spi_mine.o" -o "src/spi_mine.o" "../src/spi_mine.c"
+../src/spi_mine.c: In function 'led_on':
+../src/spi_mine.c:40:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  u32 a;
+      ^
+../src/spi_mine.c: In function 'manualOffsetControl':
+../src/spi_mine.c:121:5: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+   c=getchar();
+     ^~~~~~~
+../src/spi_mine.c: In function 'main':
+../src/spi_mine.c:285:6: warning: unused variable 'freqDACSet' [-Wunused-variable]
+  u32 freqDACSet=25000000;
+      ^~~~~~~~~~
+Finished building: ../src/spi_mine.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36608	   2188	2030248	2069044	 1f9234	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+15:24:51 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:43:05 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:53:46 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:57:02 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_general.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_general.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_general.d" -MT"src/spi_general.o" -o "src/spi_general.o" "../src/spi_general.c"
+../src/spi_general.c: In function 'spi_send_data':
+../src/spi_general.c:256:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_general.c:255:5: warning: unused variable 'data_pointer' [-Wunused-variable]
+  u8 data_pointer[1] = {data};
+     ^~~~~~~~~~~~
+../src/spi_general.c: In function 'spi_read_data':
+../src/spi_general.c:265:5: warning: unused variable 'data_pointer' [-Wunused-variable]
+  u8 data_pointer[1] = {data};
+     ^~~~~~~~~~~~
+Finished building: ../src/spi_general.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36608	   2188	2030248	2069044	 1f9234	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+15:57:03 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+15:58:05 **** Auto Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_general.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_general.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_general.d" -MT"src/spi_general.o" -o "src/spi_general.o" "../src/spi_general.c"
+../src/spi_general.c: In function 'spi_send_data':
+../src/spi_general.c:256:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_general.c:255:5: warning: unused variable 'data_pointer' [-Wunused-variable]
+  u8 data_pointer[1] = {data};
+     ^~~~~~~~~~~~
+../src/spi_general.c: In function 'spi_read_data':
+../src/spi_general.c:265:5: warning: unused variable 'data_pointer' [-Wunused-variable]
+  u8 data_pointer[1] = {data};
+     ^~~~~~~~~~~~
+Finished building: ../src/spi_general.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36608	   2188	2030248	2069044	 1f9234	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+16:05:17 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+16:06:26 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/spi_general.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/sf/axi_to_wb/include -c -fmessage-length=0 -MT"src/spi_general.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../axi_to_wb_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_general.d" -MT"src/spi_general.o" -o "src/spi_general.o" "../src/spi_general.c"
+../src/spi_general.c: In function 'spi_send_data':
+../src/spi_general.c:256:5: warning: unused variable 'data_read' [-Wunused-variable]
+  u8 data_read[3];
+     ^~~~~~~~~
+../src/spi_general.c:255:5: warning: unused variable 'data_pointer' [-Wunused-variable]
+  u8 data_pointer[1] = {data};
+     ^~~~~~~~~~~~
+../src/spi_general.c: In function 'spi_read_data':
+../src/spi_general.c:265:5: warning: unused variable 'data_pointer' [-Wunused-variable]
+  u8 data_pointer[1] = {data};
+     ^~~~~~~~~~~~
+Finished building: ../src/spi_general.c
+ 
+Building target: axi_to_wb.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../axi_to_wb_bsp/ps7_cortexa9_0/lib -o "axi_to_wb.elf"  ./src/axi_to_wb.o ./src/spi_ADC.o ./src/spi_general.o ./src/spi_mine.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: axi_to_wb.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size axi_to_wb.elf  |tee "axi_to_wb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36608	   2188	2030248	2069044	 1f9234	axi_to_wb.elf
+Finished building: axi_to_wb.elf.size
+ 
+16:06:47 **** Incremental Build of configuration Debug for project axi_to_wb ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.

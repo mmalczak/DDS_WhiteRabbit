@@ -6,6 +6,7 @@ entity DDS is
 	clk : in std_logic;
 	freq : in std_logic_vector(27 downto 0);
 	douta : out std_logic_vector(13 downto 0)
+
 );
 end DDS;
 
@@ -18,6 +19,7 @@ signal step_s : std_logic_vector(27 downto 0);
 
 signal addra_s : std_logic_vector(9 downto 0);
 signal douta_s : std_logic_vector(13 downto 0);
+signal douta_mem_s : std_logic_vector(13 downto 0);
 
 
 component counter_DAC is
@@ -41,6 +43,7 @@ counter : counter_DAC
 port map(
     clk => clk_s,
     step => step_s,
+--    step => "0001000000000000000000000000",
     dac_sierra => addra_s 
 );
 
@@ -48,14 +51,20 @@ memory : blk_mem_gen_0
 port map(
     clka => clk_s,
     addra => addra_s,
-    douta => douta_s
+    douta => douta_mem_s
 );
 
 -- entity inputs
 clk_s <= clk;
 step_s <= freq; --freq is almost the same as the step
 --entity outputs
-douta <= douta_s;
 
+process(clk)
+begin
+    if(clk'event and clk='1')then
+        douta_s <= douta_mem_s;
+        douta <= douta_s;
+    end if;
+end process;
 
 end Behavioral;

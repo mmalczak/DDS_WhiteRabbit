@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.1 (lin64) Build 1846317 Fri Apr 14 18:54:47 MDT 2017
---Date        : Tue May 22 17:42:25 2018
+--Date        : Wed Jun  6 14:49:32 2018
 --Host        : milosz-System-Product-Name running 64-bit Linux Mint 18.2 Sonya
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -628,10 +628,10 @@ entity design_1 is
     wbt_spi_cs_ad9510_o : out STD_LOGIC;
     wbt_spi_cs_ad9516_o : out STD_LOGIC
   );
-  attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=18,numReposBlks=16,numNonXlnxBlks=7,numHierBlks=2,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=7,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=1,da_clkrst_cnt=1,synth_mode=Global}";
-  attribute HW_HANDOFF : string;
-  attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
+  attribute core_generation_info : string;
+  attribute core_generation_info of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=18,numReposBlks=16,numNonXlnxBlks=7,numHierBlks=2,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=7,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=1,da_clkrst_cnt=1,synth_mode=Global}";
+  attribute hw_handoff : string;
+  attribute hw_handoff of design_1 : entity is "design_1.hwdef";
 end design_1;
 
 architecture STRUCTURE of design_1 is
@@ -849,23 +849,6 @@ architecture STRUCTURE of design_1 is
     s_out : out STD_LOGIC_VECTOR ( 57 downto 0 )
   );
   end component design_1_do_nothing_0_0;
-  component design_1_PLL_loop_0_0 is
-  port (
-    clk_50 : in STD_LOGIC;
-    clk_dds : in STD_LOGIC;
-    res : in STD_LOGIC;
-    x0 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    x1 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    spi_miso_i : in STD_LOGIC;
-    adc_offset : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    timer : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    cnv : out STD_LOGIC;
-    sdi : out STD_LOGIC;
-    spi_sclk_o : out STD_LOGIC;
-    dout_dds_P : out STD_LOGIC_VECTOR ( 13 downto 0 );
-    dout_dds_N : out STD_LOGIC_VECTOR ( 13 downto 0 )
-  );
-  end component design_1_PLL_loop_0_0;
   component design_1_freq_high_measure_0_0 is
   port (
     clk : in STD_LOGIC;
@@ -884,6 +867,23 @@ architecture STRUCTURE of design_1 is
     counts_pll : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   end component design_1_freq_high_measure_0_1;
+  component design_1_PLL_loop_0_0 is
+  port (
+    clk_50 : in STD_LOGIC;
+    clk_dds : in STD_LOGIC;
+    res : in STD_LOGIC;
+    x0 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    x1 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    spi_miso_i : in STD_LOGIC;
+    adc_offset : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    timer : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    cnv : out STD_LOGIC;
+    sdi : out STD_LOGIC;
+    spi_sclk_o : out STD_LOGIC;
+    dout_dds_P : out STD_LOGIC_VECTOR ( 13 downto 0 );
+    dout_dds_N : out STD_LOGIC_VECTOR ( 13 downto 0 )
+  );
+  end component design_1_PLL_loop_0_0;
   signal CLK0_OUT_IBUF_OUT : STD_LOGIC_VECTOR ( 0 to 0 );
   signal CLK1_OUT_IBUF_OUT : STD_LOGIC_VECTOR ( 0 to 0 );
   signal CLK2_out_IBUF_OUT : STD_LOGIC_VECTOR ( 0 to 0 );

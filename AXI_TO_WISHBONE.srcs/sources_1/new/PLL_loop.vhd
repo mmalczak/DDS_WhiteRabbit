@@ -34,7 +34,7 @@ architecture Behavioral of PLL_loop is
 --component ila_0
 --PORT (
 --	clk : IN STD_LOGIC;
---	probe0 : IN STD_LOGIC_VECTOR(16 DOWNTO 0)
+--	probe0 : IN STD_LOGIC_VECTOR(13 DOWNTO 0)
 --);
 --end component;
 
@@ -159,6 +159,9 @@ begin
 		douta => dout_dds_s 
 	);
 
+
+
+
 	DDS_out_port_gen:
 	for J in 0 to 13 generate
 	OBUFDS_inst : OBUFDS
@@ -175,8 +178,8 @@ begin
 
 --	PROBE : ila_0
 --	port map(
---		clk => clk_50_s,
---		probe0 => err_s_test_s
+--		clk => clk_dds,
+--		probe0 => dout_dds_s
 --	);
 
 
@@ -202,6 +205,7 @@ end process;
 
 --dds
 clk_dds_s <= clk_dds;
+
 dout_dds_P <= dout_dds_P_s;
 dout_dds_N <= dout_dds_N_s;
 

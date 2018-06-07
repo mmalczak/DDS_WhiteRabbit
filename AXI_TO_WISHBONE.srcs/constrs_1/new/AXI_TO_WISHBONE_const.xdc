@@ -13,8 +13,11 @@ set_property IOSTANDARD LVDS_25 [get_ports {CLK0_OUT_P[0]}]
 set_property IOSTANDARD LVDS_25 [get_ports {CLK1_OUT_P[0]}]
 set_property IOSTANDARD LVDS_25 [get_ports {CLK2_OUT_P[0]}]
 set_property DIFF_TERM TRUE [get_ports {CLK0_OUT_P[0]}]
+#set_property DIFF_TERM TRUE [get_ports {CLK0_OUT_N[0]}]
 set_property DIFF_TERM TRUE [get_ports {CLK1_OUT_P[0]}]
+#set_property DIFF_TERM TRUE [get_ports {CLK1_OUT_N[0]}]
 set_property DIFF_TERM TRUE [get_ports {CLK2_OUT_P[0]}]
+#set_property DIFF_TERM TRUE [get_ports {CLK2_OUT_N[0]}]
 set_property PACKAGE_PIN AG17 [get_ports {CLK0_OUT_P[0]}]
 set_property PACKAGE_PIN AE13 [get_ports {CLK1_OUT_P[0]}]
 set_property PACKAGE_PIN AC28 [get_ports {CLK2_OUT_P[0]}]
@@ -64,13 +67,11 @@ set_property PACKAGE_PIN AE12 [get_ports {DAC_DAT_P[11]}]
 set_property PACKAGE_PIN AB12 [get_ports {DAC_DAT_P[12]}]
 set_property PACKAGE_PIN AF15 [get_ports {DAC_DAT_P[13]}]
 
-
-
-
-
+set_property IOB true [get_cells design_1_i/PLL_loop_0/U0/DDS_inst/douta_reg[*]]
 
 set_property IOSTANDARD LVDS_25 [get_ports {IBUF_DS_P[0]}]
 set_property DIFF_TERM TRUE [get_ports {IBUF_DS_P[0]}]
+set_property DIFF_TERM TRUE [get_ports {IBUF_DS_N[0]}]
 set_property PACKAGE_PIN AE27 [get_ports {IBUF_DS_P[0]}]
 
 
@@ -169,3 +170,12 @@ set_property PACKAGE_PIN AG30 [get_ports spi_sclk_o]
 set_property IOSTANDARD LVCMOS25 [get_ports spi_sclk_o]
 set_property PACKAGE_PIN AF30 [get_ports spi_miso_i]
 set_property IOSTANDARD LVCMOS25 [get_ports spi_miso_i]
+
+
+#set_property INCREMENTAL_SYNTHESIS
+
+#create_clock -period 4.000 -name {clk_dds} -waveform {0.000 2.000} [get_ports clk_dds]
+create_clock -period 4.000 -name {CLK1_OUT_P} -waveform {0.000 2.000} [get_ports CLK1_OUT_P]
+#create_clock -period 20.000 -name {FCLK_CLK0} -waveform {0.000 10.000} [get_ports {FCLK_CLK0}]
+#create_clock -period 80.000 -name {clk_12_5_s} -waveform {0.000 40.000} [get_ports {clk_12_5_s}]
+

@@ -225,11 +225,6 @@ proc create_root_design { parentCell } {
      return 1
    }
   
-  set_property -dict [ list \
-CONFIG.NUM_READ_OUTSTANDING {1} \
-CONFIG.NUM_WRITE_OUTSTANDING {1} \
- ] [get_bd_intf_pins /axil2wb_0/S_AXI]
-
   # Create instance: do_nothing_0, and set properties
   set block_name do_nothing
   set block_cell_name do_nothing_0

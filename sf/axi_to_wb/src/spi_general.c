@@ -92,7 +92,7 @@ void configure_AD9516(void)
 	spi_send_data(0x0197, 0x00, SPI_CS_AD9516_SEL);
 	spi_send_data(0x0198, 0x00, SPI_CS_AD9516_SEL);
 	spi_send_data(0x0199, 0x00, SPI_CS_AD9516_SEL);
-	spi_send_data(0x019A, 0x00, SPI_CS_AD9516_SEL);
+	spi_send_data(0x019A, 0x00, SPI_CS_AD9516_SEL);//00 ma byc //dupa
 	spi_send_data(0x019B, 0x00, SPI_CS_AD9516_SEL);
 	spi_send_data(0x019C, 0x20, SPI_CS_AD9516_SEL);
 	spi_send_data(0x019D, 0x00, SPI_CS_AD9516_SEL);

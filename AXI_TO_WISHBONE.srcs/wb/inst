@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./bin/wbgen2 -l vhdl -H signals -V regs.vhd -s defines -C ../../sf/axi_to_wb/include/my_regs.h -D my_regs.html my_regs.wb

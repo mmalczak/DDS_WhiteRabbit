@@ -56,10 +56,9 @@ USE ieee.numeric_std.ALL;
 ENTITY design_1_freq_high_measure_0_0 IS
   PORT (
     clk : IN STD_LOGIC;
-    dac_meas : IN STD_LOGIC;
+    res : IN STD_LOGIC;
     pll_meas : IN STD_LOGIC;
     counter_mask : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-    counts_dac : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     counts_pll : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
   );
 END design_1_freq_high_measure_0_0;
@@ -70,10 +69,9 @@ ARCHITECTURE design_1_freq_high_measure_0_0_arch OF design_1_freq_high_measure_0
   COMPONENT freq_high_measure IS
     PORT (
       clk : IN STD_LOGIC;
-      dac_meas : IN STD_LOGIC;
+      res : IN STD_LOGIC;
       pll_meas : IN STD_LOGIC;
       counter_mask : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-      counts_dac : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
       counts_pll : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
     );
   END COMPONENT freq_high_measure;
@@ -83,10 +81,9 @@ BEGIN
   U0 : freq_high_measure
     PORT MAP (
       clk => clk,
-      dac_meas => dac_meas,
+      res => res,
       pll_meas => pll_meas,
       counter_mask => counter_mask,
-      counts_dac => counts_dac,
       counts_pll => counts_pll
     );
 END design_1_freq_high_measure_0_0_arch;

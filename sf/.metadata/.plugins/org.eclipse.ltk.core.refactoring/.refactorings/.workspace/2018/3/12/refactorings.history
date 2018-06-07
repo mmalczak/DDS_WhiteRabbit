@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;axi_to_wb/src/spi_mine.h&apos;" deleteContents="false" description="Delete resource &apos;axi_to_wb/src/spi_mine.h&apos;" element1="/axi_to_wb/src/spi_mine.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1521639885052"/>
+</session>

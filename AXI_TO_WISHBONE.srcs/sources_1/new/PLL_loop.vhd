@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.all;
 Library UNISIM;
 use UNISIM.vcomponents.all;
-
+--
 entity PLL_loop is
   Port (   	 
 		clk_50 : in std_logic;

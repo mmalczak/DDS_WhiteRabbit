@@ -115,7 +115,7 @@ void setReferencePLLCounter(u8 div)
 void manualOffsetControl()
 {
 	char c;
-	u16 offset = 0b0110000000000000;
+	u16 offset = 29576;
 	while(1)
 	{
 		c=getchar();
@@ -299,8 +299,8 @@ int main(void)
 	setADCoffset(29576);
 	setLOOP_timer(344);
 
-	//manualOffsetControl();
-	manualDelayControl();
+	manualOffsetControl();
+	//manualDelayControl();
 	//setReferencePLLCounter(0);
 
 	//chooseDivider();

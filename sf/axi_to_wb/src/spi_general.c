@@ -280,7 +280,7 @@ void configure_ADF4002(void)
 	ADF4002_Struct.initialization_function_Latch.currentSetting2=0b111;
 	ADF4002_Struct.initialization_function_Latch.currentSetting1=0b111;
 	ADF4002_Struct.initialization_function_Latch.timerCounterControl=0b0011;
-	ADF4002_Struct.initialization_function_Latch.PD_polarity=0;
+	ADF4002_Struct.initialization_function_Latch.PD_polarity=1;
 	ADF4002_Struct.initialization_function_Latch.fastlockEnable=0;
 	ADF4002_Struct.initialization_function_Latch.fastlockMode=0;
 	ADF4002_Struct.initialization_function_Latch.MUXOUT_CONTROL=0b100;

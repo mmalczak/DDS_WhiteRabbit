@@ -82,7 +82,9 @@ ENTITY design_1_wb_slave_0_0 IS
     wbs_x0_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     wbs_x1_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     wbs_adc_offset_o : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-    wbs_loop_timer_o : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+    wbs_loop_timer_o : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+    wbs_freq_accum_on_o : OUT STD_LOGIC;
+    wbs_reset_n_o : OUT STD_LOGIC
   );
 END design_1_wb_slave_0_0;
 
@@ -118,7 +120,9 @@ ARCHITECTURE design_1_wb_slave_0_0_arch OF design_1_wb_slave_0_0 IS
       wbs_x0_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
       wbs_x1_o : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
       wbs_adc_offset_o : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-      wbs_loop_timer_o : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+      wbs_loop_timer_o : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+      wbs_freq_accum_on_o : OUT STD_LOGIC;
+      wbs_reset_n_o : OUT STD_LOGIC
     );
   END COMPONENT wb_slave;
 BEGIN
@@ -151,6 +155,8 @@ BEGIN
       wbs_x0_o => wbs_x0_o,
       wbs_x1_o => wbs_x1_o,
       wbs_adc_offset_o => wbs_adc_offset_o,
-      wbs_loop_timer_o => wbs_loop_timer_o
+      wbs_loop_timer_o => wbs_loop_timer_o,
+      wbs_freq_accum_on_o => wbs_freq_accum_on_o,
+      wbs_reset_n_o => wbs_reset_n_o
     );
 END design_1_wb_slave_0_0_arch;

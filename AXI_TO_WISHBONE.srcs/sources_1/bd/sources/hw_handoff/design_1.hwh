@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Jun 12 12:43:01 2018" VIVADOVERSION="2017.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Jun 19 11:41:23 2018" VIVADOVERSION="2017.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="xilinx.com:zc706:part0:1.4" DEVICE="7z045" NAME="design_1" PACKAGE="ffg900" SPEEDGRADE="-2"/>
 
@@ -80,22 +80,22 @@
         <CONNECTION INSTANCE="External_Ports" PORT="przycisk"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="spi_sclk_ad95xx_o" SIGIS="undef" SIGNAME="spi_master_0_spi_sclk_o">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="spi_master_0" PORT="spi_sclk_o"/>
-      </CONNECTIONS>
-    </PORT>
     <PORT DIR="O" NAME="PD_CLK" SIGIS="undef" SIGNAME="spi_master_0_spi_sclk_o">
       <CONNECTIONS>
         <CONNECTION INSTANCE="spi_master_0" PORT="spi_sclk_o"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="spi_mosi_ad95xx_o" SIGIS="undef" SIGNAME="spi_master_0_spi_mosi_o">
+    <PORT DIR="O" NAME="spi_sclk_ad95xx_o" SIGIS="undef" SIGNAME="spi_master_0_spi_sclk_o">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="spi_master_0" PORT="spi_sclk_o"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="PD_DATA" SIGIS="undef" SIGNAME="spi_master_0_spi_mosi_o">
       <CONNECTIONS>
         <CONNECTION INSTANCE="spi_master_0" PORT="spi_mosi_o"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="PD_DATA" SIGIS="undef" SIGNAME="spi_master_0_spi_mosi_o">
+    <PORT DIR="O" NAME="spi_mosi_ad95xx_o" SIGIS="undef" SIGNAME="spi_master_0_spi_mosi_o">
       <CONNECTIONS>
         <CONNECTION INSTANCE="spi_master_0" PORT="spi_mosi_o"/>
       </CONNECTIONS>
@@ -351,6 +351,11 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_RESET0_N"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" NAME="res_soft" SIGIS="undef" SIGNAME="wb_slave_0_wbs_reset_n_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="wb_slave_0" PORT="wbs_reset_n_o"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="31" NAME="x0" RIGHT="0" SIGIS="undef" SIGNAME="wb_slave_0_wbs_x0_o">
           <CONNECTIONS>
             <CONNECTION INSTANCE="wb_slave_0" PORT="wbs_x0_o"/>
@@ -359,6 +364,11 @@
         <PORT DIR="I" LEFT="31" NAME="x1" RIGHT="0" SIGIS="undef" SIGNAME="wb_slave_0_wbs_x1_o">
           <CONNECTIONS>
             <CONNECTION INSTANCE="wb_slave_0" PORT="wbs_x1_o"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="freq_accum_on" SIGIS="undef" SIGNAME="wb_slave_0_wbs_freq_accum_on_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="wb_slave_0" PORT="wbs_freq_accum_on_o"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="spi_miso_i" SIGIS="undef" SIGNAME="External_Ports_spi_miso_i">
@@ -1861,10 +1871,10 @@
             <CONNECTION INSTANCE="axil2wb_0" PORT="S_AXI_ACLK"/>
             <CONNECTION INSTANCE="freq_high_measure_0" PORT="clk"/>
             <CONNECTION INSTANCE="freq_high_measure_1" PORT="clk"/>
-            <CONNECTION INSTANCE="PLL_loop_0" PORT="clk_50"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M00_ACLK"/>
+            <CONNECTION INSTANCE="PLL_loop_0" PORT="clk_50"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
@@ -2820,14 +2830,14 @@
         <PORT DIR="O" NAME="spi_cs_n_o" SIGIS="undef"/>
         <PORT DIR="O" NAME="spi_sclk_o" SIGIS="undef" SIGNAME="spi_master_0_spi_sclk_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="PD_CLK"/>
             <CONNECTION INSTANCE="External_Ports" PORT="spi_sclk_ad95xx_o"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="PD_CLK"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="spi_mosi_o" SIGIS="undef" SIGNAME="spi_master_0_spi_mosi_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="PD_DATA"/>
             <CONNECTION INSTANCE="External_Ports" PORT="spi_mosi_ad95xx_o"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="PD_DATA"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="spi_miso_i" SIGIS="undef" SIGNAME="External_Ports_spi_miso_i_1">
@@ -3018,6 +3028,16 @@
         <PORT DIR="O" LEFT="15" NAME="wbs_loop_timer_o" RIGHT="0" SIGIS="undef" SIGNAME="wb_slave_0_wbs_loop_timer_o">
           <CONNECTIONS>
             <CONNECTION INSTANCE="PLL_loop_0" PORT="timer"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="wbs_freq_accum_on_o" SIGIS="undef" SIGNAME="wb_slave_0_wbs_freq_accum_on_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PLL_loop_0" PORT="freq_accum_on"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="wbs_reset_n_o" SIGIS="undef" SIGNAME="wb_slave_0_wbs_reset_n_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="PLL_loop_0" PORT="res_soft"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

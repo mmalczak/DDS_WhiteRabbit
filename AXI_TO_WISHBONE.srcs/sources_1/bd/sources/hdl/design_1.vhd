@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.1 (lin64) Build 1846317 Fri Apr 14 18:54:47 MDT 2017
---Date        : Tue Jun 12 12:43:01 2018
+--Date        : Tue Jun 19 11:41:22 2018
 --Host        : milosz-System-Product-Name running 64-bit Linux Mint 18.2 Sonya
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -628,10 +628,10 @@ entity design_1 is
     wbt_spi_cs_ad9510_o : out STD_LOGIC;
     wbt_spi_cs_ad9516_o : out STD_LOGIC
   );
-  attribute core_generation_info : string;
-  attribute core_generation_info of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=18,numReposBlks=16,numNonXlnxBlks=7,numHierBlks=2,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=7,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=1,da_clkrst_cnt=1,synth_mode=Global}";
-  attribute hw_handoff : string;
-  attribute hw_handoff of design_1 : entity is "design_1.hwdef";
+  attribute CORE_GENERATION_INFO : string;
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=18,numReposBlks=16,numNonXlnxBlks=7,numHierBlks=2,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=7,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=1,da_clkrst_cnt=1,synth_mode=Global}";
+  attribute HW_HANDOFF : string;
+  attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
 
 architecture STRUCTURE of design_1 is
@@ -776,38 +776,6 @@ architecture STRUCTURE of design_1 is
     Dout : out STD_LOGIC_VECTOR ( 4 downto 0 )
   );
   end component design_1_xlslice_0_0;
-  component design_1_wb_slave_0_0 is
-  port (
-    rst_n_i : in STD_LOGIC;
-    clk_sys_i : in STD_LOGIC;
-    wb_adr_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
-    wb_dat_i : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    wb_dat_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    wb_cyc_i : in STD_LOGIC;
-    wb_sel_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    wb_stb_i : in STD_LOGIC;
-    wb_we_i : in STD_LOGIC;
-    wb_ack_o : out STD_LOGIC;
-    wb_stall_o : out STD_LOGIC;
-    wbs_led_o : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    wbs_pll1_syncb_o : out STD_LOGIC;
-    wbs_pll_freq_i : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    wbs_dds_freq_i : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    wbs_cnt_mask_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    wbs_spi_start_o : out STD_LOGIC;
-    wbs_spi_cpol_o : out STD_LOGIC;
-    wbs_spi_cs_ad9516_o : out STD_LOGIC;
-    wbs_spi_cs_ad9510_o : out STD_LOGIC;
-    wbs_spi_data_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    wbs_adf4002_le_o : out STD_LOGIC;
-    wbs_pll2_reset_n_o : out STD_LOGIC;
-    wbs_spi_data_in_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    wbs_x0_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    wbs_x1_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    wbs_adc_offset_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    wbs_loop_timer_o : out STD_LOGIC_VECTOR ( 15 downto 0 )
-  );
-  end component design_1_wb_slave_0_0;
   component design_1_axil2wb_0_0 is
   port (
     S_AXI_ACLK : in STD_LOGIC;
@@ -867,13 +835,49 @@ architecture STRUCTURE of design_1 is
     counts_pll : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   end component design_1_freq_high_measure_0_1;
+  component design_1_wb_slave_0_0 is
+  port (
+    rst_n_i : in STD_LOGIC;
+    clk_sys_i : in STD_LOGIC;
+    wb_adr_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    wb_dat_i : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    wb_dat_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    wb_cyc_i : in STD_LOGIC;
+    wb_sel_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    wb_stb_i : in STD_LOGIC;
+    wb_we_i : in STD_LOGIC;
+    wb_ack_o : out STD_LOGIC;
+    wb_stall_o : out STD_LOGIC;
+    wbs_led_o : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    wbs_pll1_syncb_o : out STD_LOGIC;
+    wbs_pll_freq_i : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    wbs_dds_freq_i : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    wbs_cnt_mask_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    wbs_spi_start_o : out STD_LOGIC;
+    wbs_spi_cpol_o : out STD_LOGIC;
+    wbs_spi_cs_ad9516_o : out STD_LOGIC;
+    wbs_spi_cs_ad9510_o : out STD_LOGIC;
+    wbs_spi_data_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    wbs_adf4002_le_o : out STD_LOGIC;
+    wbs_pll2_reset_n_o : out STD_LOGIC;
+    wbs_spi_data_in_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    wbs_x0_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    wbs_x1_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    wbs_adc_offset_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    wbs_loop_timer_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    wbs_freq_accum_on_o : out STD_LOGIC;
+    wbs_reset_n_o : out STD_LOGIC
+  );
+  end component design_1_wb_slave_0_0;
   component design_1_PLL_loop_0_0 is
   port (
     clk_50 : in STD_LOGIC;
     clk_dds : in STD_LOGIC;
     res : in STD_LOGIC;
+    res_soft : in STD_LOGIC;
     x0 : in STD_LOGIC_VECTOR ( 31 downto 0 );
     x1 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    freq_accum_on : in STD_LOGIC;
     spi_miso_i : in STD_LOGIC;
     adc_offset : in STD_LOGIC_VECTOR ( 15 downto 0 );
     timer : in STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -1003,10 +1007,12 @@ architecture STRUCTURE of design_1 is
   signal wb_slave_0_wbs_adc_offset_o : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal wb_slave_0_wbs_adf4002_le_o : STD_LOGIC;
   signal wb_slave_0_wbs_cnt_mask_o : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal wb_slave_0_wbs_freq_accum_on_o : STD_LOGIC;
   signal wb_slave_0_wbs_led_o : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal wb_slave_0_wbs_loop_timer_o : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal wb_slave_0_wbs_pll1_syncb_o : STD_LOGIC;
   signal wb_slave_0_wbs_pll2_reset_n_o : STD_LOGIC;
+  signal wb_slave_0_wbs_reset_n_o : STD_LOGIC;
   signal wb_slave_0_wbs_spi_cpol_o : STD_LOGIC;
   signal wb_slave_0_wbs_spi_cs_ad9510_o : STD_LOGIC;
   signal wb_slave_0_wbs_spi_cs_ad9516_o : STD_LOGIC;
@@ -1084,7 +1090,9 @@ PLL_loop_0: component design_1_PLL_loop_0_0
       cnv => PLL_loop_0_cnv,
       dout_dds_N(13 downto 0) => PLL_loop_0_dout_dds_N(13 downto 0),
       dout_dds_P(13 downto 0) => PLL_loop_0_dout_dds_P(13 downto 0),
+      freq_accum_on => wb_slave_0_wbs_freq_accum_on_o,
       res => processing_system7_0_FCLK_RESET0_N,
+      res_soft => wb_slave_0_wbs_reset_n_o,
       sdi => PLL_loop_0_sdi,
       spi_miso_i => spi_miso_i_2,
       spi_sclk_o => PLL_loop_0_spi_sclk_o,
@@ -1333,11 +1341,13 @@ wb_slave_0: component design_1_wb_slave_0_0
       wbs_adf4002_le_o => wb_slave_0_wbs_adf4002_le_o,
       wbs_cnt_mask_o(31 downto 0) => wb_slave_0_wbs_cnt_mask_o(31 downto 0),
       wbs_dds_freq_i(31 downto 0) => freq_high_measure_1_counts_pll(31 downto 0),
+      wbs_freq_accum_on_o => wb_slave_0_wbs_freq_accum_on_o,
       wbs_led_o(1 downto 0) => wb_slave_0_wbs_led_o(1 downto 0),
       wbs_loop_timer_o(15 downto 0) => wb_slave_0_wbs_loop_timer_o(15 downto 0),
       wbs_pll1_syncb_o => wb_slave_0_wbs_pll1_syncb_o,
       wbs_pll2_reset_n_o => wb_slave_0_wbs_pll2_reset_n_o,
       wbs_pll_freq_i(31 downto 0) => freq_high_measure_0_counts_pll(31 downto 0),
+      wbs_reset_n_o => wb_slave_0_wbs_reset_n_o,
       wbs_spi_cpol_o => wb_slave_0_wbs_spi_cpol_o,
       wbs_spi_cs_ad9510_o => wb_slave_0_wbs_spi_cs_ad9510_o,
       wbs_spi_cs_ad9516_o => wb_slave_0_wbs_spi_cs_ad9516_o,

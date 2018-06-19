@@ -230,5 +230,28 @@ peripheral {
 			access_dev = READ_ONLY;
 		};
 	};
-
+    reg {
+		name = "FREQUEMCY ACCUMULATOR register";
+		description = "A register defining the state of FREQ_ACCUM_ON";
+		prefix = "freq_accum_on";
+		field {
+			name = "FREQ_ACCUM_ON";
+			description = "Defines the state of FREQ_ACCUM_ON";
+			type = BIT;
+			access_bus = READ_WRITE;
+			access_dev = READ_ONLY;
+		};
+	};
+    reg {
+		name = "RESET_N register";
+		description = "A register defining the state of RESET_N";
+		prefix = "reset_n";
+		field {
+			name = "RESET_N";
+			description = "Defines the state of RESET_N";
+			type = BIT;
+			access_bus = READ_WRITE;
+			access_dev = READ_ONLY;
+		};
+	};
 };

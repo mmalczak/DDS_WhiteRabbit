@@ -58,8 +58,10 @@ ENTITY design_1_PLL_loop_0_0 IS
     clk_50 : IN STD_LOGIC;
     clk_dds : IN STD_LOGIC;
     res : IN STD_LOGIC;
+    res_soft : IN STD_LOGIC;
     x0 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     x1 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+    freq_accum_on : IN STD_LOGIC;
     spi_miso_i : IN STD_LOGIC;
     adc_offset : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     timer : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -79,8 +81,10 @@ ARCHITECTURE design_1_PLL_loop_0_0_arch OF design_1_PLL_loop_0_0 IS
       clk_50 : IN STD_LOGIC;
       clk_dds : IN STD_LOGIC;
       res : IN STD_LOGIC;
+      res_soft : IN STD_LOGIC;
       x0 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
       x1 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+      freq_accum_on : IN STD_LOGIC;
       spi_miso_i : IN STD_LOGIC;
       adc_offset : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
       timer : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -101,8 +105,10 @@ BEGIN
       clk_50 => clk_50,
       clk_dds => clk_dds,
       res => res,
+      res_soft => res_soft,
       x0 => x0,
       x1 => x1,
+      freq_accum_on => freq_accum_on,
       spi_miso_i => spi_miso_i,
       adc_offset => adc_offset,
       timer => timer,

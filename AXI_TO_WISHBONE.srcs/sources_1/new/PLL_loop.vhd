@@ -9,8 +9,10 @@ entity PLL_loop is
 		clk_50 : in std_logic;
 		clk_dds : in std_logic;
 		res : in std_logic;
+		res_soft : in std_logic;
 		x0 : in std_logic_vector(31 downto 0);
 		x1 : in std_logic_vector(31 downto 0);
+		freq_accum_on : in std_logic;
 		spi_miso_i : in std_logic;
 		adc_offset : in std_logic_vector(15 downto 0);
 		timer : in unsigned(15 downto 0);
@@ -54,13 +56,14 @@ component pll_inst is
 );
 end component;
 
-component PLL_filter is
+component PLL_pi is
     Port ( clk : in std_logic;
            res : in std_logic;
            start : in std_logic;
            err : in std_logic_vector(15 downto 0);
            x0 : in std_logic_vector(31 downto 0);
            x1 : in std_logic_vector(31 downto 0);
+           freq_accum_on : in std_logic;
            adc_offset : in std_logic_vector(15 downto 0);
 --           err_s_test : out std_logic_vector(16 downto 0);
 --           err_pr_test : out std_logic_vector(16 downto 0);
@@ -99,6 +102,8 @@ signal clk_12_5_s : std_logic;
 signal res_s : std_logic;
 signal x0_s : std_logic_vector(31 downto 0);
 signal x1_s : std_logic_vector(31 downto 0);
+signal freq_accum_on_s : std_logic;
+
 signal adc_offset_s :  std_logic_vector(15 downto 0);
 signal adc_start_i_s : std_logic;
 signal spi_miso_i_s : std_logic;
@@ -122,13 +127,14 @@ signal counter : unsigned(15 downto 0);
 
 begin
 
-	I1: PLL_filter port map (
+	I1: PLL_pi port map (
 		clk => clk_50_s,
 		res => res_s,
 		start => data_ready_to_start_s,
 		err => data_o_to_err_s,
 		x0 => x0_s,
 		x1 => x1_s,
+		freq_accum_on => freq_accum_on_s,
 		adc_offset => adc_offset_s,
 --		err_s_test => err_s_test_s,
 --		err_pr_test => err_pr_test_s,
@@ -210,9 +216,10 @@ dout_dds_P <= dout_dds_P_s;
 dout_dds_N <= dout_dds_N_s;
 
 clk_50_s <= clk_50;
-res_s <= res;
+res_s <= res and res_soft;
 x0_s <= x0;
 x1_s <= x1;
+freq_accum_on_s <= freq_accum_on;
 adc_offset_s <= adc_offset;
 spi_miso_i_s <= spi_miso_i;
 cnv <= cnv_s;

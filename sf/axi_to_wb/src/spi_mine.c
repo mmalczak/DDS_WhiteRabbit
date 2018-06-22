@@ -195,10 +195,14 @@ void manualDelayControl()
 void manualPIControl()
 {
 	char c;
-	u32 P = (u32)(1<<22*0);
-	u32 I = (u32)(1<<24);
+	u32 P = (u32)(1421000);
+	u32 I = (u32)(209825);//210225
+//u32 P = (u32)(1<<8);
+//u32 I = (u32)(0);
+//P = 1421000
+//I = 209825
 
-	while(1)
+while(1)
 	{
 		c=getchar();
 		if(c!='\r')
@@ -219,6 +223,9 @@ void manualPIControl()
 				case 'o': P=P-100000;break;
 				case ';': P=P+1000000;break;
 				case 'l': P=P-1000000;break;
+
+				case '1': setReferencePLLCounter(10);break;
+				case '2': setReferencePLLCounter(9);break;
 
 
 
@@ -241,6 +248,7 @@ void manualPIControl()
 
 				default: xil_printf("Wrong value\n\r");break;
 			}
+			P=6.77*I;
 			Xil_Out32(WBS_REG_X0, P);
 			Xil_Out32(WBS_REG_X1, I);
 			xil_printf("P = %d \n\r", P);
@@ -300,8 +308,10 @@ void filterConstants(void)
 //	Xil_Out32(WBS_REG_X1, (u32)x1_s);
 //	Xil_Out32(WBS_REG_X0, (u32)(1<<22*0));//+(u32)(1<<11));
 //	Xil_Out32(WBS_REG_X1, (u32)(1<<18));//-(u32)(0b11<<14));
-Xil_Out32(WBS_REG_X0, (u32)(1<<8));//+(u32)(1<<11));
-Xil_Out32(WBS_REG_X1, (u32)(0));//-(u32)(0b11<<14));
+//Xil_Out32(WBS_REG_X0, (u32)(1<<11));//+(u32)(1<<11));
+//Xil_Out32(WBS_REG_X1, (u32)(0));//-(u32)(0b11<<14));
+Xil_Out32(WBS_REG_X0, (u32)(100<<14));//+(u32)(1<<11));
+Xil_Out32(WBS_REG_X1, (u32)(1<<14));//-(u32)(0b11<<14));
 
 }
 
@@ -363,7 +373,7 @@ int main(void)
 	configure_ADF4002();
 	//setReferencePLLCounter(10);
 	//setReferencePLLCounter(1);
-	setReferencePLLCounter(10);
+	setReferencePLLCounter(9);
 	filterConstants();
 	//setADCoffset(0b0110000000000000);
 	setADCoffset(0x8000);
@@ -371,6 +381,19 @@ int main(void)
 	//setLOOP_timer(100);
 	freq_accum_on(0);
 	reset(1);
+
+	u32 P = (u32)(1421000);
+	u32 I = (u32)(209825);
+
+	while(1)
+	{
+		//P=6.77*I;
+		I=I+10;
+		Xil_Out32(WBS_REG_X0, P);
+		Xil_Out32(WBS_REG_X1, I);
+		xil_printf("P = %d \n\r", P);
+		xil_printf("I = %d \n\r", I);
+	}
 	manualPIControl();
 	//manualOffsetControl();
 	//manualDelayControl();

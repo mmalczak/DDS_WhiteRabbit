@@ -17,17 +17,17 @@ end PLL_pi;
 
 architecture Behavioral of PLL_pi is
 
-component ila_0
-PORT (
-	clk : IN STD_LOGIC;
-	probe0 : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-	probe1 : IN STD_LOGIC_VECTOR(16 DOWNTO 0);
-    probe2 : IN STD_LOGIC_VECTOR(64 DOWNTO 0);
-    probe3 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-    probe4 : IN STD_LOGIC_VECTOR(31 DOWNTO 0)
+--component ila_0
+--PORT (
+--	clk : IN STD_LOGIC;
+--	probe0 : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+--	probe1 : IN STD_LOGIC_VECTOR(16 DOWNTO 0);
+--    probe2 : IN STD_LOGIC_VECTOR(64 DOWNTO 0);
+--    probe3 : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+--    probe4 : IN STD_LOGIC_VECTOR(31 DOWNTO 0)
 
-);
-end component;
+--);
+--end component;
 
 signal clk_s : std_logic;
 
@@ -35,6 +35,8 @@ signal err_test : signed(15 downto 0);
 signal err_s : signed(16 downto 0);
 signal err_pr : signed(16 downto 0);
 signal freq_s : signed(31 downto 0);
+signal freq_pr_s : signed(31 downto 0);
+
 
 signal result_1 : signed(48 downto 0);
 signal result_2 : signed(48 downto 0);
@@ -45,8 +47,13 @@ signal i_const : signed(31 downto 0);
 signal accum : signed(31 downto 0);
 signal tune : signed(64 downto 0);
 
-type   t_state is (IDLE, READ, FILTER0, FILTER1, FILTER2, FILTER3);
+type   t_state is (IDLE, READ, FILTER0, FILTER1);
 signal state : t_state;
+
+
+constant F0 : signed(31 downto 0):=X"014AA870";
+
+
 
 begin
 
@@ -61,7 +68,6 @@ begin
         if(res = '0') then 
                 state <= IDLE;
                 err_s <= (others => '0');
-                err_pr <= (others => '0');
                 --tune <= (others => '0');
                 tune <= (others => '0');
                 freq_s <= X"017D7840";
@@ -77,25 +83,14 @@ begin
                         state <= IDLE;
                     end if;
                 when READ =>
-                    err_pr <= err_s;
-                    err_s <= signed('0'&err) - signed('0'&adc_offset);
+                    err_s <= signed('0'&err);-- - signed('0'&adc_offset);
                     state <= FILTER0;
                when FILTER0 =>
-                    accum <= accum + err_s ;
-                    state <= FILTER1; 
+                         freq_pr_s <= freq_s;
+                         freq_s <= F0 + (err_s & "0000000");
+                          -- VCO 21.67MHz + err(26000Hz/V)*128 => 3.33MHz/V
+                         state <= FILTER1; 
                when FILTER1 =>
-                    tune <= accum * signed('0' & i_const) + err_s * signed('0' & p_const);
-                    state <= FILTER2;                
-               when FILTER2 =>
-                    --współczynniki filtru 24 bity po przecinku
-                   --  freq_s <= freq_s - tune(47 downto 16);
-                     if(freq_accum_on='1')then
-                        freq_s <= freq_s + tune(55 downto 24);
-                     else
-                        freq_s <= tune(55 downto 24);
-                     end if;
-                     state <= FILTER3;
-               when FILTER3 =>
                      if(freq_s > X"05F5E100")then
                         freq_s <= X"05F5E100";  --100MHz
                      elsif(freq_s < X"000493E0")then
@@ -109,20 +104,17 @@ begin
     end if;
 end process;
 
-	PROBE : ila_0
-	port map(
-		clk => clk_s,
-		probe0 => std_logic_vector(err_test),
-		probe1 => std_logic_vector(err_s),
-		probe2 => std_logic_vector(tune),
-		probe3 => std_logic_vector(freq_s),
-		probe4 => std_logic_vector(accum)       
-	);
+--	PROBE : ila_0
+--	port map(
+--		clk => clk_s,
+--		probe0 => std_logic_vector(err_test),
+--		probe1 => std_logic_vector(err_s),
+--		probe2 => std_logic_vector(tune),
+--		probe3 => std_logic_vector(freq_s),
+--		probe4 => std_logic_vector(accum)       
+--	);
 
-
-freq <= freq_s;
---err_s_test <= err_s;
---err_pr_test <= err_pr;
+freq <= (freq_s+freq_pr_s)/2;
 --result_1_test <= result_1(48 downto 24);
 --result_2_test <= result_2(48 downto 24);
 --

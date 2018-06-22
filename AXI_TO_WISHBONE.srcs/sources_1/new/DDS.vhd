@@ -1,5 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use ieee.numeric_std.all;
 
 entity DDS is
     Port ( 
@@ -14,13 +15,14 @@ architecture Behavioral of DDS is
 
 signal clk_s : std_logic;
 
-signal step_s : std_logic_vector(27 downto 0);
+signal step_s : std_logic_vector(63 downto 0);
 --signal dac_sierra_s : std_logic_vector(9 downto 0);
 
 signal addra_s : std_logic_vector(9 downto 0);
 signal douta_s : std_logic_vector(13 downto 0);
 signal douta_mem_s : std_logic_vector(13 downto 0);
 
+constant freq_to_step : unsigned(35 downto 0):=X"112E0BE80";
 
 component counter_DAC is
     Port ( clk : in STD_LOGIC;
@@ -42,7 +44,7 @@ begin
 counter : counter_DAC
 port map(
     clk => clk_s,
-    step => step_s,
+    step => step_s(59 downto 32),
 --    step => "0001000000000000000000000000",
     dac_sierra => addra_s 
 );
@@ -56,7 +58,7 @@ port map(
 
 -- entity inputs
 clk_s <= clk;
-step_s <= freq; --freq is almost the same as the step
+step_s <= std_logic_vector(unsigned(freq)*freq_to_step); --freq is almost the same as the step
 --entity outputs
 
 process(clk)

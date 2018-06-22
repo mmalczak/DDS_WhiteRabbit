@@ -62,8 +62,30 @@ begin
    wait for clk_period;
    res <= '1';
    
+     err <= "0000000000000000";
+      start <= '1';
+      wait for clk_period;
+      start <= '0';
+      wait for clk_period*5; 
+     
+    err <= "0000000000000001";
+    start <= '1';
+    wait for clk_period;
+    start <= '0';
+    wait for clk_period*5;
    
+     err <= "0000000000000000";
+     start <= '1';
+     wait for clk_period;
+     start <= '0';
+     wait for clk_period*5; 
    
+    err <= "1000000000000000";
+    start <= '1';
+    wait for clk_period;
+    start <= '0';
+    wait for clk_period*5;
+    
    err <= "0000111111111111";
    start <= '1';
    wait for clk_period;

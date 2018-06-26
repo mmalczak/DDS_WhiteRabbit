@@ -110,6 +110,8 @@ signal spi_miso_i_s : std_logic;
 
 
 signal freq_s : std_logic_vector(31 downto 0);
+signal freq_1_s : std_logic_vector(27 downto 0);
+signal freq_2_s : std_logic_vector(27 downto 0);
 signal cnv_s : std_logic;
 signal sdi_s : std_logic;
 signal spi_sclk_o_s : std_logic;
@@ -161,11 +163,19 @@ begin
 
 	DDS_inst : DDS port map(
 		clk => clk_dds_s,
-		freq => freq_s(27 downto 0),  --should modify this
+		freq => freq_2_s,  --should modify this
 		douta => dout_dds_s 
 	);
 
 
+    process(clk_dds)
+    begin 
+        if(clk_dds'event and clk_dds='1')then
+            freq_1_s <= freq_s(27 downto 0);
+            freq_2_s <= freq_1_s;  
+        end if;
+
+    end process;
 
 
 	DDS_out_port_gen:

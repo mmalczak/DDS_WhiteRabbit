@@ -56,7 +56,7 @@ begin
    res <= '0';
    start <= '0';
    freq_accum_on <= '0';
-   x1 <= X"00080000";
+   x1 <= X"01000000";
    x0<=X"00000000";
    adc_offset <= "1000000000000000";
    wait for clk_period;
@@ -66,54 +66,54 @@ begin
       start <= '1';
       wait for clk_period;
       start <= '0';
-      wait for clk_period*5; 
+      wait for clk_period*10; 
      
     err <= "0000000000000001";
     start <= '1';
     wait for clk_period;
     start <= '0';
-    wait for clk_period*5;
+    wait for clk_period*10;
    
      err <= "0000000000000000";
      start <= '1';
      wait for clk_period;
      start <= '0';
-     wait for clk_period*5; 
+     wait for clk_period*10; 
    
     err <= "1000000000000000";
     start <= '1';
     wait for clk_period;
     start <= '0';
-    wait for clk_period*5;
+    wait for clk_period*10;
     
    err <= "0000111111111111";
    start <= '1';
    wait for clk_period;
    start <= '0';
-   wait for clk_period*5;
+   wait for clk_period*10;
    
    start <= '1';
    wait for clk_period;
    start <= '0';
-   wait for clk_period*5;
+   wait for clk_period*10;
  
    err <= "0000000000001000";         
    start <= '1';
    wait for clk_period;
    start <= '0';
-   wait for clk_period*5;
+   wait for clk_period*10;
           
    err <= "1000000000000000";
    start <= '1';
    wait for clk_period;
    start <= '0';
-   wait for clk_period*5;
+   wait for clk_period*10;
            
    err <= "1100000000000100";
    start <= '1';
    wait for clk_period;
    start <= '0';
-   wait for clk_period*5;
+   wait for clk_period*10;
  
   wait for clk_period*10;
   assert false severity failure;

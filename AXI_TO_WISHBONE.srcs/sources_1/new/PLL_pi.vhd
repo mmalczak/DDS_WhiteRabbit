@@ -35,7 +35,7 @@ signal err_test : signed(15 downto 0);
 signal err_s : signed(16 downto 0);
 signal err_pr : signed(16 downto 0);
 signal freq_s : signed(31 downto 0);
-signal freq_pr_s : signed(31 downto 0);
+signal freq_out_s : signed(31 downto 0);
 
 
 signal result_1 : signed(48 downto 0);
@@ -47,7 +47,7 @@ signal i_const : signed(31 downto 0);
 signal accum : signed(31 downto 0);
 signal tune : signed(64 downto 0);
 
-type   t_state is (IDLE, READ, FILTER0, FILTER1);
+type   t_state is (IDLE, READ, FILTER0, FILTER1, FILTER2, FILTER3, FILTER4);
 signal state : t_state;
 
 
@@ -83,22 +83,46 @@ begin
                         state <= IDLE;
                     end if;
                 when READ =>
-                    err_s <= signed('0'&err);-- - signed('0'&adc_offset);
+                    err_s <= signed('0'&err) - signed('0'&adc_offset);
                     state <= FILTER0;
                when FILTER0 =>
-                         freq_pr_s <= freq_s;
-                         freq_s <= F0 + (err_s & "0000000");
-                          -- VCO 21.67MHz + err(26000Hz/V)*128 => 3.33MHz/V
-                         state <= FILTER1; 
+                    accum <= accum + err_s ;
+                    state <= FILTER1; 
                when FILTER1 =>
+                    tune <= accum * signed('0' & i_const) + err_s * signed('0' & p_const);
+                    state <= FILTER2;                
+               when FILTER2 =>
+                    --współczynniki filtru 24 bity po przecinku
+                    --  freq_s <= freq_s - tune(47 downto 16);
+                    --freq_s <= tune(55 downto 24)*128;
+                    freq_s <= tune(48 downto 17);
+                    state <= FILTER3;
+               when FILTER3 =>
+                    freq_s <= F0 + freq_s;
+                    -- VCO 21.67MHz + err(26000Hz/V)*128 => 3.33MHz/V
+                    state <= FILTER4; 
+               when FILTER4 =>
                      if(freq_s > X"05F5E100")then
-                        freq_s <= X"05F5E100";  --100MHz
+                         freq_out_s <= X"05F5E100";  --100MHz
                      elsif(freq_s < X"000493E0")then
-                        freq_s <= X"000493E0";  --300kHz
+                         freq_out_s <= X"000493E0";  --300kHz
                      else 
-                        freq_s <= freq_s;
+                         freq_out_s <= freq_s;
                      end if;
-                    state <= IDLE;
+                     state <= IDLE;                  
+--               when FILTER0 =>
+--                         freq_s <= F0 + (err_s & "0000000");
+--                          -- VCO 21.67MHz + err(26000Hz/V)*128 => 3.33MHz/V
+--                         state <= FILTER1; 
+--               when FILTER1 =>
+--                     if(freq_s > X"05F5E100")then
+--                        freq_out_s <= X"05F5E100";  --100MHz
+--                     elsif(freq_s < X"000493E0")then
+--                        freq_out_s <= X"000493E0";  --300kHz
+--                     else 
+--                        freq_out_s <= freq_s;
+--                     end if;
+--                    state <= IDLE;
             end case;
         end if;
     end if;
@@ -114,8 +138,7 @@ end process;
 --		probe4 => std_logic_vector(accum)       
 --	);
 
-freq <= (freq_s+freq_pr_s)/2;
---result_1_test <= result_1(48 downto 24);
---result_2_test <= result_2(48 downto 24);
---
+freq <= freq_out_s;
+
+
 end Behavioral;

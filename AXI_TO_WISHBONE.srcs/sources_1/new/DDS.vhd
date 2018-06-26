@@ -16,6 +16,11 @@ architecture Behavioral of DDS is
 signal clk_s : std_logic;
 
 signal step_s : std_logic_vector(63 downto 0);
+signal step2_s : std_logic_vector(63 downto 0);
+signal step3_s : std_logic_vector(63 downto 0);
+
+signal freq_s : unsigned(27 downto 0);
+
 --signal dac_sierra_s : std_logic_vector(9 downto 0);
 
 signal addra_s : std_logic_vector(9 downto 0);
@@ -44,7 +49,7 @@ begin
 counter : counter_DAC
 port map(
     clk => clk_s,
-    step => step_s(59 downto 32),
+    step => step3_s(59 downto 32),
 --    step => "0001000000000000000000000000",
     dac_sierra => addra_s 
 );
@@ -56,10 +61,17 @@ port map(
     douta => douta_mem_s
 );
 
--- entity inputs
 clk_s <= clk;
-step_s <= std_logic_vector(unsigned(freq)*freq_to_step); --freq is almost the same as the step
---entity outputs
+
+process(clk)
+begin
+    if(clk'event and clk='1')then
+        freq_s <= unsigned(freq);
+        step_s <= std_logic_vector(freq_s*freq_to_step); --freq is almost the same as the step
+        step2_s <= step_s;
+        step3_s <= step2_s;
+    end if;
+end process;
 
 process(clk)
 begin

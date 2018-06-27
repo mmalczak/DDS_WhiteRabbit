@@ -6,8 +6,6 @@
 #include "xil_cache.h"
 
 #include "spi_general.h"
-//#include "spi_ADC.h"
-
 
 #define DDS_BASE_FREQUENCY 244140
 #define FREQ_MEAS_BASE_FREQUENCY 50000000
@@ -57,14 +55,10 @@ void led_on(u8 on)
 	}
 }
 
-
-
 void setADCoffset(u16 offset)
 {
 	Xil_Out32(WBS_REG_ADC_OFFSET, offset);
 }
-
-
 
 void setFreqCounterMaskReg(u32 mask)
 {
@@ -72,13 +66,6 @@ void setFreqCounterMaskReg(u32 mask)
 }
 
 
-/*void measurePLLFreq(u32* freqPLL)
-{
-	u32 countsPLL=0;
-	countsPLL=Xil_In32(WBS_REG_PLL_FREQ);
-
-	*freqPLL = (u32)(countsPLL*0.3725);
-}*/
 u32 measurePLLFreq(u32 freqCounterMaskReg)
 {
 	u32 countsPLL=Xil_In32(WBS_REG_PLL_FREQ);  // number of counts of PLL clock
@@ -120,38 +107,6 @@ void setReferencePLLCounter(u8 div)
 	spi_send_data(0x005A, 0x01, SPI_CS_AD9510_SEL);
 }
 
-void manualOffsetControl()
-{
-	char c;
-	u16 offset = 32768;
-	while(1)
-	{
-		c=getchar();
-		if(c!='\r')
-		{
-			switch(c)
-			{
-			case '7': setReferencePLLCounter(7);break;
-			case '8': setReferencePLLCounter(8);break;
-			case 'i': offset+=10;break;
-			case 'u': offset-=10;break;
-			case 'k': offset+=100;break;
-			case 'j': offset-=100;break;
-			case 'm': offset+=1000;break;
-			case 'n': offset-=1000;break;
-			case 'f':
-				{
-					xil_printf("freq PLL = %d \n\r", measurePLLFreq(FREQ_COUNTER_MASK_REG));
-					xil_printf("freq DDS = %d \n\r", measureDDSFreq(FREQ_COUNTER_MASK_REG));
-				};break;
-			default: xil_printf("Wrong value\n\r");break;
-			}
-			setADCoffset(offset);
-			xil_printf("offset = %d \n\r", offset);
-		}
-	}
-
-}
 void manualDelayControl()
 {
 	char c;
@@ -192,128 +147,15 @@ void manualDelayControl()
 
 }
 
-void manualPIControl()
+void setPI(void)
 {
-	char c;
-	u32 P = (u32)(2<<24);
-	u32 I = (u32)(0<<2);//210225
-//u32 P = (u32)(1<<8);
-//u32 I = (u32)(0);
-//P = 1421000
-//I = 209825
+	u32 P = (u32)(1<<22);
+	u32 I = (u32)(7<<15);
 
-while(1)
-	{
-		c=getchar();
-		if(c!='\r')
-		{
-			switch(c)
-			{
-				case '9': P++;break;
-				case '8': P--;break;
-				case 'i': P=P+10;break;
-				case 'u': P=P-10;break;
-				case 'k': P=P+100;break;
-				case 'j': P=P-100;break;
-				case 'm': P=P+1000;break;
-				case 'n': P=P-1000;break;
-				case '-': P=P+10000;break;
-				case '0': P=P-10000;break;
-				case 'p': P=P+100000;break;
-				case 'o': P=P-100000;break;
-				case ';': P=P+1000000;break;
-				case 'l': P=P-1000000;break;
-
-				case '1': setReferencePLLCounter(10);break;
-				case '2': setReferencePLLCounter(9);break;
-
-
-
-
-				case '5': I++;break;
-				case '4': I--;break;
-				case 'r': I=I+10;break;
-				case 'e': I=I-10;break;
-				case 'f': I=I+100;break;
-				case 'd': I=I-100;break;
-				case 'c': I=I+1000;break;
-				case 'x': I=I-1000;break;
-				case '7': I=I+10000;break;
-				case '6': I=I-10000;break;
-				case 'y': I=I+100000;break;
-				case 't': I=I-100000;break;
-				case 'h': I=I+1000000;break;
-				case 'g': I=I-1000000;break;
-
-
-				default: xil_printf("Wrong value\n\r");break;
-			}
-			Xil_Out32(WBS_REG_X0, P);
-			Xil_Out32(WBS_REG_X1, I);
-			xil_printf("P = %d \n\r", P);
-			xil_printf("I = %d \n\r", I);
-
-		}
-	}
-}
-
-
-// Dziala najlepiej na ten moment, tyle że duży jitter
-/*double frequencyAccumulator(void)
-{
-//chyba 100 Hz i 10 stopni
-	static double a=4.55421686746988E-05, b=	0.0483;
-
-//	static double a=5.3e-5, b=0.0483;
-	static double err[4], freq[4]={25000000.0, 25000000.0};
-	static u8 err_idx=0, freq_idx=0;
-	err_idx = (err_idx+1)&3;
-	freq_idx = (freq_idx +1)&3;
-
-	err[err_idx] = ((double)(WB_SpiADC_Transfer()))-(double)(1<<15)+(double)(1<<13);
-	freq[freq_idx] = freq[(freq_idx-1)&3] - (a+b) * err[err_idx] - (a-b) * err[(err_idx-1)&3];
-	return freq[freq_idx];
-}*/
-// na FPGA
-/*u32 frequencyAccumulator(void)
-{
-	static double err, err_pr;
-	u32 freq;
-	static double a=5.3e-5, b=0.0483;
-	err = WB_SpiADC_Transfer();
-	Xil_Out32(WBS_REG_FILTER_OUT, err);
-	freq = Xil_In32(WBS_REG_FILTER_IN);
-
-	return freq;
-}*/
-
-
-
-void filterConstants(void)
-{
-	//double a=5.3e-5, b=0.0483;
-	//double a=8.289e-5, b = 0.0483;
-	double a=0.00086/1.5, b = 0.1;
-	double x0_d, x1_d;
-	s32 x0_s, x1_s;
-
-	x0_d = a+b;
-	x1_d = a-b;
-	x0_d = x0_d * (1<<24);
-	x1_d = x1_d * (1<<24);
-	x0_s = (s32)x0_d;
-	x1_s = (s32)x1_d;
-//	Xil_Out32(WBS_REG_X0, (u32)x0_s);
-//	Xil_Out32(WBS_REG_X1, (u32)x1_s);
-//	Xil_Out32(WBS_REG_X0, (u32)(1<<22*0));//+(u32)(1<<11));
-//	Xil_Out32(WBS_REG_X1, (u32)(1<<18));//-(u32)(0b11<<14));
-//Xil_Out32(WBS_REG_X0, (u32)(1<<11));//+(u32)(1<<11));
-//Xil_Out32(WBS_REG_X1, (u32)(0));//-(u32)(0b11<<14));
-Xil_Out32(WBS_REG_X0, (u32)(1<<22));//+(u32)(1<<11));
-Xil_Out32(WBS_REG_X1, (u32)(7<<15));//-(u32)(0b11<<14));
+	Xil_Out32(WBS_REG_X0, P);
+	Xil_Out32(WBS_REG_X1, I);
 
 }
-
 
 void setLOOP_timer(u16 time)
 {
@@ -357,41 +199,21 @@ void chooseDivider(void)
 int main(void)
 {
 
-	//reset(0);
+	reset(1);
 	AD95xx_spi_init();
-	//ADC_spi_init();
 	setPLL2_RESET_N(1);
-	u32 freqDACSet=25000000;
 	configure_AD9516();
 	ppl1_syncb_on(1);
 	configure_AD9510_internal_signal();
-
-
 	setFreqCounterMaskReg(FREQ_COUNTER_MASK_REG);
-
 	configure_ADF4002();
-	//setReferencePLLCounter(10);
-	//setReferencePLLCounter(1);
-	setReferencePLLCounter(5);
-	filterConstants();
-	//setADCoffset(0b0110000000000000);
+	setReferencePLLCounter(10);
+	setPI();
 	setADCoffset(0x8000);
-	//setADCoffset(0x8000);
 	setLOOP_timer(344);
-	//setLOOP_timer(100);
 	freq_accum_on(0);
 	reset(1);
 
-	u32 P = (u32)(1421000);
-	u32 I = (u32)(209825);
-
-
-	manualPIControl();
-	//manualOffsetControl();
-	//manualDelayControl();
-	//setReferencePLLCounter(0);
-
-	//chooseDivider();
 	xil_printf("Sukces\n\r");
 
 	return 1;

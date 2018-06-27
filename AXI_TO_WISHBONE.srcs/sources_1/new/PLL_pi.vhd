@@ -17,42 +17,12 @@ end PLL_pi;
 
 architecture Behavioral of PLL_pi is
 
---component ila_0
---PORT (
---	clk : IN STD_LOGIC;
---    probe0 : IN STD_LOGIC_VECTOR(31 DOWNTO 0)
---);
---end component;
-
 signal clk_s : std_logic;
 
 signal err_test : signed(15 downto 0);
 signal err_s : signed(16 downto 0);
 signal err_pr : signed(16 downto 0);
 signal freq_s : signed(31 downto 0);
---signal freq1_s : signed(31 downto 0);
---signal freq2_s : signed(31 downto 0);
---signal freq3_s : signed(31 downto 0);
---signal freq4_s : signed(31 downto 0);
---signal freq5_s : signed(31 downto 0);
---signal freq6_s : signed(31 downto 0);
---signal freq7_s : signed(31 downto 0);
---signal freq8_s : signed(31 downto 0);
---signal freq9_s : signed(31 downto 0);
---signal freq10_s : signed(31 downto 0);
---signal freq11_s : signed(31 downto 0);
---signal freq12_s : signed(31 downto 0);
---signal freq13_s : signed(31 downto 0);
---signal freq14_s : signed(31 downto 0);
---signal freq15_s : signed(31 downto 0);
---signal freq16_s : signed(31 downto 0);
---signal freq17_s : signed(31 downto 0);
---signal freq18_s : signed(31 downto 0);
---signal freq19_s : signed(31 downto 0);
---signal freq20_s : signed(31 downto 0);
---signal freq21_s : signed(31 downto 0);
---signal freq22_s : signed(31 downto 0);
-
 
 signal freq_out_s : signed(31 downto 0);
 
@@ -72,7 +42,6 @@ signal state : t_state;
 
 constant F0 : signed(31 downto 0):=X"017D12B0";
 
-
 begin
 
 p_const<=x0;
@@ -86,7 +55,6 @@ begin
         if(res = '0') then 
                 state <= IDLE;
                 err_s <= (others => '0');
-                --tune <= (others => '0');
                 tune <= (others => '0');
                 freq_s <= X"017D7840";
                 result_1 <= (others => '0');
@@ -119,33 +87,6 @@ begin
                     freq_s <= F0 + freq_s;
                     -- VCO 21.67MHz + err(26000Hz/V)*128 => 3.33MHz/V
                     state <= FILTER4; 
---               when FILTER4 => 
---                    freq22_s <= freq21_s;
---                    freq21_s <= freq20_s;
---                    freq20_s <= freq19_s;
---                    freq19_s <= freq18_s;
---                    freq18_s <= freq17_s;
---                    freq17_s <= freq16_s;
---                    freq16_s <= freq15_s;
---                    freq15_s <= freq14_s;
---                    freq14_s <= freq13_s;
---                    freq13_s <= freq12_s;
---                    freq12_s <= freq11_s;
---                    freq11_s <= freq10_s;
---                    freq10_s <= freq9_s;
---                    freq9_s <= freq8_s;
---                    freq8_s <= freq7_s;
---                    freq7_s <= freq6_s;
---                    freq6_s <= freq5_s;
---                    freq5_s <= freq4_s;
---                    freq4_s <= freq3_s;
---                    freq3_s <= freq2_s;
---                    freq2_s <= freq1_s;
---                    freq1_s <= freq_s;
---                    state <= FILTER5;
---               when FILTER5 => 
---                    freq_s <= (freq_s + freq1_s+ freq2_s+ freq3_s+ freq4_s+ freq5_s+ freq6_s+ freq7_s+ freq8_s+ freq9_s+ freq10_s+ freq11_s+ freq12_s+ freq13_s+ freq14_s+ freq15_s+ freq16_s+ freq17_s+ freq18_s+ freq19_s+ freq20_s+ freq21_s+ freq22_s)/23;
---                    state <= FILTER6;               
                when FILTER4 =>
                      if(freq_s > X"05F5E100")then
                          freq_out_s <= X"05F5E100";  --100MHz
@@ -155,31 +96,12 @@ begin
                          freq_out_s <= freq_s;
                      end if;
                      state <= IDLE;                  
---               when FILTER0 =>
---                         freq_s <= F0 + (err_s & "0000000");
---                          -- VCO 21.67MHz + err(26000Hz/V)*128 => 3.33MHz/V
---                         state <= FILTER1; 
---               when FILTER1 =>
---                     if(freq_s > X"05F5E100")then
---                        freq_out_s <= X"05F5E100";  --100MHz
---                     elsif(freq_s < X"000493E0")then
---                        freq_out_s <= X"000493E0";  --300kHz
---                     else 
---                        freq_out_s <= freq_s;
---                     end if;
---                    state <= IDLE;
+
             end case;
         end if;
     end if;
 end process;
 
---	PROBE : ila_0
---	port map(
---		clk => clk_s,
---		probe0 => std_logic_vector(freq_out_s)   
---	);
-
 freq <= freq_out_s;
-
 
 end Behavioral;

@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.1 (lin64) Build 1846317 Fri Apr 14 18:54:47 MDT 2017
---Date        : Wed Jun 27 15:17:15 2018
+--Date        : Wed Jun 27 17:07:37 2018
 --Host        : milosz-System-Product-Name running 64-bit Linux Mint 18.2 Sonya
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper

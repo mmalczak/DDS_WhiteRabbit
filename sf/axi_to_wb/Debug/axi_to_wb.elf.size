@@ -1,2 +1,2 @@
    text	   data	    bss	    dec	    hex	filename
-  37784	   2188	2030248	2070220	 1f96cc	axi_to_wb.elf
+  37720	   2188	2030248	2070156	 1f968c	axi_to_wb.elf

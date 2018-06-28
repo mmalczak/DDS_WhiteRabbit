@@ -1,0 +1,1000 @@
+  227  ./configure --disable-lockfiles
+  228  make
+  229  ./configure --disable-lockfiles
+  230  sudo apt-get install openjdk-6-jdk
+  231  sudo update-alternatives --config java
+  232  sudo apt-get install java
+  233  ./configure --disable-lockfiles
+  234  sudo apt-get install openjdk-6-jdk
+  235  sudo update-alternatives --config java
+  236  $ sudo add-apt-repository ppa:webupd8team/java
+  237  $ sudo add-repository ppa:webupd8team/java
+  238  $ sudo add-apt-repository ppa:webupd8team/java
+  239  $add-apt-repository ppa:webupd8team/java
+  240  sudo add-apt-repository ppa:webupd8team/java
+  241  sudo apt-get update
+  242  sudo apt-get install oracle-java8-installer
+  243  ./configure --disable-lockfiles
+  244  MAKE
+  245  make
+  246  cd /opt/Xilinx/SDK/2017.1/eclipse/lnx64.o/plugins/gnu.io.rxtx.linux.x86_64_2.1.7.3_v20071015/os/linux/x86_64/
+  247  ls
+  248  sudo mv librxtxParallel.so librxtxParallel.so.orig
+  249  LS
+  250  ls
+  251  sudo mv librxtxSerial.so librxtxSerial.so.orig
+  252  ln --help
+  253  sudo ln ~/rxtx-2.2pre2/x86_64-unknown-linux-gnu/.libs/librxtxParallel.so ./librxtxParallel.so
+  254  sudo ln /home/milosz/Downloads/rxtx-2.2pre2/x86_64-unknown-linux-gnu/.libs/librxtxParallel.so ./librxtxParallel.so
+  255  sudo ln ~/workspace/rxtx-2.2pre2/x86_64-unknown-linux-gnu/.libs/librxtxSerial.so ./librxtxSerial.so
+  256  sudo ln /home/milosz/Downloads/workspace/rxtx-2.2pre2/x86_64-unknown-linux-gnu/.libs/librxtxSerial.so ./librxtxSerial.so
+  257  sudo ln /home/milosz/Downloads/rxtx-2.2pre2/x86_64-unknown-linux-gnu/.libs/librxtxSerial.so ./librxtxSerial.so
+  258  sudo mv librxtxParallel.so.orig librxtxParallel.so
+  259  ls
+  260  sudo mv librxtxParallel.so librxtxParallel.so.orig opt/Xilinx/SDK/2017.1/eclipse/lnx64.o/plugins/gnu.io.rxtx.linux.x86_64_2.1.7.3_v20071015/os/linux/x86_
+  261  sudo ln -sf /usr/lib/jni/librxtxSerial.so /opt/Xilinx/SDK/2017.1/eclipse/lnx64.o/plugins/gnu.io.rxtx.linux.x86_64_2.1.7.3_v20071015/os/linux/x86_64/librxtxSerial.so
+  262  ls
+  263  sudo ln -sf /usr/lib/jni/librxtxSerial.so /opt/Xilinx/SDK/2017.1/eclipse/lnx64.o/plugins/gnu.io.rxtx.linux.x86_64_2.1.7.3_v20071015/os/linux/x86_64/librxtxSerial.so
+  264  ls
+  265  sudo ln /home/milosz/Downloads/rxtx-2.2pre2/x86_64-unknown-linux-gnu/.libs/librxtxSerial.so ./librxtxSerial.so
+  266  ls
+  267  rm librxtxSerial.so
+  268  sudo rm librxtxSerial.so
+  269  mv librxtxSerial.so.orig librxtxSerial.so
+  270  sudo mv librxtxSerial.so.orig librxtxSerial.so
+  271  ls
+  272  cp librxtxSerial.so librxtxSerial.so.orig
+  273  sudo cp librxtxSerial.so librxtxSerial.so.orig
+  274  ls
+  275  sudo ln /home/milosz/Downloads/rxtx-2.2pre2/x86_64-unknown-linux-gnu/.libs/librxtxSerial.so ./librxtxSerial.so
+  276  ls
+  277  rm librxtxSerial.so
+  278  ls
+  279  sudo rm librxtxSerial.so
+  280  sudo ln /home/milosz/Downloads/rxtx-2.2pre2/x86_64-unknown-linux-gnu/.libs/librxtxSerial.so ./librxtxSerial.so
+  281  lks
+  282  ls
+  283  sudo aptitude install librxtx-java
+  284  ls
+  285  sudo aptitude install librxtx-java
+  286  rm librxtxSerial.so
+  287  ls
+  288  sudo rm librxtxSerial.so
+  289  ls
+  290  sudo ln -sf /usr/lib/jni/librxtxSerial.so librxtxSerial.so
+  291  cd
+  292  sudo apt-get install minicom
+  293  minicom -D /dev/ttyUSB0 
+  294  sudo minicom -D /dev/ttyUSB0 
+  295  cd /dev/ls
+  296  cd /dev
+  297  ls
+  298  dmesg
+  299  ls
+  300  sudo apt-get install kermit
+  301  sudo apt-get install ckermit
+  302  kermit
+  303  sudo kermit
+  304  cd /home/milosz/Downloads/
+  305  sudo chmod +x VNC-Server-6.2.0-Linux-x64.deb 
+  306  sudo apt install ./VNC-Server-6.2.0-Linux-x64.deb
+  307  systemctl start vncserver-virtuald.service
+  308  systemctl
+  309  cd /etc/pam.d/
+  310  ls
+  311  systemctl start vncserver-x11-serviced.service
+  312  /etc/init.d/vncserver-x11-serviced start
+  313  cd /home/milosz/Downloads
+  314  dpkg -i VNC-Server-6.2.0-Linux-x64.deb 
+  315  sudo dpkg -i VNC-Server-6.2.0-Linux-x64.deb 
+  316  vncserver
+  317  vncagent 
+  318  vnclicense
+  319  env | grep vnc*
+  320  vncserver
+  321  vncserver-virtual
+  322  kermit
+  323  cd /dev/
+  324  ls
+  325  cd
+  326  kermit
+  327  sudo kermit
+  328  mkdir /opt/petalinux
+  329  sudo mkdir /opt/petalinux
+  330  cd /home/milosz/Desktop/Xilinx/Petalinux/
+  331  ls
+  332  sudo chmod +x petalinux-v2017.1-final-installer.run 
+  333  ./petalinux-v2017.1-final-installer.run /opt/petalinux/
+  334  sudo ./petalinux-v2017.1-final-installer.run /opt/petalinux/
+  335  ./petalinux-v2017.1-final-installer.run /opt/petalinux/
+  336  sudo chown milosz /opt/petalinux/
+  337  ./petalinux-v2017.1-final-installer.run /opt/petalinux/
+  338  cat /home/milosz/Desktop/Xilinx/Petalinux/petalinux_installation_log
+  339  rm --help
+  340  sudo rm -f /opt/petalinux/
+  341  sudo rm -f d /opt/petalinux/
+  342  sudo rm -f -d /opt/petalinux/
+  343  sudo rm -f -r /opt/petalinux/
+  344  cd /opt/
+  345  ls
+  346  sudo chown milosz /opt/
+  347  mkdir petalinux
+  348  sudo chown milosz petalinux/
+  349  cd /home/milosz/Desktop/Xilinx/Petalinux/
+  350  ./petalinux-v2017.1-final-installer.run /opt/petalinux/
+  351  /opt/petalinux/components/yocto/source/microblaze_lite/environment-setup-microblazeel-v10.0-bs-cmp-ml-xilinx-linux
+  352  ls
+  353  cd /opt/petalinux/components/yocto/source/microblaze_lite/environment-setup-microblazeel-v10.0-bs-cmp-ml-xilinx-linux
+  354  cd /opt/petalinux/components/yocto/source/microblaze_lite/
+  355  ls
+  356  source environment-setup-microblazeel-v10.0-bs-cmp-ml-xilinx-linux 
+  357  cd /dev/
+  358  ls
+  359  cd /opt/Xilinx/
+  360  ls
+  361  cd Vivado
+  362  ls
+  363  cd 2017.1/
+  364  ls
+  365  ./settings64.sh 
+  366  cd /home/milosz/Desktop/Xilinx/Vivado/projects/project_1/project_1.sdk
+  367  open_hw_design design_1_wrapper.hdf 
+  368  hsm
+  369  hsi
+  370  cd /opt/Xilinx/Vivado
+  371  ls
+  372  cd 2017.1/
+  373  ls
+  374  ./settings64.
+  375  ./settings64.sh 
+  376  hsm
+  377  cd /home/milosz/Desktop/Xilinx/buildroot/buildroot-2017.08.1/output/images/sd/
+  378  dtc -h
+  379  dtc -I devicetree.dtb -o devicetree.dts
+  380  dtc -I dtb -i devicetree.dtb -o devicetree.dts
+  381  dtc -I dtb devicetree.dtb -o devicetree.dts
+  382  cat devicetree.dts
+  383  cd /home/milosz/Desktop/Xilinx/buildroot/buildroot-2017.08.1/
+  384  cd configs/
+  385  ls
+  386  cat zynq_zc706_defconfig 
+  387  cd ..
+  388  cat > configs/zc706_defconfig << EOF
+  389  cat configs/zynq_zc706_defconfig 
+  390  gedit configs/zynq_zc706_defconfig 
+  391  cd configs/
+  392  ls
+  393  make zynq_zc706_defconfig
+  394  cd ..
+  395  make zynq_zc706_defconfig
+  396  ls
+  397  cat .config 
+  398  make menuconfig
+  399  make busybox-menuconfig
+  400  make linux-menuconfig
+  401  make
+  402  ls
+  403  cd boot/
+  404  ls
+  405  cd ..
+  406  ls
+  407  cd output/
+  408  ls
+  409  cd build/
+  410  ls
+  411  cd ..
+  412  cd images/
+  413  ls
+  414  cd ..
+  415  cp output/build/uboot-xilinx-v2017.1/board/xilinx/zynq/zynq-zc706/ps7_init_gpl.{c,h} output/build/uboot-xilinx-v2017.1/board/xilinx/zynq/
+  416  make uboot-rebuild all
+  417  mkdir -p output/images/sd
+  418  cp output/images/boot.bin output/images/sd/
+  419  cp output/images/uImage output/images/sd/
+  420  cp output/images/u-boot.img output/images/sd/u-boot.img
+  421  cp output/images/zynq-zc706.dtb output/images/sd/devicetree.dtb
+  422  cp output/images/rootfs.cpio.uboot output/images/sd/uramdisk.image.gz
+  423  make busybox-menuconfig
+  424  make
+  425  cp output/images/boot.bin output/images/sd/
+  426  cp output/images/uImage output/images/sd/
+  427  cp output/images/u-boot.img output/images/sd/u-boot.img
+  428  cp output/images/zynq-zc706.dtb output/images/sd/devicetree.dtb
+  429  cp output/images/rootfs.cpio.uboot output/images/sd/uramdisk.image.gz
+  430  open_hw_design design_1_wrapper.hdf 
+  431  kermit
+  432  sudo kermit
+  433  cd /dev/
+  434  ls
+  435  ifconfig
+  436  ls
+  437  ifconfig
+  438  cd /usr/bin/
+  439  ls
+  440  ls | grep file
+  441  d
+  442  cd
+  443  sudo apt-get install which
+  444  WHICH
+  445  which
+  446  which -h
+  447  which --h
+  448  python
+  449  ls
+  450  sudo apt-get install ncurses5
+  451  sudo apt-get install ncurses
+  452  sudo apt-get install libncurses5-dev
+  453  curl -O https://buildroot.org/downloads/Vagrantfile; vagrant up
+  454  sudo apt install vagrant
+  455  cd /home/milosz/Desktop/Xilinx/buildroot/buildroot-2017.08.1/
+  456  ld
+  457  ls
+  458  make menuconfig
+  459  sudo apt-get install dtc
+  460  dtc
+  461  sudo apt-get install device-tree-compiler
+  462  make zynq_zc706_defconfig
+  463  make uboot-menuconfig
+  464  make
+  465  cp output/images/boot.bin output/images/sd/
+  466  cp output/images/uImage output/images/sd/
+  467  cp output/images/u-boot.img output/images/sd/u-boot.img
+  468  cp output/images/zynq-zc706.dtb output/images/sd/devicetree.dtb
+  469  cp output/images/rootfs.cpio.uboot output/images/sd/uramdisk.image.gz
+  470  make zynq_zc706_defconfig
+  471  make uboot-menuconfig
+  472  make 
+  473  make
+  474  make uboot-menuconfig
+  475  make
+  476  cp output/images/boot.bin output/images/sd/
+  477  cp output/images/uImage output/images/sd/
+  478  cp output/images/u-boot.img output/images/sd/u-boot.img
+  479  cp output/images/zynq-zc706.dtb output/images/sd/devicetree.dtb
+  480  cp output/images/rootfs.cpio.uboot output/images/sd/uramdisk.image.gz
+  481  make menuconfig
+  482  make
+  483  cd /opt/Xilinx/SDK/2017.1/bin/unwrapped/lnx64.o/
+  484  ls
+  485  cd ..
+  486  ls
+  487  ./xsdk
+  488  cd ..
+  489  cd Vivado
+  490  ls
+  491  cd
+  492  cd /opt/Xilinx/Vivado/2017.1/bin/
+  493  ls
+  494  ./vivado 
+  495  git
+  496  cd
+  497  git clone git://github.com/Xilinx/device-tree-xlnx.git
+  498  ping github.com
+  499  git clone git://github.com/Xilinx/device-tree-xlnx.git
+  500  ls
+  501  cd /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE/export_lin/
+  502  git clone git://github.com/Xilinx/device-tree-xlnx.git
+  503  cd device_tree_bsp_0/
+  504  ls
+  505  dtc
+  506  dtc -h
+  507  dtc -I dts -O dtb -o system-top.dtb system-top.dts 
+  508  cd ..
+  509  kermit
+  510  sudo apt-get install ia32-libs
+  511  apt-get update
+  512  apt-get upgrade
+  513  sudp apt-get upgrade
+  514  sudo apt-get upgrade
+  515  sudo apt-get update
+  516  sudo apt-get upgrade
+  517  sudo apt-get install ia32-libs
+  518  cd /home/milosz/Desktop/buildroot/buildroot-2017.08.1/
+  519  ls
+  520  make menuconfig
+  521  make
+  522  make menuconfig
+  523  make
+  524  make menuconfig
+  525  make
+  526  make menuconfig
+  527  make
+  528  make menuconfig
+  529  make
+  530  make menuconfig
+  531  make
+  532  make menuconfig
+  533  make
+  534  make menuconfig
+  535  make
+  536  make menuconfig
+  537  make
+  538  make menuconfig
+  539  make
+  540  mkdir /home/milosz/Desktop/buildroot/buildroot-2017.08.1/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib
+  541  mkdir /home/milosz/Desktop/buildroot/buildroot-2017.08.1/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr
+  542  mkdir /home/milosz/Desktop/buildroot/buildroot-2017.08.1/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib
+  543  make
+  544  cd output/images/sd/
+  545  cd ..
+  546  cp output/images/boot.bin output/images/sd
+  547  cp output/images/uImage output/images/sd/
+  548  cp output/images/u-boot.img output/images/sd/u-boot.img
+  549  cp output/images/system-top.dtb output/images/sd/devicetree.dtb
+  550  cp output/images/rootfs.cpio.uboot output/images/sd/uramdisk.image.gz
+  551  cd /home/milosz/Desktop/buildroot/buildroot-2017.08.1/
+  552  make menuconfig
+  553  grep "ssh" ~/.bash_history
+  554  kermit
+  555  termit
+  556  kermit
+  557  sudo apt-get install libre-office
+  558  sudo apt-get install texlive-full
+  559  sudo apt-get install texmaker
+  560  texmaker 
+  561  cd /home/milosz/Desktop/hdlmake-v1.0/
+  562  python hdlmake
+  563  python3
+  564  cd /home/milosz/Desktop/
+  565  chmod a+x hdlmake-v1.0 
+  566  ./hdlmake-v1.0 
+  567  cd /home/milosz/Desktop/wlostowski/
+  568  git pull git://ohwr.org/white-rabbit/wr-node-core.git
+  569  .git 
+  570  git
+  571  git clone git://ohwr.org/white-rabbit/wr-node-core.git
+  572  ssh root@192.168.95.159
+  573  scp /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE/AXI_TO_WISHBONE.runs/impl_1/design_1_wrapper.bit root@192.168.95.159:/
+  574  scp /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE/export_lin/print_mine/Release/print_mine.elf root@192.168.95.159:/
+  575  sudo add-apt-repository ppa:gezakovacs/ppa
+  576  unetbootin
+  577  ip a
+  578  dmesg | grep -i eth
+  579  sudo nano /etc/default/grub
+  580  sudo gedit /etc/default/grub
+  581  sudo grub-mkconfig -o /boot/grub/grub.cfg
+  582  sudo gedit /etc/network/interfaces
+  583  sudo reboot
+  584  dmesg | grep -i eth
+  585  IFCONFIG
+  586  ifconfig
+  587  cd /etc/profile.d/
+  588  ls
+  589  cat bash_completion.sh 
+  590  cat vte-2.91.sh 
+  591  vi ~/.bash_proflle
+  592  cd /etc/profile.d/
+  593  ls
+  594  cd ..
+  595  cd bash_completion.d/
+  596  ls
+  597  cat dkms 
+  598  find -n environment
+  599  find -N environment
+  600  find  environment
+  601  find -h
+  602  find
+  603  cd /etc/profile.d/
+  604  ls
+  605  cat /etc/profile
+  606  cat /etc/environment 
+  607  gedit /etc/environment 
+  608  sudo gedit /etc/environment 
+  609  cat /etc/environment 
+  610  sudo reboot
+  611  cat /etc/environment 
+  612  ifconfig
+  613  vncserver-x11
+  614  sudo vncserver-x11
+  615  /etc/init.d/vncserver-x11-serviced start
+  616  vncserver
+  617  /home/milosz/Downloads/VNC-Server-6.2.1-Linux-x64/
+  618  cd /home/milosz/Downloads/VNC-Server-6.2.1-Linux-x64/
+  619  ./vncinstall 
+  620  sudo ./vncinstall 
+  621  systemctl start vncserver-virtuald.service
+  622  vncserver
+  623  vnclicense
+  624  vnclicense -list
+  625  sudo vnclicense -list
+  626  sudo vnclicense -reload
+  627  vncserver
+  628  ls
+  629  ./vnclicense
+  630  ls
+  631  ./vncserver-x11
+  632  sudo ./vncserver-x11
+  633  cd /home/milosz/Downloads/VNC-Server-6.2.1-Linux-x64/
+  634  ls
+  635  ./vncserver-x11
+  636  ./vnclicense
+  637  ./vnclicense -add 
+  638  ls
+  639  ./vncserver-virtual
+  640  ./vnclicense
+  641  ./vnclicense -list
+  642  sudo ./vnclicense -list
+  643  ls
+  644  ./vncserver-x11-core 
+  645  sudo ./vncserver-x11-core 
+  646  ./vncinstall 
+  647  sudo ./vncinstall 
+  648  systemctl start vncserver-virtuald.service
+  649  systemctl start vncserver-x11-serviced.service
+  650  ifconfig 
+  651  cat /etc/environment 
+  652  kermit
+  653  cd /dev/
+  654  ls
+  655  cd /dev/
+  656  ls
+  657  cd /home/milosz/Downloads/
+  658  ls
+  659  sudo rm ad9516_conf(1)
+  660  sudo rm ad9516_conf.stp 
+  661  ls
+  662  sudo rm General_LibC.zip 
+  663  sudo rm General_LibC\(1\).zip 
+  664  sudo rm ad9516_conf\(1\).stp ad9516_conf\(2\).stp 
+  665  ls
+  666  cd /dev/
+  667  ls
+  668  cd /dev/
+  669  ls
+  670  sudo apt-get install python
+  671  python
+  672  sudo apt-get install wing
+  673  wing
+  674  sudo apt-get remove wing
+  675  wing
+  676  sudo apt-get remove wingware
+  677  octave
+  678  dmesg
+  679  sudo apt-get install octave
+  680  sudo apt-get update
+  681  sudo apt-get upgrade
+  682  sudo apt-get install octave
+  683  octave
+  684  sudo apt-get update
+  685  sudo apt-get install virtualbox-5.2
+  686  sudo apt-get install virtualbox
+  687  virtualbox
+  688  sudo apt install virtualbox-qt
+  689  virtualbox 
+  690  sudo apt-get install cpu-checker
+  691  sudo kvm-ok 
+  692  sudo apt-get install virtualbox
+  693  sudo apt-get update
+  694  sudo apt-get upgrade
+  695  sudo mount -t vboxsf -o uid=$UID,gid=$(id -g) /home/milosz/Desktop/shared ~/host
+  696  sudo mount -t vboxsf -o uid=$UID,gid=$(id -g) /home/milosz/Desktop/shared/ ~/host
+  697  cd /dev/
+  698  ls
+  699  find / -name env
+  700  find / -name enviro
+  701  cd /var/
+  702  ls
+  703  cd /proc/
+  704  ls
+  705  cd ..
+  706  ls
+  707  cd etc/
+  708  ls
+  709  cat environment 
+  710  cd
+  711  kewrmit
+  712  kermit
+  713  cd /dev/
+  714  ls
+  715  cd
+  716  kermit
+  717  cd /dev/
+  718  ls
+  719  kermit
+  720  cd /home/milosz/Desktop/Untitled\ Folder/vextproj-master/version_2/demo_wb/hdl/
+  721  ./build.sh 
+  722  cd /opt/Xilinx/Vivado/2017.1/bin
+  723  ls
+  724  cd ..
+  725  ./settings64.sh 
+  726  ~/Desktop/Untitled Folder/vextproj-master/version_2/demo_wb/hdl
+  727  cd /home/milosz/Desktop/Untitled\ Folder/vextproj-master/version_2/demo_wb/hdl/
+  728  ./build.sh 
+  729  cd
+  730  cd /opt/Xilinx/Vivado/2017.1/
+  731  ls
+  732  ./build.sh 
+  733  source /opt/Xilinx/Vivado/2017.1/settings64.sh 
+  734  ./build.sh 
+  735  ./build.sh -force
+  736  git clone https://github.com/mmalczak/DDS_WhiteRabbit.git
+  737  set modem type none
+  738  set line /dev/ttyUSB0
+  739  set carrier-watch off
+  740  set speed 115200
+  741  set parity even
+  742  set stop-bits 1
+  743  connect
+  744  kermit
+  745  cd /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/
+  746  git init
+  747  git add README.md
+  748  git commit -m "first commit, README"
+  749  git remote add origin https://github.com/mmalczak/DDS_WhiteRabbit.git
+  750  git push -u origin master
+  751  cd git
+  752  cd .git/
+  753  ls
+  754  git remote add origin https://github.com/mmalczak/DDS_WhiteRabbit.git
+  755  git push -u origin master
+  756  cd ..
+  757  git commit -m "first commit, README"
+  758  git push -u origin master
+  759  git commit -m "first commit, README"
+  760  git config --global mmalczak
+  761  git config --global user.email "milosz.malczak@gmail.com"
+  762  git config --global user.name "mmalczak"
+  763  git commit -m "first commit, README"
+  764  git remote add origin https://github.com/mmalczak/DDS_WhiteRabbit.git
+  765  git push -u origin master
+  766  git commit
+  767  git add AXI_TO_WISHBONE.srcs/
+  768  git add AXI_TO_WISHBONE.xpr 
+  769  git add sinus.coe 
+  770  git add sinus2.coe 
+  771  git commit
+  772  git push
+  773  git add sf
+  774  git commit
+  775  git push
+  776  cd /home/milosz/Desktop/
+  777  mkdir test
+  778  cd test/
+  779  git clone 
+  780  git clone https://github.com/mmalczak/DDS_WhiteRabbit.git
+  781  git commit
+  782  cd /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/
+  783  ls
+  784  git commit
+  785  git commit -a
+  786  git push
+  787  git commit -a
+  788  git add AXI_TO_WISHBONE.srcs/wb/
+  789  git commit AXI_TO_WISHBONE.srcs/wb/
+  790  git commit
+  791  ./bin/wbgen2 -h
+  792  ./bin/wbgen2 -l vhdl -H record -V mm
+  793  ./bin/wbgen2 -l vhdl -H record -V mm my_regs.wb 
+  794  ./bin/wbgen2 -l vhdl -H record -V my_regs2.vhd my_regs.wb 
+  795  ./bin/wbgen2 -l vhdl -H signals -V my_regs2.vhd my_regs.wb 
+  796  cd ..
+  797  ls
+  798  git commit
+  799  git clone git://ohwr.org/white-rabbit/wr-d3s.git
+  800  git submodules init
+  801  git submodule init
+  802  ls
+  803  cd Desktop/wlostowsky
+  804  git submodule init
+  805  ls
+  806  git clone git://ohwr.org/white-rabbit/wr-d3s.git
+  807  git submodule init
+  808  cd wr-d3s/
+  809  git submodule init
+  810  git submodule update
+  811  git commit 
+  812  git add AXI_TO_WISHBONE.srcs
+  813  git commit
+  814  git push
+  815  ./bin/wbgen2 -l vhdl -H signals -V my_regs2.vhd my_regs.wb
+  816  cd ..
+  817  ls
+  818  git diff AXI_TO_WISHBONE.srcs/sources_1/imports/sources/my_regs.vhd
+  819  kermit
+  820  dmesg
+  821  ./bin/wbgen2 -l vhdl -H signals -V my_regs2.vhd my_regs.wb
+  822  cd /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/
+  823  ls
+  824  git commit
+  825  git commit -a
+  826  git push
+  827  cd /home/milosz/Desktop/
+  828  mkdir test
+  829  cd test/
+  830  git clone https://github.com/mmalczak/DDS_WhiteRabbit.git
+  831  git commit
+  832  git commit -a
+  833  git push
+  834  git checkout -b spi_wb
+  835  git commit -a
+  836  git push
+  837  git push --set-upstream origin spi_wb
+  838  git commit -a
+  839  git push
+  840  ./bin/wbgen2 -l vhdl -H signals -V my_regs2.vhd my_regs.wb
+  841  set modem type none
+  842  set line /dev/ttyUSB0
+  843  set carrier-watch off
+  844  set speed 115200
+  845  set parity even 
+  846  set stop-bits 1
+  847  connect
+  848  kermit
+  849  ./bin/wbgen2 -l vhdl -H signals -V my_regs2.vhd my_regs.wb
+  850  ./bin/wbgen2 -l vhdl -H signals -V my_regs2.vhd my_regs.wb
+  851  git commit -a
+  852  git push
+  853  ./bin/wbgen2 -l vhdl -H signals -V my_regs2.vhd my_regs.wb
+  854  cd /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/
+  855  git commit -a
+  856  git push
+  857  git commit -a
+  858  git push
+  859  git commit -a
+  860  git commit
+  861  git commit -a
+  862  git diff AXI_TO_WISHBONE.xpr
+  863  git diff AXI_TO_WISHBONE.srcs/wb/my_regs.wb
+  864  git ls-files . --exclude-standard --others
+  865  git add AXI_TO_WISHBONE.xpr 
+  866  git commit
+  867  git add AXI_TO_WISHBONE.srcs/
+  868  git add AXI_TO_WISHBONE.sf
+  869  git add sf
+  870  git commit
+  871  git push
+  872  git ls-files . --exclude-standard --others
+  873  sudo chmod +x inst
+  874  ./inst 
+  875  ls
+  876  cd bin/
+  877  ls
+  878  ./wbgen2 
+  879  ./wbgen2 -h
+  880  ./inst 
+  881  cd..
+  882  ./inst 
+  883  cd ..
+  884  ./inst 
+  885  kermit
+  886  git clone https://github.com/mmalczak/DDS_WhiteRabbit.git
+  887  git commit -a
+  888  git push
+  889  git commit
+  890  git add AXI_TO_WISHBONE.srcs/
+  891  git add AXI_TO_WISHBONE.xpr 
+  892  git add sf
+  893  git commit
+  894  git push
+  895  git commit
+  896  git add export_lin/
+  897  git commit
+  898  git push
+  899  git commit 
+  900  git add sf
+  901  git add AXI_TO_WISHBONE.srcs/
+  902  git add AXI_TO_WISHBONE.xpr 
+  903  git commit
+  904  git push
+  905  git commit
+  906  git push
+  907  git commit
+  908  git commit -a
+  909  git push
+  910  git commit
+  911  git log
+  912  git commit -a
+  913  git push
+  914  git commit
+  915  /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/AXI_TO_WISHBONE.sim/sim_1/behav/elaborate.log
+  916  sudo gedit /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/AXI_TO_WISHBONE.sim/sim_1/behav/elaborate.log
+  917  git commit -a
+  918  git push
+  919  git commit
+  920  git add AXI_TO_WISHBONE.srcs/
+  921  git commit
+  922  git push
+  923  git commit
+  924  gedit  [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/AXI_TO_WISHBONE.sim/sim_1/behav/xvhdl.log' file for more information.
+  925  gedit /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/AXI_TO_WISHBONE.sim/sim_1/behav/xvhdl.log
+  926  git commit -a
+  927  git push
+  928  git commit
+  929  git commit AXI_TO_WISHBONE.srcs/
+  930  git add AXI_TO_WISHBONE.srcs/
+  931  git commit
+  932  git push
+  933  git commit -a
+  934  git push
+  935  git commit
+  936  git add AXI_TO_WISHBONE.srcs/
+  937  git commit
+  938  git push
+  939  git add AXI_TO_WISHBONE.srcs/
+  940  git commit -a
+  941  git push
+  942  git commit
+  943  gedit /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/AXI_TO_WISHBONE.sim/sim_1/behav/elaborate.log
+  944  git add AXI_TO_WISHBONE.srcs/
+  945  git commit -a
+  946  git push
+  947  git commit -a
+  948  git push
+  949  git add AXI_TO_WISHBONE.srcs/
+  950  git commit -a
+  951  git push
+  952  git commit
+  953  git push
+  954  vim
+  955  curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > install.sh
+  956  sh ./install.sh
+  957  cd ~/.vim/bundle
+  958  git clone git://github.com/tpope/vim-repeat.git
+  959  sudo apt-get install neobundle
+  960  vim --remote-tab-silent
+  961  vim-h
+  962  vim -h
+  963  cd ~/.vim/bundle/
+  964  git clone https://github.com/svermeulen/vim-easyclip.git
+  965  vim
+  966  ls
+  967  gedit vimrc
+  968  sudo gedit vimrc
+  969  vim
+  970  sudo gedit vimrc
+  971  vim
+  972  sudo gedit vimrc
+  973  sudo apt-get install vim
+  974  sudo apt autoremove
+  975  sudo apt-get remove vim-tiny
+  976  sudo apt -y update
+  977  sudo apt-get update
+  978  sudo apt-get upgrade
+  979  sudo apt -y install vim
+  980  sudo apt-get install vim
+  981  sudo apt-get remove vim-tiny
+  982  cd 
+  983  cd /
+  984  ls
+  985  sudo find vim
+  986  sudo find -n vim
+  987  cd /etc/
+  988  cd vim/
+  989  ls
+  990  vim vimrc
+  991  find -h
+  992  find -help
+  993  find -name 'debian.vim'
+  994  find -name / 'debian.vim'
+  995  find / -name 'debian.vim'
+  996  sudo find / -name 'debian.vim'
+  997  cd /usr/share/vim/vim74/
+  998  ls
+  999  source debian.vim 
+ 1000  cd
+ 1001  vim .vimrc
+ 1002  vim
+ 1003  xterm
+ 1004  xterm vim 
+ 1005  ./home/milosz/Desktop/termi 
+ 1006  /home/milosz/Desktop/.termi 
+ 1007  /home/milosz/Desktop./termi 
+ 1008  cd /home/milosz/Desktop/
+ 1009  ./termi 
+ 1010  gedit
+ 1011  gedit termi
+ 1012  sudo chmod +x termi 
+ 1013  ./termi 
+ 1014  sudo apt-get install xdotool
+ 1015  ./termi 
+ 1016  gedit .vimrc
+ 1017  ls
+ 1018  cat .vimrc
+ 1019  cd /etc/vim/
+ 1020  ls
+ 1021  gedit vimrc
+ 1022  sudo gedit vimrc
+ 1023  cd
+ 1024  ls
+ 1025  vim .vimrc
+ 1026  cat .vimrc
+ 1027  vim .vimrc
+ 1028  sudo vim .vimrc
+ 1029  sudo gedit .vimrc
+ 1030  gedt /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/AXI_TO_WISHBONE.sim/sim_1/behav/elaborate.log
+ 1031  gedit /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/AXI_TO_WISHBONE.sim/sim_1/behav/elaborate.log
+ 1032  gedit /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/AXI_TO_WISHBONE.sim/sim_1/behav/xvhdl.log
+ 1033  git add AXI_TO_WISHBONE.srcs/
+ 1034  git commit -a
+ 1035  git push
+ 1036  modprobe vboxdrv
+ 1037  sudo modprobe vboxdrv
+ 1038  dkms autoinstall
+ 1039  sudo dkms autoinstall
+ 1040  vboxreload
+ 1041  sudo /etc/init.d/vboxdrv setup]
+ 1042  cd /etc/init.d
+ 1043  ls
+ 1044  cd
+ 1045  sudo dkms autoinstall 
+ 1046  virtualboxreload
+ 1047  sudo /etc/init.d/virtualbox setup
+ 1048  sudo /etc/init.d/virtualbox force-reload
+ 1049  sudo apt-get install dkms
+ 1050  modprobe vboxdrv
+ 1051  sudo /sbin/rcvboxdrv setup
+ 1052  sudo /etc/init.d/virtualbox start
+ 1053  lsb_release -a command
+ 1054  lsb_release
+ 1055  lsb_release -a
+ 1056  modprobe vboxdrv
+ 1057  sudo apt-get purge 'virtualbox*'
+ 1058  sudo apt-get install virtualbox-5.0
+ 1059  uname -a
+ 1060  sudo apt-get install virtualbox-5.2
+ 1061  sudo apt-get install virtualbox
+ 1062  virtualbox
+ 1063  virtualbox-qt
+ 1064  sudo apt install virtualbox-qt
+ 1065  virtualbox
+ 1066  /home/milosz/Desktop/Xilinx/V
+ 1067  cd vivado/projects/AXI_TO_WISHBONE_edit_slave/AXI_TO_WISHBONE.srcs/sources_1/new/
+ 1068  ls
+ 1069  ls -a
+ 1070  cd /etc/
+ 1071  cd /etc/vim/
+ 1072  ls
+ 1073  gedit vimrc
+ 1074  sudo gedit vimrc
+ 1075  sudo gedit vimrc.tiny 
+ 1076  cd /home/milosz/
+ 1077  ls
+ 1078  cd /home/
+ 1079  ls
+ 1080  cd milosz/
+ 1081  ls
+ 1082  sudo gedit .vimrc
+ 1083  brew install vim
+ 1084  sudo apt install linuxbrew-wrapper
+ 1085  brew install vim
+ 1086  sudo ap-get update
+ 1087  sudo apt-get update
+ 1088  sudo apt-get upgrade
+ 1089  brew install vim
+ 1090  vim
+ 1091  exit
+ 1092  git add AXI_TO_WISHBONE.srcs/
+ 1093  git add sf/
+ 1094  git commit -a
+ 1095  git push
+ 1096  exit
+ 1097  cd /home/milosz/Downloads/
+ 1098  ls
+ 1099  sudo gedit vimrc
+ 1100  git add AXI_TO_WISHBONE.srcs/
+ 1101  git commit -a
+ 1102  git push
+ 1103  git add AXI_TO_WISHBONE.srcs/
+ 1104  git commit -a
+ 1105  git push
+ 1106  exit
+ 1107  sudo apt-get purge vim
+ 1108  sudo apt-get install vim
+ 1109  sudo apt-get purge vim
+ 1110  sudo apt-get update
+ 1111  sudo apt-get upgrade
+ 1112  sudo apt-get install vim
+ 1113  cd /etc/
+ 1114  ls
+ 1115  cd vim/
+ 1116  ls
+ 1117  cat vimrc
+ 1118  sudo gedit vimrc
+ 1119  vim --version | grep clipboard
+ 1120  sudo apt-get install vim-gtk
+ 1121  vim --version | grep clipboard
+ 1122  sudo gedit vimrc
+ 1123  git add AXI_TO_WISHBONE.srcs/
+ 1124  git add sf/
+ 1125  git commit -a
+ 1126  git push
+ 1127  /opt/
+ 1128  ls
+ 1129  /var/
+ 1130  ls
+ 1131  cd /var/
+ 1132  ls
+ 1133  cd /proc/
+ 1134  ks
+ 1135  ls
+ 1136  cd /etc/
+ 1137  ls
+ 1138  cat environment 
+ 1139  git add AXI_TO_WISHBONE.srcs
+ 1140  git add sf
+ 1141  git commit -a
+ 1142  git push
+ 1143  git add AXI_TO_WISHBONE.srcs/
+ 1144  git commit -a
+ 1145  git push
+ 1146  cd /opt/Xilinx/
+ 1147  ls
+ 1148  mkdir 2018
+ 1149  sudo mkdir 2018
+ 1150  git add AXI_TO_WISHBONE.srcs/
+ 1151  git add sf/
+ 1152  git commit -a
+ 1153  git push
+ 1154  git 
+ 1155  git diff HEAD^
+ 1156  git
+ 1157  git diff spi_wb 
+ 1158  git diff --name-only HEAD^
+ 1159  git diff AXI_TO_WISHBONE.xpr
+ 1160  git diff AXI_TO_WISHBONE.xpr HEAD 
+ 1161  git diff HEAD AXI_TO_WISHBONE.xpr
+ 1162  echo .log >> .gitignore
+ 1163  git ls-tree --full-tree -r HEAD 
+ 1164  git rm --cashed sf/.metadata/.log 
+ 1165  git rm --cached sf/.metadata/.log 
+ 1166  git commit -m "start ignorign .log"
+ 1167  git push
+ 1168  git ls-tree --full-tree -r HEAD 
+ 1169  echo *.log >> .gitignore
+ 1170  git rm --cached sf/.metadata/*.log 
+ 1171  git rm --cached *.log 
+ 1172  git commit -m "Start ignoring  *.log"
+ 1173  echo *.log >> **/.history
+ 1174  echo **/.history >> .gitignore
+ 1175  git rm --cached **/.history
+ 1176  git rm --cached **/.history/
+ 1177  git rm --cached sf/.metadata/.plugins/org.eclipse.core.resources/.history
+ 1178  git rm --cached sf/.metadata/.plugins/org.eclipse.core.resources/.history -r
+ 1179  git commit -m "Start ignoring .history"
+ 1180  git push
+ 1181  git ls-tree --full-tree -r HEAD 
+ 1182  branch master
+ 1183  git branch master
+ 1184  git checkout  master
+ 1185  git rm --cached sf/.metadata/.plugins/org.eclipse.core.resources/.history -r
+ 1186  git rm --cached *.log 
+ 1187  git commit
+ 1188  git push
+ 1189  git checkout spi_wb 
+ 1190  git checkout master 
+ 1191  git merge spi_wb 
+ 1192  git push
+ 1193  git add AXI_TO_WISHBONE.srcs/
+ 1194  git commit -a
+ 1195  git push
+ 1196  git ls-tree --full-tree -r HEAD 
+ 1197  git ls-tree --full-tree -r HEAD | grep .history
+ 1198  git rm --cached sf/.metadata/.plugins/org.eclipse.core.resources/.history -r
+ 1199  git rm --cached export_lin/.metadata/.plugins/org.eclipse.core.resources/.history -r
+ 1200  git commit -m "start ignoring .history"
+ 1201  git push
+ 1202  git add sf
+ 1203  git commit -a
+ 1204  git push
+ 1205  git ls-tree --full-tree -r HEAD 
+ 1206  echo *.o >> .gitignore
+ 1207  git rm --cached *.o
+ 1208  git commit
+ 1209  git push
+ 1210  git ls-tree --full-tree -r HEAD 
+ 1211  git diff --name-only HEAD^
+ 1212  git diff --name-only HEAD^3
+ 1213  git diff --name-only HEAD^^
+ 1214  git diff --name-only HEAD~4
+ 1215  git diff spi_wb~2:AXI_TO_WISHBONE.srcs/sources_1/new/PLL_filter.vhd AXI_TO_WISHBONE.srcs/sources_1/new/PLL_filter.vhd
+ 1216  git diff spi_wb~10:AXI_TO_WISHBONE.srcs/sources_1/new/PLL_filter.vhd AXI_TO_WISHBONE.srcs/sources_1/new/PLL_filter.vhd
+ 1217  cd /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/
+ 1218  git ls-tree --full-tree -r HEAD 
+ 1219  exit
+ 1220  cd /home/milosz/Desktop/Xilinx/Vivado/projects/AXI_TO_WISHBONE_edit_slave/
+ 1221  git add AXI_TO_WISHBONE.srcs/
+ 1222  git commit -a
+ 1223  git push
+ 1224  git diff HEAD^ HEAD
+ 1225  git diff HEAD^ HEAD --name-only
+ 1226  history > /home/milosz/Desktop/terminal_history.txt

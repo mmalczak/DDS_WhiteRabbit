@@ -1,0 +1,16 @@
+budowanie buildroota
+
+
+projekt hdl vivado, export to sdk
+wygeneruj drzewo urzadzen z sdk
+http://www.wiki.xilinx.com/Build+Device+Tree+Blob
+
+ściagnij buildroota
+zmodyfikuj zynq_zc706_defconfig tak zeby uzywał wskazaneo drzewa urzadzen
+zbuduj sobie buildroota uzywajac
+http://www.wiki.xilinx.com/Build+Linux+for+Zynq-7000+AP+SoC+using+Buildroot
+pamietaj o zmienieniu toolchaina na tego od xilinxa i wlaczeniu ssh
+make menuconfig-> target packages ->networking applications -> dropbear
+ionfiguracja toolchain w screenshocie
+
+
